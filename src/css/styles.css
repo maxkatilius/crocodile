@@ -90,7 +90,7 @@ li::before {
 
 header {
     height: 15vh;
-    padding: 0 1em;
+    padding: 0 1.5em;
     display: flex;
     align-items: start;
     justify-content: start;
@@ -110,11 +110,13 @@ header {
     color: #0B6E4F;
     border-top: 2px solid #0B6E4F;
     border-bottom: 2px solid #0B6E4F;
+    cursor: pointer;
 }
 
 .header--img {
     display: block;
     max-width: 47%;
+    cursor: pointer;
 }
 
 /* Nav */
@@ -187,12 +189,12 @@ nav.open {
 }
 
 .nav.open .hamburger {
-    background-color: #DBD4D3;
+    background-color: #FEFFFE;
     transform: rotate(-225deg);
 }
 
 .nav.open .hamburger:before {
-    background-color: #DBD4D3;
+    background-color: #FEFFFE;
     transform: rotate(90deg) translateX(-1em);
 }
 
@@ -209,7 +211,7 @@ nav.open {
     inset: 0 0 0 35%;
     padding: 6.8em 2.6em;
     font-weight: bold;
-    color: #DBD4D3;
+    color: #FEFFFE;
     
     display: flex;
     flex-direction: column;
@@ -223,7 +225,7 @@ nav.open {
 
 .nav--links a,
 .nav--how-to {
-    color: #DBD4D3;
+    color: #FEFFFE;
     font-size: 1.95rem;
     cursor: pointer;
 }
