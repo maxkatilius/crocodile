@@ -17,6 +17,16 @@ body {
     justify-content: center;
 }
 
+.x {
+    display: inline-block;
+    /* Changed from inline to inline-block */
+}
+
+.x h1 {
+    border: 1px solid blue;
+    display: inline-block;
+    /* Ensure the h1 doesn't take full width */
+}
 /***************
 ** Typography **
 ***************/
@@ -80,27 +90,172 @@ li::before {
 
 header {
     height: 15vh;
+    padding: 0 1em;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
+    align-items: start;
+    justify-content: start;
 }
 
-.header--img {
-    width: 65%;
+.header--logo {
+    display: inline-block;
 }
 
 .header--title {
-    display: inline;
-    font-size: 2rem;
+    display: inline-block;
+    margin: 0.2em 0;
+    font-size: 1.4rem;
     text-transform: uppercase;
-    letter-spacing: 0.5rem;
+    letter-spacing: 0.3rem;
     line-height: 1.5em;
     color: #0B6E4F;
     border-top: 2px solid #0B6E4F;
     border-bottom: 2px solid #0B6E4F;
-    /* margin-bottom: 0.2em; */
 }
+
+.header--img {
+    display: block;
+    max-width: 47%;
+}
+
+/* Nav */
+
+nav {
+    position: absolute;
+    top: 1.4em;
+    right: 2em;
+    left: auto;
+    transition: right 550ms ease-out;
+    transition-delay: 100ms;
+    /* border: 1px solid red; */
+}
+
+nav.open {
+    right: calc(65% - 3.2em - 2em);
+    /* Screen width minus nav width (4em) and its right margin (1.6em) */
+}
+
+/***** Hamburger  *****/
+
+.hamburger-container {
+    z-index: 1001;
+
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 4.6em;
+    width: 3.2em;
+    cursor: pointer;
+    transition: all 500ms ease-in-out;
+}
+
+.nav.closed .hamburger-container {
+    transition-delay: 100ms;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+    height: 0.25em;
+    background-color: #0B6E4F;
+    border-radius: 1.5em;
+}
+
+.hamburger {
+    z-index: 1001;
+
+    width: 100%;
+    transition: transform 700ms ease-in-out 50ms, background-color 1000ms ease-in-out;
+}
+
+.hamburger:before,
+.hamburger:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    opacity: 1;
+    transition: transform 700ms ease-in-out 50ms, background-color 800ms ease-in-out 100ms;
+}
+
+.hamburger:before {
+    top: 1.1em;
+}
+
+.hamburger:after {
+    bottom: 1.1em;
+    transition: opacity 800ms ease-in-out 200ms;
+}
+
+.nav.open .hamburger {
+    background-color: #DBD4D3;
+    transform: rotate(-225deg);
+}
+
+.nav.open .hamburger:before {
+    background-color: #DBD4D3;
+    transform: rotate(90deg) translateX(-1em);
+}
+
+.nav.open .hamburger:after {
+    opacity: 0;
+    transition: opacity 800ms ease-in-out;
+}
+
+/***** Nav Links Overlay *****/
+
+.nav--links {
+    z-index: 1000;
+    position: fixed;
+    inset: 0 0 0 35%;
+    padding: 6.8em 2.6em;
+    font-weight: bold;
+    color: #DBD4D3;
+    
+    display: flex;
+    flex-direction: column;
+    gap: 1.8em;
+    background-color: hsla(0, 0%, 5%, 0.6);
+    backdrop-filter: blur(0.4rem);
+    
+    transform: translateX(100%);
+    transition: transform 450ms ease-in 100ms;
+}
+
+.nav--links a,
+.nav--how-to {
+    color: #DBD4D3;
+    font-size: 1.95rem;
+    cursor: pointer;
+}
+
+.nav--how-to {
+}
+
+.how-to-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2em;
+    padding: 1em 1.8em;
+}
+
+.how-to-links a {
+    font-size: 1.2rem;
+}
+
+.how-to-links.open {
+    border: 1px solid red;
+}
+
+.how-to-links.closed {
+    display: none;
+    border: 1px solid blue;
+}
+
+.nav.open .nav--links {
+    transform: translateX(0%);
+    transition: transform 400ms ease-in 100ms;
+}
+
 
 /* Main */
 
