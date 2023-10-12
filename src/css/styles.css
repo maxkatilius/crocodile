@@ -1,0 +1,389 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    background-color: #FEFFFE;
+    color: #161925;
+    display: flex;
+    justify-content: center;
+}
+
+/***************
+** Typography **
+***************/
+
+h2 {
+    color: #0B6E4F;
+    padding-bottom: 0.4em;
+}
+
+h4 {
+    color: #0B6E4F;
+    margin: 0.2em 0
+}
+
+p {
+    margin: 0.6em 0;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+ul {
+    margin-bottom: 1em;
+    list-style-type: none;
+}
+
+li {
+    position: relative;
+    padding: 0.8em 0 0 4em;
+    /* This creates space for the bullet image. Adjust as needed based on the image size */
+}
+
+li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-30%);
+    width: 2.6em;
+    height: 1.2em;
+    background-image: url("../assets/images/croc-head-in-water-mirror.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/**************
+***  Layout ***
+***************/
+
+.site-container {
+    height: 100%;
+    position: relative;
+    padding-top: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Header */
+
+header {
+    height: 15vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.header--img {
+    width: 65%;
+}
+
+.header--title {
+    display: inline;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+    line-height: 1.5em;
+    color: #0B6E4F;
+    border-top: 2px solid #0B6E4F;
+    border-bottom: 2px solid #0B6E4F;
+    /* margin-bottom: 0.2em; */
+}
+
+/* Main */
+
+main {
+    /* flex: 1; */
+    max-height: 60vh;
+    overflow-y: auto;
+    width: 85%;
+    margin: auto auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Footer */
+
+footer {
+    height: 15vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #0B6E4F;
+}
+
+footer h4 {
+    padding: 3.4em 0 0 2em;
+}
+
+footer img {
+    width: 40%;
+}
+
+/************
+*** Links ***
+*************/
+
+a {
+    text-decoration: none;
+}
+
+.links-container {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 1em 0;
+}
+
+
+main a,
+.back-btn {
+    display: flex;
+    align-items: center;
+    background-color: #0B6E4F;
+    color: #FEFFFE;
+    font-weight: bold;
+    padding: 0.8em 1.2em;
+    font-size: 1rem;
+    border-radius: 0.9em;
+    border: none;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1), -1px -1px 4px rgba(255, 255, 255, 0.3);
+    transition: all 250ms ease-in-out;
+    cursor: pointer;
+}
+
+main a:hover,
+main a:active,
+main a:focus,
+.back-btn:hover,
+.back-btn:active,
+.back-btn:focus {
+    transform: scale(1);
+    margin-bottom: 0.3em;
+    font-size: 1.1rem;
+    margin-top: -0.5em;
+    border-radius: 1em;
+    background-color: #07543A;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2), -2px -2px 5px rgba(255, 255, 255, 0.3);
+}
+
+.back-btn {
+    font-family: inherit;
+    font-weight: 600;
+}
+
+
+/***********
+*** Home ***
+************/
+
+.home-container {
+    width: 80%;
+}
+
+.subtitle {
+    font-size: 1.4rem;
+    padding: 0.6em 0;
+    width: 100%;
+    text-align: center;
+}
+
+.tagline {
+    margin-bottom: 2em;
+}
+
+.home-container a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.8em 1.4em;
+}
+
+
+/**************
+****  Aim  ****
+***************/
+
+.aim-container {
+    width: 80%;
+}
+
+/****************
+****  Setup  ****
+*****************/
+
+/*******************
+****  Gameplay  ****
+********************/
+
+.gameplay-container ul:nth-of-type(1) li:nth-child(1){
+    padding-bottom: 0.5em;
+}
+
+.gameplay-container ul:nth-of-type(2) li:nth-child(3) {
+    padding-bottom: 0.5em;
+}
+
+.gameplay-container span:not(.bold) {
+    color: #0B6E4F;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 250ms ease-in-out;
+}
+
+.gameplay-container span:hover:not(.bold) {
+    color: #07543A;
+    transform: scale(1);
+    font-size: 1.1rem;
+}
+/***********************
+****  Calling Croc  ****
+************************/
+
+
+/*********************
+****  Smackdowns  ****
+**********************/
+
+/***********************************
+****  Card values / Power cards ****
+***********************************/
+
+.cards h4 {
+    color:#161925
+}
+
+.cards, .power-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card, .power-card {
+    width: 50%;
+    margin-bottom: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.4em;
+}
+
+.card h4, .power-card h4 {
+    text-align: center;
+}
+
+.power-card {
+    width: 40%;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+
+.card img, .power-card img {
+    width: 35%;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1), -1px -1px 4px rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease-in-out;
+}
+
+.card img:hover,
+.power-card img:hover {
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2), -2px -2px 5px rgba(255, 255, 255, 0.3);
+}
+
+
+.card-values-container .links-container {
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.power-cards-container .links-container a,
+.power-cards-container .back-btn {
+    font-size: 0.9rem;
+}
+
+/***************************
+****  Prohibited Plays  ****
+****************************/
+
+/************************
+****  Media Queries  ****
+*************************/
+
+
+/* Extra small devices (portrait phones, less than 576px):  */
+@media (max-width: 575px) {
+}
+
+/* Small devices (landscape phones, 576px and up):  */
+@media (min-width: 576px) {
+}
+
+/* Medium devices (tablets, 768px and up):  */
+@media only screen and (min-width: 768px) {
+    header {
+        height: 20vh;
+    }
+
+    main {
+        width: 70%;
+    }
+
+    footer img {
+        width: 30%;
+    }
+
+    .card,
+    .power-card {
+        width: calc(33.333% - 20px);
+        /* For 3 cards per row */
+    }
+}
+
+/* Large devices (desktops, 992px and up):  */
+@media only screen and (min-width: 992px) {
+    header {
+        height: 30vh;
+    }
+
+    main {
+        width: 60%;
+    }
+
+    footer {
+        font-size: 1.4rem;
+        margin-bottom: 1em;
+    }
+
+    footer img {
+        width: 28%;
+    }
+
+    .card,
+    .power-card {
+        width: calc(25% - 20px);
+        /* For 4 cards per row */
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .site-container {
+        width: 80%;
+        margin: auto auto;
+    }
+    main {
+        width: 50%;
+    }
+}
+

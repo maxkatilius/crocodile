@@ -1,0 +1,23 @@
+Features 
+- About us?
+- Contact us
+- Shop / Basket
+- Navbar with the above and Rules with its on mini nav
+- animated croc jaw snap when user clicks header link
+-css hover effects / animations
+- animated scenarios of dealing, smackdowns etc.
+deals: the classic, the casino, the maniac
+- change navigate to card values / power cards from gameplay, so that if they came from there the next button is to 'Calling Croc'
+
+
+Croc variations
+-Croc poker
+
+
+Croc merch
+- croc cards
+- mini croc dealer token
+- hand restraint for clarkeys
+- croc table
+- smackdown timers
+- croc knuckle dusters

@@ -1,0 +1,78 @@
+Aim of the game: to be the player with the least amount of points once the round is over OR to have no cards remaining on the table i.e. doing the deed.
+
+
+
+Card values:
+
+A - 1
+2 - 2
+3 - 3
+4 - 4 
+5 - 5
+6 - 6
+7 - 7
+8 - 8
+9 - 9
+10 - 10
+J - 10
+Q - 10
+Black K - 10
+Red K - -1 
+Joker - 0
+
+
+
+Playing the game:
+
+All players are dealt four cards in a square formation. (Dealing etiquette is to deal two cards at a time i.e. the bottom two cards for every player, followed by the top two cards for every player). The dealer the flips the top card of the deck and places it face up on the table, creating the discard pile. 
+
+After the cards are dealt, players are allowed to initially look at the two cards closest to them, but NOT the two cards furthest away. Once all players have looked at their first 2 cards, play begins. 
+
+The player to the left of dealer begins the game by either drawing the first card, or by swapping one of their cards with the first card in the discard pile.
+
+Players take turns drawing or swapping cards until one player calls 'Crocodile' after which the final round of play occurs, followed by the scoring of the round. 
+
+On a player's turn they can either draw a new card from the deck OR select the most recently discarded face-up card on top of the discard pile and swap this card for one of the facedown cards in their hand. 
+
+When selecting a new card from the deck, you may choose to:
+play the card (if it has powers),
+swap the card for one of yours, or,
+discard the card. 
+
+
+
+Calling crocodile:
+
+When a player believes they have a winning hand and wants to end the game, they do so by calling 'Crocodile' (or casually, 'croc'). After this, every other player will play one more round, after which, all players turn their cards face up and their score is calculated by adding all values of their cards. The player with the least amount of points win the game. 
+
+A player is allowed to call crocodile at any point in the game, however, every other player will have one more turn (including whoseever turn it is at the time crocodile is called) before the revealing of hands.
+
+
+
+Smackdowns:
+
+Whenever a card is placed face up on the discard pile and you are aware that there is a or multiple of the same card face down card on the table, you are allowed to flip these cards and 'smack them down' on the discard pile. If it is one of your cards that you have smacked down, that card remains removed from your hand and you now have one less card in your hand. If it is another players card thst you have smacked down, this card is replaced by the first card from the pick up pile, and remains face down so that no one is privy to its value whilst you may discard ANY one of your face down cards. 
+
+If two players both try to smackdown at the same time, the first player to smack their card down wins and completes the smackdown, the other player is effectively punished by revealing the identity and position of one of their cards in the process of losing the smackdown. 
+
+Combining smackdowns...
+
+Clarkey two hand...
+
+The snatchdown ....
+
+If you manage to perform 4 smackdowns in the one game, you no longer have any cards and automatically win the game, effectively 'doing the deed. 
+
+
+
+Power cards: 
+
+Power cards may be used if they are played immediately after picking up the card during the same turn, therefore any power cards that are played from a face-down position or in a smackdown have their power voided.
+
+7 - the self-peek or 'selfie'. Allows players to look at one of their face down cards.
+
+8 - the sneak-a-peek or 'sneaky'. Allows the player to look at another players face down card.
+
+9 - the blind swap - allows the player to switch two face cards on the table. It may be one of their own cards and another player's card OR two cards of two other players in order to cause mayhem/confusion. 
+
+10 - the power swap - allows the player to look at one of their own cards, one of someone else's card AND choose to swap them if they would like to. The cards that are looked at are the only cards that may be swapped although do not gave to be. Essentially combining all the previous power cards powers into one.
