@@ -35,10 +35,10 @@ const Nav = () => {
 						toggleNav();
 					}}>Shop</NavLink>
 				<div>
-					<NavLink to="/how-to" className="nav--how-to" onClick={() => {
+					<h3 className="nav--how-to" onClick={() => {
 						toggleHowTo();
 					}}>How to Play
-					</NavLink>
+					</h3>
 					<ul className={`how-to-links croc-ul ${howToOpen ? "open" : "closed"}`}>
 						<li className="croc-li nav-li" style={{backgroundColor: "none"}}>
 							<NavLink to="/how-to" onClick={() => {

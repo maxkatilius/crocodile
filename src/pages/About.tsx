@@ -13,7 +13,7 @@ const About = () => {
 			</p>
 
 			<p className="about-para">
-				At first, I was a mere novice amidst the seasoned players. I grappled with the swift pace of the smackdowns and struggled to keep track of the various cards flitting across the table. Yet, as rounds progressed, something clicked. I began anticipating moves, plotting strategies, and expertly smacking down cards with finesse. Before I knew it, hours had passed, and I was fully immersed in the game, playing it at every subsequent stop of my trip.
+				At first, I was a mere novice amidst the seasoned players. I grappled with the swift pace of the smackdowns and struggled to keep track of the various cards flitting across the table. Yet, as rounds progressed, something clicked. I began anticipating moves, plotting strategies, and expertly smacking down cards with finesse. Before I knew it, hours had passed, and I was fully immersed in the game. I made sure to play it at every remaining opportunity of my trip.
 			</p>
 
 			<p className="about-para">
