@@ -53,7 +53,7 @@ const CardValues = () => {
 					/>
 				</div>
 				<div className="links-container">
-					<button className="back-btn" onClick={() => navigate(-1)}>
+					<button className="btn back-btn" onClick={() => navigate(-1)}>
 						◀ Back
 					</button>
 					<Link to="../calling-croc">Calling 'Croc' ▶</Link>
