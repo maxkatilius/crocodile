@@ -43,7 +43,7 @@ const Gameplay = () => {
 							});
 						}}
 					>
-						power Cards
+						power cards
 					</span>
 					),
 				</li>
