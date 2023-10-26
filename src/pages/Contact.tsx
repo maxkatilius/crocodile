@@ -1,7 +1,7 @@
 import React from "react";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 
-const Contact = ({ db }) => {
+const Contact = ({ db }: {db: any }) => {
 	const [userName, setUserName] = React.useState("")
 	const [userEmail, setUserEmail] = React.useState("")
 	const [userMessage, setUserMessage] = React.useState("")
