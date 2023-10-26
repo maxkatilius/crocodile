@@ -20,7 +20,7 @@ const Setup = () => {
 			</p>
 			<p>Once everyone's checked their cards, the game begins.</p>
 			<div className="links-container">
-				<button className="back-btn" onClick={() => navigate(-1)}>
+				<button className="btn back-btn" onClick={() => navigate(-1)}>
 					◀ Back
 				</button>
 				<Link to="../gameplay">Gameplay ▶</Link>

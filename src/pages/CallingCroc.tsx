@@ -27,7 +27,7 @@ const CallingCroc = () => {
 				wildcard, knowing you'll forfeit your final turn.
 			</p>
 			<div className="links-container">
-				<button className="back-btn" onClick={() => navigate(-1)}>
+				<button className="btn back-btn" onClick={() => navigate(-1)}>
 					◀ Back
 				</button>
 				<Link to="../smackdowns">Smackdowns ▶</Link>

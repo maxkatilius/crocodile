@@ -10,7 +10,7 @@ const Gameplay = () => {
 				The player to the dealer's left kicks off the game. They have
 				two options:
 			</p>
-			<ul>
+			<ul className="croc-ul">
 				<li>Draw the top card from the deck.</li>
 				<li>
 					Swap one of their face-down cards directly with the face-up
@@ -32,8 +32,8 @@ const Gameplay = () => {
 				) for their face-down hand by either drawing or swapping.
 			</p>
 			<p>When drawing a fresh card from the deck a player can:</p>
-			<ul>
-				<li>
+			<ul className="croc-ul">
+				<li className="croc-li">
 					Use it if it's a Power Card (see{" "}
 					<span
 						className="link-power-cards"
@@ -47,11 +47,11 @@ const Gameplay = () => {
 					</span>
 					),
 				</li>
-				<li>
+				<li className="croc-li">
 					Swap it with one of their face-down cards,
 					<span className="bold"> or</span>
 				</li>
-				<li>Simply discard it.</li>
+				<li className="croc-li">Simply discard it.</li>
 			</ul>
 			<p>
 				The game can be concluded by any player declaring 'Crocodile.'
@@ -60,7 +60,7 @@ const Gameplay = () => {
 				'does the deed'.
 			</p>
 			<div className="links-container">
-				<button className="back-btn" onClick={() => navigate(-1)}>
+				<button className="btn back-btn" onClick={() => navigate(-1)}>
 					◀ Back
 				</button>
 				<Link to="../calling-croc">Calling 'Croc' ▶</Link>

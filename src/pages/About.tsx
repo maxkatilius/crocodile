@@ -1,7 +1,38 @@
 // import React from "react";
 
+// import React from "react";
+import { Link } from "react-router-dom";
+
 const About = () => {
-	return <div>About</div>;
+	return (
+		<main className="about-container">
+			<h2 className="about-header">The Crocodile Tale</h2>
+
+			<p className="about-para">
+				As I journeyed through the vivid landscapes of South-East Asia, hopping from bustling cities to tranquil towns, I found myself in a myriad of hostels. It was on one such evening, in a dimly lit common room, that I stumbled upon a captivating scene – a group of travelers engrossed in a card game. Curiosity piqued, I joined them, unaware that this moment would change my life as I knew it.
+			</p>
+
+			<p className="about-para">
+				At first, I was a mere novice amidst the seasoned players. I grappled with the swift pace of the smackdowns and struggled to keep track of the various cards flitting across the table. Yet, as rounds progressed, something clicked. I began anticipating moves, plotting strategies, and expertly smacking down cards with finesse. Before I knew it, hours had passed, and I was fully immersed in the game, playing it at every subsequent stop of my trip.
+			</p>
+
+			<p className="about-para">
+				Upon returning home, I introduced the game to my friends and like me, they were hooked. Playing night after night, we introduced twists and tweaks, gradually evolving the game into what it is today. From those humble beginnings, the enhanced and exhilarating version of Crocodile was born.
+			</p>
+
+			<p className="about-para">
+				Now, it's your turn to dive into this whirlwind of strategy, suspense, and spirited competition. Ready for some adrenaline-pumping action? The crocs are eager to meet you!
+			</p>
+
+			<div className="about-links">
+				<Link to="/">Home</Link>
+				<Link to="/how-to">How to play</Link>
+				<Link to="/shop">Shop</Link>
+				<Link to="/contact">Contact Us</Link>
+			</div>
+		</main>
+	);
 };
 
 export default About;
+

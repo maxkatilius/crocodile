@@ -37,42 +37,58 @@ const Nav = () => {
 				<div>
 					<NavLink to="/how-to" className="nav--how-to" onClick={() => {
 						toggleHowTo();
-						console.log("clicked!")
-					}}>How to Play</NavLink>
-					<div className={`how-to-links ${howToOpen ? "open" : "closed"}`}>
-						<NavLink to="/how-to" onClick={() => {
-						toggleNav()
-						toggleHowTo();
-					}}>Aim</NavLink>
-						<NavLink to="/how-to/setup" onClick={() => {
-						toggleNav()
-						toggleHowTo();
-					}}>Setup</NavLink>
-						<NavLink to="/how-to/gameplay" onClick={() => {
-						toggleNav()
-						toggleHowTo();
-					}}>Gameplay</NavLink>
-						<NavLink to="/how-to/card-values" onClick={() => {
-						toggleNav()
-						toggleHowTo();
-					}}>Card Values</NavLink>
-						<NavLink to="/how-to/calling-croc" onClick={() => {
-						toggleNav()
-						toggleHowTo();
-					}}>CallingCroc</NavLink>
-						<NavLink to="/how-to/smackdowns" onClick={() => {
-						toggleNav()
-						toggleHowTo();
-					}}>Smackdowns</NavLink>
-						<NavLink to="/how-to/power-cards" onClick={() => {
-						toggleNav()
-						toggleHowTo();
-					}}>Power Cards</NavLink>
-						<NavLink to="/how-to/prohibited" onClick={() => {
-						toggleNav()
-						toggleHowTo();
-					}}>Prohibited Plays</NavLink>
-					</div>
+					}}>How to Play
+					</NavLink>
+					<ul className={`how-to-links croc-ul ${howToOpen ? "open" : "closed"}`}>
+						<li className="croc-li nav-li" style={{backgroundColor: "none"}}>
+							<NavLink to="/how-to" onClick={() => {
+								toggleNav()
+								toggleHowTo();
+							}}>Aim</NavLink>
+						</li>
+						<li className="croc-li nav-li">
+							<NavLink to="/how-to/setup" onClick={() => {
+								toggleNav()
+								toggleHowTo();
+							}}>Setup</NavLink>
+						</li>
+						<li className="croc-li nav-li">
+							<NavLink to="/how-to/gameplay" onClick={() => {
+								toggleNav()
+								toggleHowTo();
+							}}>Gameplay</NavLink>
+						</li>
+						<li className="croc-li nav-li">
+							<NavLink to="/how-to/card-values" onClick={() => {
+								toggleNav()
+								toggleHowTo();
+							}}>Card Values</NavLink>
+						</li>
+						<li className="croc-li nav-li">
+							<NavLink to="/how-to/calling-croc" onClick={() => {
+								toggleNav()
+								toggleHowTo();
+							}}>Calling Croc</NavLink>
+						</li>
+						<li className="croc-li nav-li">
+							<NavLink to="/how-to/smackdowns" onClick={() => {
+								toggleNav()
+								toggleHowTo();
+							}}>Smackdowns</NavLink>
+							</li>
+						<li className="croc-li nav-li">
+							<NavLink to="/how-to/power-cards" onClick={() => {
+								toggleNav()
+								toggleHowTo();
+							}}>Power Cards</NavLink>
+						</li>
+						<li className="croc-li nav-li">
+							<NavLink to="/how-to/prohibited" onClick={() => {
+								toggleNav()
+								toggleHowTo();
+							}}>Prohibited Plays</NavLink>
+						</li> 
+					</ul>
 				</div>
 				<NavLink to="/contact" onClick={() => {
 						toggleNav();

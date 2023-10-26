@@ -15,6 +15,24 @@ import Smackdowns from "./pages/Smackdowns";
 import PowerCards from "./pages/PowerCards";
 import Prohibited from "./pages/Prohibited";
 
+import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
+
+// Firebase Configuration
+const firebaseConfig ={
+	apiKey: "AIzaSyCFg9fqwwNnQ2Evi-5G9lsQQ3iLXlIjIFs",
+	authDomain: "crocodile-ecca8.firebaseapp.com",
+	projectId: "crocodile-ecca8",
+	storageBucket: "crocodile-ecca8.appspot.com",
+	messagingSenderId: "863454724692",
+	appId: "1:863454724692:web:735e772c0b26ac28f8e3c1",
+	measurementId: "G-YXSGP8GX47"
+}
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
 const App = () => {
 	return (
 		<BrowserRouter>
@@ -23,7 +41,7 @@ const App = () => {
 					<Route index element={<Home />} />
 					<Route path="about" element={<About />} />
 					<Route path="shop" element={<Shop />} />
-					<Route path="contact" element={<Contact />} />
+					<Route path="contact" element={<Contact db={db} />} />
 					<Route path="how-to" element={<HowTo />}>
 						<Route index element={<Aim />} />
 						<Route path="setup" element={<Setup />} />
