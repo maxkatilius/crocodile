@@ -11,8 +11,8 @@ const Gameplay = () => {
 				two options:
 			</p>
 			<ul className="croc-ul">
-				<li>Draw the top card from the deck.</li>
-				<li>
+				<li className="croc-li">Draw the top card from the deck.</li>
+				<li className="croc-li">
 					Swap one of their face-down cards directly with the face-up
 					card on the discard pile.
 				</li>
