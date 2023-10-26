@@ -18,17 +18,17 @@ const Smackdowns = () => {
 				atop the discard pile, snatch it swiftly and slam it down.
 			</p>
 			<p>Depending on whose card you smacked down:</p>
-			<ul>
-				<li>
+			<ul className="croc-ul">
+				<li className="croc-li">
 					Yours? It stays out, reducing your hand size, boosting your
 					chance to win, and getting you one step closer to doing the
 					deed.
 				</li>
-				<li>
+				<li className="croc-li">
 					An oppenent's? They draw a replacement card that remains
 					face-down while you discard any one of your face-down cards.
 				</li>
-				<li>
+				<li className="croc-li">
 					The wrong card? Beware of your memory failing you. Smackdown
 					the wrong card and a penalty face-down card is added to your
 					hand, significanlty hindering your chance to win.
@@ -75,7 +75,7 @@ const Smackdowns = () => {
 				execute with care, finesse, and utmost respect.
 			</p>
 			<div className="links-container">
-				<button className="back-btn" onClick={() => navigate(-1)}>
+				<button className="btn back-btn" onClick={() => navigate(-1)}>
 					◀ Back
 				</button>
 				<Link to="../power-cards">Power Cards ▶</Link>

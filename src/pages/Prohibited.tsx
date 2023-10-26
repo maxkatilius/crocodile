@@ -29,7 +29,7 @@ const Prohibited = () => {
 				But! Should the swan shake off its apathy, dive into the rulebook or otherwise demonstrate respect for the game, they're back in with full honors (and free from the swan label).
 			</p>
 			<div className="links-container">
-				<button className="back-btn" onClick={() => navigate(-1)}>
+				<button className="btn back-btn" onClick={() => navigate(-1)}>
 					◀ Back
 				</button>
 				<Link to="../../">Home</Link>

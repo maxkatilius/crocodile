@@ -31,13 +31,17 @@ body {
 ** Typography **
 ***************/
 
-h2 {
+h1, 
+h2, 
+h4 {
     color: #0B6E4F;
+}
+
+h2 {
     padding-bottom: 0.4em;
 }
 
 h4 {
-    color: #0B6E4F;
     margin: 0.2em 0
 }
 
@@ -49,18 +53,18 @@ p {
     font-weight: bold;
 }
 
-ul {
+ul.croc-ul {
     margin-bottom: 1em;
     list-style-type: none;
 }
 
-li {
+li.croc-li {
     position: relative;
     padding: 0.8em 0 0 4em;
     /* This creates space for the bullet image. Adjust as needed based on the image size */
 }
 
-li::before {
+li.croc-li::before {
     content: "";
     position: absolute;
     left: 0;
@@ -68,9 +72,15 @@ li::before {
     transform: translateY(-30%);
     width: 2.6em;
     height: 1.2em;
-    background-image: url("../assets/images/croc-head-in-water-mirror.jpg");
+    background-image: url("../assets/images/croc-head-transparent.png");
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+li.nav-li::before {
+    width: 2.2em;
+    height: 1.1em;
+    background-image: url("../assets/images/croc-head-white.png");
 }
 
 /**************
@@ -80,7 +90,6 @@ li::before {
 .site-container {
     height: 100%;
     position: relative;
-    padding-top: 1em;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -90,7 +99,7 @@ li::before {
 
 header {
     height: 15vh;
-    padding: 0 1.5em;
+    padding: 1em 1.5em;
     display: flex;
     align-items: start;
     justify-content: start;
@@ -103,10 +112,10 @@ header {
 .header--title {
     display: inline-block;
     margin: 0.2em 0;
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     text-transform: uppercase;
-    letter-spacing: 0.3rem;
-    line-height: 1.5em;
+    letter-spacing: 0.25rem;
+    line-height: 1.4em;
     color: #0B6E4F;
     border-top: 2px solid #0B6E4F;
     border-bottom: 2px solid #0B6E4F;
@@ -115,7 +124,7 @@ header {
 
 .header--img {
     display: block;
-    max-width: 47%;
+    max-width: 60%;
     cursor: pointer;
 }
 
@@ -123,12 +132,11 @@ header {
 
 nav {
     position: absolute;
-    top: 1.4em;
-    right: 2em;
+    top: 2.8em;
+    right: 2.4em;
     left: auto;
     transition: right 550ms ease-out;
     transition-delay: 100ms;
-    /* border: 1px solid red; */
 }
 
 nav.open {
@@ -158,7 +166,7 @@ nav.open {
 .hamburger,
 .hamburger::before,
 .hamburger::after {
-    height: 0.25em;
+    height: 0.18em;
     background-color: #0B6E4F;
     border-radius: 1.5em;
 }
@@ -180,21 +188,23 @@ nav.open {
 }
 
 .hamburger:before {
-    top: 1.1em;
+    top: 1.15em;
 }
 
 .hamburger:after {
-    bottom: 1.1em;
+    bottom: 1.15em;
     transition: opacity 800ms ease-in-out 200ms;
 }
 
 .nav.open .hamburger {
     background-color: #FEFFFE;
+    height: 0.25em;
     transform: rotate(-225deg);
 }
 
 .nav.open .hamburger:before {
     background-color: #FEFFFE;
+    height: 0.25em;
     transform: rotate(90deg) translateX(-1em);
 }
 
@@ -209,12 +219,13 @@ nav.open {
     z-index: 1000;
     position: fixed;
     inset: 0 0 0 35%;
-    padding: 6.8em 2.6em;
+    padding: 8.4em 2.6em;
     font-weight: bold;
     color: #FEFFFE;
     
     display: flex;
     flex-direction: column;
+    height: 100%;
     gap: 1.8em;
     background-color: hsla(0, 0%, 5%, 0.6);
     backdrop-filter: blur(0.4rem);
@@ -230,32 +241,24 @@ nav.open {
     cursor: pointer;
 }
 
+.nav.open .nav--links {
+    transform: translateX(0%);
+    transition: transform 400ms ease-in 100ms;
+}
+
 .nav--how-to {
 }
 
 .how-to-links {
-    display: flex;
-    flex-direction: column;
-    gap: 0.2em;
-    padding: 1em 1.8em;
+    margin-top: 1em;
 }
 
 .how-to-links a {
-    font-size: 1.2rem;
-}
-
-.how-to-links.open {
-    border: 1px solid red;
+    font-size: 1rem;
 }
 
 .how-to-links.closed {
     display: none;
-    border: 1px solid blue;
-}
-
-.nav.open .nav--links {
-    transform: translateX(0%);
-    transition: transform 400ms ease-in 100ms;
 }
 
 
@@ -265,7 +268,7 @@ main {
     /* flex: 1; */
     max-height: 60vh;
     overflow-y: auto;
-    width: 85%;
+    width: 80%;
     margin: auto auto;
     display: flex;
     flex-direction: column;
@@ -305,18 +308,17 @@ a {
 
 
 main a,
-.back-btn {
+.btn {
+    padding: 0.8em 1.2em;
     display: flex;
     align-items: center;
     background-color: #0B6E4F;
     color: #FEFFFE;
     font-weight: bold;
-    padding: 0.8em 1.2em;
-    font-size: 1rem;
-    border-radius: 0.9em;
+    
     border: none;
+    border-radius: 0.7em;
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1), -1px -1px 4px rgba(255, 255, 255, 0.3);
-    transition: all 250ms ease-in-out;
     cursor: pointer;
 }
 
@@ -336,8 +338,10 @@ main a:focus,
 }
 
 .back-btn {
+    font-size: 1rem;
     font-family: inherit;
     font-weight: 600;
+    transition: all 250ms ease-in-out;
 }
 
 
@@ -367,6 +371,87 @@ main a:focus,
     padding: 0.8em 1.4em;
 }
 
+/************
+*** About ***
+*************/
+
+.about-para {
+    line-height: 1.5rem;
+}
+
+.about-links {
+    margin-top: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 1.1em;
+}
+
+/************
+*** Shop ***
+*************/
+
+.shop {
+    margin: 0 auto 6em auto;
+}
+
+/*******************
+***  Contact Us  ***
+********************/
+
+main.contact-us {
+    width: 75%;
+    gap: 1.3em;
+}
+
+.contact-us h1 {
+    /* align-self: flex-start; */
+}
+
+.contact-us p {
+    margin-top: 0;
+    font-size: 1.1rem;
+    line-height: 1.7rem;
+    letter-spacing: 0.05em;
+}
+
+form.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+form input,
+form textarea {
+    padding: 0.5em;
+    font-size: 1.1rem;
+    height: 2em;
+    border: 1px solid #C7D3DD;
+    border-radius: 2px;
+}
+
+form textarea {
+    height: 6em;
+}
+
+.submit-btn {
+    margin-top: 0.8em;
+    padding: 0.7em 1.4em;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5em;
+    transition: all 200ms ease-in;
+}
+
+.submit-btn:hover,
+.submit-btn:active,
+.submit-btn:focus {
+    padding: 0.8em 1.4em;
+    font-size: 1.15rem;
+    background-color: #07543A;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2), -2px -2px 5px rgba(255, 255, 255, 0.3);
+}
 
 /**************
 ****  Aim  ****

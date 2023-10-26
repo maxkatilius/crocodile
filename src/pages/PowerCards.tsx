@@ -4,7 +4,6 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 const PowerCards = () => {
 	const navigate = useNavigate();
 	const location = useLocation();
-	console.log(location);
 	const prevLocation = location.state?.from || "/how-to/prohibited";
 	const path =
 		prevLocation === "/how-to/gameplay"
@@ -73,7 +72,7 @@ const PowerCards = () => {
 				</div>
 			</div>
 			<div className="links-container">
-				<button className="back-btn" onClick={() => navigate(-1)}>
+				<button className="btn back-btn" onClick={() => navigate(-1)}>
 					◀ Back
 				</button>
 				<Link to={path}>{nextLocation}</Link>
