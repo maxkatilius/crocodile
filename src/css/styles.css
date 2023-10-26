@@ -193,7 +193,7 @@ nav.open {
 
 .hamburger:after {
     bottom: 1.15em;
-    transition: opacity 800ms ease-in-out 200ms;
+    transition: all 800ms ease-in-out 200ms;
 }
 
 .nav.open .hamburger {

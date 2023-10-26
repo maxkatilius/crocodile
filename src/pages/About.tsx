@@ -9,7 +9,7 @@ const About = () => {
 			<h2 className="about-header">The Crocodile Tale</h2>
 
 			<p className="about-para">
-				As I journeyed through the vivid landscapes of South-East Asia, hopping from bustling cities to tranquil towns, I found myself in a myriad of hostels. It was on one such evening, in a dimly lit common room, that I stumbled upon a captivating scene – a group of travelers engrossed in a card game. Curiosity piqued, I joined them, unaware that this moment would change my life as I knew it.
+				In 2016 as I journeyed through the vivid landscapes of South-East Asia as a 19-year old boy, full of wonder, hopping from bustling cities to tranquil towns, I found myself meeting many new people, and playing many new games across a myriad of hostels. It was on one such evening, in a dimly lit common room, that I stumbled upon a captivating scene – a group of travelers engrossed in a card game. Curiosity piqued, I joined them, unaware that this moment would change my life as I knew it.
 			</p>
 
 			<p className="about-para">
