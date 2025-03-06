@@ -90,6 +90,7 @@ li.nav-li::before {
 
 .site-container {
     min-height: 100vh;
+    min-width: 100vw;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -156,7 +157,7 @@ nav.open {
     height: 4.6em;
     width: 3.2em;
     cursor: pointer;
-    transition: all 500ms ease-in-out;
+    transition: all 400ms ease-in-out;
 }
 
 .nav.closed .hamburger-container {
@@ -175,7 +176,7 @@ nav.open {
     z-index: 1001;
 
     width: 100%;
-    transition: transform 700ms ease-in-out 50ms, background-color 1000ms ease-in-out;
+    transition: transform 500ms ease-in-out 50ms, background-color 500ms ease-in-out;
 }
 
 .hamburger:before,
@@ -184,7 +185,7 @@ nav.open {
     position: absolute;
     width: 100%;
     opacity: 1;
-    transition: transform 700ms ease-in-out 50ms, background-color 800ms ease-in-out 100ms;
+    transition: transform 500ms ease-in-out 50ms, background-color 500ms ease-in-out 100ms;
 }
 
 .hamburger:before {
@@ -193,7 +194,7 @@ nav.open {
 
 .hamburger:after {
     bottom: 1.15em;
-    transition: all 800ms ease-in-out 200ms;
+    transition: all 500ms ease-in-out 200ms;
 }
 
 .nav.open .hamburger {
@@ -210,7 +211,7 @@ nav.open {
 
 .nav.open .hamburger:after {
     opacity: 0;
-    transition: opacity 800ms ease-in-out;
+    transition: opacity 400ms ease-in-out;
 }
 
 /***** Nav Links Overlay *****/
@@ -265,7 +266,7 @@ main {
     /* flex: 1; */
     max-height: 60vh;
     overflow-y: auto;
-    width: 80%;
+    max-width: 80%;
     margin: auto auto;
     display: flex;
     flex-direction: column;
@@ -372,7 +373,6 @@ main a:focus,
 /************
 *** About ***
 *************/
-
 .about-para {
     line-height: 1.5rem;
 }
@@ -398,7 +398,7 @@ main a:focus,
 
 main.contact-us {
     width: 75%;
-    gap: 1.3em;
+    gap: 1.2em;
 }
 
 .contact-us p {
@@ -639,34 +639,80 @@ form textarea {
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
-    .site-container {
-        max-height: 100vh;
+
+    html {
+        font-size: 2.2rem;
+    }
+
+    header {
+        max-height: 10vh;
         padding: 1em;
     }
+    
+    nav {
+        /* change position */
+    }
+    
     main {
-        max-width: 80%;
+        min-width: 100%;
+        margin: auto 0;
+        padding: 1em 2em;
+        max-height: 60vh;
     }
 
-    .contact-us {
-        border: 1px solid green;
-        padding: 1em;
-        font-size: 0.9rem;
-    }
-
-    .contact-us p {
-        font-size: 1rem;
-    }
-
-    .contact-form {
-
-    }
     footer {
-        font-size: 1.4rem;
-        margin-bottom: 0.5em;
+        max-height: 10vh;
+        min-width: 100%;
+    }
+    
+    footer h4 {
+        padding: 0;
+        margin-top: 2em;
     }
 
     footer img {
-        width: 15%;
+        width: 12%;
     }
+
+    .home-container {
+        padding: 2em 10em;
+    }
+
+    .about-links {
+        flex-direction: row;
+        gap: 5em;
+        width: 100%;
+    }
+
+    .about-links a {
+        width: 10em;
+        justify-content: center;
+    }
+
+    .setup-container,
+    .gameplay-container,
+    .calling-croc-container,
+    .smackdowns-container,
+    .power-cards-container {
+        margin-top: 2em;
+    }
+
+    main.contact-us {
+        gap: 1em;
+        align-items: center;
+    }
+    
+    form.contact-form {
+        width: 50%;
+    }
+    
+    form textarea {
+        height: 4em;
+    }
+    
+    .submit-btn {
+        margin-top: 0.5em;
+    }
+
 }
 

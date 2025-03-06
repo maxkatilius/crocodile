@@ -3,7 +3,7 @@ import { Outlet } from "react-router-dom";
 
 const HowTo = () => {
 	return (
-		<div>
+		<div className="how-to-container">
 			<Outlet />
 		</div>
 	);
