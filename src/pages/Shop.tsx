@@ -1,7 +1,7 @@
 // import React from "react";
 
 const Shop = () => {
-	return <div className="shop"><h1>Coming soon...</h1></div>;
+	return <main className="shop-container"><h1>Coming soon...</h1></main>;
 };
 
 export default Shop;

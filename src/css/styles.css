@@ -27,6 +27,7 @@ body {
     display: inline-block;
     /* Ensure the h1 doesn't take full width */
 }
+
 /***************
 ** Typography **
 ***************/
@@ -88,7 +89,7 @@ li.nav-li::before {
 ***************/
 
 .site-container {
-    height: 100%;
+    min-height: 100vh;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -123,7 +124,7 @@ header {
 
 .header--img {
     display: block;
-    max-width: 60%;
+    max-width: 55%;
     cursor: pointer;
 }
 
@@ -286,6 +287,7 @@ footer h4 {
 
 footer img {
     width: 40%;
+    min-width: 150px;
 }
 
 /************
@@ -351,7 +353,8 @@ main a:focus,
 
 .subtitle {
     font-size: 1.4rem;
-    padding: 0.6em 0;
+    color: #07543A;
+    padding: 0.6em 0; 
     width: 100%;
 }
 
@@ -385,8 +388,8 @@ main a:focus,
 *** Shop ***
 *************/
 
-.shop {
-    margin: 0 auto 6em auto;
+.shop-container h1 {
+    margin: 0 auto;
 }
 
 /*******************
@@ -396,10 +399,6 @@ main a:focus,
 main.contact-us {
     width: 75%;
     gap: 1.3em;
-}
-
-.contact-us h1 {
-    /* align-self: flex-start; */
 }
 
 .contact-us p {
@@ -418,6 +417,7 @@ form.contact-form {
 form input,
 form textarea {
     padding: 0.5em;
+    font-family: inherit;
     font-size: 1.1rem;
     height: 2em;
     border: 1px solid #C7D3DD;
@@ -557,27 +557,40 @@ form textarea {
 ****  Media Queries  ****
 *************************/
 
-
-/* Extra small devices (portrait phones, less than 576px):  */
-@media (max-width: 575px) {
-}
-
-/* Small devices (landscape phones, 576px and up):  */
-@media (min-width: 576px) {
-}
-
 /* Medium devices (tablets, 768px and up):  */
 @media only screen and (min-width: 768px) {
+    html {
+        font-size: 1.2rem;
+    }
+
+    .site-container {
+        padding: 0.5em 1em;
+    }
+    
     header {
         height: 20vh;
+        width: 90vw;
+    }
+
+    .header--title {
+        font-size: 2rem;
+    }
+
+    .header--img {
+        max-width: 60%;
     }
 
     main {
-        width: 70%;
+        max-width: 65%;
     }
 
     footer img {
-        width: 30%;
+        width: 20%;
+    }
+
+    .subtitle {
+        font-size: 1.8rem;
+        text-align: center;
     }
 
     .card,
@@ -589,12 +602,22 @@ form textarea {
 
 /* Large devices (desktops, 992px and up):  */
 @media only screen and (min-width: 992px) {
-    header {
-        height: 30vh;
+
+    html {
+        font-size: 1.8rem;
+    }
+
+    .header--title {
+        font-size: 1.7rem;
+    }
+
+    .header--img {
+        max-width: 80%;
     }
 
     main {
-        width: 60%;
+        max-width: 70%;
+        /* border: 1px solid red; */
     }
 
     footer {
@@ -603,7 +626,8 @@ form textarea {
     }
 
     footer img {
-        width: 28%;
+        margin-top: 1em;
+        width: 25%;
     }
 
     .card,
@@ -616,11 +640,33 @@ form textarea {
 /* Extra large devices (large desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
     .site-container {
-        width: 80%;
-        margin: auto auto;
+        max-height: 100vh;
+        padding: 1em;
     }
     main {
-        width: 50%;
+        max-width: 80%;
+    }
+
+    .contact-us {
+        border: 1px solid green;
+        padding: 1em;
+        font-size: 0.9rem;
+    }
+
+    .contact-us p {
+        font-size: 1rem;
+    }
+
+    .contact-form {
+
+    }
+    footer {
+        font-size: 1.4rem;
+        margin-bottom: 0.5em;
+    }
+
+    footer img {
+        width: 15%;
     }
 }
 
