@@ -16,6 +16,7 @@ const Nav = () => {
 
 	return (
 		<nav className={`nav ${navOpen ? "open" : "closed"}`}>
+			<div className="nav--barrier"></div>
 			<div
 				className={`hamburger-container`}
 				onClick={toggleNav}

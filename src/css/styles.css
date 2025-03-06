@@ -149,6 +149,7 @@ nav.open {
 
 .hamburger-container {
     z-index: 1001;
+
     
     position: relative;
     display: flex;
@@ -195,6 +196,12 @@ nav.open {
 .hamburger:after {
     bottom: 1.15em;
     transition: all 500ms ease-in-out 200ms;
+}
+
+
+.nav.open .hamburger-container {
+    background-color: hsla(0, 0%, 5%, 0);
+    backdrop-filter: blur(0.4rem);
 }
 
 .nav.open .hamburger {
@@ -703,7 +710,7 @@ form textarea {
     
     .about-links {
         flex-direction: row;
-        gap: 5em;
+        justify-content: space-between;
         width: 100%;
     }
 
@@ -722,24 +729,41 @@ form textarea {
 
     main.contact-us {
         gap: 1em;
-        /* align-items: center; */
     }
 
     .contact-us p {
         font-size: 0.8rem;
         line-height: 1.5em;
     }
-    
+
+
     form.contact-form {
-        width: 50%;
+        flex-direction: row;
+    }
+    
+    .form-inputs {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        width: 30em;
+    }
+
+    .form-inputs input {
+        font-size: 0.8rem;
     }
     
     form textarea {
-        height: 4em;
+        font-size: 0.7rem;
+        height: 8em;
     }
     
     .submit-btn {
-        margin-top: 0.5em;
+        margin-top: 0;
+        padding: 0 2em;
+        display: block;
+        margin: auto 0 0 2em;
+        height: 4em;
+        font-size: 1.1rem;
     }
 
 }
