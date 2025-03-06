@@ -149,7 +149,7 @@ nav.open {
 
 .hamburger-container {
     z-index: 1001;
-
+    
     position: relative;
     display: flex;
     justify-content: center;
@@ -174,7 +174,7 @@ nav.open {
 
 .hamburger {
     z-index: 1001;
-
+    
     width: 100%;
     transition: transform 500ms ease-in-out 50ms, background-color 500ms ease-in-out;
 }
@@ -233,6 +233,7 @@ nav.open {
     
     transform: translateX(100%);
     transition: transform 450ms ease-in 100ms;
+    overflow-y: scroll;
 }
 
 .nav--links a,
@@ -319,6 +320,7 @@ main a,
     border-radius: 0.7em;
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1), -1px -1px 4px rgba(255, 255, 255, 0.3);
     cursor: pointer;
+    transition: all 250ms ease-in-out;
 }
 
 main a:hover,
@@ -337,7 +339,7 @@ main a:focus,
 }
 
 .back-btn {
-    font-size: 1rem;
+    font-size: inherit;
     font-family: inherit;
     font-weight: 600;
     transition: all 250ms ease-in-out;
@@ -641,25 +643,41 @@ form textarea {
 @media only screen and (min-width: 1200px) {
 
     html {
-        font-size: 2.2rem;
+        font-size: 2rem;
     }
 
     header {
         max-height: 10vh;
         padding: 1em;
     }
-    
-    nav {
-        /* change position */
-    }
-    
-    main {
-        min-width: 100%;
-        margin: auto 0;
-        padding: 1em 2em;
-        max-height: 60vh;
+
+    .header--title {
+        font-size: 1.3rem;
     }
 
+    .header--img {
+        max-width: 70%;
+    }
+    
+    nav {
+        top: 1.5em;
+        right: 3em;
+    }
+    
+    .nav--links,
+    .nav--how-to {
+        gap: 2em;
+        font-weight: lighter;
+    }
+
+    main {
+        min-width: 100%;
+        max-height: 50vh;
+        font-size: 0.8rem;
+        margin: auto 0;
+        padding: 0.2em 1.4em;
+    }
+    
     footer {
         max-height: 10vh;
         min-width: 100%;
@@ -669,15 +687,20 @@ form textarea {
         padding: 0;
         margin-top: 2em;
     }
-
+    
     footer img {
         width: 12%;
     }
-
+    
     .home-container {
         padding: 2em 10em;
+        overflow-y: hidden;
     }
 
+    .aim-container {
+        text-align: center;
+    }
+    
     .about-links {
         flex-direction: row;
         gap: 5em;
@@ -699,7 +722,12 @@ form textarea {
 
     main.contact-us {
         gap: 1em;
-        align-items: center;
+        /* align-items: center; */
+    }
+
+    .contact-us p {
+        font-size: 0.8rem;
+        line-height: 1.5em;
     }
     
     form.contact-form {
