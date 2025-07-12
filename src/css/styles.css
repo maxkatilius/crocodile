@@ -358,7 +358,7 @@ main a:focus,
 ************/
 
 .home-container {
-    width: 80%;
+    min-width: 80%;
 }
 
 .subtitle {
@@ -626,7 +626,6 @@ form textarea {
 
     main {
         max-width: 70%;
-        /* border: 1px solid red; */
     }
 
     footer {
@@ -678,11 +677,10 @@ form textarea {
     }
 
     main {
-        min-width: 100%;
-        max-height: 50vh;
+        max-height: 60vh;
         font-size: 0.8rem;
-        margin: auto 0;
-        padding: 0.2em 1.4em;
+        margin: auto auto;
+        /* padding: 0.2em 1.4em; */
     }
     
     footer {
@@ -700,7 +698,8 @@ form textarea {
     }
     
     .home-container {
-        padding: 2em 10em;
+        min-width: 50%;
+        padding: 2em 12em;
         overflow-y: hidden;
     }
 
