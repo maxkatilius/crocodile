@@ -1,0 +1,795 @@
+$font-stack: 'Quicksand', sans-serif;
+$primary-green: #0B6E4F;
+$secondary-green: #07543A;
+$primary-black: #161925;
+$primary-white: #FEFFFE;
+$secondary-white: #C7D3DD;
+
+$box-shadow-default: 2px 2px 8px rgba(0, 0, 0, 0.1), -1px -1px 4px rgba(255, 255, 255, 0.3);
+$box-shadow-hover: 3px 3px 10px rgba(0, 0, 0, 0.2), -2px -2px 5px rgba(255, 255, 255, 0.3);
+
+$transition-fast: all 250ms ease-in-out;
+$transition-slow: all 500ms ease-in-out;
+
+@mixin flex-col() {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin card-style($width: 50%) {
+    width: $width;
+    margin-bottom: 1em;
+    @include flex-col;
+    justify-content: center;
+    align-items: center;
+
+    h4 {
+        color: $primary-black;
+        text-align: center;
+    }
+
+    img {
+        width: 35%;
+        margin: 1em auto;
+        box-shadow: $box-shadow-default;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+            box-shadow: $box-shadow-hover;
+        }
+    }
+}
+
+@mixin button-style {
+    padding: 0.8em 1.2em;
+    display: flex;
+    align-items: center;
+    background-color: $primary-green;
+    color: $primary-white;
+    font-weight: bold;
+    border: none;
+    border-radius: 0.7em;
+    cursor: pointer;
+    transition: $transition-fast;
+    box-shadow: $box-shadow-default;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-family: $font-stack;
+    background-color: $primary-white;
+    color: $primary-black;
+    display: flex;
+    justify-content: center;
+}
+
+/***************
+** Typography **
+***************/
+
+h1, 
+h2, 
+h4 {
+    color: $primary-green;
+}
+
+h2 {
+    padding-bottom: 0.4em;
+}
+
+h4 {
+    margin: 0.2em 0
+}
+
+p {
+    margin: 0.6em 0;
+}
+
+/**************
+***  Layout ***
+***************/
+
+.site-container {
+    min-height: 100dvh;
+    min-width: 100dvw;
+    position: relative;
+    @include flex-col;
+    justify-content: space-between;
+}
+
+/* Header */
+
+header {
+    padding: 0.8em 1.5em;
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    
+    .header--logo {
+        display: inline-block;
+
+        img {
+            display: block;
+            max-width: 55%;
+            cursor: pointer;
+        }
+    
+        h1 {
+            display: inline-block;
+            margin: 0.2em 0;
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.25rem;
+            line-height: 1.4em;
+            color: $primary-green;
+            border-top: 2px solid $primary-green;
+            border-bottom: 2px solid $primary-green;
+            cursor: pointer;
+        }
+    }
+
+    
+}
+
+/* Nav */
+
+.nav {
+    position: absolute;
+    top: 2.2em;
+    right: 2.4em;
+    left: auto;
+    transition: right 550ms ease-out 100ms;
+
+    .hamburger-container {
+        z-index: 1001;
+
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 4.6em;
+        width: 3.2em;
+        cursor: pointer;
+        transition: all 400ms ease-in-out;
+    
+        .hamburger,
+        .hamburger::before,
+        .hamburger::after {
+            height: 0.18em;
+            background-color: $primary-green;
+            border-radius: 1.5em;
+        }
+
+        .hamburger {
+            z-index: 1001;
+
+            width: 100%;
+            transition: transform 500ms ease-in-out 50ms, background-color 500ms ease-in-out;
+
+            &:before,
+            &:after {
+                content: '';
+                position: absolute;
+                width: 100%;
+                opacity: 1;
+                transition: transform 500ms ease-in-out 50ms, background-color 500ms ease-in-out 100ms;
+            }
+
+            &:before {
+                top: 1.15em;
+            }
+
+            &:after {
+                bottom: 1.15em;
+                transition: $transition-slow 200ms;
+            }
+        }
+    }
+
+    &__links {
+        z-index: 1000;
+        position: fixed;
+        inset: 0 0 0 35%;
+        padding: 8.4em 2.6em;
+        font-weight: bold;
+        color: $primary-white;
+
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        gap: 1.8em;
+        background-color: hsla(0, 0%, 5%, 0.6);
+        backdrop-filter: blur(0.4rem);
+
+        transform: translateX(100%);
+        transition: transform 450ms ease-in 100ms;
+        overflow-y: scroll;
+
+        a,
+        .nav__how-to {
+            color: $primary-white;
+            font-size: 1.95rem;
+            cursor: pointer;
+        }
+
+    }
+
+    &__how-to-links {
+        margin-top: 1em;
+
+        a {
+            font-size: 1rem;
+        }
+
+        &.closed {
+            display: none;
+        }
+
+        li.nav-li {
+            &::before {
+                width: 2.2em;
+                height: 1.1em;
+                background-image: url("../assets/images/croc-head-white.png");
+            }
+        }
+    }
+
+    &.open {
+        right: calc(65% - 3.2em - 2em);
+        /* Screen width minus nav width (4em) and its right margin (1.6em) */
+
+        .hamburger-container {
+            background-color: hsla(0, 0%, 5%, 0);
+            backdrop-filter: blur(0.4rem);
+        }
+
+        .hamburger {
+            background-color: $primary-white;
+            height: 0.25em;
+            transform: rotate(-225deg);
+        }
+
+        .hamburger:before {
+            background-color: $primary-white;
+            height: 0.25em;
+            transform: rotate(90deg) translateX(-1em);
+        }
+
+        .hamburger:after {
+            opacity: 0;
+            transition: opacity 400ms ease-in-out;
+        }
+
+        .nav__links {
+            transform: translateX(0%);
+            transition: transform 400ms ease-in 100ms;
+        }
+    }
+
+    &.closed {
+        .hamburger-container {
+            transition-delay: 100ms;
+        }
+    }
+}
+
+ul.croc-ul {
+    margin-bottom: 1em;
+    list-style-type: none;
+}
+
+li.croc-li {
+    position: relative;
+    padding: 0.8em 0 0 4em;
+    /* This creates space for the bullet image. Adjust as needed based on the image size */
+
+    &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-30%);
+        width: 2.6em;
+        height: 1.2em;
+        background-image: url("../assets/images/croc-head-transparent.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+}
+
+/* Main */
+
+main {
+    margin: auto auto;
+    padding: 0.4em 2em;
+    @include flex-col;
+}
+
+/* Footer */
+
+footer {
+    height: 15vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: $primary-green;
+
+    h4 {
+        padding: 3.4em 0 0 2em;
+    }
+
+    img {
+        width: 40%;
+        min-width: 150px;
+    }
+}
+
+
+/************
+*** Links ***
+*************/
+
+a {
+    text-decoration: none;
+}
+
+.links-container {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 1em 0;
+}
+
+main a,
+.btn {
+    @include button-style;
+}
+
+.back-btn {
+    font-size: inherit;
+    font-family: inherit;
+    font-weight: 600;
+    transition: $transition-fast;
+}
+
+main a:hover,
+main a:active,
+main a:focus,
+.back-btn:hover,
+.back-btn:active,
+.back-btn:focus {
+    transform: scale(1);
+    margin-bottom: 0.3em;
+    font-size: 1.1rem;
+    margin-top: -0.5em;
+    border-radius: 1em;
+    background-color: $secondary-green;
+    box-shadow: $box-shadow-hover;
+}
+
+/***********
+*** Home ***
+************/
+
+.home-container {
+    min-width: 80%;
+
+    .subtitle {
+        font-size: 1.4rem;
+        color: $secondary-green;
+        padding: 0.6em 0;
+        width: 100%;
+    }
+
+    .tagline {
+        margin-bottom: 2em;
+    }
+
+    a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.8em 1.4em;
+    }
+}
+
+/************
+*** About ***
+*************/
+
+.about-container {
+    
+    p {
+        line-height: 1.5rem;
+    }
+
+    .about-links {
+        margin-top: 1em;
+        @include flex-col;
+        gap: 1.1em;
+    }
+}
+
+/************
+*** Shop ***
+*************/
+
+.shop-container {
+    
+    h1 {
+        margin: 0 auto;
+    }
+}
+
+/*******************
+***  Contact Us  ***
+********************/
+
+main.contact-us {
+    width: 75%;
+    gap: 1.2em;
+
+    p {
+        margin-top: 0;
+        font-size: 1.1rem;
+        line-height: 1.7rem;
+        letter-spacing: 0.05em;
+    }
+    
+    .contact-form {
+        @include flex-col;
+        gap: 1em;
+        
+        input,
+        textarea {
+            padding: 0.5em;
+            font-family: inherit;
+            font-size: 1.1rem;
+            height: 2em;
+            border: 1px solid $secondary-white;
+            border-radius: 2px;
+        }
+    
+        textarea {
+            height: 6em;
+        }
+    
+        .submit-btn {
+            margin-top: 0.8em;
+            padding: 0.7em 1.4em;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0.5em;
+            transition: all 200ms ease-in;
+    
+            &:hover,
+            &:active,
+            &:focus {
+                padding: 0.8em 1.4em;
+                font-size: 1.15rem;
+                background-color: $secondary-green;
+                box-shadow: $box-shadow-hover;
+            }
+        }
+    }
+}
+    
+
+/**************
+****  Aim  ****
+***************/
+
+.aim-container {
+    width: 80%;
+}
+
+/****************
+****  Setup  ****
+*****************/
+
+/*******************
+****  Gameplay  ****
+********************/
+
+.gameplay-container {
+
+    ul:nth-of-type(1) li:nth-child(1){
+        padding-bottom: 0.5em;
+    }
+    
+    ul:nth-of-type(2) li:nth-child(3) {
+        padding-bottom: 0.5em;
+    }
+    
+    span:not(.bold) {
+        color: $primary-green;
+        font-weight: bold;
+        cursor: pointer;
+        transition: $transition-fast;
+    }
+
+    span:hover:not(.bold) {
+        color: $secondary-green;
+        transform: scale(1);
+        font-size: 1.1rem;
+    }
+}
+
+/***********************
+****  Calling Croc  ****
+************************/
+
+/*********************
+****  Smackdowns  ****
+**********************/
+
+/***********************************
+****  Card values / Power cards ****
+***********************************/
+
+.cards, 
+.power-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    @include card-style(50%)
+}
+
+.power-card {
+    @include card-style(45%);
+    justify-content: space-between;
+    margin: 1em auto;
+}
+
+.card-values-container {
+
+    .links-container {
+        width: 100%;
+    }
+}
+
+.power-cards-container {
+    
+    .links-container {
+        a {
+            font-size: 0.9rem;
+        }
+    }
+    
+    .back-btn {
+        font-size: 0.9rem;
+    }
+}    
+
+/***************************
+****  Prohibited Plays  ****
+****************************/
+
+/************************
+****  Media Queries  ****
+*************************/
+
+/* Medium devices (tablets, 768px and up):  */
+@media only screen and (min-width: 768px) {
+    html {
+        font-size: 1.2rem;
+    }
+
+    .site-container {
+        padding: 0.5em 1em;
+    }
+    
+    header {
+        height: 20vh;
+        width: 90vw;
+    
+        img {
+            max-width: 60%;
+        }
+
+        h1 {
+            font-size: 2rem;
+        }
+    }
+
+
+    main {
+        max-width: 65%;
+    }
+
+    footer {
+        
+        img {
+            width: 20%;
+        }
+    }
+
+    .home-container {
+
+        .subtitle {
+            font-size: 1.8rem;
+            text-align: center;
+        }
+    }
+
+    .card,
+    .power-card {
+        width: calc(33.333% - 20px);
+        /* For 3 cards per row */
+    }
+}
+
+/* Large devices (desktops, 992px and up):  */
+@media only screen and (min-width: 992px) {
+
+    html {
+        font-size: 1.8rem;
+    }
+
+    header {
+
+        img {
+            max-width: 80%;
+        }
+        
+        h1 {
+            font-size: 1.7rem;
+        }
+    }
+
+    main {
+        max-width: 70%;
+    }
+
+    footer {
+        font-size: 1.4rem;
+        margin-bottom: 1em;
+        
+        img {
+            margin-top: 1em;
+            width: 25%;
+        }
+    }
+
+    .card,
+    .power-card {
+        width: calc(25% - 20px);
+        /* For 4 cards per row */
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+    html {
+        font-size: 2rem;
+    }
+
+    header {
+        max-height: 10vh;
+        padding: 1em;
+        
+        img {
+            max-width: 70%;
+        }
+
+        h1 {
+            font-size: 1.3rem;
+        }
+    }
+    
+    .nav {
+        top: 1.5em;
+        right: 3em;
+        
+        .nav__links,
+        .nav__how-to {
+            gap: 2em;
+            font-weight: lighter;
+        }
+    }
+    
+    main {
+        max-height: 60vh;
+        font-size: 0.8rem;
+        margin: auto auto;
+        /* padding: 0.2em 1.4em; */
+    }
+    
+    footer {
+        max-height: 10vh;
+        min-width: 100%;
+        
+        h4 {
+            padding: 0;
+            margin-top: 2em;
+        }
+        img {
+            width: 12%;
+        }
+    }
+    
+    .home-container {
+        min-width: 50%;
+        padding: 2em 12em;
+        overflow-y: hidden;
+    }
+
+    .aim-container {
+        text-align: center;
+    }
+
+    .about-container {
+   
+        .about-links {
+            flex-direction: row;
+            justify-content: space-between;
+            width: 100%;
+            
+            a {
+                width: 10em;
+                justify-content: center;
+            }
+        }
+    }
+
+    .setup-container,
+    .gameplay-container,
+    .calling-croc-container,
+    .smackdowns-container,
+    .power-cards-container {
+        margin-top: 2em;
+    }
+
+    main.contact-us {
+        gap: 1em;
+  
+        p {
+            font-size: 0.8rem;
+            line-height: 1.5em;
+        }
+        
+        form.contact-form {
+            flex-direction: row;
+            
+            .form-inputs {
+                @include flex-col;
+                gap: 1em;
+                width: 30em;
+
+                input {
+                    font-size: 0.8rem;
+                }
+
+                textarea {
+                    font-size: 0.7rem;
+                    height: 8em;
+                }
+            }
+
+            .submit-btn {
+                margin-top: 0;
+                padding: 0 2em;
+                display: block;
+                margin: auto 0 0 2em;
+                height: 4em;
+                font-size: 1.1rem;
+            }
+        }
+    }
+}
+

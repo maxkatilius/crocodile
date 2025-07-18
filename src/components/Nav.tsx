@@ -16,84 +16,106 @@ const Nav = () => {
 
 	return (
 		<nav className={`nav ${navOpen ? "open" : "closed"}`}>
-			<div className="nav--barrier"></div>
+			<div className="nav__barrier"></div>
 			<div
 				className={`hamburger-container`}
 				onClick={toggleNav}
 			>
-				<div
-					className={`hamburger`}
-				></div>
+				<div className={`hamburger`}></div>
 			</div>
-			<div className="nav--links">
+			<div className="nav__links">
 				<NavLink to="/" onClick={() => {
 						toggleNav();
-					}}>Home</NavLink>
+				}}>
+					Home
+				</NavLink>
 				<NavLink to="/about" onClick={() => {
 						toggleNav();
-					}}>About</NavLink>
+				}}>
+					About
+				</NavLink>
 				<NavLink to="/shop" onClick={() => {
 						toggleNav();
-					}}>Shop</NavLink>
+				}}>
+					Shop
+				</NavLink>
 				<div>
-					<h3 className="nav--how-to" onClick={() => {
+					<h3 className="nav__how-to" onClick={() => {
 						toggleHowTo();
 					}}>How to Play
 					</h3>
-					<ul className={`how-to-links croc-ul ${howToOpen ? "open" : "closed"}`}>
+					<ul className={`nav__how-to-links croc-ul ${howToOpen ? "open" : "closed"}`}>
 						<li className="croc-li nav-li" style={{backgroundColor: "none"}}>
 							<NavLink to="/how-to" onClick={() => {
 								toggleNav()
 								toggleHowTo();
-							}}>Aim</NavLink>
+							}}>
+								Aim
+							</NavLink>
 						</li>
 						<li className="croc-li nav-li">
 							<NavLink to="/how-to/setup" onClick={() => {
 								toggleNav()
 								toggleHowTo();
-							}}>Setup</NavLink>
+							}}>
+								Setup
+							</NavLink>
 						</li>
 						<li className="croc-li nav-li">
 							<NavLink to="/how-to/gameplay" onClick={() => {
 								toggleNav()
 								toggleHowTo();
-							}}>Gameplay</NavLink>
+							}}>
+								Gameplay
+							</NavLink>
 						</li>
 						<li className="croc-li nav-li">
 							<NavLink to="/how-to/card-values" onClick={() => {
 								toggleNav()
 								toggleHowTo();
-							}}>Card Values</NavLink>
+							}}>
+								Card
+								Values</NavLink>
 						</li>
 						<li className="croc-li nav-li">
 							<NavLink to="/how-to/calling-croc" onClick={() => {
 								toggleNav()
 								toggleHowTo();
-							}}>Calling Croc</NavLink>
+							}}>
+								Calling Croc
+							</NavLink>
 						</li>
 						<li className="croc-li nav-li">
 							<NavLink to="/how-to/smackdowns" onClick={() => {
 								toggleNav()
 								toggleHowTo();
-							}}>Smackdowns</NavLink>
+							}}>
+								Smackdowns
+							</NavLink>
 							</li>
 						<li className="croc-li nav-li">
 							<NavLink to="/how-to/power-cards" onClick={() => {
 								toggleNav()
 								toggleHowTo();
-							}}>Power Cards</NavLink>
+							}}>
+								Power Cards
+							</NavLink>
 						</li>
 						<li className="croc-li nav-li">
 							<NavLink to="/how-to/prohibited" onClick={() => {
 								toggleNav()
 								toggleHowTo();
-							}}>Prohibited Plays</NavLink>
+							}}>
+								Prohibited Plays
+							</NavLink>
 						</li> 
 					</ul>
 				</div>
 				<NavLink to="/contact" onClick={() => {
 						toggleNav();
-					}}>Contact us</NavLink>
+					}}>
+						Contact us
+				</NavLink>
 			</div>
 		</nav>
 	);

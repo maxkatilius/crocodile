@@ -9,8 +9,8 @@ const Header = () => {
 	return (
 		<header>
 			<div className="header--logo">
-				<img onClick={()=> navigate("/")} src={crocHeaderImg} className="header--img" />
-				<h1 onClick={()=> navigate("/")} className="header--title">Crocodile</h1>
+				<img onClick={()=> navigate("/")} src={crocHeaderImg} />
+				<h1 onClick={()=> navigate("/")}>Crocodile</h1>
 			</div>
 			<Nav />
 		</header>

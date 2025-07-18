@@ -52,7 +52,8 @@ p {
 
 /* Header */
 header {
-  padding: 0.8em 1.5em;
+  padding: 1em 1.5em 0 1.5em;
+  border: 1px solid red;
   display: flex;
   align-items: start;
   justify-content: start;
@@ -81,7 +82,7 @@ header .header--logo h1 {
 /* Nav */
 .nav {
   position: absolute;
-  top: 2.2em;
+  top: 2.8em;
   right: 2.4em;
   left: auto;
   transition: right 550ms ease-out 100ms;
@@ -215,8 +216,8 @@ li.croc-li::before {
 
 /* Main */
 main {
+  max-width: 80%;
   margin: auto auto;
-  padding: 0.4em 2em;
   display: flex;
   flex-direction: column;
 }
@@ -430,6 +431,7 @@ main.contact-us .contact-form .submit-btn:hover, main.contact-us .contact-form .
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 0.4em;
 }
 .card h4 {
   color: #161925;
@@ -437,7 +439,6 @@ main.contact-us .contact-form .submit-btn:hover, main.contact-us .contact-form .
 }
 .card img {
   width: 35%;
-  margin: 1em auto;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1), -1px -1px 4px rgba(255, 255, 255, 0.3);
   transition: all 0.3s ease-in-out;
 }
@@ -446,14 +447,15 @@ main.contact-us .contact-form .submit-btn:hover, main.contact-us .contact-form .
 }
 
 .power-card {
-  width: 45%;
+  width: 40%;
   margin-bottom: 1em;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 0.4em;
   justify-content: space-between;
-  margin: 1em auto;
+  margin: 0 auto;
 }
 .power-card h4 {
   color: #161925;
@@ -461,7 +463,6 @@ main.contact-us .contact-form .submit-btn:hover, main.contact-us .contact-form .
 }
 .power-card img {
   width: 35%;
-  margin: 1em auto;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1), -1px -1px 4px rgba(255, 255, 255, 0.3);
   transition: all 0.3s ease-in-out;
 }
@@ -645,3 +646,5 @@ main.contact-us .contact-form .submit-btn:hover, main.contact-us .contact-form .
     font-size: 1.1rem;
   }
 }
+
+/*# sourceMappingURL=index.css.map */

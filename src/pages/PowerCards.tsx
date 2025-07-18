@@ -1,5 +1,8 @@
-// import React from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
+import SevenOfClubs from "../assets/images/card_images/7_of_clubs.png";
+import EightOfDiamonds from "../assets/images/card_images/8_of_diamonds.png";
+import NineOfSpades from "../assets/images/card_images/9_of_spades.png";
+import TenOfHearts from "../assets/images/card_images/10_of_hearts.png";
 
 const PowerCards = () => {
 	const navigate = useNavigate();
@@ -29,8 +32,7 @@ const PowerCards = () => {
 				<div className="power-card">
 					<h4>7 - The Self-Peek or 'Selfie'</h4>
 					<img
-						className="7-clubs-img"
-						src="https://tekeye.uk/playing_cards/images/svg_playing_cards/fronts/clubs_7.svg"
+						src={SevenOfClubs}
 						alt="7 of clubs playing card."
 					/>
 					<p>Have a peek at one of your own face-down cards.</p>
@@ -38,8 +40,7 @@ const PowerCards = () => {
 				<div className="power-card">
 					<h4>8 - The Sneak-a-Peek or 'Sneaky'</h4>
 					<img
-						className="8-diamionds-img"
-						src="https://tekeye.uk/playing_cards/images/svg_playing_cards/fronts/diamonds_8.svg"
+						src={EightOfDiamonds}
 						alt="8 of diamonds playing card."
 					/>
 					<p>Sneak a peek at another player's face-down card.</p>
@@ -47,8 +48,7 @@ const PowerCards = () => {
 				<div className="power-card">
 					<h4>9 - The Blind Swap or 'Switcharoo'</h4>
 					<img
-						className="9-spades-img"
-						src="https://tekeye.uk/playing_cards/images/svg_playing_cards/fronts/spades_9.svg"
+						src={NineOfSpades}
 						alt="9 of spades playing card."
 					/>
 					<p>
@@ -60,8 +60,7 @@ const PowerCards = () => {
 				<div className="power-card">
 					<h4>10 - The Power Swap or 'The Punisher'</h4>
 					<img
-						className="10-hearts-img"
-						src="https://tekeye.uk/playing_cards/images/svg_playing_cards/fronts/hearts_10.svg"
+						src={TenOfHearts}
 						alt="10 of hearts playing card."
 					/>
 					<p>

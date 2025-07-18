@@ -49,7 +49,7 @@ const Gameplay = () => {
 				</li>
 				<li className="croc-li">
 					Swap it with one of their face-down cards,
-					<span className="bold"> or</span>
+					<strong>or</strong>
 				</li>
 				<li className="croc-li">Simply discard it.</li>
 			</ul>

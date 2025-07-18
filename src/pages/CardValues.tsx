@@ -1,5 +1,10 @@
-// import React from "react";
 import { Link, useNavigate } from "react-router-dom";
+import KingOfHearts from "../assets/images/card_images/king_of_hearts.png";
+import Joker from "../assets/images/card_images/joker.png";
+import AceOfSpades from "../assets/images/card_images/ace_of_spades.png";
+import TwoOfDiamonds from "../assets/images/card_images/2_of_diamonds.png";
+import ThreeOfHearts from "../assets/images/card_images/3_of_hearts.png";
+import QueenOfClubs from "../assets/images/card_images/queen_of_clubs.png";
 
 const CardValues = () => {
 	const navigate = useNavigate();
@@ -11,45 +16,47 @@ const CardValues = () => {
 				<div className="card">
 					<h4>Red Kings = -1</h4>
 					<img
-						className="red-king-img"
-						src="https://tekeye.uk/playing_cards/images/svg_playing_cards/fronts/hearts_king.svg"
+						src={KingOfHearts}
 						alt="King of hearts playing card."
 					/>
 				</div>
 				<div className="card">
 					<h4>Jokers = 0</h4>
 					<img
-						className="joker-img"
-						src="https://tekeye.uk/playing_cards/images/svg_playing_cards/fronts/joker_black.svg"
+						src={Joker}
 						alt="Joker playing card."
 					/>
 				</div>
 				<div className="card">
 					<h4>Ace = 1</h4>
 					<img
-						className="ace-clubs-img"
-						src="https://tekeye.uk/playing_cards/images/svg_playing_cards/fronts/clubs_ace.svg"
-						alt="Ace of clubs playing card."
+						src={AceOfSpades}
+						alt="Ace of spades playing card."
 					/>
 				</div>
 				<div className="card">
 					<h4>
-						2 = 2,
-						<br />
-						<span>and so on and so forth...</span>
+						2 = 2
 					</h4>
 					<img
-						className="2-diamonds-img"
-						src="https://tekeye.uk/playing_cards/images/svg_playing_cards/fronts/diamonds_2.svg"
+						src={TwoOfDiamonds}
 						alt="2 of diamonds playing card."
+					/>
+				</div>
+				<div className="card">
+					<h4>
+						3 = 3, etc
+					</h4>
+					<img
+						src={ThreeOfHearts}
+						alt="3 of hearts playing card."
 					/>
 				</div>
 				<div className="card">
 					<h4>Any other face card = 10</h4>
 					<img
-						className="queen-spades-img"
-						src="https://tekeye.uk/playing_cards/images/svg_playing_cards/fronts/spades_queen.svg"
-						alt="2 of diamonds playing card."
+						src={QueenOfClubs}
+						alt="Queen of clubs playing card."
 					/>
 				</div>
 				<div className="links-container">

@@ -43,19 +43,25 @@ const Contact = ({ db }: {db: any }) => {
             <p>Have any questions? Suggestions? Feedback? <br />Let us know!</p>
             <form className="contact-form" onSubmit={(e) => handleSubmit(e)}>
 				<div className="form-inputs">
-
-					<input type="text" placeholder="Name *" value={userName} onChange={(e)=> {
+					<input type="text" 
+						placeholder="Name *" 
+						value={userName} 
+						onChange={(e)=> {
 						handleNameChange(e)
 					}}/>
-					<input type="email" placeholder="Email *" value={userEmail} onChange={(e)=> {
+					<input type="email" 
+						placeholder="Email *" 
+						value={userEmail} 
+						onChange={(e)=> {
 						handleEmailChange(e)
 					}}/>
-					<textarea placeholder="Message *" value={userMessage} onChange={(e)=> {
+					<textarea 
+						placeholder="Message *" 
+						value={userMessage} 
+						onChange={(e)=> {
 						handleMessageChange(e)
 					}}></textarea>
-				
 				</div>
-				
                 <button className="btn submit-btn" type="submit">Submit</button>
             </form>
         </main>

@@ -7,7 +7,7 @@ const Aim = () => {
 			<h2>Aim of the game</h2>
 			<p>
 				Be the player with the fewest points at the end of the round
-				<span className="bold"> OR</span> empty your hand first,
+				<strong> OR</strong> empty your hand first,
 				otherwise known as 'doing the deed'.
 			</p>
 			<div className="links-container">
