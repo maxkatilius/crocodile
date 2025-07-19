@@ -14,8 +14,8 @@ const PowerCards = () => {
 			: "../prohibited";
 	const nextLocation =
 		prevLocation === "/how-to/gameplay"
-			? "Calling 'Croc' ▶"
-			: "Prohibited Plays ▶";
+			? "Calling 'Croc'"
+			: "Prohibited Plays";
 
 	return (
 		<main className="power-cards-container">
@@ -72,9 +72,13 @@ const PowerCards = () => {
 			</div>
 			<div className="links-container">
 				<button className="btn back-btn" onClick={() => navigate(-1)}>
-					◀ Back
+					<span className="arrow left" />
+					<span className="button-text">Back</span>
 				</button>
-				<Link to={path}>{nextLocation}</Link>
+				<Link to={path}>
+					{nextLocation}
+					<span className="arrow right" />
+				</Link>
 			</div>
 		</main>
 	);

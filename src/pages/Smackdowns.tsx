@@ -76,9 +76,13 @@ const Smackdowns = () => {
 			</p>
 			<div className="links-container">
 				<button className="btn back-btn" onClick={() => navigate(-1)}>
-					◀ Back
+					<span className="arrow left" />
+					<span className="button-text">Back</span>
 				</button>
-				<Link to="../power-cards">Power Cards ▶</Link>
+				<Link to="../power-cards">
+					<span className="button-text">Power Cards</span>
+					<span className="arrow right" />
+				</Link>
 			</div>
 		</main>
 	);

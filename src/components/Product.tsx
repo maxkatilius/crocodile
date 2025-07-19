@@ -69,7 +69,7 @@ const Product = ({ product }: Props) => {
           {Object.keys(colors).map((color) => (
             <button
               key={color}
-              className={`color-button ${selectedColor === color ? "active" : ""}`}
+              className={`color-btn ${selectedColor === color ? "active" : ""}`}
               onClick={() => setSelectedColor(color)}
               style={{ backgroundColor: color }}
             />
@@ -81,6 +81,7 @@ const Product = ({ product }: Props) => {
         <p className='price'>${price}</p>
         <p className='description'>{description}</p>
       </div>
+      <button className='add-to-cart-btn'>Add to cart</button>
     </div>
   )
 }

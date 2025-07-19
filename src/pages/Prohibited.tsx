@@ -30,9 +30,12 @@ const Prohibited = () => {
 			</p>
 			<div className="links-container">
 				<button className="btn back-btn" onClick={() => navigate(-1)}>
-					◀ Back
+					<span className="arrow left" />
+					<span className="button-text">Back</span>
 				</button>
-				<Link to="../../">Home</Link>
+				<Link to="../../">
+					<span className="button-text">Home</span>
+				</Link>
 			</div>
 		</main>
 	);

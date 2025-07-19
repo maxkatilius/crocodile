@@ -27,7 +27,12 @@ const Shop = () => {
 		)
 	})
 
-	return <main className="shop-container">{productEls}</main>;
-};
+	return (
+		<main className="shop-container">
+			<h2>The Croc Shop</h2>
+			{productEls}
+		</main>
+	)
+}
 
 export default Shop;

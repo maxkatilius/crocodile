@@ -1,4 +1,3 @@
-// import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 const CallingCroc = () => {
@@ -28,9 +27,13 @@ const CallingCroc = () => {
 			</p>
 			<div className="links-container">
 				<button className="btn back-btn" onClick={() => navigate(-1)}>
-					◀ Back
+					<span className="arrow left" />
+					<span className="button-text">Back</span>
 				</button>
-				<Link to="../smackdowns">Smackdowns ▶</Link>
+				<Link to="/how-to/smackdowns">
+					<span className="button-text">Smackdowns</span>
+					<span className="arrow right" />
+				</Link>
 			</div>
 		</main>
 	);

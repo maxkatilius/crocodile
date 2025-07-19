@@ -10,11 +10,11 @@ const Aim = () => {
 				otherwise known as 'doing the deed'.
 			</p>
 			<div className="links-container">
-				<Link to="../" >
+				<Link to="/" >
 					<span className="arrow left" />
 					<span className="button-text">Home</span>
 				</Link>
-				<Link to="../how-to/setup" >
+				<Link to="/how-to/setup" >
 					<span className="button-text">Setup</span>
 					<span className="arrow right" />
 				</Link>

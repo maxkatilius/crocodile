@@ -61,9 +61,13 @@ const CardValues = () => {
 				</div>
 				<div className="links-container">
 					<button className="btn back-btn" onClick={() => navigate(-1)}>
-						◀ Back
+						<span className="arrow left" />
+						<span className="button-text">Back</span>
 					</button>
-					<Link to="../calling-croc">Calling 'Croc' ▶</Link>
+					<Link to="/how-to/calling-croc">
+						<span className="button-text">Calling 'Croc'</span>
+						<span className="arrow right" />
+					</Link>
 				</div>
 			</div>
 		</main>

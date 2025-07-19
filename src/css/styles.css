@@ -4,11 +4,6 @@
   box-sizing: border-box;
 }
 
-html,
-body {
-  height: 100%;
-}
-
 body {
   font-family: "Quicksand", sans-serif;
   background-color: #FEFFFE;
@@ -27,15 +22,22 @@ h4 {
 }
 
 h2 {
-  padding-bottom: 0.4em;
+  font-size: 1.65rem;
+  margin-bottom: 0.5em;
 }
 
 h4 {
-  margin: 0.2em 0;
+  margin-top: 0.7em;
+  font-size: 1.2rem;
 }
 
 p {
+  margin: 0.5em 0;
   line-height: 1.4;
+}
+
+a {
+  text-decoration: none;
 }
 
 /**************
@@ -53,17 +55,14 @@ p {
 /* Header */
 header {
   padding: 0.8em 1.5em;
-  display: flex;
-  align-items: start;
-  justify-content: start;
 }
 header .header__logo {
   display: inline-block;
+  cursor: pointer;
 }
 header .header__logo img {
   display: block;
-  max-width: 55%;
-  cursor: pointer;
+  max-width: 50%;
 }
 header .header__logo h1 {
   display: inline-block;
@@ -75,7 +74,6 @@ header .header__logo h1 {
   color: #07543A;
   border-top: 2px solid #07543A;
   border-bottom: 2px solid #07543A;
-  cursor: pointer;
 }
 
 /* Nav */
@@ -264,53 +262,58 @@ footer img {
 /************
 *** Links ***
 *************/
-a {
-  text-decoration: none;
+.links-container {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 1.2em 0;
 }
 
 .about-links a,
 .links-container a,
-.btn {
+.back-btn {
   padding: 0.8em 1.2em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5em;
   background-color: #07543A;
-  color: #FEFFFE;
   font-weight: bold;
+  color: #FEFFFE;
   border: none;
   border-radius: 0.7em;
   cursor: pointer;
   transition: all 250ms ease-in-out;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1), -1px -1px 4px rgba(255, 255, 255, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
 }
 .about-links a .arrow,
 .links-container a .arrow,
-.btn .arrow {
+.back-btn .arrow {
   width: 0;
   height: 0;
   display: inline-block;
 }
 .about-links a .arrow.right,
 .links-container a .arrow.right,
-.btn .arrow.right {
+.back-btn .arrow.right {
   border-top: 0.4em solid transparent;
   border-bottom: 0.4em solid transparent;
   border-left: 0.6em solid #FEFFFE;
 }
 .about-links a .arrow.left,
 .links-container a .arrow.left,
-.btn .arrow.left {
+.back-btn .arrow.left {
   border-top: 0.4em solid transparent;
   border-bottom: 0.4em solid transparent;
   border-right: 0.6em solid #FEFFFE;
 }
-
-.links-container {
-  display: flex;
-  justify-content: space-evenly;
-  margin: 1.2em 0;
+.about-links a:hover, .about-links a:active,
+.links-container a:hover,
+.links-container a:active,
+.back-btn:hover,
+.back-btn:active {
+  transform: scale(1.1);
+  background-color: #0B6E4F;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2), -2px -2px 5px rgba(255, 255, 255, 0.3);
 }
 
 .back-btn {
@@ -320,48 +323,31 @@ a {
   transition: all 250ms ease-in-out;
 }
 
-.about-links a:hover,
-.about-links a:active,
-.about-links a:focus,
-.links-container a:hover,
-.links-container a:active,
-.links-container a:focus,
-.back-btn:hover,
-.back-btn:active,
-.back-btn:focus {
-  transform: scale(1);
-  margin-bottom: 0.3em;
-  font-size: 1.1rem;
-  margin-top: -0.5em;
-  border-radius: 1em;
-  background-color: #0B6E4F;
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2), -2px -2px 5px rgba(255, 255, 255, 0.3);
-}
-
 /***********
 *** Home ***
 ************/
-.home-container {
-  min-width: 80%;
+main.home-container {
+  padding: 0 3em;
 }
-.home-container .subtitle {
-  font-size: 1.4rem;
-  color: #0B6E4F;
+main.home-container .subtitle {
   padding: 0.6em 0;
-  width: 100%;
+  font-size: 1.4rem;
+  text-align: center;
+  color: #0B6E4F;
 }
-.home-container .tagline {
+main.home-container .tagline {
   margin-bottom: 2em;
 }
-.home-container a {
-  padding: 0.8em 1.2em;
+main.home-container .home__links {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5em;
+  flex-direction: column;
+  gap: 1em;
+}
+main.home-container .home__links a {
+  padding: 0.8em 1.2em;
   background-color: #07543A;
-  color: #FEFFFE;
   font-weight: bold;
+  color: #FEFFFE;
   border: none;
   border-radius: 0.7em;
   cursor: pointer;
@@ -372,20 +358,10 @@ a {
   justify-content: center;
   padding: 0.8em 1.4em;
 }
-.home-container a .arrow {
-  width: 0;
-  height: 0;
-  display: inline-block;
-}
-.home-container a .arrow.right {
-  border-top: 0.4em solid transparent;
-  border-bottom: 0.4em solid transparent;
-  border-left: 0.6em solid #FEFFFE;
-}
-.home-container a .arrow.left {
-  border-top: 0.4em solid transparent;
-  border-bottom: 0.4em solid transparent;
-  border-right: 0.6em solid #FEFFFE;
+main.home-container .home__links a:hover {
+  transform: scale(1.1);
+  background-color: #0B6E4F;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2), -2px -2px 5px rgba(255, 255, 255, 0.3);
 }
 
 /************
@@ -409,8 +385,9 @@ a {
   flex-wrap: wrap;
   justify-content: center;
   gap: 1.5em;
+  margin-bottom: 1em;
 }
-.shop-container h1 {
+.shop-container h2 {
   margin: 0 auto;
 }
 
@@ -479,19 +456,22 @@ a {
   gap: 0.3em;
   margin-right: 0.4em;
 }
-.product__card .color-selector .color-button {
+.product__card .color-selector .color-btn {
   height: 1.2em;
   width: 1.2em;
   border: 1px solid #e2e2e2;
   border-radius: 100%;
 }
-.product__card .color-selector .color-button.active {
+.product__card .color-selector .color-btn.active {
   border: 1px solid black;
 }
 .product__card .product__info {
   display: flex;
   flex-direction: column;
   gap: 0.4em;
+}
+.product__card .product__info p {
+  margin: 0;
 }
 .product__card .product__info .title {
   font-size: 1.1rem;
@@ -505,12 +485,33 @@ a {
 .product__card .product__info .description {
   font-size: 0.9rem;
 }
+.product__card .add-to-cart-btn {
+  padding: 0.8em 1.2em;
+  background-color: #07543A;
+  font-weight: bold;
+  color: #FEFFFE;
+  border: none;
+  border-radius: 0.7em;
+  cursor: pointer;
+  transition: all 250ms ease-in-out;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1), -1px -1px 4px rgba(255, 255, 255, 0.3);
+  align-self: flex-start;
+  margin-top: 0.2em;
+  font-weight: normal;
+  letter-spacing: 0.05rem;
+}
+.product__card .add-to-cart-btn:hover {
+  transform: scale(1.05);
+  background-color: #0B6E4F;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2), -2px -2px 5px rgba(255, 255, 255, 0.3);
+}
 
 /*******************
 ***  Contact Us  ***
 ********************/
 main.contact-us {
   gap: 1.2em;
+  width: 90%;
 }
 main.contact-us h1 {
   text-align: center;
@@ -544,18 +545,21 @@ main.contact-us form .form-inputs textarea {
   height: 6em;
 }
 main.contact-us form .submit-btn {
-  margin-top: 0.8em;
-  padding: 0.7em 1.4em;
+  padding: 0.8em 1.2em;
+  background-color: #07543A;
+  font-weight: bold;
+  color: #FEFFFE;
+  border: none;
+  border-radius: 0.7em;
+  cursor: pointer;
+  transition: all 250ms ease-in-out;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1), -1px -1px 4px rgba(255, 255, 255, 0.3);
+  padding: 0.8em 0;
   font-size: 1.1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 0.5em;
-  transition: all 200ms ease-in;
+  letter-spacing: 0.05rem;
 }
-main.contact-us form .submit-btn:hover, main.contact-us form .submit-btn:active, main.contact-us form .submit-btn:focus {
-  padding: 0.8em 1.4em;
-  font-size: 1.15rem;
+main.contact-us form .submit-btn:hover {
+  transform: scale(1.1);
   background-color: #0B6E4F;
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2), -2px -2px 5px rgba(255, 255, 255, 0.3);
 }
@@ -604,13 +608,15 @@ main.contact-us form .submit-btn:hover, main.contact-us form .submit-btn:active,
 .gameplay-container ul:nth-of-type(2) li:nth-child(3) {
   padding-bottom: 0.5em;
 }
-.gameplay-container span {
+.gameplay-container .link-card-values,
+.gameplay-container .link-power-cards {
   color: #07543A;
   font-weight: bold;
   cursor: pointer;
   transition: all 250ms ease-in-out;
 }
-.gameplay-container span:hover {
+.gameplay-container .link-card-values:hover,
+.gameplay-container .link-power-cards:hover {
   color: #0B6E4F;
   transform: scale(1);
   font-size: 1.1rem;
@@ -704,6 +710,9 @@ main.contact-us form .submit-btn:hover, main.contact-us form .submit-btn:active,
   width: 100%;
 }
 
+.power-cards-container h4 {
+  font-size: 1.05rem;
+}
 .power-cards-container .links-container a {
   font-size: 0.9rem;
 }
@@ -717,7 +726,6 @@ main.contact-us form .submit-btn:hover, main.contact-us form .submit-btn:active,
 /************************
 ****  Media Queries  ****
 *************************/
-/* Medium devices (tablets, 768px and up):  */
 @media only screen and (min-width: 768px) {
   html {
     font-size: 1.2rem;
@@ -751,8 +759,7 @@ main.contact-us form .submit-btn:hover, main.contact-us form .submit-btn:active,
     /* For 3 cards per row */
   }
 }
-/* Large devices (desktops, 992px and up):  */
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 1024px) {
   html {
     font-size: 1.8rem;
   }
@@ -779,8 +786,7 @@ main.contact-us form .submit-btn:hover, main.contact-us form .submit-btn:active,
     /* For 4 cards per row */
   }
 }
-/* Extra large devices (large desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1280px) {
   html {
     font-size: 2rem;
   }

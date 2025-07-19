@@ -1,4 +1,3 @@
-// import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 const Setup = () => {
@@ -21,9 +20,13 @@ const Setup = () => {
 			<p>Once everyone's checked their cards, the game begins.</p>
 			<div className="links-container">
 				<button className="btn back-btn" onClick={() => navigate(-1)}>
-					◀ Back
+					<span className="arrow left" />
+					<span className="button-text">Back</span>
 				</button>
-				<Link to="../gameplay">Gameplay ▶</Link>
+				<Link to="../gameplay">
+					<span className="button-text">Gameplay</span>
+					<span className="arrow right" />
+				</Link>
 			</div>
 		</main>
 	);

@@ -1,4 +1,3 @@
-// import React from "react";
 import { useNavigate } from "react-router-dom";
 import Nav from "./Nav"
 import crocHeaderImg from "../assets/images/sneaky-croc-2-0B6E4F.jpg";

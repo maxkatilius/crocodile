@@ -18,18 +18,21 @@ $transition-slow: all 500ms ease-in-out;
 
 @mixin button-style {
     padding: 0.8em 1.2em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5em;
     background-color: $primary-green;
-    color: $primary-white;
     font-weight: bold;
+    color: $primary-white;
     border: none;
     border-radius: 0.7em;
     cursor: pointer;
     transition: $transition-fast;
     box-shadow: $box-shadow-default;
+}
+
+@mixin link-button-style {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
 
     .arrow {
         width: 0;
@@ -48,7 +51,22 @@ $transition-slow: all 500ms ease-in-out;
             border-right: 0.6em solid $primary-white;
         }
     }
-    
+}
+
+@mixin button-hover {
+    transform: scale(1.1);
+    background-color: $secondary-green;
+    box-shadow: $box-shadow-hover;
+}
+
+@mixin link-button-hover {
+    transform: scale(1);
+    margin-bottom: 0.3em;
+    font-size: 1.1rem;
+    margin-top: -0.5em;
+    border-radius: 1em;
+    background-color: $secondary-green;
+    box-shadow: $box-shadow-hover;
 }
 
 @mixin card-style($width: 50%) {
@@ -99,16 +117,10 @@ $transition-slow: all 500ms ease-in-out;
     }
 }
 
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-html,
-body {
-    height: 100%;
 }
 
 body {
@@ -130,17 +142,23 @@ h4 {
 }
 
 h2 {
-    padding-bottom: 0.4em;
+    font-size: 1.65rem;
+    margin-bottom: 0.5em;
 }
 
 h4 {
-    margin: 0.2em 0
+    margin-top: 0.7em;
+    font-size: 1.2rem;
 }
 
 p {
+    margin: 0.5em 0;
     line-height: 1.4;
 }
 
+a {
+    text-decoration: none;
+}
 
 /**************
 ***  Layout ***
@@ -158,17 +176,14 @@ p {
 
 header {
     padding: 0.8em 1.5em;
-    display: flex;
-    align-items: start;
-    justify-content: start;
     
     .header__logo {
         display: inline-block;
+        cursor: pointer;
 
         img {
             display: block;
-            max-width: 55%;
-            cursor: pointer;
+            max-width: 50%;
         }
     
         h1 {
@@ -181,11 +196,8 @@ header {
             color: $primary-green;
             border-top: 2px solid $primary-green;
             border-bottom: 2px solid $primary-green;
-            cursor: pointer;
         }
     }
-
-    
 }
 
 /* Nav */
@@ -388,25 +400,26 @@ footer {
     }
 }
 
-
 /************
 *** Links ***
 *************/
-
-a {
-    text-decoration: none;
-}
-
-.about-links a,
-.links-container a,
-.btn {
-    @include button-style;
-}
 
 .links-container {
     display: flex;
     justify-content: space-evenly;
     margin: 1.2em 0;
+}
+
+.about-links a,
+.links-container a,
+.back-btn {
+    @include button-style;
+    @include link-button-style;
+    
+    &:hover,
+    &:active {
+        @include button-hover;
+    }
 }
 
 .back-btn {
@@ -416,48 +429,39 @@ a {
     transition: $transition-fast;
 }
 
-.about-links a:hover,
-.about-links a:active,
-.about-links a:focus,
-.links-container a:hover,
-.links-container a:active,
-.links-container a:focus,
-.back-btn:hover,
-.back-btn:active,
-.back-btn:focus {
-    transform: scale(1);
-    margin-bottom: 0.3em;
-    font-size: 1.1rem;
-    margin-top: -0.5em;
-    border-radius: 1em;
-    background-color: $secondary-green;
-    box-shadow: $box-shadow-hover;
-}
-
 /***********
 *** Home ***
 ************/
 
-.home-container {
-    min-width: 80%;
+main.home-container {
+    padding: 0 3em;
 
     .subtitle {
-        font-size: 1.4rem;
-        color: $secondary-green;
         padding: 0.6em 0;
-        width: 100%;
+        font-size: 1.4rem;
+        text-align: center;
+        color: $secondary-green;
     }
 
     .tagline {
         margin-bottom: 2em;
     }
+    
+    .home__links {
+        @include flex-col;
+        gap: 1em;
 
-    a {
-        @include button-style;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 0.8em 1.4em;
+        a {
+            @include button-style;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.8em 1.4em;
+        
+            &:hover {
+                @include button-hover;
+            }
+        }
     }
 }
 
@@ -466,7 +470,7 @@ a {
 *************/
 
 .about-container {
-    
+
     p {
         line-height: 1.5rem;
     }
@@ -487,8 +491,9 @@ a {
     flex-wrap: wrap;
     justify-content: center;
     gap: 1.5em;
+    margin-bottom: 1em;
 
-    h1 {
+    h2 {
         margin: 0 auto;
     }
 }
@@ -567,7 +572,7 @@ a {
         gap: 0.3em;
         margin-right: 0.4em;
 
-        .color-button {
+        .color-btn {
             height: 1.2em;
             width: 1.2em;
             border: 1px solid #e2e2e2;
@@ -582,6 +587,10 @@ a {
 
         @include flex-col;
         gap: 0.4em; 
+
+        p {
+            margin: 0;
+        }
 
         .title {
             font-size: 1.1rem;
@@ -598,6 +607,21 @@ a {
             font-size: 0.9rem;
         }
     }
+
+    .add-to-cart-btn {
+        @include button-style;
+        align-self: flex-start;
+        margin-top: 0.2em;
+        font-weight: normal;
+        letter-spacing: 0.05rem;
+        
+        &:hover {
+            transform: scale(1.05);
+            background-color: $secondary-green;
+            box-shadow: $box-shadow-hover;
+        }
+        
+    }
 }
 
 /*******************
@@ -606,6 +630,7 @@ a {
 
 main.contact-us {
     gap: 1.2em;
+    width: 90%;
 
     h1 {
         text-align: center;
@@ -642,23 +667,15 @@ main.contact-us {
         }
     
         .submit-btn {
-            margin-top: 0.8em;
-            padding: 0.7em 1.4em;
+            @include button-style;
+            padding: 0.8em 0;
             font-size: 1.1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 0.5em;
-            transition: all 200ms ease-in;
-    
-            &:hover,
-            &:active,
-            &:focus {
-                padding: 0.8em 1.4em;
-                font-size: 1.15rem;
-                background-color: $secondary-green;
-                box-shadow: $box-shadow-hover;
+            letter-spacing: 0.05rem;
+
+            &:hover {
+                @include button-hover;
             }
+
         }
     }
 }
@@ -699,7 +716,8 @@ main.contact-us {
         padding-bottom: 0.5em;
     }
     
-    span {
+    .link-card-values,
+    .link-power-cards {
         color: $primary-green;
         font-weight: bold;
         cursor: pointer;
@@ -711,7 +729,6 @@ main.contact-us {
             font-size: 1.1rem;
         }
     }
-
 }
 
 /***********************
@@ -723,7 +740,6 @@ main.contact-us {
 **********************/
 
 .smackdowns-container {
-
     ul {
         @include croc-ul(green);
     }
@@ -758,6 +774,10 @@ main.contact-us {
 }
 
 .power-cards-container {
+
+    h4 {
+        font-size: 1.05rem;
+    }
     
     .links-container {
         a {
@@ -778,7 +798,10 @@ main.contact-us {
 ****  Media Queries  ****
 *************************/
 
-/* Medium devices (tablets, 768px and up):  */
+@media only screen and (min-width: 648px) {
+
+}
+
 @media only screen and (min-width: 768px) {
     html {
         font-size: 1.2rem;
@@ -828,8 +851,7 @@ main.contact-us {
     }
 }
 
-/* Large devices (desktops, 992px and up):  */
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 1024px) {
 
     html {
         font-size: 1.8rem;
@@ -867,8 +889,7 @@ main.contact-us {
     }
 }
 
-/* Extra large devices (large desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1280px) {
 
     html {
         font-size: 2rem;
@@ -988,3 +1009,6 @@ main.contact-us {
     }
 }
 
+@media only screen and (min-width: 1536px) {
+    
+}

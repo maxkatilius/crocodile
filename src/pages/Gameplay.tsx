@@ -1,4 +1,3 @@
-// import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 const Gameplay = () => {
@@ -38,7 +37,7 @@ const Gameplay = () => {
 					<span
 						className="link-power-cards"
 						onClick={() => {
-							navigate("../power-cards", {
+							navigate("/how-to/power-cards", {
 								state: { from: "/how-to/gameplay" },
 							});
 						}}
@@ -49,7 +48,7 @@ const Gameplay = () => {
 				</li>
 				<li>
 					Swap it with one of their face-down cards,
-					<strong>or</strong>
+					<strong> or,</strong>
 				</li>
 				<li>Simply discard it.</li>
 			</ul>
@@ -61,9 +60,13 @@ const Gameplay = () => {
 			</p>
 			<div className="links-container">
 				<button className="btn back-btn" onClick={() => navigate(-1)}>
-					◀ Back
+					<span className="arrow left" />
+					<span className="button-text">Back</span>
 				</button>
-				<Link to="../calling-croc">Calling 'Croc' ▶</Link>
+				<Link to="/how-to/calling-croc">
+					<span className="button-text">Calling 'Croc'</span>
+					<span className="arrow right" />
+				</Link>
 			</div>
 		</main>
 	);
