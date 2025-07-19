@@ -23,7 +23,7 @@ body {
 h1,
 h2,
 h4 {
-  color: #0B6E4F;
+  color: #07543A;
 }
 
 h2 {
@@ -35,7 +35,7 @@ h4 {
 }
 
 p {
-  margin: 0.6em 0;
+  line-height: 1.4;
 }
 
 /**************
@@ -57,24 +57,24 @@ header {
   align-items: start;
   justify-content: start;
 }
-header .header--logo {
+header .header__logo {
   display: inline-block;
 }
-header .header--logo img {
+header .header__logo img {
   display: block;
   max-width: 55%;
   cursor: pointer;
 }
-header .header--logo h1 {
+header .header__logo h1 {
   display: inline-block;
   margin: 0.2em 0;
   font-size: 1.8rem;
   text-transform: uppercase;
   letter-spacing: 0.25rem;
   line-height: 1.4em;
-  color: #0B6E4F;
-  border-top: 2px solid #0B6E4F;
-  border-bottom: 2px solid #0B6E4F;
+  color: #07543A;
+  border-top: 2px solid #07543A;
+  border-bottom: 2px solid #07543A;
   cursor: pointer;
 }
 
@@ -101,7 +101,7 @@ header .header--logo h1 {
 .nav .hamburger-container .hamburger::before,
 .nav .hamburger-container .hamburger::after {
   height: 0.18em;
-  background-color: #0B6E4F;
+  background-color: #07543A;
   border-radius: 1.5em;
 }
 .nav .hamburger-container .hamburger {
@@ -126,7 +126,7 @@ header .header--logo h1 {
 .nav__links {
   z-index: 1000;
   position: fixed;
-  inset: 0 0 0 35%;
+  inset: 0 0 0 25%;
   padding: 8.4em 2.6em;
   font-weight: bold;
   color: #FEFFFE;
@@ -147,7 +147,26 @@ header .header--logo h1 {
   cursor: pointer;
 }
 .nav__how-to-links {
+  margin-bottom: 1em;
+  list-style-type: none;
   margin-top: 1em;
+}
+.nav__how-to-links li {
+  position: relative;
+  padding: 0.8em 0 0 4em;
+  /* This creates space for the bullet image. Adjust as needed based on the image size */
+}
+.nav__how-to-links li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-30%);
+  width: 2.6em;
+  height: 1.2em;
+  background-image: url("../assets/images/croc-head-white.png");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .nav__how-to-links a {
   font-size: 1rem;
@@ -155,13 +174,12 @@ header .header--logo h1 {
 .nav__how-to-links.closed {
   display: none;
 }
-.nav__how-to-links li.nav-li::before {
+.nav__how-to-links li::before {
   width: 2.2em;
   height: 1.1em;
-  background-image: url("../assets/images/croc-head-white.png");
 }
 .nav.open {
-  right: calc(65% - 3.2em - 2em);
+  right: calc(65% - 3.2em);
   /* Screen width minus nav width (4em) and its right margin (1.6em) */
 }
 .nav.open .hamburger-container {
@@ -216,6 +234,7 @@ li.croc-li::before {
 /* Main */
 main {
   margin: auto auto;
+  width: 100%;
   padding: 0.4em 2em;
   display: flex;
   flex-direction: column;
@@ -223,18 +242,23 @@ main {
 
 /* Footer */
 footer {
-  height: 15vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #0B6E4F;
+  padding: 0.5em 0.2em 0.1em 0.2em;
+  color: #07543A;
 }
 footer h4 {
-  padding: 3.4em 0 0 2em;
+  margin-top: 2em;
+  margin-left: 1em;
+  font-size: 1.1rem;
+}
+footer h4 span {
+  letter-spacing: 0.05rem;
 }
 footer img {
-  width: 40%;
-  min-width: 150px;
+  width: 30%;
+  min-width: 120px;
 }
 
 /************
@@ -244,18 +268,15 @@ a {
   text-decoration: none;
 }
 
-.links-container {
-  display: flex;
-  justify-content: space-evenly;
-  margin: 1em 0;
-}
-
-main a,
+.about-links a,
+.links-container a,
 .btn {
   padding: 0.8em 1.2em;
   display: flex;
+  justify-content: center;
   align-items: center;
-  background-color: #0B6E4F;
+  gap: 0.5em;
+  background-color: #07543A;
   color: #FEFFFE;
   font-weight: bold;
   border: none;
@@ -263,6 +284,33 @@ main a,
   cursor: pointer;
   transition: all 250ms ease-in-out;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1), -1px -1px 4px rgba(255, 255, 255, 0.3);
+}
+.about-links a .arrow,
+.links-container a .arrow,
+.btn .arrow {
+  width: 0;
+  height: 0;
+  display: inline-block;
+}
+.about-links a .arrow.right,
+.links-container a .arrow.right,
+.btn .arrow.right {
+  border-top: 0.4em solid transparent;
+  border-bottom: 0.4em solid transparent;
+  border-left: 0.6em solid #FEFFFE;
+}
+.about-links a .arrow.left,
+.links-container a .arrow.left,
+.btn .arrow.left {
+  border-top: 0.4em solid transparent;
+  border-bottom: 0.4em solid transparent;
+  border-right: 0.6em solid #FEFFFE;
+}
+
+.links-container {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 1.2em 0;
 }
 
 .back-btn {
@@ -272,9 +320,12 @@ main a,
   transition: all 250ms ease-in-out;
 }
 
-main a:hover,
-main a:active,
-main a:focus,
+.about-links a:hover,
+.about-links a:active,
+.about-links a:focus,
+.links-container a:hover,
+.links-container a:active,
+.links-container a:focus,
 .back-btn:hover,
 .back-btn:active,
 .back-btn:focus {
@@ -283,7 +334,7 @@ main a:focus,
   font-size: 1.1rem;
   margin-top: -0.5em;
   border-radius: 1em;
-  background-color: #07543A;
+  background-color: #0B6E4F;
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2), -2px -2px 5px rgba(255, 255, 255, 0.3);
 }
 
@@ -295,7 +346,7 @@ main a:focus,
 }
 .home-container .subtitle {
   font-size: 1.4rem;
-  color: #07543A;
+  color: #0B6E4F;
   padding: 0.6em 0;
   width: 100%;
 }
@@ -303,10 +354,38 @@ main a:focus,
   margin-bottom: 2em;
 }
 .home-container a {
+  padding: 0.8em 1.2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+  background-color: #07543A;
+  color: #FEFFFE;
+  font-weight: bold;
+  border: none;
+  border-radius: 0.7em;
+  cursor: pointer;
+  transition: all 250ms ease-in-out;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1), -1px -1px 4px rgba(255, 255, 255, 0.3);
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 0.8em 1.4em;
+}
+.home-container a .arrow {
+  width: 0;
+  height: 0;
+  display: inline-block;
+}
+.home-container a .arrow.right {
+  border-top: 0.4em solid transparent;
+  border-bottom: 0.4em solid transparent;
+  border-left: 0.6em solid #FEFFFE;
+}
+.home-container a .arrow.left {
+  border-top: 0.4em solid transparent;
+  border-bottom: 0.4em solid transparent;
+  border-right: 0.6em solid #FEFFFE;
 }
 
 /************
@@ -325,41 +404,146 @@ main a:focus,
 /************
 *** Shop ***
 *************/
+.shop-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5em;
+}
 .shop-container h1 {
   margin: 0 auto;
+}
+
+.product__card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6em;
+  padding: 1em;
+  border: 1px solid #d3d3d3;
+  border-radius: 0.6em;
+  background-color: rgba(247, 247, 247, 0.9333333333);
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1), -1px -1px 4px rgba(255, 255, 255, 0.3);
+}
+.product__card .image-section {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 1em;
+  height: 16em;
+  overflow: hidden;
+}
+.product__card .image-section .thumbnails {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4em;
+}
+.product__card .image-section .thumbnails img {
+  width: 2em;
+  height: 2em;
+  object-fit: cover;
+  border-radius: 0.4em;
+  opacity: 0.6;
+  cursor: pointer;
+  transition: opacity 200 ease-in;
+}
+.product__card .image-section .thumbnails img:hover, .product__card .image-section .thumbnails img.selected {
+  opacity: 100%;
+}
+.product__card .image-section .main-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1em;
+  display: block;
+}
+.product__card .image-section .full-screen-btn {
+  position: absolute;
+  bottom: 0.6em;
+  right: 0.6em;
+}
+.product__card .image-section .full-screen-btn a {
+  font-size: 0.8rem;
+  color: #07543A;
+  transition: all 300ms ease-in-out;
+  padding: 0.5em 0.5em 0.2em 0.5em;
+  border-radius: 100%;
+}
+.product__card .image-section .full-screen-btn a:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+  font-size: 0.9rem;
+}
+.product__card .color-selector {
+  align-self: flex-end;
+  display: flex;
+  gap: 0.3em;
+  margin-right: 0.4em;
+}
+.product__card .color-selector .color-button {
+  height: 1.2em;
+  width: 1.2em;
+  border: 1px solid #e2e2e2;
+  border-radius: 100%;
+}
+.product__card .color-selector .color-button.active {
+  border: 1px solid black;
+}
+.product__card .product__info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4em;
+}
+.product__card .product__info .title {
+  font-size: 1.1rem;
+  color: #07543A;
+}
+.product__card .product__info .price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #161925;
+}
+.product__card .product__info .description {
+  font-size: 0.9rem;
 }
 
 /*******************
 ***  Contact Us  ***
 ********************/
 main.contact-us {
-  width: 75%;
   gap: 1.2em;
 }
+main.contact-us h1 {
+  text-align: center;
+}
 main.contact-us p {
-  margin-top: 0;
   font-size: 1.1rem;
   line-height: 1.7rem;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.05rem;
 }
-main.contact-us .contact-form {
+main.contact-us form {
   display: flex;
   flex-direction: column;
   gap: 1em;
 }
-main.contact-us .contact-form input,
-main.contact-us .contact-form textarea {
+main.contact-us form .form-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+main.contact-us form .form-inputs input,
+main.contact-us form .form-inputs textarea {
   padding: 0.5em;
+  width: 100%;
   font-family: inherit;
   font-size: 1.1rem;
   height: 2em;
   border: 1px solid #C7D3DD;
   border-radius: 2px;
 }
-main.contact-us .contact-form textarea {
+main.contact-us form .form-inputs textarea {
   height: 6em;
 }
-main.contact-us .contact-form .submit-btn {
+main.contact-us form .submit-btn {
   margin-top: 0.8em;
   padding: 0.7em 1.4em;
   font-size: 1.1rem;
@@ -369,10 +553,10 @@ main.contact-us .contact-form .submit-btn {
   border-radius: 0.5em;
   transition: all 200ms ease-in;
 }
-main.contact-us .contact-form .submit-btn:hover, main.contact-us .contact-form .submit-btn:active, main.contact-us .contact-form .submit-btn:focus {
+main.contact-us form .submit-btn:hover, main.contact-us form .submit-btn:active, main.contact-us form .submit-btn:focus {
   padding: 0.8em 1.4em;
   font-size: 1.15rem;
-  background-color: #07543A;
+  background-color: #0B6E4F;
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2), -2px -2px 5px rgba(255, 255, 255, 0.3);
 }
 
@@ -380,7 +564,11 @@ main.contact-us .contact-form .submit-btn:hover, main.contact-us .contact-form .
 ****  Aim  ****
 ***************/
 .aim-container {
-  width: 80%;
+  width: 90%;
+}
+.aim-container .links-container {
+  width: 100%;
+  gap: 2em;
 }
 
 /****************
@@ -389,20 +577,41 @@ main.contact-us .contact-form .submit-btn:hover, main.contact-us .contact-form .
 /*******************
 ****  Gameplay  ****
 ********************/
+.gameplay-container ul {
+  margin-bottom: 1em;
+  list-style-type: none;
+}
+.gameplay-container ul li {
+  position: relative;
+  padding: 0.8em 0 0 4em;
+  /* This creates space for the bullet image. Adjust as needed based on the image size */
+}
+.gameplay-container ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-30%);
+  width: 2.6em;
+  height: 1.2em;
+  background-image: url("../assets/images/croc-head-green.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 .gameplay-container ul:nth-of-type(1) li:nth-child(1) {
   padding-bottom: 0.5em;
 }
 .gameplay-container ul:nth-of-type(2) li:nth-child(3) {
   padding-bottom: 0.5em;
 }
-.gameplay-container span:not(.bold) {
-  color: #0B6E4F;
+.gameplay-container span {
+  color: #07543A;
   font-weight: bold;
   cursor: pointer;
   transition: all 250ms ease-in-out;
 }
-.gameplay-container span:hover:not(.bold) {
-  color: #07543A;
+.gameplay-container span:hover {
+  color: #0B6E4F;
   transform: scale(1);
   font-size: 1.1rem;
 }
@@ -413,6 +622,28 @@ main.contact-us .contact-form .submit-btn:hover, main.contact-us .contact-form .
 /*********************
 ****  Smackdowns  ****
 **********************/
+.smackdowns-container ul {
+  margin-bottom: 1em;
+  list-style-type: none;
+}
+.smackdowns-container ul li {
+  position: relative;
+  padding: 0.8em 0 0 4em;
+  /* This creates space for the bullet image. Adjust as needed based on the image size */
+}
+.smackdowns-container ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-30%);
+  width: 2.6em;
+  height: 1.2em;
+  background-image: url("../assets/images/croc-head-green.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 /***********************************
 ****  Card values / Power cards ****
 ***********************************/

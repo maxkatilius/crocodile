@@ -10,9 +10,9 @@ const Gameplay = () => {
 				The player to the dealer's left kicks off the game. They have
 				two options:
 			</p>
-			<ul className="croc-ul">
-				<li className="croc-li">Draw the top card from the deck.</li>
-				<li className="croc-li">
+			<ul>
+				<li>Draw the top card from the deck.</li>
+				<li>
 					Swap one of their face-down cards directly with the face-up
 					card on the discard pile.
 				</li>
@@ -32,8 +32,8 @@ const Gameplay = () => {
 				) for their face-down hand by either drawing or swapping.
 			</p>
 			<p>When drawing a fresh card from the deck a player can:</p>
-			<ul className="croc-ul">
-				<li className="croc-li">
+			<ul>
+				<li>
 					Use it if it's a Power Card (see{" "}
 					<span
 						className="link-power-cards"
@@ -47,11 +47,11 @@ const Gameplay = () => {
 					</span>
 					),
 				</li>
-				<li className="croc-li">
+				<li>
 					Swap it with one of their face-down cards,
 					<strong>or</strong>
 				</li>
-				<li className="croc-li">Simply discard it.</li>
+				<li>Simply discard it.</li>
 			</ul>
 			<p>
 				The game can be concluded by any player declaring 'Crocodile.'

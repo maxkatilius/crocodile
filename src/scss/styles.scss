@@ -1,9 +1,9 @@
 $font-stack: 'Quicksand', sans-serif;
-$primary-green: #0B6E4F;
-$secondary-green: #07543A;
+$primary-green: #07543A;
+$secondary-green: #0B6E4F;
 $primary-black: #161925;
 $primary-white: #FEFFFE;
-$secondary-white: #C7D3DD;
+$secondary-white: #f7f7f7ee;
 
 $box-shadow-default: 2px 2px 8px rgba(0, 0, 0, 0.1), -1px -1px 4px rgba(255, 255, 255, 0.3);
 $box-shadow-hover: 3px 3px 10px rgba(0, 0, 0, 0.2), -2px -2px 5px rgba(255, 255, 255, 0.3);
@@ -14,6 +14,41 @@ $transition-slow: all 500ms ease-in-out;
 @mixin flex-col() {
     display: flex;
     flex-direction: column;
+}
+
+@mixin button-style {
+    padding: 0.8em 1.2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+    background-color: $primary-green;
+    color: $primary-white;
+    font-weight: bold;
+    border: none;
+    border-radius: 0.7em;
+    cursor: pointer;
+    transition: $transition-fast;
+    box-shadow: $box-shadow-default;
+
+    .arrow {
+        width: 0;
+        height: 0;
+        display: inline-block;
+
+        &.right {
+            border-top: 0.4em solid transparent;
+            border-bottom: 0.4em solid transparent;
+            border-left: 0.6em solid $primary-white;
+        }
+
+        &.left {
+            border-top: 0.4em solid transparent;
+            border-bottom: 0.4em solid transparent;
+            border-right: 0.6em solid $primary-white;
+        }
+    }
+    
 }
 
 @mixin card-style($width: 50%) {
@@ -40,19 +75,30 @@ $transition-slow: all 500ms ease-in-out;
     }
 }
 
-@mixin button-style {
-    padding: 0.8em 1.2em;
-    display: flex;
-    align-items: center;
-    background-color: $primary-green;
-    color: $primary-white;
-    font-weight: bold;
-    border: none;
-    border-radius: 0.7em;
-    cursor: pointer;
-    transition: $transition-fast;
-    box-shadow: $box-shadow-default;
+@mixin croc-ul($croc-color: "green") {
+    margin-bottom: 1em;
+    list-style-type: none;
+
+    li {
+        position: relative;
+        padding: 0.8em 0 0 4em;
+        /* This creates space for the bullet image. Adjust as needed based on the image size */
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-30%);
+            width: 2.6em;
+            height: 1.2em;
+            background-image: url("../assets/images/croc-head-#{$croc-color}.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+    }
 }
+
 
 * {
     margin: 0;
@@ -92,8 +138,9 @@ h4 {
 }
 
 p {
-    margin: 0.6em 0;
+    line-height: 1.4;
 }
+
 
 /**************
 ***  Layout ***
@@ -115,7 +162,7 @@ header {
     align-items: start;
     justify-content: start;
     
-    .header--logo {
+    .header__logo {
         display: inline-block;
 
         img {
@@ -199,7 +246,7 @@ header {
     &__links {
         z-index: 1000;
         position: fixed;
-        inset: 0 0 0 35%;
+        inset: 0 0 0 25%;
         padding: 8.4em 2.6em;
         font-weight: bold;
         color: $primary-white;
@@ -225,6 +272,7 @@ header {
     }
 
     &__how-to-links {
+        @include croc-ul(white);
         margin-top: 1em;
 
         a {
@@ -235,17 +283,16 @@ header {
             display: none;
         }
 
-        li.nav-li {
+        li {
             &::before {
                 width: 2.2em;
                 height: 1.1em;
-                background-image: url("../assets/images/croc-head-white.png");
             }
         }
     }
 
     &.open {
-        right: calc(65% - 3.2em - 2em);
+        right: calc(65% - 3.2em);
         /* Screen width minus nav width (4em) and its right margin (1.6em) */
 
         .hamburger-container {
@@ -311,6 +358,7 @@ li.croc-li {
 
 main {
     margin: auto auto;
+    width: 100%;
     padding: 0.4em 2em;
     @include flex-col;
 }
@@ -318,19 +366,25 @@ main {
 /* Footer */
 
 footer {
-    height: 15vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0.5em 0.2em 0.1em 0.2em;
     color: $primary-green;
 
     h4 {
-        padding: 3.4em 0 0 2em;
+        margin-top: 2em;
+        margin-left: 1em;
+        font-size: 1.1rem;
+        
+        span {
+            letter-spacing: 0.05rem;
+        }
     }
 
     img {
-        width: 40%;
-        min-width: 150px;
+        width: 30%;
+        min-width: 120px;
     }
 }
 
@@ -343,15 +397,16 @@ a {
     text-decoration: none;
 }
 
+.about-links a,
+.links-container a,
+.btn {
+    @include button-style;
+}
+
 .links-container {
     display: flex;
     justify-content: space-evenly;
-    margin: 1em 0;
-}
-
-main a,
-.btn {
-    @include button-style;
+    margin: 1.2em 0;
 }
 
 .back-btn {
@@ -361,9 +416,12 @@ main a,
     transition: $transition-fast;
 }
 
-main a:hover,
-main a:active,
-main a:focus,
+.about-links a:hover,
+.about-links a:active,
+.about-links a:focus,
+.links-container a:hover,
+.links-container a:active,
+.links-container a:focus,
 .back-btn:hover,
 .back-btn:active,
 .back-btn:focus {
@@ -395,6 +453,7 @@ main a:focus,
     }
 
     a {
+        @include button-style;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -424,9 +483,120 @@ main a:focus,
 *************/
 
 .shop-container {
-    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5em;
+
     h1 {
         margin: 0 auto;
+    }
+}
+
+.product__card {
+    @include flex-col;
+    gap: 0.6em;
+    padding: 1em;
+    border: 1px solid #d3d3d3;
+    border-radius: 0.6em;
+    
+    background-color: $secondary-white;
+    box-shadow: $box-shadow-default;
+    
+    .image-section {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+        gap: 1em;
+        height: 16em;
+        overflow: hidden;
+        // border: 1px solid red;
+
+        .thumbnails {
+            @include flex-col;
+            gap: 0.4em;
+            
+            img {
+                width: 2em;
+                height: 2em;
+                object-fit: cover;
+                border-radius: 0.4em;
+                opacity: 0.6;
+                cursor: pointer;
+                transition: opacity 200 ease-in;
+
+                &:hover,
+                &.selected {
+                    opacity: 100%;
+                }
+            }
+        }
+
+        .main-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 1em;
+            display: block;
+        }
+
+        .full-screen-btn {
+            position: absolute;
+            bottom: 0.6em;
+            right: 0.6em;
+            
+            a {
+                font-size: 0.8rem;
+                color: $primary-green;
+                transition: all 300ms ease-in-out;
+                padding: 0.5em 0.5em 0.2em 0.5em;
+                border-radius: 100%;
+                
+                &:hover {
+                    background-color: rgba(0, 0, 0, 0.3);
+                    font-size: 0.9rem;
+                }
+            }
+        }
+    }
+
+    .color-selector {
+        align-self: flex-end;
+        display: flex;
+        gap: 0.3em;
+        margin-right: 0.4em;
+
+        .color-button {
+            height: 1.2em;
+            width: 1.2em;
+            border: 1px solid #e2e2e2;
+            border-radius: 100%;
+        
+            &.active {
+                border: 1px solid black;
+            }
+        }
+    }
+    .product__info {
+
+        @include flex-col;
+        gap: 0.4em; 
+
+        .title {
+            font-size: 1.1rem;
+            color: $primary-green;
+        }
+
+        .price {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: $primary-black;
+        }
+
+        .description {
+            font-size: 0.9rem;
+        }
     }
 }
 
@@ -435,32 +605,40 @@ main a:focus,
 ********************/
 
 main.contact-us {
-    width: 75%;
     gap: 1.2em;
 
+    h1 {
+        text-align: center;
+    }
+
     p {
-        margin-top: 0;
         font-size: 1.1rem;
         line-height: 1.7rem;
-        letter-spacing: 0.05em;
+        letter-spacing: 0.05rem;
     }
     
-    .contact-form {
+    form {
         @include flex-col;
         gap: 1em;
         
-        input,
-        textarea {
-            padding: 0.5em;
-            font-family: inherit;
-            font-size: 1.1rem;
-            height: 2em;
-            border: 1px solid $secondary-white;
-            border-radius: 2px;
-        }
-    
-        textarea {
-            height: 6em;
+        .form-inputs {
+            @include flex-col;
+            gap: 1em;
+
+            input,
+            textarea {
+                padding: 0.5em;
+                width: 100%;
+                font-family: inherit;
+                font-size: 1.1rem;
+                height: 2em;
+                border: 1px solid #C7D3DD;
+                border-radius: 2px;
+            }
+            
+            textarea {
+                height: 6em;
+            }
         }
     
         .submit-btn {
@@ -491,7 +669,12 @@ main.contact-us {
 ***************/
 
 .aim-container {
-    width: 80%;
+    width: 90%;
+
+    .links-container {
+        width: 100%;
+        gap: 2em;
+    }
 }
 
 /****************
@@ -504,6 +687,10 @@ main.contact-us {
 
 .gameplay-container {
 
+    ul {
+        @include croc-ul(green);
+    }
+
     ul:nth-of-type(1) li:nth-child(1){
         padding-bottom: 0.5em;
     }
@@ -512,18 +699,19 @@ main.contact-us {
         padding-bottom: 0.5em;
     }
     
-    span:not(.bold) {
+    span {
         color: $primary-green;
         font-weight: bold;
         cursor: pointer;
         transition: $transition-fast;
+        
+        &:hover {
+            color: $secondary-green;
+            transform: scale(1);
+            font-size: 1.1rem;
+        }
     }
 
-    span:hover:not(.bold) {
-        color: $secondary-green;
-        transform: scale(1);
-        font-size: 1.1rem;
-    }
 }
 
 /***********************
@@ -533,6 +721,13 @@ main.contact-us {
 /*********************
 ****  Smackdowns  ****
 **********************/
+
+.smackdowns-container {
+
+    ul {
+        @include croc-ul(green);
+    }
+}
 
 /***********************************
 ****  Card values / Power cards ****

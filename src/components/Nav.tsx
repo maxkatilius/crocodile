@@ -44,8 +44,8 @@ const Nav = () => {
 						toggleHowTo();
 					}}>How to Play
 					</h3>
-					<ul className={`nav__how-to-links croc-ul ${howToOpen ? "open" : "closed"}`}>
-						<li className="croc-li nav-li" style={{backgroundColor: "none"}}>
+					<ul className={`nav__how-to-links ${howToOpen ? "open" : "closed"}`}>
+						<li style={{backgroundColor: "none"}}>
 							<NavLink to="/how-to" onClick={() => {
 								toggleNav()
 								toggleHowTo();
@@ -53,7 +53,7 @@ const Nav = () => {
 								Aim
 							</NavLink>
 						</li>
-						<li className="croc-li nav-li">
+						<li>
 							<NavLink to="/how-to/setup" onClick={() => {
 								toggleNav()
 								toggleHowTo();
@@ -61,7 +61,7 @@ const Nav = () => {
 								Setup
 							</NavLink>
 						</li>
-						<li className="croc-li nav-li">
+						<li>
 							<NavLink to="/how-to/gameplay" onClick={() => {
 								toggleNav()
 								toggleHowTo();
@@ -69,7 +69,7 @@ const Nav = () => {
 								Gameplay
 							</NavLink>
 						</li>
-						<li className="croc-li nav-li">
+						<li>
 							<NavLink to="/how-to/card-values" onClick={() => {
 								toggleNav()
 								toggleHowTo();
@@ -77,7 +77,7 @@ const Nav = () => {
 								Card
 								Values</NavLink>
 						</li>
-						<li className="croc-li nav-li">
+						<li>
 							<NavLink to="/how-to/calling-croc" onClick={() => {
 								toggleNav()
 								toggleHowTo();
@@ -85,7 +85,7 @@ const Nav = () => {
 								Calling Croc
 							</NavLink>
 						</li>
-						<li className="croc-li nav-li">
+						<li>
 							<NavLink to="/how-to/smackdowns" onClick={() => {
 								toggleNav()
 								toggleHowTo();
@@ -93,7 +93,7 @@ const Nav = () => {
 								Smackdowns
 							</NavLink>
 							</li>
-						<li className="croc-li nav-li">
+						<li>
 							<NavLink to="/how-to/power-cards" onClick={() => {
 								toggleNav()
 								toggleHowTo();
@@ -101,7 +101,7 @@ const Nav = () => {
 								Power Cards
 							</NavLink>
 						</li>
-						<li className="croc-li nav-li">
+						<li>
 							<NavLink to="/how-to/prohibited" onClick={() => {
 								toggleNav()
 								toggleHowTo();

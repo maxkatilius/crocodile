@@ -41,7 +41,7 @@ const Contact = ({ db }: {db: any }) => {
         <main className="contact-us">
             <h1>Contact Us</h1>
             <p>Have any questions? Suggestions? Feedback? <br />Let us know!</p>
-            <form className="contact-form" onSubmit={(e) => handleSubmit(e)}>
+            <form onSubmit={(e) => handleSubmit(e)}>
 				<div className="form-inputs">
 					<input type="text" 
 						placeholder="Name *" 

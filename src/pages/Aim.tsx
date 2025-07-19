@@ -1,4 +1,3 @@
-// import React from "react";
 import { Link } from "react-router-dom";
 
 const Aim = () => {
@@ -11,11 +10,13 @@ const Aim = () => {
 				otherwise known as 'doing the deed'.
 			</p>
 			<div className="links-container">
-				<Link className="link--setup" to="../">
-					◀ Home
+				<Link to="../" >
+					<span className="arrow left" />
+					<span className="button-text">Home</span>
 				</Link>
-				<Link className="link--setup" to="../how-to/setup">
-					Setup ▶
+				<Link to="../how-to/setup" >
+					<span className="button-text">Setup</span>
+					<span className="arrow right" />
 				</Link>
 			</div>
 		</main>
