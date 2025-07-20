@@ -1,10 +1,10 @@
 import { Link, useNavigate } from "react-router-dom"
-import KingOfHearts from "https://cdn.jsdelivr.net/gh/maxkatilius/crocodile/public/images/card_images/king_of_hearts.png"
-import Joker from "https://cdn.jsdelivr.net/gh/maxkatilius/crocodile/public/images/card_images/joker.png"
-import AceOfSpades from "https://cdn.jsdelivr.net/gh/maxkatilius/crocodile/public/images/card_images/ace_of_spades.png"
-import TwoOfDiamonds from "https://cdn.jsdelivr.net/gh/maxkatilius/crocodile/public/images/card_images/2_of_diamonds.png"
-import ThreeOfHearts from "https://cdn.jsdelivr.net/gh/maxkatilius/crocodile/public/images/card_images/3_of_hearts.png"
-import QueenOfClubs from "https://cdn.jsdelivr.net/gh/maxkatilius/crocodile/public/images/card_images/queen_of_clubs.png"
+import KingOfHearts from "https://cdn.jsdelivr.net/gh/maxkatilius/crocodile@main/public/images/card_images/king_of_hearts.png"
+import Joker from "https://cdn.jsdelivr.net/gh/maxkatilius/crocodile@main/public/images/card_images/joker.png"
+import AceOfSpades from "https://cdn.jsdelivr.net/gh/maxkatilius/crocodile@main/public/images/card_images/ace_of_spades.png"
+import TwoOfDiamonds from "https://cdn.jsdelivr.net/gh/maxkatilius/crocodile@main/public/images/card_images/2_of_diamonds.png"
+import ThreeOfHearts from "https://cdn.jsdelivr.net/gh/maxkatilius/crocodile@main/public/images/card_images/3_of_hearts.png"
+import QueenOfClubs from "https://cdn.jsdelivr.net/gh/maxkatilius/crocodile@main/public/images/card_images/queen_of_clubs.png"
 
 const CardValues = () => {
 	const navigate = useNavigate()
