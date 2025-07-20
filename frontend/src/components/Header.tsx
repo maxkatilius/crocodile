@@ -2,8 +2,8 @@ import { useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 import MobileNav from "./MobileNav"
 import DesktopNav from "./DesktopNav"
-import crocHeaderImgGreen from "../assets/images/sneaky-croc-2-0B6E4F.jpg"
-import crocHeaderImgWhite from "../assets/images/sneaky-croc-2-white-transparent.png"
+import crocHeaderImgGreen from "https://cdn.jsdelivr.net/gh/maxkatilius/crocodile/public/images/logos/sneaky-croc-2-0B6E4F.jpg"
+import crocHeaderImgWhite from "https://cdn.jsdelivr.net/gh/maxkatilius/crocodile/public/images/logos/sneaky-croc-2-white-transparent.png"
 
 
 const Header = () => {

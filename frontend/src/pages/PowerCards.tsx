@@ -1,21 +1,21 @@
-import { Link, useNavigate, useLocation } from "react-router-dom";
-import SevenOfClubs from "../assets/images/card_images/7_of_clubs.png";
-import EightOfDiamonds from "../assets/images/card_images/8_of_diamonds.png";
-import NineOfSpades from "../assets/images/card_images/9_of_spades.png";
-import TenOfHearts from "../assets/images/card_images/10_of_hearts.png";
+import { Link, useNavigate, useLocation } from "react-router-dom"
+import SevenOfClubs from "https://cdn.jsdelivr.net/gh/maxkatilius/crocodile/public/images/card_images/7_of_clubs.png"
+import EightOfDiamonds from "https://cdn.jsdelivr.net/gh/maxkatilius/crocodile/public/images/card_images/8_of_diamonds.png"
+import NineOfSpades from "https://cdn.jsdelivr.net/gh/maxkatilius/crocodile/public/images/card_images/9_of_spades.png"
+import TenOfHearts from "https://cdn.jsdelivr.net/gh/maxkatilius/crocodile/public/images/card_images/10_of_hearts.png"
 
 const PowerCards = () => {
-	const navigate = useNavigate();
-	const location = useLocation();
-	const prevLocation = location.state?.from || "/how-to/prohibited";
+	const navigate = useNavigate()
+	const location = useLocation()
+	const prevLocation = location.state?.from || "/how-to/prohibited"
 	const path =
 		prevLocation === "/how-to/gameplay"
 			? "../calling-croc"
-			: "../prohibited";
+			: "../prohibited"
 	const nextLocation =
 		prevLocation === "/how-to/gameplay"
 			? "Calling 'Croc'"
-			: "Prohibited Plays";
+			: "Prohibited Plays"
 
 	return (
 		<main className="power-cards-container">
@@ -81,7 +81,7 @@ const PowerCards = () => {
 				</Link>
 			</div>
 		</main>
-	);
-};
+	)
+}
 
-export default PowerCards;
+export default PowerCards

@@ -110,7 +110,7 @@ $transition-slow: all 500ms ease-in-out;
             transform: translateY(-30%);
             width: 2.6em;
             height: 1.2em;
-            background-image: url("https://cdn.jsdelivr.net/gh/maxkatilius/crocodile/src/assets/images/croc-head-#{$croc-color}.png");
+            background-image: url("https://cdn.jsdelivr.net/gh/maxkatilius/crocodile/public/images/logos/croc-head-#{$croc-color}.png");
             background-size: cover;
             background-repeat: no-repeat;
         }
@@ -188,7 +188,6 @@ header {
             line-height: 1.3em;
             border-top: 2px solid $primary-green;
             border-bottom: 2px solid $primary-green;
-            // border: 1px solid orange;
         }
     }
 }
@@ -333,9 +332,13 @@ header {
 
     a { 
         position: relative;
-        padding-bottom: 0.24em;
+        display: inline flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 0.2em;
         
-        span {
+        .underline {
             position: absolute;
             bottom: 0;
             left: 0;
@@ -345,12 +348,36 @@ header {
             transition: width 0.3s ease;
         }
 
-        &:hover span,
-        &.active span {
+        .cart-img-container {
+            position: relative;
+            width: 1.6em;
+            height: 1.6em;
+            padding: 0 0.2em 1.2em 0;
+
+            img {
+                width: 100%;
+                height: auto;
+            }
+
+            .cart-count {
+                position: absolute;
+                top: -0.7em;
+                right: 0.55em;
+                font-size: 1.1rem;
+                font-weight: bold;
+                color: $primary-white;
+            }
+
+            .underline {
+                bottom: -0.18em;
+            }
+        }
+
+        &:hover .underline,
+        &.active .underline {
             width: 100%;
         }
-    }
-
+    }  
 }
 
 /* Main */
@@ -887,15 +914,7 @@ main.contact-us {
 }
 
 @media only screen and (min-width: 1024px) {
-
-    .home-container {
-        max-width: 34em;
-
-        .subtitle {
-            font-size: 2rem;
-        }
-    }
-
+    
     .desktop__nav {
         font-size: 1rem;
         gap: 1.2rem;
@@ -905,16 +924,24 @@ main.contact-us {
         max-width: 70%;
     }
 
-    .card,
-    .power-card {
-        width: calc(25% - 20px);
-        /* For 4 cards per row */
-    }
-
     footer {
         img {
             width: 8em;
         }
+    }
+
+    .home-container {
+        max-width: 34em;
+
+        .subtitle {
+            font-size: 2rem;
+        }
+    }
+
+    .card,
+    .power-card {
+        width: calc(25% - 20px);
+        /* For 4 cards per row */
     }
 }
 
@@ -994,17 +1021,37 @@ main.contact-us {
 @media only screen and (min-width: 1536px) {
 
     header {
-        padding: 1.3em 2em;
+        padding: 0.6em 2.5em 1.2em 2.5em;
+
+        .header__logo {
+            img {
+                max-width: 9.5em;
+            }
+
+            h1 {
+                font-size: 1.4rem;
+            }
+        }
+
+        .desktop__nav {
+            font-size: 1.3rem;
+            gap: 1.5em;
+            
+            span {
+                height: 3px;
+            }
+        }
     }
 
     footer {
+        padding-top: 2em;
         h4 {
             margin: 1em 0 0 2em;
-            font-size: 1.6rem;
+            font-size: 1.4rem;
         }
 
         img {
-            min-width: 9em;
+            min-width: 8em;
         }
     }
 }
