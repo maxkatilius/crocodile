@@ -23,7 +23,6 @@ h4 {
 
 h2 {
   font-size: 1.65rem;
-  margin-bottom: 0.5em;
 }
 
 h4 {
@@ -54,37 +53,33 @@ a {
 
 /* Header */
 header {
+  display: flex;
+  justify-content: start;
   padding: 0.8em 1.5em;
 }
 header .header__logo {
-  display: inline-block;
   cursor: pointer;
 }
 header .header__logo img {
-  display: block;
-  max-width: 50%;
+  max-width: 12.4em;
 }
 header .header__logo h1 {
-  display: inline-block;
-  margin: 0.2em 0;
   font-size: 1.8rem;
-  text-transform: uppercase;
   letter-spacing: 0.25rem;
-  line-height: 1.4em;
-  color: #07543A;
+  line-height: 1.3em;
   border-top: 2px solid #07543A;
   border-bottom: 2px solid #07543A;
 }
 
-/* Nav */
-.nav {
+/* Mobile Nav */
+.mobile__nav {
   position: absolute;
   top: 2.2em;
   right: 2.4em;
   left: auto;
   transition: right 550ms ease-out 100ms;
 }
-.nav .hamburger-container {
+.mobile__nav .hamburger-container {
   z-index: 1001;
   position: relative;
   display: flex;
@@ -95,37 +90,37 @@ header .header__logo h1 {
   cursor: pointer;
   transition: all 400ms ease-in-out;
 }
-.nav .hamburger-container .hamburger,
-.nav .hamburger-container .hamburger::before,
-.nav .hamburger-container .hamburger::after {
+.mobile__nav .hamburger-container .hamburger,
+.mobile__nav .hamburger-container .hamburger::before,
+.mobile__nav .hamburger-container .hamburger::after {
   height: 0.18em;
   background-color: #07543A;
   border-radius: 1.5em;
 }
-.nav .hamburger-container .hamburger {
+.mobile__nav .hamburger-container .hamburger {
   z-index: 1001;
   width: 100%;
   transition: transform 500ms ease-in-out 50ms, background-color 500ms ease-in-out;
 }
-.nav .hamburger-container .hamburger:before, .nav .hamburger-container .hamburger:after {
+.mobile__nav .hamburger-container .hamburger:before, .mobile__nav .hamburger-container .hamburger:after {
   content: "";
   position: absolute;
   width: 100%;
   opacity: 1;
   transition: transform 500ms ease-in-out 50ms, background-color 500ms ease-in-out 100ms;
 }
-.nav .hamburger-container .hamburger:before {
+.mobile__nav .hamburger-container .hamburger:before {
   top: 1.15em;
 }
-.nav .hamburger-container .hamburger:after {
+.mobile__nav .hamburger-container .hamburger:after {
   bottom: 1.15em;
   transition: all 500ms ease-in-out 200ms;
 }
-.nav__links {
+.mobile__nav__links {
   z-index: 1000;
   position: fixed;
   inset: 0 0 0 25%;
-  padding: 8.4em 2.6em;
+  padding: 7.5em 2.6em;
   font-weight: bold;
   color: #FEFFFE;
   display: flex;
@@ -138,23 +133,22 @@ header .header__logo h1 {
   transition: transform 450ms ease-in 100ms;
   overflow-y: scroll;
 }
-.nav__links a,
-.nav__links .nav__how-to {
+.mobile__nav__links a,
+.mobile__nav__links .mobile__nav__how-to {
   color: #FEFFFE;
   font-size: 1.95rem;
   cursor: pointer;
 }
-.nav__how-to-links {
+.mobile__nav__how-to-links {
   margin-bottom: 1em;
   list-style-type: none;
   margin-top: 1em;
 }
-.nav__how-to-links li {
+.mobile__nav__how-to-links li {
   position: relative;
   padding: 0.8em 0 0 4em;
-  /* This creates space for the bullet image. Adjust as needed based on the image size */
 }
-.nav__how-to-links li::before {
+.mobile__nav__how-to-links li::before {
   content: "";
   position: absolute;
   left: 0;
@@ -162,77 +156,70 @@ header .header__logo h1 {
   transform: translateY(-30%);
   width: 2.6em;
   height: 1.2em;
-  background-image: url("../assets/images/croc-head-white.png");
+  background-image: url("https://cdn.jsdelivr.net/gh/maxkatilius/crocodile/src/assets/images/croc-head-white.png");
   background-size: cover;
   background-repeat: no-repeat;
 }
-.nav__how-to-links a {
+.mobile__nav__how-to-links a {
   font-size: 1rem;
 }
-.nav__how-to-links.closed {
+.mobile__nav__how-to-links.closed {
   display: none;
 }
-.nav__how-to-links li::before {
+.mobile__nav__how-to-links li::before {
   width: 2.2em;
   height: 1.1em;
 }
-.nav.open {
-  right: calc(65% - 3.2em);
-  /* Screen width minus nav width (4em) and its right margin (1.6em) */
+.mobile__nav.open {
+  right: calc(75% - 3.2em - 2em);
 }
-.nav.open .hamburger-container {
-  background-color: hsla(0, 0%, 5%, 0);
-  backdrop-filter: blur(0.4rem);
-}
-.nav.open .hamburger {
+.mobile__nav.open .hamburger {
   background-color: #FEFFFE;
   height: 0.25em;
   transform: rotate(-225deg);
 }
-.nav.open .hamburger:before {
+.mobile__nav.open .hamburger:before {
   background-color: #FEFFFE;
   height: 0.25em;
-  transform: rotate(90deg) translateX(-1em);
+  transform: rotate(90deg) translateX(-1.1em);
 }
-.nav.open .hamburger:after {
+.mobile__nav.open .hamburger:after {
   opacity: 0;
   transition: opacity 400ms ease-in-out;
 }
-.nav.open .nav__links {
+.mobile__nav.open .mobile__nav__links {
   transform: translateX(0%);
   transition: transform 400ms ease-in 100ms;
 }
-.nav.closed .hamburger-container {
+.mobile__nav.closed .hamburger-container {
   transition-delay: 100ms;
 }
 
-ul.croc-ul {
-  margin-bottom: 1em;
-  list-style-type: none;
+/* Desktop Nav */
+.desktop__nav {
+  display: flex;
+  gap: 1em;
 }
-
-li.croc-li {
+.desktop__nav a {
   position: relative;
-  padding: 0.8em 0 0 4em;
-  /* This creates space for the bullet image. Adjust as needed based on the image size */
+  padding-bottom: 0.24em;
 }
-li.croc-li::before {
-  content: "";
+.desktop__nav a span {
   position: absolute;
+  bottom: 0;
   left: 0;
-  top: 50%;
-  transform: translateY(-30%);
-  width: 2.6em;
-  height: 1.2em;
-  background-image: url("../assets/images/croc-head-transparent.png");
-  background-size: cover;
-  background-repeat: no-repeat;
+  height: 2px;
+  width: 0;
+  background-color: white;
+  transition: width 0.3s ease;
+}
+.desktop__nav a:hover span, .desktop__nav a.active span {
+  width: 100%;
 }
 
 /* Main */
 main {
   margin: auto auto;
-  width: 100%;
   padding: 0.4em 2em;
   display: flex;
   flex-direction: column;
@@ -244,19 +231,19 @@ footer {
   justify-content: space-between;
   align-items: center;
   padding: 0.5em 0.2em 0.1em 0.2em;
-  color: #07543A;
 }
 footer h4 {
   margin-top: 2em;
-  margin-left: 1em;
-  font-size: 1.1rem;
+  margin-left: 5%;
+  font-size: 1.2rem;
 }
 footer h4 span {
   letter-spacing: 0.05rem;
 }
 footer img {
-  width: 30%;
-  min-width: 120px;
+  width: 10%;
+  min-width: 8em;
+  max-width: 12em;
 }
 
 /************
@@ -327,11 +314,12 @@ footer img {
 *** Home ***
 ************/
 main.home-container {
-  padding: 0 3em;
+  width: 90%;
+  max-width: 28em;
 }
 main.home-container .subtitle {
   padding: 0.6em 0;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   text-align: center;
   color: #0B6E4F;
 }
@@ -367,6 +355,12 @@ main.home-container .home__links a:hover {
 /************
 *** About ***
 *************/
+.about-container {
+  padding-right: 4em;
+}
+.about-container h2 {
+  padding: 0.6em 0 0.2em 0;
+}
 .about-container p {
   line-height: 1.5rem;
 }
@@ -377,21 +371,20 @@ main.home-container .home__links a:hover {
   gap: 1.1em;
 }
 
-/************
-*** Shop ***
+/*************
+**** Shop ****
 *************/
-.shop-container {
+.shop-container h2 {
+  margin: 0 auto;
+}
+.shop-container .products-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 1.5em;
-  margin-bottom: 1em;
+  margin: 0.6em 0 1em 0;
 }
-.shop-container h2 {
-  margin: 0 auto;
-}
-
-.product__card {
+.shop-container .products-container .product__card {
   display: flex;
   flex-direction: column;
   gap: 0.6em;
@@ -401,7 +394,7 @@ main.home-container .home__links a:hover {
   background-color: rgba(247, 247, 247, 0.9333333333);
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1), -1px -1px 4px rgba(255, 255, 255, 0.3);
 }
-.product__card .image-section {
+.shop-container .products-container .product__card .image-section {
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -410,12 +403,12 @@ main.home-container .home__links a:hover {
   height: 16em;
   overflow: hidden;
 }
-.product__card .image-section .thumbnails {
+.shop-container .products-container .product__card .image-section .thumbnails {
   display: flex;
   flex-direction: column;
   gap: 0.4em;
 }
-.product__card .image-section .thumbnails img {
+.shop-container .products-container .product__card .image-section .thumbnails img {
   width: 2em;
   height: 2em;
   object-fit: cover;
@@ -424,68 +417,68 @@ main.home-container .home__links a:hover {
   cursor: pointer;
   transition: opacity 200 ease-in;
 }
-.product__card .image-section .thumbnails img:hover, .product__card .image-section .thumbnails img.selected {
+.shop-container .products-container .product__card .image-section .thumbnails img:hover, .shop-container .products-container .product__card .image-section .thumbnails img.selected {
   opacity: 100%;
 }
-.product__card .image-section .main-image {
+.shop-container .products-container .product__card .image-section .main-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 1em;
   display: block;
 }
-.product__card .image-section .full-screen-btn {
+.shop-container .products-container .product__card .image-section .full-screen-btn {
   position: absolute;
   bottom: 0.6em;
   right: 0.6em;
 }
-.product__card .image-section .full-screen-btn a {
+.shop-container .products-container .product__card .image-section .full-screen-btn a {
   font-size: 0.8rem;
   color: #07543A;
   transition: all 300ms ease-in-out;
   padding: 0.5em 0.5em 0.2em 0.5em;
   border-radius: 100%;
 }
-.product__card .image-section .full-screen-btn a:hover {
+.shop-container .products-container .product__card .image-section .full-screen-btn a:hover {
   background-color: rgba(0, 0, 0, 0.3);
   font-size: 0.9rem;
 }
-.product__card .color-selector {
+.shop-container .products-container .product__card .color-selector {
   align-self: flex-end;
   display: flex;
   gap: 0.3em;
   margin-right: 0.4em;
 }
-.product__card .color-selector .color-btn {
+.shop-container .products-container .product__card .color-selector .color-btn {
   height: 1.2em;
   width: 1.2em;
   border: 1px solid #e2e2e2;
   border-radius: 100%;
 }
-.product__card .color-selector .color-btn.active {
+.shop-container .products-container .product__card .color-selector .color-btn.active {
   border: 1px solid black;
 }
-.product__card .product__info {
+.shop-container .products-container .product__card .product__info {
   display: flex;
   flex-direction: column;
   gap: 0.4em;
 }
-.product__card .product__info p {
+.shop-container .products-container .product__card .product__info p {
   margin: 0;
 }
-.product__card .product__info .title {
+.shop-container .products-container .product__card .product__info .title {
   font-size: 1.1rem;
   color: #07543A;
 }
-.product__card .product__info .price {
+.shop-container .products-container .product__card .product__info .price {
   font-size: 1.2rem;
   font-weight: bold;
   color: #161925;
 }
-.product__card .product__info .description {
+.shop-container .products-container .product__card .product__info .description {
   font-size: 0.9rem;
 }
-.product__card .add-to-cart-btn {
+.shop-container .products-container .product__card .add-to-cart-btn {
   padding: 0.8em 1.2em;
   background-color: #07543A;
   font-weight: bold;
@@ -500,7 +493,7 @@ main.home-container .home__links a:hover {
   font-weight: normal;
   letter-spacing: 0.05rem;
 }
-.product__card .add-to-cart-btn:hover {
+.shop-container .products-container .product__card .add-to-cart-btn:hover {
   transform: scale(1.05);
   background-color: #0B6E4F;
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2), -2px -2px 5px rgba(255, 255, 255, 0.3);
@@ -588,7 +581,6 @@ main.contact-us form .submit-btn:hover {
 .gameplay-container ul li {
   position: relative;
   padding: 0.8em 0 0 4em;
-  /* This creates space for the bullet image. Adjust as needed based on the image size */
 }
 .gameplay-container ul li::before {
   content: "";
@@ -598,7 +590,7 @@ main.contact-us form .submit-btn:hover {
   transform: translateY(-30%);
   width: 2.6em;
   height: 1.2em;
-  background-image: url("../assets/images/croc-head-green.png");
+  background-image: url("https://cdn.jsdelivr.net/gh/maxkatilius/crocodile/src/assets/images/croc-head-green.png");
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -635,7 +627,6 @@ main.contact-us form .submit-btn:hover {
 .smackdowns-container ul li {
   position: relative;
   padding: 0.8em 0 0 4em;
-  /* This creates space for the bullet image. Adjust as needed based on the image size */
 }
 .smackdowns-container ul li::before {
   content: "";
@@ -645,7 +636,7 @@ main.contact-us form .submit-btn:hover {
   transform: translateY(-30%);
   width: 2.6em;
   height: 1.2em;
-  background-image: url("../assets/images/croc-head-green.png");
+  background-image: url("https://cdn.jsdelivr.net/gh/maxkatilius/crocodile/src/assets/images/croc-head-green.png");
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -726,28 +717,71 @@ main.contact-us form .submit-btn:hover {
 /************************
 ****  Media Queries  ****
 *************************/
+@media only screen and (min-width: 648px) {
+  header {
+    padding: 1em 1.8em;
+  }
+  header .header__logo img {
+    max-width: 14.5em;
+  }
+  header .header__logo h1 {
+    font-size: 2.2rem;
+  }
+  .mobile__nav {
+    top: 2em;
+    right: 3.4em;
+  }
+  .mobile__nav__links {
+    z-index: 1000;
+    position: fixed;
+    inset: 0 0 0 50%;
+  }
+  .mobile__nav.open {
+    right: calc(50% - 3.2em - 2.6em);
+  }
+  footer h4 {
+    margin-top: 1.6em;
+    font-size: 1.5rem;
+  }
+  footer img {
+    min-width: 10em;
+  }
+}
 @media only screen and (min-width: 768px) {
   html {
     font-size: 1.2rem;
   }
-  .site-container {
-    padding: 0.5em 1em;
-  }
   header {
-    height: 20vh;
-    width: 90vw;
+    padding: 1em 1.5em;
+    background-image: linear-gradient(#0B6E4F, #07543A);
+    justify-content: space-between;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1), -1px -1px 4px rgba(255, 255, 255, 0.3);
   }
-  header img {
-    max-width: 60%;
+  header .header__logo img {
+    max-width: 10.3em;
   }
-  header h1 {
-    font-size: 2rem;
+  header .header__logo h1 {
+    font-size: 1.5rem;
+    color: #FEFFFE;
+    border-top: 2px solid #FEFFFE;
+    border-bottom: 2px solid #FEFFFE;
+  }
+  .desktop__nav {
+    align-self: flex-end;
+    font-weight: bold;
+  }
+  .desktop__nav a {
+    color: #FEFFFE;
   }
   main {
     max-width: 65%;
   }
+  footer h4 {
+    margin: 1.2em 0 0 1.4em;
+    font-size: 1.4rem;
+  }
   footer img {
-    width: 20%;
+    min-width: 8em;
   }
   .home-container .subtitle {
     font-size: 1.8rem;
@@ -759,47 +793,33 @@ main.contact-us form .submit-btn:hover {
     /* For 3 cards per row */
   }
 }
+@media only screen and (min-width: 840px) {
+  .desktop__nav {
+    font-size: 1.15rem;
+    gap: 1.3em;
+  }
+}
 @media only screen and (min-width: 1024px) {
   html {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
-  header img {
-    max-width: 80%;
-  }
-  header h1 {
-    font-size: 1.7rem;
+  .desktop__nav {
+    font-size: 1rem;
+    gap: 1.2rem;
   }
   main {
     max-width: 70%;
-  }
-  footer {
-    font-size: 1.4rem;
-    margin-bottom: 1em;
-  }
-  footer img {
-    margin-top: 1em;
-    width: 25%;
   }
   .card,
   .power-card {
     width: calc(25% - 20px);
     /* For 4 cards per row */
   }
+  footer img {
+    width: 8em;
+  }
 }
 @media only screen and (min-width: 1280px) {
-  html {
-    font-size: 2rem;
-  }
-  header {
-    max-height: 10vh;
-    padding: 1em;
-  }
-  header img {
-    max-width: 70%;
-  }
-  header h1 {
-    font-size: 1.3rem;
-  }
   .nav {
     top: 1.5em;
     right: 3em;
@@ -815,16 +835,9 @@ main.contact-us form .submit-btn:hover {
     margin: auto auto;
     /* padding: 0.2em 1.4em; */
   }
-  footer {
-    max-height: 10vh;
-    min-width: 100%;
-  }
   footer h4 {
-    padding: 0;
-    margin-top: 2em;
-  }
-  footer img {
-    width: 12%;
+    margin-top: 1.3em;
+    font-size: 1.5rem;
   }
   .home-container {
     min-width: 50%;
@@ -880,5 +893,14 @@ main.contact-us form .submit-btn:hover {
     margin: auto 0 0 2em;
     height: 4em;
     font-size: 1.1rem;
+  }
+}
+@media only screen and (min-width: 1536px) {
+  footer h4 {
+    margin-top: 1.3em;
+    font-size: 1.6rem;
+  }
+  footer img {
+    min-width: 9em;
   }
 }

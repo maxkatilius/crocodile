@@ -25,7 +25,6 @@ const About = () => {
 				<Link to="/">Home</Link>
 				<Link to="/how-to">How to play</Link>
 				<Link to="/shop">Shop</Link>
-				<Link to="/contact">Contact Us</Link>
 			</div>
 		</main>
 	);

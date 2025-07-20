@@ -30,7 +30,9 @@ const Shop = () => {
 	return (
 		<main className="shop-container">
 			<h2>The Croc Shop</h2>
-			{productEls}
+			<div className="products-container">
+				{productEls}
+			</div>
 		</main>
 	)
 }

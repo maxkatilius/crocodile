@@ -1,54 +1,54 @@
 import { useState } from "react"
-import { NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom"
 
-const Nav = () => {
+const MobileNav = () => {
 	const [navOpen, setNavOpen] = useState(false)
 	const [howToOpen, setHowToOpen] = useState(false)
 	
 
 	const toggleNav = () => {
-		setNavOpen((prevState) => !prevState);
-	};
+		setNavOpen((prevState) => !prevState)
+	}
 
 	const toggleHowTo = () => {
-		setHowToOpen((prevState) => !prevState);
-	};
+		setHowToOpen((prevState) => !prevState)
+	}
 
 	return (
-		<nav className={`nav ${navOpen ? "open" : "closed"}`}>
-			<div className="nav__barrier"></div>
+		<nav className={`mobile__nav ${navOpen ? "open" : "closed"}`}>
+			<div className="mobile__nav__barrier"></div>
 			<div
 				className={`hamburger-container`}
 				onClick={toggleNav}
 			>
 				<div className={`hamburger`}></div>
 			</div>
-			<div className="nav__links">
+			<div className="mobile__nav__links">
 				<NavLink to="/" onClick={() => {
-						toggleNav();
+						toggleNav()
 				}}>
 					Home
 				</NavLink>
 				<NavLink to="/about" onClick={() => {
-						toggleNav();
+						toggleNav()
 				}}>
 					About
 				</NavLink>
 				<NavLink to="/shop" onClick={() => {
-						toggleNav();
+						toggleNav()
 				}}>
 					Shop
 				</NavLink>
 				<div>
-					<h3 className="nav__how-to" onClick={() => {
-						toggleHowTo();
+					<h3 className="mobile__nav__how-to" onClick={() => {
+						toggleHowTo()
 					}}>How to Play
 					</h3>
-					<ul className={`nav__how-to-links ${howToOpen ? "open" : "closed"}`}>
+					<ul className={`mobile__nav__how-to-links ${howToOpen ? "open" : "closed"}`}>
 						<li style={{backgroundColor: "none"}}>
 							<NavLink to="/how-to" onClick={() => {
 								toggleNav()
-								toggleHowTo();
+								toggleHowTo()
 							}}>
 								Aim
 							</NavLink>
@@ -56,7 +56,7 @@ const Nav = () => {
 						<li>
 							<NavLink to="/how-to/setup" onClick={() => {
 								toggleNav()
-								toggleHowTo();
+								toggleHowTo()
 							}}>
 								Setup
 							</NavLink>
@@ -64,7 +64,7 @@ const Nav = () => {
 						<li>
 							<NavLink to="/how-to/gameplay" onClick={() => {
 								toggleNav()
-								toggleHowTo();
+								toggleHowTo()
 							}}>
 								Gameplay
 							</NavLink>
@@ -72,7 +72,7 @@ const Nav = () => {
 						<li>
 							<NavLink to="/how-to/card-values" onClick={() => {
 								toggleNav()
-								toggleHowTo();
+								toggleHowTo()
 							}}>
 								Card
 								Values</NavLink>
@@ -80,7 +80,7 @@ const Nav = () => {
 						<li>
 							<NavLink to="/how-to/calling-croc" onClick={() => {
 								toggleNav()
-								toggleHowTo();
+								toggleHowTo()
 							}}>
 								Calling Croc
 							</NavLink>
@@ -88,7 +88,7 @@ const Nav = () => {
 						<li>
 							<NavLink to="/how-to/smackdowns" onClick={() => {
 								toggleNav()
-								toggleHowTo();
+								toggleHowTo()
 							}}>
 								Smackdowns
 							</NavLink>
@@ -96,7 +96,7 @@ const Nav = () => {
 						<li>
 							<NavLink to="/how-to/power-cards" onClick={() => {
 								toggleNav()
-								toggleHowTo();
+								toggleHowTo()
 							}}>
 								Power Cards
 							</NavLink>
@@ -104,7 +104,7 @@ const Nav = () => {
 						<li>
 							<NavLink to="/how-to/prohibited" onClick={() => {
 								toggleNav()
-								toggleHowTo();
+								toggleHowTo()
 							}}>
 								Prohibited Plays
 							</NavLink>
@@ -112,13 +112,13 @@ const Nav = () => {
 					</ul>
 				</div>
 				<NavLink to="/contact" onClick={() => {
-						toggleNav();
+						toggleNav()
 					}}>
 						Contact us
 				</NavLink>
 			</div>
 		</nav>
-	);
-};
+	)
+}
 
-export default Nav;
+export default MobileNav

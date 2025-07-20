@@ -1,19 +1,33 @@
-import { useNavigate } from "react-router-dom";
-import Nav from "./Nav"
-import crocHeaderImg from "../assets/images/sneaky-croc-2-0B6E4F.jpg";
+import { useState, useEffect } from "react"
+import { useNavigate } from "react-router-dom"
+import MobileNav from "./MobileNav"
+import DesktopNav from "./DesktopNav"
+import crocHeaderImgGreen from "../assets/images/sneaky-croc-2-0B6E4F.jpg"
+import crocHeaderImgWhite from "../assets/images/sneaky-croc-2-white-transparent.png"
+
 
 const Header = () => {
+	const [screenWidth, setScreenWidth] = useState<number>(window.innerWidth)
 	const navigate = useNavigate()
+
+	useEffect(() => {
+		const handleResize = () => setScreenWidth(window.innerWidth)
+		window.addEventListener("resize", handleResize)
+		return () => window.removeEventListener("resize", handleResize)
+	}, [])
 
 	return (
 		<header>
 			<div className="header__logo">
-				<img onClick={()=> navigate("/")} src={crocHeaderImg} />
-				<h1 onClick={()=> navigate("/")}>Crocodile</h1>
+				<img onClick={()=> navigate("/")} src={screenWidth < 768 ? crocHeaderImgGreen : crocHeaderImgWhite} />
+				<h1 onClick={()=> navigate("/")}>CROCODILE</h1>
 			</div>
-			<Nav />
+			{screenWidth < 768 
+			?	<MobileNav />
+			:	<DesktopNav />
+			}
 		</header>
-	);
-};
+	)
+}
 
-export default Header;
+export default Header

@@ -3,46 +3,46 @@
         "title": "Crocodile Cards",
         "price" : 24.95,
         "description": "A complete set of Crocodile playing cards",
-        "displayImage": "/images/products/croc-deck.png",
+        "displayImage": "https://cdn.jsdelivr.net/gh/maxkatilius/crocodile/public/images/products/croc-deck.png",
         "extraImages": [
-            "/images/products/croc-deck.png",
-            "/images/products/croc-deck.png",
-            "/images/products/croc-deck.png"
+            "https://cdn.jsdelivr.net/gh/maxkatilius/crocodile/public/images/products/croc-deck.png",
+            "https://cdn.jsdelivr.net/gh/maxkatilius/crocodile/public/images/products/croc-deck.png",
+            "https://cdn.jsdelivr.net/gh/maxkatilius/crocodile/public/images/products/croc-deck.png"
         ]
     },
     {
         "title": "Crocodile Dealer Token",
         "price" : 9.95,
         "description": "A Crocodile Dealer chip so you can always keep track of whose turn it is to deal, and make sure nobody is hiding from the thieir duty underneath the murky waters",
-        "displayImage": "/images/products/croc-dealer-token.png",
+        "displayImage": "https://cdn.jsdelivr.net/gh/maxkatilius/crocodile/public/images/products/croc-dealer-token.png",
         "extraImages": [
-            "/images/products/croc-dealer-token.png",
-            "/images/products/croc-dealer-token.png",
-            "/images/products/croc-dealer-token.png"
+            "https://cdn.jsdelivr.net/gh/maxkatilius/crocodile/public/images/products/croc-dealer-token.png",
+            "https://cdn.jsdelivr.net/gh/maxkatilius/crocodile/public/images/products/croc-dealer-token.png",
+            "https://cdn.jsdelivr.net/gh/maxkatilius/crocodile/public/images/products/croc-dealer-token.png"
         ]
     },
     {
         "title": "Crocodile Hoodie",
         "price" : 49.95,
         "description": "A stylish Crocodile Hoodie, a signal to potential rivals of the billabong",
-        "displayImage": "/images/products/croc-hoodie-green-front.png",
+        "displayImage": "https://cdn.jsdelivr.net/gh/maxkatilius/crocodile/public/images/products/croc-hoodie-green-front.png",
         "colors": {
             "#07543A": {
                 "images": [
-                    "/images/products/croc-hoodie-green-front.png",
-                    "/images/products/croc-hoodie-green-back.png"
+                    "https://cdn.jsdelivr.net/gh/maxkatilius/crocodile/public/images/products/croc-hoodie-green-front.png",
+                    "https://cdn.jsdelivr.net/gh/maxkatilius/crocodile/public/images/products/croc-hoodie-green-back.png"
                 ]
             },
             "white": {
                 "images": [
-                    "/images/products/croc-hoodie-green-front.png",
-                    "/images/products/croc-hoodie-green-back.png"
+                    "https://cdn.jsdelivr.net/gh/maxkatilius/crocodile/public/images/products/croc-hoodie-white-front.png",
+                    "https://cdn.jsdelivr.net/gh/maxkatilius/crocodile/public/images/products/croc-hoodie-white-back.png"
                 ]
             },
-            "#050505": {
+            "black": {
                 "images": [
-                    "/images/products/croc-hoodie-green-front.png",
-                    "/images/products/croc-hoodie-green-back.png"
+                    "https://cdn.jsdelivr.net/gh/maxkatilius/crocodile/public/images/products/croc-hoodie-black-front.png",
+                    "https://cdn.jsdelivr.net/gh/maxkatilius/crocodile/public/images/products/croc-hoodie-black-back.png"
                 ]
             }
         }
@@ -51,24 +51,24 @@
         "title": "Crocodile T-Shirt",
         "price" : 29.95,
         "description": "A A stylish Crocodile T-shirt, a signal to potential rivals of the billabong",
-        "displayImage": "/images/products/croc-t-shirt-green-front.png",
+        "displayImage": "https://cdn.jsdelivr.net/gh/maxkatilius/crocodile/public/images/products/croc-t-shirt-green-front.png",
         "colors": {
             "#07543A": {
                 "images": [
-                    "/images/products/croc-t-shirt-green-front.png",
-                    "/images/products/croc-t-shirt-green-back.png"
+                    "https://cdn.jsdelivr.net/gh/maxkatilius/crocodile/public/images/products/croc-t-shirt-green-front.png",
+                    "https://cdn.jsdelivr.net/gh/maxkatilius/crocodile/public/images/products/croc-t-shirt-green-back.png"
                 ]
             },
             "white": {
                 "images": [
-                    "/images/products/croc-t-shirt-white-front.png",
-                    "/images/products/croc-t-shirt-white-back.png"
+                    "https://cdn.jsdelivr.net/gh/maxkatilius/crocodile/public/images/products/croc-t-shirt-white-front.png",
+                    "https://cdn.jsdelivr.net/gh/maxkatilius/crocodile/public/images/products/croc-t-shirt-white-back.png"
                 ]
             },
-            "#050505": {
+            "black": {
                 "images": [
-                    "/images/products/croc-hoodie-green-front.png",
-                    "/images/products/croc-hoodie-green-back.png"
+                    "https://cdn.jsdelivr.net/gh/maxkatilius/crocodile/public/images/products/croc-hoodie-green-front.png",
+                    "https://cdn.jsdelivr.net/gh/maxkatilius/crocodile/public/images/products/croc-hoodie-green-back.png"
                 ]
             }
         }
@@ -77,24 +77,24 @@
         "title": "Crocodile Cap",
         "price" : 24.95,
         "description": "A A stylish Crocodile T-shirt, a signal to potential rivals of the billabong",
-        "displayImage": "/images/products/croc-cap-green-front.png",
+        "displayImage": "https://cdn.jsdelivr.net/gh/maxkatilius/crocodile/public/images/products/croc-cap-green-front.png",
         "colors": {
             "#07543A": {
                 "images": [
-                    "/images/products/croc-cap-green-front.png",
-                    "/images/products/croc-cap-green-back.png"
+                    "https://cdn.jsdelivr.net/gh/maxkatilius/crocodile/public/images/products/croc-cap-green-front.png",
+                    "https://cdn.jsdelivr.net/gh/maxkatilius/crocodile/public/images/products/croc-cap-green-back.png"
                 ]
             },
             "white": {
                 "images": [
-                    "/images/products/croc-cap-green-front.png",
-                    "/images/products/croc-cap-green-back.png"
+                    "https://cdn.jsdelivr.net/gh/maxkatilius/crocodile/public/images/products/croc-cap-white-front.png",
+                    "https://cdn.jsdelivr.net/gh/maxkatilius/crocodile/public/images/products/croc-cap-white-back.png"
                 ]
             },
-            "#050505": {
+            "black": {
                 "images": [
-                    "/images/products/croc-cap-green-front.png",
-                    "/images/products/croc-cap-green-back.png"
+                    "https://cdn.jsdelivr.net/gh/maxkatilius/crocodile/public/images/products/croc-cap-black-front.png",
+                    "https://cdn.jsdelivr.net/gh/maxkatilius/crocodile/public/images/products/croc-cap-black-back.png"
                 ]
             }
         }
@@ -103,24 +103,24 @@
         "title": "Crocodile Beanie",
         "price" : 24.95,
         "description": "A A stylish Crocodile T-shirt, a signal to potential rivals of the billabong",
-        "displayImage": "/images/products/croc-beanie-green-front.png",
+        "displayImage": "https://cdn.jsdelivr.net/gh/maxkatilius/crocodile/public/images/products/croc-beanie-green-front.png",
         "colors": {
             "#07543A": {
                 "images": [
-                    "/images/products/croc-beanie-green-front.png",
-                    "/images/products/croc-beanie-green-front.png"
+                    "https://cdn.jsdelivr.net/gh/maxkatilius/crocodile/public/images/products/croc-beanie-green-front.png",
+                    "https://cdn.jsdelivr.net/gh/maxkatilius/crocodile/public/images/products/croc-beanie-green-back.png"
                 ]
             },
             "white": {
                 "images": [
-                    "/images/products/croc-beanie-green-front.png",
-                    "/images/products/croc-beanie-green-front.png"
+                    "https://cdn.jsdelivr.net/gh/maxkatilius/crocodile/public/images/products/croc-beanie-white-front.png",
+                    "https://cdn.jsdelivr.net/gh/maxkatilius/crocodile/public/images/products/croc-beanie-white-back.png"
                 ]
             },
-            "#050505": {
+            "black": {
                 "images": [
-                    "/images/products/croc-beanie-green-front.png",
-                    "/images/products/croc-cap-green-back.png"
+                    "https://cdn.jsdelivr.net/gh/maxkatilius/crocodile/public/images/products/croc-beanie-black-front.png",
+                    "https://cdn.jsdelivr.net/gh/maxkatilius/crocodile/public/images/products/croc-beanie-black-back.png"
                 ]
             }
         }

@@ -1,4 +1,3 @@
-// import React from "react";
 import crocFooterImg from "../assets/images/sneaky-croc-0B6E4F-mirror.png";
 
 const Footer = () => {
