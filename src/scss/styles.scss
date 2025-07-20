@@ -415,7 +415,7 @@ footer {
 /***********
 *** Home ***
 ************/
-main.home-container {
+.home-container {
     width:90%;
     max-width: 28em;
 
@@ -787,20 +787,6 @@ main.contact-us {
 
 @media only screen and (min-width: 648px) {
 
-    header {
-        padding: 1em 1.8em;
-
-        .header__logo {
-            img {
-                max-width: 14.5em;
-            }
-
-            h1 {
-                font-size: 2.2rem;
-            }
-        }
-    }
-
     .mobile__nav {
 
         top: 2em;
@@ -902,8 +888,12 @@ main.contact-us {
 
 @media only screen and (min-width: 1024px) {
 
-    html {
-        font-size: 1.6rem;
+    .home-container {
+        max-width: 34em;
+
+        .subtitle {
+            font-size: 2rem;
+        }
     }
 
     .desktop__nav {
@@ -930,35 +920,11 @@ main.contact-us {
 
 @media only screen and (min-width: 1280px) {
     
-    .nav {
-        top: 1.5em;
-        right: 3em;
-        
-        .nav__links,
-        .nav__how-to {
-            gap: 2em;
-            font-weight: lighter;
-        }
-    }
-    
-    main {
-        max-height: 60vh;
-        font-size: 0.8rem;
-        margin: auto auto;
-        /* padding: 0.2em 1.4em; */
-    }
-    
     footer {
         h4 {
             margin-top: 1.3em;
             font-size: 1.5rem;
         }
-    }
-    
-    .home-container {
-        min-width: 50%;
-        padding: 2em 12em;
-        overflow-y: hidden;
     }
 
     .aim-container {
@@ -1027,9 +993,13 @@ main.contact-us {
 
 @media only screen and (min-width: 1536px) {
 
+    header {
+        padding: 1.3em 2em;
+    }
+
     footer {
         h4 {
-            margin-top: 1.3em;
+            margin: 1em 0 0 2em;
             font-size: 1.6rem;
         }
 

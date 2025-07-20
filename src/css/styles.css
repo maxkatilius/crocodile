@@ -313,25 +313,25 @@ footer img {
 /***********
 *** Home ***
 ************/
-main.home-container {
+.home-container {
   width: 90%;
   max-width: 28em;
 }
-main.home-container .subtitle {
+.home-container .subtitle {
   padding: 0.6em 0;
   font-size: 1.6rem;
   text-align: center;
   color: #0B6E4F;
 }
-main.home-container .tagline {
+.home-container .tagline {
   margin-bottom: 2em;
 }
-main.home-container .home__links {
+.home-container .home__links {
   display: flex;
   flex-direction: column;
   gap: 1em;
 }
-main.home-container .home__links a {
+.home-container .home__links a {
   padding: 0.8em 1.2em;
   background-color: #07543A;
   font-weight: bold;
@@ -346,7 +346,7 @@ main.home-container .home__links a {
   justify-content: center;
   padding: 0.8em 1.4em;
 }
-main.home-container .home__links a:hover {
+.home-container .home__links a:hover {
   transform: scale(1.1);
   background-color: #0B6E4F;
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2), -2px -2px 5px rgba(255, 255, 255, 0.3);
@@ -718,15 +718,6 @@ main.contact-us form .submit-btn:hover {
 ****  Media Queries  ****
 *************************/
 @media only screen and (min-width: 648px) {
-  header {
-    padding: 1em 1.8em;
-  }
-  header .header__logo img {
-    max-width: 14.5em;
-  }
-  header .header__logo h1 {
-    font-size: 2.2rem;
-  }
   .mobile__nav {
     top: 2em;
     right: 3.4em;
@@ -800,8 +791,11 @@ main.contact-us form .submit-btn:hover {
   }
 }
 @media only screen and (min-width: 1024px) {
-  html {
-    font-size: 1.6rem;
+  .home-container {
+    max-width: 34em;
+  }
+  .home-container .subtitle {
+    font-size: 2rem;
   }
   .desktop__nav {
     font-size: 1rem;
@@ -820,29 +814,9 @@ main.contact-us form .submit-btn:hover {
   }
 }
 @media only screen and (min-width: 1280px) {
-  .nav {
-    top: 1.5em;
-    right: 3em;
-  }
-  .nav .nav__links,
-  .nav .nav__how-to {
-    gap: 2em;
-    font-weight: lighter;
-  }
-  main {
-    max-height: 60vh;
-    font-size: 0.8rem;
-    margin: auto auto;
-    /* padding: 0.2em 1.4em; */
-  }
   footer h4 {
     margin-top: 1.3em;
     font-size: 1.5rem;
-  }
-  .home-container {
-    min-width: 50%;
-    padding: 2em 12em;
-    overflow-y: hidden;
   }
   .aim-container {
     text-align: center;
@@ -896,8 +870,11 @@ main.contact-us form .submit-btn:hover {
   }
 }
 @media only screen and (min-width: 1536px) {
+  header {
+    padding: 1.3em 2em;
+  }
   footer h4 {
-    margin-top: 1.3em;
+    margin: 1em 0 0 2em;
     font-size: 1.6rem;
   }
   footer img {

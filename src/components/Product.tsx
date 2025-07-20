@@ -61,7 +61,7 @@ const Product = ({ product }: Props) => {
         )}
         <img src={selectedImage} alt={title} className="main-image" />
         <div className='full-screen-btn'>
-          <a target='_blank' href={displayImage}><ImEnlarge2 /></a>
+          <a target='_blank' href={selectedImage}><ImEnlarge2 /></a>
         </div>
       </div>
       {colors && (
