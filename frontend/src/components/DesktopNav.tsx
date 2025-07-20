@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { NavLink } from "react-router-dom"
-import CartImg from "../assets/images/cart.png"
+import CartImg from "https://cdn.jsdelivr.net/gh/maxkatilius/crocodile/public/images/cart.png"
 
 const DesktopNav = () => {
 
