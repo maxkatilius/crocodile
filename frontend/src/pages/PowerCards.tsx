@@ -1,8 +1,8 @@
 import { Link, useNavigate, useLocation } from "react-router-dom"
-import SevenOfClubs from "https://cdn.jsdelivr.net/gh/maxkatilius/crocodile@main/public/images/card_images/7_of_clubs.png"
-import EightOfDiamonds from "https://cdn.jsdelivr.net/gh/maxkatilius/crocodile@main/public/images/card_images/8_of_diamonds.png"
-import NineOfSpades from "https://cdn.jsdelivr.net/gh/maxkatilius/crocodile@main/public/images/card_images/9_of_spades.png"
-import TenOfHearts from "https://cdn.jsdelivr.net/gh/maxkatilius/crocodile@main/public/images/card_images/10_of_hearts.png"
+import SevenOfClubs from "https://cdn.jsdelivr.net/gh/maxkatilius/crocodile/src/assets/images/card_images/7_of_clubs.png"
+import EightOfDiamonds from "https://cdn.jsdelivr.net/gh/maxkatilius/crocodile/src/assets/images/card_images/8_of_diamonds.png"
+import NineOfSpades from "https://cdn.jsdelivr.net/gh/maxkatilius/crocodile/src/assets/images/card_images/9_of_spades.png"
+import TenOfHearts from "https://cdn.jsdelivr.net/gh/maxkatilius/crocodile/src/assets/images/card_images/10_of_hearts.png"
 
 const PowerCards = () => {
 	const navigate = useNavigate()

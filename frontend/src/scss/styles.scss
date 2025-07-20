@@ -110,7 +110,7 @@ $transition-slow: all 500ms ease-in-out;
             transform: translateY(-30%);
             width: 2.6em;
             height: 1.2em;
-            background-image: url("https://cdn.jsdelivr.net/gh/maxkatilius/crocodile/public/images/logos/croc-head-#{$croc-color}.png");
+            background-image: url("https://cdn.jsdelivr.net/gh/maxkatilius/crocodile/src/assets/images/logos/croc-head-#{$croc-color}.png");
             background-size: cover;
             background-repeat: no-repeat;
         }
