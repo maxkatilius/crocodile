@@ -32,6 +32,20 @@ app.post('/api/contact', async (req, res) => {
   }
 });
 
+app.post('/api/cart-checkout', async (req, res) => {
+  const { cart } = req.body;
+  try {
+    const result = await pool.query(
+      'INSERT INTO contact_messages (name, email, message) VALUES ($1, $2, $3) RETURNING *',
+      [name, email, message]
+    );
+    res.status(201).json({ message: 'Message received', data: result.rows[0] });
+  } catch (err) {
+    console.error('Error inserting message:', err);
+    res.status(500).json({ error: 'Database insert failed' });
+  }
+});
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`✅ Server running at http://localhost:${PORT}`);

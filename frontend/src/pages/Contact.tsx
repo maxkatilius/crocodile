@@ -1,25 +1,26 @@
 import React from "react"
 
 const Contact = () => {
-	const [userName, setUserName] = React.useState("")
-	const [userEmail, setUserEmail] = React.useState("")
-	const [userMessage, setUserMessage] = React.useState("")
+	const [name, setName] = React.useState("")
+	const [email, setEmail] = React.useState("")
+	const [message, setMessage] = React.useState("")
 
 
 	const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
-        setUserName(e.target.value)
+        setName(e.target.value)
     }
 
     const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
-        setUserEmail(e.target.value)
+        setEmail(e.target.value)
     }
 
     const handleMessageChange = (e: React.ChangeEvent<HTMLTextAreaElement>): void => {
-        setUserMessage(e.target.value)
+        setMessage(e.target.value)
     }
 
 
 	const handleSubmit = async (e: React.FormEvent) : Promise<void> => {
+		console.log( name, email, message)
     	e.preventDefault()
 		try {
 			const response = await fetch('http://localhost:5000/api/contact', {
@@ -27,7 +28,7 @@ const Contact = () => {
 			headers: {
 				'Content-Type': 'application/json',
 			},
-				body: JSON.stringify({ userName, userEmail, userMessage }),
+				body: JSON.stringify({ name, email, message }),
 			})
 			const data = await response.json()
 
@@ -41,9 +42,9 @@ const Contact = () => {
 			alert('Error submitting form')
 		}
 
-		setUserName("")
-		setUserEmail("")
-		setUserMessage("")
+		setName("")
+		setEmail("")
+		setMessage("")
 	}
 
     return (
@@ -54,21 +55,21 @@ const Contact = () => {
 				<div className="form-inputs">
 					<input type="text" 
 						placeholder="Name *" 
-						value={userName}
+						value={name}
 						required 
 						onChange={(e)=> {
 						handleNameChange(e)
 					}}/>
 					<input type="email" 
 						placeholder="Email *" 
-						value={userEmail} 
+						value={email} 
 						required 
 						onChange={(e)=> {
 						handleEmailChange(e)
 					}}/>
 					<textarea 
 						placeholder="Message *" 
-						value={userMessage} 
+						value={message} 
 						required 
 						onChange={(e)=> {
 						handleMessageChange(e)

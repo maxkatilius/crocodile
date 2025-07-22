@@ -18,12 +18,59 @@ type Props = {
   product: ProductType
 }
 
+type CartItem = {
+  title: string
+  qty: number,
+  price: number,
+  imgUrl: string,
+  selectedColor?: string,
+  description: string
+}
+
 const Product = ({ product }: Props) => {
 
-  const { title, price, description, displayImage, extraImages, colors } = product;
+  const { title, price, description, displayImage, extraImages, colors } = product
 
-  const [selectedColor, setSelectedColor] = useState<string | null>(null);
-  const [selectedImage, setSelectedImage] = useState<string>(displayImage);
+  const [selectedColor, setSelectedColor] = useState<string | null>(null)
+  const [selectedImage, setSelectedImage] = useState<string>(displayImage)
+
+  const handleAddToCart = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault()
+    console.log(e)
+    // retrieve cart from local storage
+    const cart: CartItem[] = JSON.parse(localStorage.getItem("cart") ?? "[]")
+    console.log(cart)
+    // Check if the item already exists in the user's cart 
+    const existingItem = cart.find(item => 
+      item.title === title && (selectedColor ? item.selectedColor === selectedColor : !item.selectedColor)
+    )
+
+    let updatedCart: CartItem[];
+    // If item exists increment the quantity
+    if (existingItem) {
+      updatedCart = cart.map(item =>
+        item.title === title &&
+        (selectedColor ? item.selectedColor === selectedColor : !item.selectedColor)
+        ? { ...item, qty: item.qty + 1 }
+        : item
+      )
+    } else {
+      // Add a new item
+      const newItem: CartItem = {
+        title,
+        qty: 1,
+        price,
+        imgUrl: selectedImage,
+        description,
+        ...(selectedColor && { selectedColor })
+      }
+      
+      updatedCart = [...cart, newItem]
+    }
+
+    localStorage.setItem("cart", JSON.stringify(updatedCart))
+    console.log("Updated cart: ", updatedCart)
+  }
 
   useEffect(() => {
     if (colors) {
@@ -81,7 +128,12 @@ const Product = ({ product }: Props) => {
         <p className='price'>${price}</p>
         <p className='description'>{description}</p>
       </div>
-      <button className='add-to-cart-btn'>Add to cart</button>
+      <button 
+        className='add-to-cart-btn'
+        onClick={handleAddToCart}
+      >
+          Add to cart
+        </button>
     </div>
   )
 }

@@ -164,7 +164,6 @@ a {
 .site-container {
     min-height: 100dvh;
     min-width: 100dvw;
-    position: relative;
     @include flex-col;
     justify-content: space-between;
 }
@@ -172,6 +171,7 @@ a {
 /* Header */
 header {
     display: flex;
+    position: relative;
     justify-content: start;
     padding: 0.8em 1.5em;
     
@@ -195,10 +195,39 @@ header {
 /* Mobile Nav */
 .mobile__nav {
     position: absolute;
-    top: 2.2em;
-    right: 2.4em;
+    bottom: 0.5em;
+    right: 2em;
     left: auto;
     transition: right 550ms ease-out 100ms;
+
+    a {
+        .mobile__nav-cart-img-container {
+            position: absolute;
+            width: 2em;
+            height: 2em;
+            right: 0.65em;
+            bottom: 4.2em;
+            transition: opacity 300ms ease-in 600ms;
+
+            img {
+                width: 100%;
+                height: auto;
+            }
+
+            .cart-count {
+                position: absolute;
+                bottom: 0.65em;
+                right: 0.28em;
+                font-size: 1.6rem;
+                font-weight: bold;
+                color: $primary-green;
+            }
+
+            .underline {
+                bottom: -0.18em;
+            }
+        }
+    }
 
     .hamburger-container {
         z-index: 1001;
@@ -207,7 +236,7 @@ header {
         justify-content: center;
         align-items: center;
         height: 4.6em;
-        width: 3.2em;
+        width: 3em;
         cursor: pointer;
         transition: all 400ms ease-in-out;
     
@@ -248,7 +277,7 @@ header {
         z-index: 1000;
         position: fixed;
         inset: 0 0 0 25%;
-        padding: 7.5em 2.6em;
+        padding: 9em 2.6em;
         font-weight: bold;
         color: $primary-white;
 
@@ -295,6 +324,12 @@ header {
     &.open {
         right: calc(75% - 3.2em - 2em); // inset - hamburger-container width - nav__links padding
 
+        a {
+                .mobile__nav-cart-img-container {
+                    opacity: 0;
+                    transition: opacity 100ms ease-in-out;
+                }
+        }
         .hamburger {
             background-color: $primary-white;
             height: 0.25em;
@@ -500,9 +535,11 @@ footer {
 **** Shop ****
 *************/
 .shop-container {
+
+    // border-top: 2px solid $primary-green;
     
     h2 {
-        margin: 0 auto;
+        margin: 0.6em auto 0.5em auto;
     }
     
     .products-container {
@@ -918,6 +955,16 @@ main.contact-us {
     .desktop__nav {
         font-size: 1rem;
         gap: 1.2rem;
+
+        a {
+            .cart-img-container {
+                .cart-count {
+                    font-size: 0.95rem;
+                    top: -0.7em;
+                    right: 0.57em;
+                }
+            }
+        }
     }
 
     main {

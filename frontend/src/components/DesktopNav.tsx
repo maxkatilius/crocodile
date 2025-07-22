@@ -1,10 +1,9 @@
-import { useState } from "react"
 import { NavLink } from "react-router-dom"
-import CartImg from "../assets/images/cart.png"
+import CartImg from "../assets/images/cart-white.png"
 
 const DesktopNav = () => {
 
-    const [cartCount, setCartCount ] = useState<number>(3)
+    const cartCount = JSON.parse(localStorage.getItem("cart") ?? "[]").length
 
     return (
         <nav className="desktop__nav">

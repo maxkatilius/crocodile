@@ -1,10 +1,12 @@
 import { useState } from "react"
 import { NavLink } from "react-router-dom"
+import CartImg from "../assets/images/cart-green.png"
 
 const MobileNav = () => {
 	const [navOpen, setNavOpen] = useState(false)
 	const [howToOpen, setHowToOpen] = useState(false)
 	
+	const cartCount = JSON.parse(localStorage.getItem("cart") ?? "[]").length
 
 	const toggleNav = () => {
 		setNavOpen((prevState) => !prevState)
@@ -16,6 +18,13 @@ const MobileNav = () => {
 
 	return (
 		<nav className={`mobile__nav ${navOpen ? "open" : "closed"}`}>
+			<NavLink to="/cart" className={({ isActive }) => isActive ? "active" : ""}>
+				<span className="mobile__nav-cart-img-container">
+					<img src={CartImg} />
+					<span className="cart-count">{cartCount}</span>
+					<span className="underline"></span>
+				</span>
+			</NavLink>
 			<div className="mobile__nav__barrier"></div>
 			<div
 				className={`hamburger-container`}
