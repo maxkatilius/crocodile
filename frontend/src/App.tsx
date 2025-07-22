@@ -5,6 +5,7 @@ import Home from "./pages/Home"
 import About from "./pages/About"
 import Shop from "./pages/Shop"
 import Cart from "./pages/Cart"
+import Checkout from "./pages/Checkout"
 import Contact from "./pages/Contact"
 import HowTo from "./components/HowTo"
 import Aim from "./pages/Aim"
@@ -20,7 +21,6 @@ const App = () => {
 	
 	useEffect(() => {
 		const existingCart = localStorage.getItem("cart")
-
 		if (existingCart === null) {
 			localStorage.setItem("cart", JSON.stringify([]))
 		}
@@ -33,7 +33,9 @@ const App = () => {
 						<Route index element={<Home />} />
 						<Route path="about" element={<About />} />
 						<Route path="shop" element={<Shop />} />
-						<Route path="cart" element={<Cart />} />
+						<Route path="cart" element={<Cart />}>
+							<Route path ="checkout" element={<Checkout />} />
+						</Route>
 						<Route path="contact" element={<Contact />} />
 						<Route path="how-to" element={<HowTo />}>
 							<Route index element={<Aim />} />

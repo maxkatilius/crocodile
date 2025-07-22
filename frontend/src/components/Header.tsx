@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { useNavigate, NavLink } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import MobileNav from "./MobileNav"
 import DesktopNav from "./DesktopNav"
 import crocHeaderImgGreen from "../assets/images/logos/sneaky-croc-2-0B6E4F.jpg"
