@@ -9,7 +9,7 @@ const cors = require('cors')
 app.use(cors({
   origin: [
     "http://localhost:5173",  // local dev
-    "https://crocodile-sigma.vercel.app", // deployed frontend
+    "https://crocodile-mk.vercel.app", // deployed frontend
   ],
   credentials: true,
 }))
