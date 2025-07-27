@@ -7,7 +7,8 @@ app.use(express.json())
 
 const cors = require('cors')
 app.use(cors({
-  origin: process.env.API_BASE_URL,
+  origin:[ process.env.API_BASE_URL, 'http://localhost:5173'],
+  credentials: true,
 }))
 
 // Routes
