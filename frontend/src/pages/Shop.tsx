@@ -17,7 +17,11 @@ const Shop = () => {
 
 	useEffect(() => {
 		fetchProducts()
-			.then(res => setProducts(res.data))
+			.then(res => {
+				if (res) {
+					setProducts(res.data)
+				}
+			})
 			.catch(err => console.error(err))
 	}, [])
 

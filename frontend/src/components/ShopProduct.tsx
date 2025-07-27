@@ -86,13 +86,15 @@ const ShopProduct = ({ product }: Props) => {
   useEffect(() => {
     fetchProductData(id.toString())
     .then(res => {
-      const product = res.data as ProductDetailsType
-      setColors(product.colors ?? [])
-      setSizes(product.sizes ?? [])
-      setImages(product.images ?? [])
-    })
-  }, [])
-
+      if (res) {
+        const product = res.data as ProductDetailsType
+        setColors(product.colors ?? [])
+        setSizes(product.sizes ?? [])
+        setImages(product.images ?? [])
+      }
+      })
+    }, [])
+    
   useEffect(() => {
     if (colors.length > 0) {
       setSelectedColor(colors[0])

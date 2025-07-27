@@ -7,7 +7,7 @@ app.use(express.json())
 
 const cors = require('cors')
 app.use(cors({
-  origin: process.env.PG_BASE_API_URL,
+  origin: process.env.BASE_API_URL,
 }))
 
 // Routes
