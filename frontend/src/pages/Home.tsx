@@ -9,7 +9,7 @@ const Home = () => {
 				in this game of skill, speed, suspense, memory, mischief, and
 				yes, some barrel-rolling fun!
 			</p>
-			<div className="home__links">
+			<div className="home-links">
 				<Link to="/how-to">How to play</Link>
 				<Link to="/about">About</Link>
 				<Link to="/shop">Shop</Link>

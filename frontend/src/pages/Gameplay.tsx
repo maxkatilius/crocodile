@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 const Gameplay = () => {
 	const navigate = useNavigate();
 	return (
-		<main className="gameplay-container">
+		<div className="gameplay-container">
 			<h2>Playing the game</h2>
 			<p>
 				The player to the dealer's left kicks off the game. They have
@@ -68,7 +68,7 @@ const Gameplay = () => {
 					<span className="arrow right" />
 				</Link>
 			</div>
-		</main>
+		</div>
 	);
 };
 

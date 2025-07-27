@@ -1,12 +1,15 @@
-import { useState } from "react"
+import { useState, useContext } from "react"
+import CartContext from "../context/CartContext"
 import { NavLink } from "react-router-dom"
 import CartImg from "../assets/images/cart-green.png"
 
 const MobileNav = () => {
 	const [navOpen, setNavOpen] = useState(false)
 	const [howToOpen, setHowToOpen] = useState(false)
-	
-	const cartCount = JSON.parse(localStorage.getItem("cart") ?? "[]").length
+
+	const context = useContext(CartContext)
+	if (!context) throw new Error("CartContext must be used within a CartProvider")
+	const { cartCount } = context
 
 	const toggleNav = () => {
 		setNavOpen((prevState) => !prevState)
@@ -17,22 +20,22 @@ const MobileNav = () => {
 	}
 
 	return (
-		<nav className={`mobile__nav ${navOpen ? "open" : "closed"}`}>
+		<nav className={`mobile-nav ${navOpen ? "open" : "closed"}`}>
 			<NavLink to="/cart" className={({ isActive }) => isActive ? "active" : ""}>
-				<span className="mobile__nav-cart-img-container">
+				<span className="mobile-nav-cart-img-container">
 					<img src={CartImg} />
-					<span className="cart-count">{cartCount}</span>
+					<span className="cart-count">{cartCount > 0 ? cartCount : ""}</span>
 					<span className="underline"></span>
 				</span>
 			</NavLink>
-			<div className="mobile__nav__barrier"></div>
+			<div className="mobile-nav-barrier"></div>
 			<div
 				className={`hamburger-container`}
 				onClick={toggleNav}
 			>
 				<div className={`hamburger`}></div>
 			</div>
-			<div className="mobile__nav__links">
+			<div className="mobile-nav-links">
 				<NavLink to="/" onClick={() => {
 						toggleNav()
 				}}>
@@ -49,11 +52,11 @@ const MobileNav = () => {
 					Shop
 				</NavLink>
 				<div>
-					<h3 className="mobile__nav__how-to" onClick={() => {
+					<h3 className="mobile-nav-how-to" onClick={() => {
 						toggleHowTo()
 					}}>How to Play
 					</h3>
-					<ul className={`mobile__nav__how-to-links ${howToOpen ? "open" : "closed"}`}>
+					<ul className={`mobile-nav-how-to-links ${howToOpen ? "open" : "closed"}`}>
 						<li style={{backgroundColor: "none"}}>
 							<NavLink to="/how-to" onClick={() => {
 								toggleNav()

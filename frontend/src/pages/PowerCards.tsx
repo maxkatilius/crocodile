@@ -18,7 +18,7 @@ const PowerCards = () => {
 			: "Prohibited Plays"
 
 	return (
-		<main className="power-cards-container">
+		<div className="power-cards-container">
 			<h2>Power cards</h2>
 			<p>
 				Use power cards by playing them directly onto the discard pile
@@ -80,7 +80,7 @@ const PowerCards = () => {
 					<span className="arrow right" />
 				</Link>
 			</div>
-		</main>
+		</div>
 	)
 }
 

@@ -1,9 +1,9 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom"
 
 const CallingCroc = () => {
-	const navigate = useNavigate();
+	const navigate = useNavigate()
 	return (
-		<main className="calling-croc-container">
+		<div className="calling-croc-container">
 			<h2>Ending the game: 'Crocodile!'</h2>
 			<p>
 				Think you're winning? Call 'Crocodile' or more casually, 'Croc'
@@ -35,7 +35,7 @@ const CallingCroc = () => {
 					<span className="arrow right" />
 				</Link>
 			</div>
-		</main>
+		</div>
 	);
 };
 

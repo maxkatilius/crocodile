@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 const Prohibited = () => {
 	const navigate = useNavigate();
 	return (
-		<main className="prohibited-plays-container">
+		<div className="prohibited-container">
 			<h2>Prohibited Plays</h2>
 			<h4>The Clarkey Two-Hand</h4>
 			<p>
@@ -37,7 +37,7 @@ const Prohibited = () => {
 					<span className="button-text">Home</span>
 				</Link>
 			</div>
-		</main>
+		</div>
 	);
 };
 

@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 const Smackdowns = () => {
 	const navigate = useNavigate();
 	return (
-		<main className="smackdowns-container">
+		<div className="smackdowns-container">
 			<h2>Smackdowns</h2>
 			<h4>The Basics</h4>
 			<p>
@@ -84,7 +84,7 @@ const Smackdowns = () => {
 					<span className="arrow right" />
 				</Link>
 			</div>
-		</main>
+		</div>
 	);
 };
 

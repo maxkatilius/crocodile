@@ -23,11 +23,11 @@ const Contact = () => {
 		console.log( name, email, message)
     	e.preventDefault()
 		try {
-			const response = await fetch('http://localhost:5000/api/contact', {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json',
-			},
+			const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/contact`, {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
 				body: JSON.stringify({ name, email, message }),
 			})
 			const data = await response.json()
@@ -48,7 +48,7 @@ const Contact = () => {
 	}
 
     return (
-        <main className="contact-us">
+        <main className="contact-us-container">
             <h1>Contact Us</h1>
             <p>Have any questions? Suggestions? Feedback? <br />Let us know!</p>
             <form onSubmit={(e) => handleSubmit(e)}>

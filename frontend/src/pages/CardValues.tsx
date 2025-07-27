@@ -10,7 +10,7 @@ const CardValues = () => {
 	const navigate = useNavigate();
 
 	return (
-		<main className="card-values-container">
+		<div className="card-values-container">
 			<h2> Card Values</h2>
 			<div className="cards">
 				<div className="card">
@@ -70,7 +70,7 @@ const CardValues = () => {
 					</Link>
 				</div>
 			</div>
-		</main>
+		</div>
 	);
 };
 

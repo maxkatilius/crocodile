@@ -1,30 +1,35 @@
-import productsData from "../data/products.json";
-import Product from "../components/Product"
+import { useState, useEffect } from "react"
+import { Link } from "react-router-dom"
+import ShopProduct from "../components/ShopProduct"
+import { fetchProducts } from "../utils"
 
 type ProductType = {
+	id: number
 	title: string
 	price: number
 	description: string
 	displayImage: string
-	extraImages?: string[]
-	colors?: {
-		[color: string]: {
-			images: string[]
-		}
-  }
 }
-
-const products = productsData as ProductType[];
 
 const Shop = () => {
 
-	const productEls = products.map((product, idx) => {
-		return (
-			<Product 
-				key={idx} 
-				product={product}
-			/>
-		)
+	const [products, setProducts] = useState<ProductType[] | null>(null)
+
+	useEffect(() => {
+		fetchProducts()
+			.then(res => setProducts(res.data))
+			.catch(err => console.error(err))
+	}, [])
+
+	const productEls = products
+		?.sort((a, b) => a.id - b.id)
+		.map((product, idx) => {
+			return (
+				<ShopProduct 
+					key={idx} 
+					product={product}
+				/>
+			)
 	})
 
 	return (
@@ -33,6 +38,10 @@ const Shop = () => {
 			<div className="products-container">
 				{productEls}
 			</div>
+			<Link to="/cart" className="go-to-cart-btn">
+				<span className="button-text">Your Shopping Cart</span>
+				<span className="arrow right" />
+			</Link>
 		</main>
 	)
 }
