@@ -7,7 +7,10 @@ app.use(express.json())
 
 const cors = require('cors')
 app.use(cors({
-  origin:[ process.env.API_BASE_URL, 'http://localhost:5173'],
+  origin: [
+    "http://localhost:5173",  // local dev
+    "https://crocodile-sigma.vercel.app", // deployed frontend
+  ],
   credentials: true,
 }))
 
