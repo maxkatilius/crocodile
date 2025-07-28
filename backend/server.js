@@ -6,11 +6,20 @@ const app = express()
 app.use(express.json())
 
 const cors = require('cors')
+const allowedOrigins = [
+  "http://localhost:5174", // local host for testing
+  "https://crocodile-mk.vercel.app", // deployed frontend
+]
+
 app.use(cors({
-  origin: [
-    "http://localhost:5174",  // local dev
-    "https://crocodile-mk.vercel.app", // deployed frontend
-  ],
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true)
+    } else {
+      console.log("❌ CORS blocked origin:", origin)
+      callback(new Error("Not allowed by CORS"))
+    }
+  },
   credentials: true,
 }))
 
@@ -20,7 +29,7 @@ app.use("/api/contact", require("./routes/contact"))
 app.use("/api/customer", require("./routes/customer"))
 app.use("/api/order", require("./routes/order"))
 app.get("/", (req, res) => {
-  res.send("✅ Backend is running");
+  res.send("✅ Backend is running")
 })
 
 const PORT = process.env.PORT || 5000
