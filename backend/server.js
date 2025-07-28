@@ -11,8 +11,8 @@ app.use(cors({
     "*"
     // "http://localhost:5173",  // local dev
     // "https://crocodile-mk.vercel.app", // deployed frontend
-  ],
-  credentials: true,
+  ]
+  // credentials: true,
 }))
 
 // Routes
