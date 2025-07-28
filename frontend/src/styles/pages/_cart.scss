@@ -1,0 +1,125 @@
+@use "../index" as *;
+
+main.cart-container {
+    @include flex-col;
+    align-items: center;
+    width: 100%;
+    flex-grow: 1;
+    margin: auto auto;
+    gap: 1.2em;
+
+    h1 {
+        padding: 0.1em 0;
+    }
+
+    .cart-product-card {
+        @include product-card-style(100%, 24em, 15em);
+        padding: 0.6em;
+        min-height: 7.2em; // img height 6 em + top and bottom padding 0.5em 
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 1em;
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        img {
+            height: 6em;
+            width: 6em;
+            border-radius: 0.6em;
+        }
+
+        &-info {
+            flex-grow: 1;
+            height: 6em;
+            @include flex-col;
+            justify-content: space-between;
+
+            .title {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                gap: 0.5em;
+
+                h4 {
+                    font-weight: 500;
+                    font-size: 1rem;
+                }
+
+                p {
+                    font-size: 0.8rem;
+                    font-weight: 600;
+                }
+            }
+
+            .cart-product-ctrls {
+                margin-top: auto;
+                display: flex;
+                align-items: center;
+                width: fit-content;
+                font-size: 0.8rem;
+                font-weight: 600;
+                color: $crocodile-green;
+                border: 2px solid $secondary-green;
+                border-radius: 0.6em;
+                width: 4.8em; //ctrl container x 3
+
+                .ctrl-container {
+                    @include flex-center;
+                    width: 1.6em;
+                    height: 1.6em;
+                }
+
+                .plus,
+                .minus,
+                .delete {
+                    margin-top: 0.05rem;
+                    font-size: 0.7rem;
+                    cursor: pointer;
+                }
+
+                .delete {
+                    font-size: 0.65rem;
+                }
+            }
+        }
+
+    }
+
+    .subtotal {
+        justify-self: flex-start;
+        align-self: flex-end;
+        margin: -0.5em 0.3em 0 0;
+    }
+
+    .links-container {
+        margin-top: auto;
+        width: 90%;
+
+        a {
+            @include arrow-button-style;
+            width: 45%;
+        }
+    }
+
+    .empty-cart {
+        margin: auto 0;
+
+        p {
+            font-weight: bold;
+            font-size: 1.25rem;
+        }
+
+        a {
+            margin-top: 1.6em;
+            font-size: 1.15rem;
+            @include arrow-button-style;
+
+            &:hover {
+                @include button-hover;
+            }
+        }
+    }
+}

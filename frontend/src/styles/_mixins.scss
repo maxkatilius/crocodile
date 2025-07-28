@@ -1,0 +1,158 @@
+@use "variables" as *;
+
+@mixin flex-col() {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin flex-center() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin button-style {
+    @include flex-center;
+    padding: 0.8em 1.2em;
+    background-color: $crocodile-green;
+    font-weight: bold;
+    color: $primary-white;
+    border: none;
+    border-radius: 0.7em;
+    cursor: pointer;
+    transition: $transition-fast;
+    box-shadow: $box-shadow-default;
+}
+
+@mixin button-hover {
+    transform: scale(1.1);
+    background-color: $secondary-green;
+    box-shadow: $box-shadow-hover;
+}
+
+@mixin arrow-button-style {
+    @include button-style;
+    gap: 0.5em;
+
+    .arrow {
+        width: 0;
+        height: 0;
+        display: inline-block;
+
+        &.right {
+            border-top: 0.4em solid transparent;
+            border-bottom: 0.4em solid transparent;
+            border-left: 0.6em solid $primary-white;
+        }
+
+        &.left {
+            border-top: 0.4em solid transparent;
+            border-bottom: 0.4em solid transparent;
+            border-right: 0.6em solid $primary-white;
+        }
+    }
+}
+
+@mixin product-card-style($w: 90%, $max-w: 18em, $min-w: 15em) {
+    width: $w;
+    max-width: $max-w;
+    min-width: $min-w;
+    @include flex-col;
+    gap: 1em;
+    padding: 1em;
+    background-color: $secondary-white;
+    border: 1px solid $primary-grey;
+    border-radius: 0.6em;
+    box-shadow: $box-shadow-default;
+}
+
+@mixin playing-card-style() {
+    display: flex;
+    align-items: flex-start;
+    gap: 3em;
+    padding: 1em;
+
+    img {
+        width: 5em;
+        height: auto;
+        box-shadow: $box-shadow-default;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+            box-shadow: $box-shadow-hover;
+        }
+    }
+}
+
+@mixin croc-ul($croc-color: "green") {
+    margin-bottom: 1em;
+    list-style-type: none;
+
+    li {
+        position: relative;
+        padding: 0.8em 0 0 4em;
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-30%);
+            width: 2.6em;
+            height: 1.2em;
+            background-image: url("https://cdn.jsdelivr.net/gh/maxkatilius/crocodile/frontend/src/assets/images/logos/croc-head-#{$croc-color}.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+    }
+}
+
+@mixin links-container-style() {
+    display: flex;
+    justify-content: space-around;
+    margin: auto 0 0.8em 0;
+    padding-top: 1em;
+    
+    @media only screen and (min-width: 840px) {
+        justify-content: space-between;
+        
+        a,
+        .back-btn {
+            font-size: 1.1rem;
+            width: 10em;
+        }
+    }
+    
+    a,
+    .back-btn {
+        @include arrow-button-style;
+    }
+
+    .back-btn {
+        @include button-style;
+        font-size: inherit;
+        font-family: inherit;
+    }
+}
+
+@mixin loading() {
+    .loading {
+        width: 2em;
+        height: 2em;
+        margin: auto;
+        border: 0.2em solid $primary-grey;
+        border-top: 0.2em solid $crocodile-green;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+}

@@ -148,6 +148,12 @@ $transition-slow: all 500ms ease-in-out;
     box-sizing: border-box;
 }
 
+@media only screen and (min-width: 768px) {
+    html {
+        font-size: 1.2rem;
+    }
+}
+
 body {
     font-family: $font-stack;
     background-color: $primary-white;
@@ -222,6 +228,52 @@ header {
                 line-height: 1.3em;
                 border-top: 2px solid $crocodile-green;
                 border-bottom: 2px solid $crocodile-green;
+            }
+        }
+    }
+
+    @media only screen and (min-width: 736px) {
+        .header-container {
+            background-image: linear-gradient($secondary-green, $crocodile-green);
+            justify-content: space-between;
+
+            .header-logo {
+                h1 {
+                    color: $primary-white;
+                    border-top: 2px solid $primary-white;
+                    border-bottom: 2px solid $primary-white;
+                }
+            }
+        }
+    }
+    @media only screen and (min-width: 1536px) {
+        .header-container {
+            padding: 0.6em 2.5em 1.2em 2.5em;
+
+            .header-logo {
+                img {
+                    max-width: 9.5em;
+                }
+                h1 {
+                    font-size: 1.4rem;
+                }
+            }
+
+            .desktop-nav {
+                font-size: 1.3rem;
+                gap: 1.5em;
+                span {
+                    height: 3px;
+                }
+                a {
+                    .desktop-nav-cart-img-container {
+                        .cart-count {
+                            font-size: 1.15rem;
+                            bottom: 1.05em;
+                            right: 0.12em;
+                        }
+                    }
+                }
             }
         }
     }
@@ -394,6 +446,18 @@ header {
             transition-delay: 100ms;
         }
     }
+
+    @media only screen and (min-width: 648px) {
+        &-links {
+            z-index: 100;
+            position: fixed;
+            inset: 0 0 0 50%;
+        }
+
+        &.open {
+            right: calc(50% - 2em - 2.6em)
+        }
+    }
 }
 
 /* Desktop Nav */
@@ -478,6 +542,10 @@ main {
             width: 10em;
         }
     }
+    
+    a {
+        @include arrow-button-style();
+    }
 }
 
 .about-links a,
@@ -519,6 +587,51 @@ footer {
         min-width: 6em;
         max-width: 12em;
     }
+
+    @media only screen and (min-width: 648px) {
+        h4 {
+            margin-top: 1.2em;
+            font-size: 1.5rem;
+        }
+
+        img {
+            min-width: 8em;
+        }
+    }
+
+    @media only screen and (min-width: 768px) {
+        h4 {
+            font-size: 1.2rem;
+        }
+
+        img {
+            min-width: 7em;
+        }
+    }
+
+    @media only screen and (min-width: 1024px) {    
+        img {
+            width: 8em;
+        }
+    }
+
+    @media only screen and (min-width: 1280px) {
+        h4 {
+            margin-top: 1.3em;
+            font-size: 1.5rem;
+        }
+    }
+
+    @media only screen and (min-width: 1536px) {
+        h4 {
+            margin: 1em 0 0 2em;
+            font-size: 1.4rem;
+        }
+
+        img {
+            min-width: 8em;
+        }
+    }                  
 }
 
 /***********
@@ -529,14 +642,16 @@ main.home-container {
     max-width: 28em;
     margin: auto auto;
 
-    .subtitle {
-        padding: 0.6em 0;
-        text-align: center;
-        color: $secondary-green;
-    }
-
-    .tagline {
-        margin-bottom: 2em;
+    .home-text {
+        .subtitle {
+            padding: 0.6em 0;
+            text-align: center;
+            color: $secondary-green;
+        }
+        
+        .tagline {
+            margin-bottom: 2em;
+        }
     }
     
     .home-links {
@@ -545,9 +660,7 @@ main.home-container {
 
         a {
             @include button-style;
-            @include flex-center;
-            padding: 0.8em 1.4em;
-        
+            @include flex-center;        
             &:hover {
                 @include button-hover;
             }
@@ -555,13 +668,26 @@ main.home-container {
     }
 
     @media only screen and (min-width: 1024px) {           
-        .home-links {
-            gap: 1.4em;
-        }
+        max-width: 34em;
 
-        .subtitle {
-            font-size: 1.8rem;
-            text-align: center;
+        .home-text {
+            .home-links {
+                gap: 1.4em;
+            }
+            
+            .subtitle {
+                font-size: 2.2rem;
+                text-align: center;
+            }
+        }
+    }
+
+    @media only screen and (min-width: 1536px) {
+        max-width: 38em;
+        .home-text {
+            .subtitle {
+                font-size: 2.2rem;
+            }
         }
     }
 }
@@ -955,7 +1081,6 @@ main.cart-container {
 /***************
 *** Checkout ***
 ***************/
-
 main.checkout-container {
     flex-grow: 1;
     width: 100%;
@@ -1211,15 +1336,19 @@ main.contact-us-container {
         gap: 0;
         max-width: 100%;
         h1 {
-            padding-top: 0.2em
+            padding-top: 0.2em;
+            font-size: 2.4em;
         }
         .contact-text {
-            font-size: 1.2rem;
+            font-size: 2rem;
             flex-direction: row;
             margin-top: 2em;
+            border: 1px solid red;
+            margin: auto auto;
 
             form {
                 width: 80%;
+                gap: 0.6em;
             }
         }
     }
@@ -1273,8 +1402,19 @@ main.contact-us-container {
     .card-values-container,
     .calling-croc-container,
     .prohibited-container {
-        flex-grow: 1;                                                                                                     @include flex-col;
+        flex-grow: 1;
+        @include flex-col;
         gap: 0.3em;
+    }
+
+    @media only screen and (min-width: 1280px) {
+        .setup-container,
+        .gameplay-container,
+        .calling-croc-container,
+        .smackdowns-container,
+        .power-cards-container {
+            margin-top: 2em;
+        }
     }
 }
 
@@ -1415,151 +1555,3 @@ main.contact-us-container {
 ****  Media Queries  ****
 *************************/
 
-@media only screen and (min-width: 648px) {
-
-    .mobile-nav {
-
-        &-links {
-            z-index: 100;
-            position: fixed;
-            inset: 0 0 0 50%;
-        }
-
-        &.open {
-            right: calc(50% - 2em - 2.6em)
-        }
-    }
-
-    footer {
-        h4 {
-            margin-top: 1.2em;
-            font-size: 1.5rem;
-        }
-
-        img {
-            min-width: 8em;
-        }
-    }
-}
-
-@media only screen and (min-width: 768px) {
-    html {
-        font-size: 1.2rem;
-    }
-
-    header {
-        .header-container {
-            background-image: linear-gradient($secondary-green, $crocodile-green);
-            justify-content: space-between;
-
-            .header-logo {
-                h1 {
-                    color: $primary-white;
-                    border-top: 2px solid $primary-white;
-                    border-bottom: 2px solid $primary-white;
-                }
-            }
-        }
-    }
-
-    footer {
-        h4 {
-            font-size: 1.2rem;
-        }
-
-        img {
-            min-width: 7em;
-        }
-    }
-
-}
-
-@media only screen and (min-width: 840px) {
-
-}
-
-@media only screen and (min-width: 1024px) {
-
-    footer {
-        img {
-            width: 8em;
-        }
-    }
-
-    main.home-container {
-        max-width: 34em;
-
-        .subtitle {
-            font-size: 2rem;
-        }
-    }
-}
-
-@media only screen and (min-width: 1280px) {
-
-    footer {
-        h4 {
-            margin-top: 1.3em;
-            font-size: 1.5rem;
-        }
-    }
-
-    .setup-container,
-    .gameplay-container,
-    .calling-croc-container,
-    .smackdowns-container,
-    .power-cards-container {
-        margin-top: 2em;
-    }
-
-}
-
-@media only screen and (min-width: 1536px) {
-
-    header {
-        .header-container {
-            padding: 0.6em 2.5em 1.2em 2.5em;
-            
-            .header-logo {
-                img {
-                    max-width: 9.5em;
-                }
-
-                h1 {
-                    font-size: 1.4rem;
-                }
-            }
-            
-            .desktop-nav {
-                font-size: 1.3rem;
-                gap: 1.5em;
-                
-                span {
-                    height: 3px;
-                }
-                
-                a {
-                    .desktop-nav-cart-img-container {
-                        .cart-count {
-                            font-size: 1.15rem;
-                            bottom: 1.05em;
-                            right: 0.12em;
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    footer {
-
-        h4 {
-            margin: 1em 0 0 2em;
-            font-size: 1.4rem;
-        }
-
-        img {
-            min-width: 8em;
-        }
-    }
-}

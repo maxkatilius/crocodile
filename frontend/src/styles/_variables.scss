@@ -1,0 +1,22 @@
+// colors
+
+$font-stack: 'Quicksand', sans-serif;
+$crocodile-green: #07543A;
+$secondary-green: #0B6E4F;
+$light-green: #428061;
+$primary-black: #161925;
+$secondary-black: #050505;
+$primary-white: #FEFFFE;
+$secondary-white: #f7f7f7ee;
+$third-white: #d3d3d3;
+$primary-grey: #d3d3d3;
+
+
+// box shadow
+$box-shadow-default: 2px 2px 8px rgba(0, 0, 0, 0.1), -1px -1px 4px rgba(255, 255, 255, 0.3);
+$box-shadow-hover: 3px 3px 10px rgba(0, 0, 0, 0.2), -2px -2px 5px rgba(255, 255, 255, 0.3);
+
+
+// transitions
+$transition-fast: all 200ms ease-in-out;
+$transition-slow: all 500ms ease-in-out;

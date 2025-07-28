@@ -1,0 +1,11 @@
+@use "index" as *;
+
+@use "components/header";
+@use "components/layout";
+@use "components/footer";
+
+@use "pages/home";
+@use "pages/shop";
+@use "pages/howTo";
+@use "pages/about";
+@use "pages/contact";

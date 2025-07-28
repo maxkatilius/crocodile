@@ -1,0 +1,154 @@
+@use "../index" as *;
+
+// How To
+.how-to-container {
+    flex-grow: 1;
+    padding: 8em 2.6em 1.6em 2.6em;
+    
+    .aim-setup-container,
+    .setup-container,
+    .gameplay-container,
+    .smackdowns-container,
+    .power-cards-container,
+    .card-values-container,
+    .calling-croc-container,
+    .prohibited-container {
+        flex-grow: 1;
+        @include flex-col;
+        gap: 0.3em;
+        .links-container {
+            @include links-container-style;
+        }
+    }
+
+    @media only screen and (min-width: 1280px) {
+
+        .setup-container,
+        .gameplay-container,
+        .calling-croc-container,
+        .smackdowns-container,
+        .power-cards-container {
+            margin-top: 2em;
+        }
+    }
+}
+
+// AimSetup
+.aim-setup-container {
+    @include flex-col;
+    gap: 0.3em;
+}
+
+// Gameplay
+.gameplay-container {
+
+    ul {
+        @include croc-ul(green);
+    }
+
+    ul:nth-of-type(1) li:nth-child(1),
+    ul:nth-of-type(2) li:nth-child(3) {
+        padding-bottom: 0.5em;
+    }
+
+    .link-card-values,
+    .link-power-cards {
+        color: $crocodile-green;
+        font-weight: bold;
+        cursor: pointer;
+        transition: $transition-fast;
+
+        &:hover {
+            color: $secondary-green;
+            transform: scale(1);
+            font-size: 1.1rem;
+        }
+    }
+}
+
+// Smackdowns
+.smackdowns-container {
+    ul {
+        @include croc-ul(green);
+    }
+
+    .royal-croc {
+        font-weight: bold;
+        color: $crocodile-green;
+    }
+}
+
+//  Card values / Power cards
+.card-values-container,
+.power-cards-container {
+
+    h4 {
+        font-size: 1.05rem;
+    }
+
+    .links-container {
+        a {
+            width: auto;
+        }
+    }
+}
+
+.playing-cards,
+.power-cards {
+    @include flex-col;
+}
+
+.playing-card,
+.power-card {
+    @include playing-card-style;
+    @include playing-card-style;
+
+    .playing-card-info,
+    .power-card-info {
+        h4 {
+            color: $primary-black;
+        }
+
+        p {
+            font-size: 0.8rem;
+
+            span {
+                display: block;
+            }
+
+            .playing-card-value {
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+
+    .playing-cards,
+    .power-cards {
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        .playing-card,
+        .power-card {
+            width: 40%;
+            margin-right: auto;
+        }
+    }
+
+}
+
+// Calling Croc
+.calling-croc-container {
+    h2 {
+        padding-bottom: 0.6em;
+    }
+}
+
+// Prohibited Plays
+.prohibited-container {
+    h4 {
+        padding-top: 1em;
+    }
+}

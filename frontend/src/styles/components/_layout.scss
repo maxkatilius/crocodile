@@ -1,0 +1,60 @@
+@use "../index" as *;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@media only screen and (min-width: 768px) {
+    html {
+        font-size: 1.2rem;
+    }
+}
+
+body {
+    font-family: $font-stack;
+    background-color: $primary-white;
+    color: $primary-black;
+    display: flex;
+    justify-content: center;
+}
+
+.site-container {
+    min-height: 100dvh;
+    min-width: 100dvw;
+    @include flex-col;
+    justify-content: space-between;
+}
+
+/* Main */
+main {
+    @include flex-col;
+    padding: 8em 2em 1.6em 2em; // large top padding to account for header height
+}
+
+/***************
+** Typography **
+***************/
+h1,
+h2,
+h4 {
+    color: $crocodile-green;
+}
+
+h2 {
+    font-size: 1.65rem;
+}
+
+h4 {
+    font-size: 1.2rem;
+}
+
+p {
+    margin: 0.5em 0;
+    line-height: 1.4;
+}
+
+a {
+    text-decoration: none;
+}

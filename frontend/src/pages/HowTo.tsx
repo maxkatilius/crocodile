@@ -1,6 +1,5 @@
 import { Outlet } from "react-router-dom"
-import ScrollToTop from "./ScrollToTop"
-
+import ScrollToTop from "../components/ScrollToTop"
 
 const HowTo = () => {
 	return (

@@ -22,6 +22,11 @@
   box-sizing: border-box;
 }
 
+@media only screen and (min-width: 768px) {
+  html {
+    font-size: 1.2rem;
+  }
+}
 body {
   font-family: "Quicksand", sans-serif;
   background-color: #FEFFFE;
@@ -96,6 +101,40 @@ header .header-container .header-logo h1 {
   line-height: 1.3em;
   border-top: 2px solid #07543A;
   border-bottom: 2px solid #07543A;
+}
+@media only screen and (min-width: 736px) {
+  header .header-container {
+    background-image: linear-gradient(#0B6E4F, #07543A);
+    justify-content: space-between;
+  }
+  header .header-container .header-logo h1 {
+    color: #FEFFFE;
+    border-top: 2px solid #FEFFFE;
+    border-bottom: 2px solid #FEFFFE;
+  }
+}
+@media only screen and (min-width: 1536px) {
+  header .header-container {
+    padding: 0.6em 2.5em 1.2em 2.5em;
+  }
+  header .header-container .header-logo img {
+    max-width: 9.5em;
+  }
+  header .header-container .header-logo h1 {
+    font-size: 1.4rem;
+  }
+  header .header-container .desktop-nav {
+    font-size: 1.3rem;
+    gap: 1.5em;
+  }
+  header .header-container .desktop-nav span {
+    height: 3px;
+  }
+  header .header-container .desktop-nav a .desktop-nav-cart-img-container .cart-count {
+    font-size: 1.15rem;
+    bottom: 1.05em;
+    right: 0.12em;
+  }
 }
 
 /* Mobile Nav */
@@ -253,6 +292,16 @@ header .header-container .header-logo h1 {
 .mobile-nav.closed .hamburger-container {
   transition-delay: 100ms;
 }
+@media only screen and (min-width: 648px) {
+  .mobile-nav-links {
+    z-index: 100;
+    position: fixed;
+    inset: 0 0 0 50%;
+  }
+  .mobile-nav.open {
+    right: calc(50% - 2em - 2.6em);
+  }
+}
 
 /* Desktop Nav */
 .desktop-nav {
@@ -334,6 +383,36 @@ main {
     font-size: 1.1rem;
     width: 10em;
   }
+}
+.links-container a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.8em 1.2em;
+  background-color: #07543A;
+  font-weight: bold;
+  color: #FEFFFE;
+  border: none;
+  border-radius: 0.7em;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1), -1px -1px 4px rgba(255, 255, 255, 0.3);
+  gap: 0.5em;
+}
+.links-container a .arrow {
+  width: 0;
+  height: 0;
+  display: inline-block;
+}
+.links-container a .arrow.right {
+  border-top: 0.4em solid transparent;
+  border-bottom: 0.4em solid transparent;
+  border-left: 0.6em solid #FEFFFE;
+}
+.links-container a .arrow.left {
+  border-top: 0.4em solid transparent;
+  border-bottom: 0.4em solid transparent;
+  border-right: 0.6em solid #FEFFFE;
 }
 
 .about-links a,
@@ -421,6 +500,43 @@ footer img {
   min-width: 6em;
   max-width: 12em;
 }
+@media only screen and (min-width: 648px) {
+  footer h4 {
+    margin-top: 1.2em;
+    font-size: 1.5rem;
+  }
+  footer img {
+    min-width: 8em;
+  }
+}
+@media only screen and (min-width: 768px) {
+  footer h4 {
+    font-size: 1.2rem;
+  }
+  footer img {
+    min-width: 7em;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  footer img {
+    width: 8em;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  footer h4 {
+    margin-top: 1.3em;
+    font-size: 1.5rem;
+  }
+}
+@media only screen and (min-width: 1536px) {
+  footer h4 {
+    margin: 1em 0 0 2em;
+    font-size: 1.4rem;
+  }
+  footer img {
+    min-width: 8em;
+  }
+}
 
 /***********
 *** Home ***
@@ -430,12 +546,12 @@ main.home-container {
   max-width: 28em;
   margin: auto auto;
 }
-main.home-container .subtitle {
+main.home-container .home-text .subtitle {
   padding: 0.6em 0;
   text-align: center;
   color: #0B6E4F;
 }
-main.home-container .tagline {
+main.home-container .home-text .tagline {
   margin-bottom: 2em;
 }
 main.home-container .home-links {
@@ -459,7 +575,6 @@ main.home-container .home-links a {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0.8em 1.4em;
 }
 main.home-container .home-links a:hover {
   transform: scale(1.1);
@@ -467,12 +582,23 @@ main.home-container .home-links a:hover {
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2), -2px -2px 5px rgba(255, 255, 255, 0.3);
 }
 @media only screen and (min-width: 1024px) {
-  main.home-container .home-links {
+  main.home-container {
+    max-width: 34em;
+  }
+  main.home-container .home-text .home-links {
     gap: 1.4em;
   }
-  main.home-container .subtitle {
-    font-size: 1.8rem;
+  main.home-container .home-text .subtitle {
+    font-size: 2.2rem;
     text-align: center;
+  }
+}
+@media only screen and (min-width: 1536px) {
+  main.home-container {
+    max-width: 38em;
+  }
+  main.home-container .home-text .subtitle {
+    font-size: 2.2rem;
   }
 }
 
@@ -1190,14 +1316,18 @@ main.contact-us-container .contact-text form .submit-btn:hover {
   }
   main.contact-us-container h1 {
     padding-top: 0.2em;
+    font-size: 2.4em;
   }
   main.contact-us-container .contact-text {
-    font-size: 1.2rem;
+    font-size: 2rem;
     flex-direction: row;
     margin-top: 2em;
+    border: 1px solid red;
+    margin: auto auto;
   }
   main.contact-us-container .contact-text form {
     width: 80%;
+    gap: 0.6em;
   }
 }
 
@@ -1254,6 +1384,15 @@ main.contact-us-container .contact-text form .submit-btn:hover {
   display: flex;
   flex-direction: column;
   gap: 0.3em;
+}
+@media only screen and (min-width: 1280px) {
+  .how-to-container .setup-container,
+  .how-to-container .gameplay-container,
+  .how-to-container .calling-croc-container,
+  .how-to-container .smackdowns-container,
+  .how-to-container .power-cards-container {
+    margin-top: 2em;
+  }
 }
 
 /*******************
@@ -1441,94 +1580,3 @@ main.contact-us-container .contact-text form .submit-btn:hover {
 /************************
 ****  Media Queries  ****
 *************************/
-@media only screen and (min-width: 648px) {
-  .mobile-nav-links {
-    z-index: 100;
-    position: fixed;
-    inset: 0 0 0 50%;
-  }
-  .mobile-nav.open {
-    right: calc(50% - 2em - 2.6em);
-  }
-  footer h4 {
-    margin-top: 1.2em;
-    font-size: 1.5rem;
-  }
-  footer img {
-    min-width: 8em;
-  }
-}
-@media only screen and (min-width: 768px) {
-  html {
-    font-size: 1.2rem;
-  }
-  header .header-container {
-    background-image: linear-gradient(#0B6E4F, #07543A);
-    justify-content: space-between;
-  }
-  header .header-container .header-logo h1 {
-    color: #FEFFFE;
-    border-top: 2px solid #FEFFFE;
-    border-bottom: 2px solid #FEFFFE;
-  }
-  footer h4 {
-    font-size: 1.2rem;
-  }
-  footer img {
-    min-width: 7em;
-  }
-}
-@media only screen and (min-width: 1024px) {
-  footer img {
-    width: 8em;
-  }
-  main.home-container {
-    max-width: 34em;
-  }
-  main.home-container .subtitle {
-    font-size: 2rem;
-  }
-}
-@media only screen and (min-width: 1280px) {
-  footer h4 {
-    margin-top: 1.3em;
-    font-size: 1.5rem;
-  }
-  .setup-container,
-  .gameplay-container,
-  .calling-croc-container,
-  .smackdowns-container,
-  .power-cards-container {
-    margin-top: 2em;
-  }
-}
-@media only screen and (min-width: 1536px) {
-  header .header-container {
-    padding: 0.6em 2.5em 1.2em 2.5em;
-  }
-  header .header-container .header-logo img {
-    max-width: 9.5em;
-  }
-  header .header-container .header-logo h1 {
-    font-size: 1.4rem;
-  }
-  header .header-container .desktop-nav {
-    font-size: 1.3rem;
-    gap: 1.5em;
-  }
-  header .header-container .desktop-nav span {
-    height: 3px;
-  }
-  header .header-container .desktop-nav a .desktop-nav-cart-img-container .cart-count {
-    font-size: 1.15rem;
-    bottom: 1.05em;
-    right: 0.12em;
-  }
-  footer h4 {
-    margin: 1em 0 0 2em;
-    font-size: 1.4rem;
-  }
-  footer img {
-    min-width: 8em;
-  }
-}

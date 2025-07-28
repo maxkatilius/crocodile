@@ -1,0 +1,197 @@
+@use "../index" as *;
+
+main.checkout-container {
+    flex-grow: 1;
+    width: 100%;
+    @include flex-col;
+    justify-content: flex-start;
+    gap: 1em;
+
+    h1 {
+        margin: 0 auto;
+    }
+
+    .checkout-status-bar {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.4em;
+
+        .shrink {
+            flex-grow: 0;
+        }
+
+        .grow {
+            flex-grow: 1;
+        }
+
+        .status-container {
+            display: flex;
+            gap: 0.4em;
+            align-items: center;
+            justify-content: space-between;
+
+
+            span {
+                @include flex-center;
+                height: 1.5em;
+                width: 1.5em;
+                color: $primary-white;
+                background-color: $crocodile-green;
+                border-radius: 100%;
+            }
+
+            .incomplete {
+                opacity: 0.5;
+            }
+
+            span.hr {
+                flex-grow: 1;
+                height: 0.1em;
+                background-color: $crocodile-green;
+                border-radius: 0;
+            }
+
+        }
+
+        .shrink-margin {
+            margin-right: 2.45em;
+        }
+    }
+
+    @media only screen and (min-width: 840px) {
+        .checkout-status-bar {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.4em;
+
+            .status-container,
+            .status-place-order-container {
+                display: flex;
+                gap: 0.4em;
+                align-items: center;
+                justify-content: space-between;
+
+                span {
+                    @include flex-center;
+                    height: 1.5em;
+                    width: 1.5em;
+                    color: $primary-white;
+                    background-color: $crocodile-green;
+                    border-radius: 100%;
+                }
+
+                .incomplete {
+                    opacity: 0.5;
+                }
+
+                span.hr {
+                    flex-grow: 1;
+                    height: 0.1em;
+                    background-color: $crocodile-green;
+                    border-radius: 0;
+                }
+
+            }
+
+        }
+    }
+
+    form {
+        padding: 0.8em 1em;
+        margin: auto 0;
+        border: 1px solid $secondary-green;
+        border-radius: 0.8em;
+        box-shadow: $box-shadow-default;
+
+        .details-container {
+            @include flex-col;
+            margin-top: 0.3em;
+
+            input {
+                padding: 0.2em;
+                margin: 0.2em 0 1em 0;
+                font-size: 1rem;
+            }
+        }
+
+        .order {
+            @include flex-col;
+            gap: 1em;
+
+            * {
+                margin: 0;
+                padding: 0;
+            }
+
+            h2 {
+                margin: 0 auto 0.2em auto;
+            }
+
+            .total {
+                margin-left: auto;
+                padding-right: 0.5em;
+            }
+
+            .checkout-product-card {
+
+                display: flex;
+                align-items: flex-end;
+                gap: 1em;
+
+                img {
+                    height: 4em;
+                    width: 4em;
+                    border: none;
+                    border-radius: 0.2em;
+                    box-shadow: $box-shadow-default;
+                }
+
+                .product-text {
+                    @include flex-col;
+                    justify-content: space-between;
+                    height: 4em;
+                    width: 100%;
+
+                    .product-info {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: flex-start;
+                        width: 100%;
+                    }
+
+                    span {
+                        color: $crocodile-green;
+                        font-weight: 500;
+                    }
+
+                    p {
+                        font-size: 0.8rem;
+                    }
+
+                    .subtotal {
+                        margin-left: auto;
+                    }
+                }
+            }
+        }
+
+        .checkout-ctrls,
+        .order-ctrls,
+        .thanks-ctrls {
+            margin-top: 1em;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+
+            button,
+            a {
+                @include button-style;
+                width: 40%;
+            }
+        }
+    }
+}

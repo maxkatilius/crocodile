@@ -1,0 +1,87 @@
+@use "../index" as *;
+
+main.about-container {
+    flex-grow: 1;
+
+    h1 {
+        padding: 0 0 0.4em 0;
+    }
+
+    .about-text {
+        font-size: 1.1rem;
+        margin: auto 0;
+
+        p {
+            margin: 0.2em 2.2em 1.2em 0;
+            line-height: 1.7rem;
+        }
+    }
+
+    .about-links {
+        @include links-container-style;
+        margin: auto 0 1em 0;
+        @include flex-col;
+        gap: 1.1em;
+
+        a {
+            @include button-style;
+            @include arrow-button-style;
+            font-size: 1.1rem;
+            &:hover {
+                @include button-hover;
+            }
+        }
+    }
+
+    @media only screen and (min-width: 648px) {
+        .about-text {
+            p {
+                margin-bottom: 1em;
+            }
+        }
+    }
+
+    @media only screen and (min-width: 840px) {
+        padding: 8em 3em 1.6em 3em;
+
+        h1 {
+            padding: 0.4em 0 0.8em 0;
+            font-size: 2rem;
+        }
+
+        .about-text {
+            margin: auto 0;
+
+            p {
+                margin: 0.2em 0 1.6em 0;
+            }
+        }
+
+        .about-links {
+            font-size: 1.2rem;
+            flex-direction: row;
+            justify-content: space-between;
+
+            a {
+                width: 12em;
+                justify-content: center;
+            }
+        }
+    }
+
+    @media only screen and (min-width: 1536px) {
+        .about-text {
+            p {
+                font-size: 1.2rem;
+            }
+        }
+
+        .about-links {
+            font-size: 1.3rem;
+
+            a {
+                width: 18em;
+            }
+        }
+    }
+}
