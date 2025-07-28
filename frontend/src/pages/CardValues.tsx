@@ -96,16 +96,16 @@ const CardValues = () => {
 						</p>
 					</div>
 				</div>
-				<div className="links-container">
-					<button className="btn back-btn" onClick={() => navigate(-1)}>
-						<span className="arrow left" />
-						<span className="button-text">Back</span>
-					</button>
-					<Link to="/how-to/calling-croc">
-						<span className="button-text">Calling 'Croc'</span>
-						<span className="arrow right" />
-					</Link>
-				</div>
+			</div>
+			<div className="links-container">
+				<button className="btn back-btn" onClick={() => navigate(-1)}>
+					<span className="arrow left" />
+					<span className="button-text">Back</span>
+				</button>
+				<Link to="/how-to/calling-croc">
+					<span className="button-text">Calling 'Croc'</span>
+					<span className="arrow right" />
+				</Link>
 			</div>
 		</div>
 	);

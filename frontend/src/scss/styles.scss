@@ -1273,9 +1273,7 @@ main.contact-us-container {
     .card-values-container,
     .calling-croc-container,
     .prohibited-container {
-        flex-grow: 1;
-        border: 1px solid red;
-        @include flex-col;
+        flex-grow: 1;                                                                                                     @include flex-col;
         gap: 0.3em;
     }
 }
@@ -1336,6 +1334,7 @@ main.contact-us-container {
 ****  Card values / Power cards ****
 ***********************************/
 
+.card-values-container,
 .power-cards-container {
 
     h4 {
@@ -1356,8 +1355,8 @@ main.contact-us-container {
 
 .playing-card,
 .power-card {
-    @include playing-card-style();
-    @include playing-card-style();
+    @include playing-card-style;
+    @include playing-card-style;
 
     .playing-card-info,
     .power-card-info {
@@ -1379,10 +1378,33 @@ main.contact-us-container {
     }
 }
 
+@media only screen and (min-width: 1024px) {
+    .playing-cards,
+    .power-cards {
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        .playing-card,
+        .power-card {
+            width: 40%;
+            margin-right: auto;
+        }
+    }
+
+}
+
+/***********************
+****  Calling Croc  ****
+************************/
+.calling-croc-container {
+    h2 {
+        padding-bottom: 0.6em;
+    }
+}
+
 /***************************
 ****  Prohibited Plays  ****
 ****************************/
-
 .prohibited-container {
     h4 {
         padding-top: 1em;

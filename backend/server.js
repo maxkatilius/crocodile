@@ -8,8 +8,9 @@ app.use(express.json())
 const cors = require('cors')
 app.use(cors({
   origin: [
-    "http://localhost:5173",  // local dev
-    "https://crocodile-mk.vercel.app", // deployed frontend
+    "*"
+    // "http://localhost:5173",  // local dev
+    // "https://crocodile-mk.vercel.app", // deployed frontend
   ],
   credentials: true,
 }))

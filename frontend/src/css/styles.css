@@ -1251,7 +1251,6 @@ main.contact-us-container .contact-text form .submit-btn:hover {
 .how-to-container .calling-croc-container,
 .how-to-container .prohibited-container {
   flex-grow: 1;
-  border: 1px solid red;
   display: flex;
   flex-direction: column;
   gap: 0.3em;
@@ -1338,9 +1337,11 @@ main.contact-us-container .contact-text form .submit-btn:hover {
 /***********************************
 ****  Card values / Power cards ****
 ***********************************/
+.card-values-container h4,
 .power-cards-container h4 {
   font-size: 1.05rem;
 }
+.card-values-container .links-container a,
 .power-cards-container .links-container a {
   width: auto;
 }
@@ -1407,6 +1408,27 @@ main.contact-us-container .contact-text form .submit-btn:hover {
 .power-card .playing-card-info p .playing-card-value,
 .power-card .power-card-info p .playing-card-value {
   font-weight: bold;
+}
+
+@media only screen and (min-width: 1024px) {
+  .playing-cards,
+  .power-cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .playing-cards .playing-card,
+  .playing-cards .power-card,
+  .power-cards .playing-card,
+  .power-cards .power-card {
+    width: 40%;
+    margin-right: auto;
+  }
+}
+/***********************
+****  Calling Croc  ****
+************************/
+.calling-croc-container h2 {
+  padding-bottom: 0.6em;
 }
 
 /***************************
