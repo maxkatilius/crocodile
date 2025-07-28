@@ -318,6 +318,89 @@ main {
   padding: 8em 2em 1.6em 2em;
 }
 
+/* Links */
+.links-container {
+  display: flex;
+  justify-content: space-around;
+  margin: auto 0 0.8em 0;
+  padding-top: 1em;
+}
+@media only screen and (min-width: 840px) {
+  .links-container {
+    justify-content: space-between;
+  }
+  .links-container a,
+  .links-container .back-btn {
+    font-size: 1.1rem;
+    width: 10em;
+  }
+}
+
+.about-links a,
+.links-container a,
+.back-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.8em 1.2em;
+  background-color: #07543A;
+  font-weight: bold;
+  color: #FEFFFE;
+  border: none;
+  border-radius: 0.7em;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1), -1px -1px 4px rgba(255, 255, 255, 0.3);
+  gap: 0.5em;
+}
+.about-links a .arrow,
+.links-container a .arrow,
+.back-btn .arrow {
+  width: 0;
+  height: 0;
+  display: inline-block;
+}
+.about-links a .arrow.right,
+.links-container a .arrow.right,
+.back-btn .arrow.right {
+  border-top: 0.4em solid transparent;
+  border-bottom: 0.4em solid transparent;
+  border-left: 0.6em solid #FEFFFE;
+}
+.about-links a .arrow.left,
+.links-container a .arrow.left,
+.back-btn .arrow.left {
+  border-top: 0.4em solid transparent;
+  border-bottom: 0.4em solid transparent;
+  border-right: 0.6em solid #FEFFFE;
+}
+.about-links a:hover, .about-links a:active,
+.links-container a:hover,
+.links-container a:active,
+.back-btn:hover,
+.back-btn:active {
+  transform: scale(1.1);
+  background-color: #0B6E4F;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2), -2px -2px 5px rgba(255, 255, 255, 0.3);
+}
+
+.back-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.8em 1.2em;
+  background-color: #07543A;
+  font-weight: bold;
+  color: #FEFFFE;
+  border: none;
+  border-radius: 0.7em;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1), -1px -1px 4px rgba(255, 255, 255, 0.3);
+  font-size: inherit;
+  font-family: inherit;
+}
+
 /* Footer */
 footer {
   display: flex;
@@ -349,7 +432,6 @@ main.home-container {
 }
 main.home-container .subtitle {
   padding: 0.6em 0;
-  font-size: 1.6rem;
   text-align: center;
   color: #0B6E4F;
 }
@@ -384,22 +466,79 @@ main.home-container .home-links a:hover {
   background-color: #0B6E4F;
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2), -2px -2px 5px rgba(255, 255, 255, 0.3);
 }
+@media only screen and (min-width: 1024px) {
+  main.home-container .home-links {
+    gap: 1.4em;
+  }
+  main.home-container .subtitle {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+}
 
 /************
 *** About ***
 *************/
-main.about-container h2 {
-  padding-bottom: 0.4em;
+main.about-container {
+  flex-grow: 1;
+}
+main.about-container h1 {
+  padding: 0 0 0.4em 0;
+}
+main.about-container .about-text {
+  font-size: 1.1rem;
+  margin: auto 0;
 }
 main.about-container .about-text p {
-  margin: 0.2em 2em 0.6em 0;
-  line-height: 1.5rem;
+  margin: 0.2em 2.2em 1.2em 0;
+  line-height: 1.7rem;
 }
 main.about-container .about-links {
-  margin-top: 1em;
+  margin: auto 0 1em 0;
   display: flex;
   flex-direction: column;
   gap: 1.1em;
+  font-size: 1.1rem;
+}
+@media only screen and (min-width: 648px) {
+  main.about-container .about-text p {
+    margin-bottom: 1em;
+  }
+}
+@media only screen and (min-width: 840px) {
+  main.about-container {
+    padding: 8em 3em 1.6em 3em;
+  }
+  main.about-container h1 {
+    padding: 0.4em 0 0.8em 0;
+    font-size: 2rem;
+  }
+  main.about-container .about-text {
+    margin: auto 0;
+  }
+  main.about-container .about-text p {
+    margin: 0.2em 0 1.6em 0;
+  }
+  main.about-container .about-links {
+    font-size: 1.2rem;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  main.about-container .about-links a {
+    width: 12em;
+    justify-content: center;
+  }
+}
+@media only screen and (min-width: 1536px) {
+  main.about-container .about-text p {
+    font-size: 1.2rem;
+  }
+  main.about-container .about-links {
+    font-size: 1.3rem;
+  }
+  main.about-container .about-links a {
+    width: 18em;
+  }
 }
 
 /*************
@@ -984,39 +1123,46 @@ main.checkout-container form .thanks-ctrls a {
 *******************/
 main.contact-us-container {
   flex-grow: 1;
-  gap: 1.2em;
+  margin: 0 auto;
+  gap: 1em;
+  max-width: 30em;
 }
 main.contact-us-container h1 {
   text-align: center;
 }
-main.contact-us-container p {
-  font-size: 1.2rem;
+main.contact-us-container .contact-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+main.contact-us-container .contact-text p {
+  font-size: 1.1rem;
   line-height: 1.7rem;
   letter-spacing: 0.05rem;
 }
-main.contact-us-container form {
+main.contact-us-container .contact-text form {
   display: flex;
   flex-direction: column;
   gap: 1em;
   border: 1px solid #428061;
-  border-radius: 0.6em;
+  border-radius: 0.7em;
   padding: 1em;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1), -1px -1px 4px rgba(255, 255, 255, 0.3);
 }
-main.contact-us-container form input,
-main.contact-us-container form textarea {
-  padding: 0.5em;
+main.contact-us-container .contact-text form input,
+main.contact-us-container .contact-text form textarea {
+  padding: 0.45em;
   width: 100%;
   font-family: inherit;
   font-size: 1.1rem;
   height: 2.2em;
   border: 1px solid #d3d3d3;
-  border-radius: 0.4em;
+  border-radius: 0.6em;
 }
-main.contact-us-container form textarea {
+main.contact-us-container .contact-text form textarea {
   height: 6em;
 }
-main.contact-us-container form .submit-btn {
+main.contact-us-container .contact-text form .submit-btn {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1032,10 +1178,27 @@ main.contact-us-container form .submit-btn {
   font-size: 1.1rem;
   letter-spacing: 0.05rem;
 }
-main.contact-us-container form .submit-btn:hover {
+main.contact-us-container .contact-text form .submit-btn:hover {
   transform: scale(1.1);
   background-color: #0B6E4F;
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2), -2px -2px 5px rgba(255, 255, 255, 0.3);
+}
+@media only screen and (min-width: 1024px) {
+  main.contact-us-container {
+    gap: 0;
+    max-width: 100%;
+  }
+  main.contact-us-container h1 {
+    padding-top: 0.2em;
+  }
+  main.contact-us-container .contact-text {
+    font-size: 1.2rem;
+    flex-direction: row;
+    margin-top: 2em;
+  }
+  main.contact-us-container .contact-text form {
+    width: 80%;
+  }
 }
 
 .thanks-modal {
@@ -1077,9 +1240,9 @@ main.contact-us-container form .submit-btn:hover {
 *****************/
 .how-to-container {
   flex-grow: 1;
-  padding: 1.6em 2.6em;
+  padding: 8em 2.6em 1.6em 2.6em;
 }
-.how-to-container .aim-container,
+.how-to-container .aim-setup-container,
 .how-to-container .setup-container,
 .how-to-container .gameplay-container,
 .how-to-container .smackdowns-container,
@@ -1087,86 +1250,17 @@ main.contact-us-container form .submit-btn:hover {
 .how-to-container .card-values-container,
 .how-to-container .calling-croc-container,
 .how-to-container .prohibited-container {
+  flex-grow: 1;
+  border: 1px solid red;
   display: flex;
   flex-direction: column;
   gap: 0.3em;
 }
 
-.links-container {
-  display: flex;
-  justify-content: space-around;
-  margin: 0.8em 0;
-}
-
-.about-links a,
-.links-container a,
-.back-btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0.8em 1.2em;
-  background-color: #07543A;
-  font-weight: bold;
-  color: #FEFFFE;
-  border: none;
-  border-radius: 0.7em;
-  cursor: pointer;
-  transition: all 200ms ease-in-out;
-  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1), -1px -1px 4px rgba(255, 255, 255, 0.3);
-  gap: 0.5em;
-}
-.about-links a .arrow,
-.links-container a .arrow,
-.back-btn .arrow {
-  width: 0;
-  height: 0;
-  display: inline-block;
-}
-.about-links a .arrow.right,
-.links-container a .arrow.right,
-.back-btn .arrow.right {
-  border-top: 0.4em solid transparent;
-  border-bottom: 0.4em solid transparent;
-  border-left: 0.6em solid #FEFFFE;
-}
-.about-links a .arrow.left,
-.links-container a .arrow.left,
-.back-btn .arrow.left {
-  border-top: 0.4em solid transparent;
-  border-bottom: 0.4em solid transparent;
-  border-right: 0.6em solid #FEFFFE;
-}
-.about-links a:hover, .about-links a:active,
-.links-container a:hover,
-.links-container a:active,
-.back-btn:hover,
-.back-btn:active {
-  transform: scale(1.1);
-  background-color: #0B6E4F;
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2), -2px -2px 5px rgba(255, 255, 255, 0.3);
-}
-
-.back-btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0.8em 1.2em;
-  background-color: #07543A;
-  font-weight: bold;
-  color: #FEFFFE;
-  border: none;
-  border-radius: 0.7em;
-  cursor: pointer;
-  transition: all 200ms ease-in-out;
-  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1), -1px -1px 4px rgba(255, 255, 255, 0.3);
-  font-size: inherit;
-  font-family: inherit;
-}
-
 /*******************
 ****  AimSetup  ****
 *******************/
-.aim-container {
+.aim-setup-container {
   display: flex;
   flex-direction: column;
   gap: 0.3em;
@@ -1248,10 +1342,7 @@ main.contact-us-container form .submit-btn:hover {
   font-size: 1.05rem;
 }
 .power-cards-container .links-container a {
-  font-size: 0.9rem;
-}
-.power-cards-container .back-btn {
-  font-size: 0.9rem;
+  width: auto;
 }
 
 .playing-cards,
@@ -1263,12 +1354,10 @@ main.contact-us-container form .submit-btn:hover {
 .playing-card,
 .power-card {
   display: flex;
-  justify-content: space-between;
   align-items: flex-start;
   gap: 3em;
   padding: 1em;
   display: flex;
-  justify-content: space-between;
   align-items: flex-start;
   gap: 3em;
   padding: 1em;
@@ -1323,6 +1412,10 @@ main.contact-us-container form .submit-btn:hover {
 /***************************
 ****  Prohibited Plays  ****
 ****************************/
+.prohibited-container h4 {
+  padding-top: 1em;
+}
+
 /************************
 ****  Media Queries  ****
 *************************/
@@ -1362,15 +1455,6 @@ main.contact-us-container form .submit-btn:hover {
   footer img {
     min-width: 7em;
   }
-  main.home-container .subtitle {
-    font-size: 1.8rem;
-    text-align: center;
-  }
-  .card,
-  .power-card {
-    width: calc(33.333% - 20px);
-    /* For 3 cards per row */
-  }
 }
 @media only screen and (min-width: 1024px) {
   footer img {
@@ -1382,28 +1466,11 @@ main.contact-us-container form .submit-btn:hover {
   main.home-container .subtitle {
     font-size: 2rem;
   }
-  .card,
-  .power-card {
-    width: calc(25% - 20px);
-    /* For 4 cards per row */
-  }
 }
 @media only screen and (min-width: 1280px) {
   footer h4 {
     margin-top: 1.3em;
     font-size: 1.5rem;
-  }
-  main.about-container .about-links {
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
-  }
-  main.about-container .about-links a {
-    width: 10em;
-    justify-content: center;
-  }
-  .aim-container {
-    text-align: center;
   }
   .setup-container,
   .gameplay-container,
@@ -1411,37 +1478,6 @@ main.contact-us-container form .submit-btn:hover {
   .smackdowns-container,
   .power-cards-container {
     margin-top: 2em;
-  }
-  main.contact-us-container {
-    gap: 1em;
-  }
-  main.contact-us-container p {
-    font-size: 0.8rem;
-    line-height: 1.5em;
-  }
-  main.contact-us-container form.contact-form {
-    flex-direction: row;
-  }
-  main.contact-us-container form.contact-form .form-inputs {
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-    width: 30em;
-  }
-  main.contact-us-container form.contact-form .form-inputs input {
-    font-size: 0.8rem;
-  }
-  main.contact-us-container form.contact-form .form-inputs textarea {
-    font-size: 0.7rem;
-    height: 8em;
-  }
-  main.contact-us-container form.contact-form .submit-btn {
-    margin-top: 0;
-    padding: 0 2em;
-    display: block;
-    margin: auto 0 0 2em;
-    height: 4em;
-    font-size: 1.1rem;
   }
 }
 @media only screen and (min-width: 1536px) {
@@ -1465,9 +1501,6 @@ main.contact-us-container form .submit-btn:hover {
     font-size: 1.15rem;
     bottom: 1.05em;
     right: 0.12em;
-  }
-  footer {
-    padding-top: 2em;
   }
   footer h4 {
     margin: 1em 0 0 2em;

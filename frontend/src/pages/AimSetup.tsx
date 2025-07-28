@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const AimSetup = () => {
 	return (
-		<div className="aim-container">
+		<div className="aim-setup-container">
 			<h2>Aim of the game</h2>
 			<p>
 				Be the player with the fewest points at the end of the round

@@ -1,9 +1,9 @@
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"
 
 const About = () => {
 	return (
 		<main className="about-container">
-			<h2>The Crocodile Tale</h2>
+			<h1>The Crocodile Tale</h1>
 			<div className="about-text">
 				<p>
 					In 2016 as I journeyed through the vivid landscapes of South-East Asia as a 19-year old boy, 
@@ -39,8 +39,8 @@ const About = () => {
 
 			<div className="about-links">
 				<Link to="/">Home</Link>
-				<Link to="/how-to">How to play</Link>
 				<Link to="/shop">Shop</Link>
+				<Link to="/how-to">How to play</Link>
 			</div>
 		</main>
 	);

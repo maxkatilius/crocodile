@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 const Home = () => {
 	return (
 		<main className="home-container">
-			<h3 className="subtitle">Snap, Strategize, Sabotage!</h3>
+			<h1 className="subtitle">Snap, Strategize, Sabotage!</h1>
 			<p className="tagline">
 				When cards meet crocs, chaos ensues! Channel your inner reptile
 				in this game of skill, speed, suspense, memory, mischief, and

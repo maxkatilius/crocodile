@@ -1,7 +1,7 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom"
 
 const Gameplay = () => {
-	const navigate = useNavigate();
+	const navigate = useNavigate()
 	return (
 		<div className="gameplay-container">
 			<h2>Playing the game</h2>
@@ -23,7 +23,7 @@ const Gameplay = () => {
 					onClick={() => {
 						navigate("../card-values", {
 							state: { from: "/how-to/gameplay" },
-						});
+						})
 					}}
 				>
 					card values
@@ -39,7 +39,7 @@ const Gameplay = () => {
 						onClick={() => {
 							navigate("/how-to/power-cards", {
 								state: { from: "/how-to/gameplay" },
-							});
+							})
 						}}
 					>
 						power cards
@@ -69,7 +69,7 @@ const Gameplay = () => {
 				</Link>
 			</div>
 		</div>
-	);
-};
+	)
+}
 
-export default Gameplay;
+export default Gameplay

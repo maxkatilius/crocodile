@@ -83,7 +83,6 @@ $transition-slow: all 500ms ease-in-out;
 
 @mixin playing-card-style() {
     display: flex;
-    justify-content: space-between;
     align-items: flex-start;
     gap: 3em;
     padding: 1em;
@@ -460,7 +459,42 @@ header {
 /* Main */
 main {
     @include flex-col;
-    padding: 8em 2em 1.6em 2em;
+    padding: 8em 2em 1.6em 2em; // large top padding to account for header height
+}
+
+/* Links */
+.links-container {
+    display: flex;
+    justify-content: space-around;
+    margin: auto 0 0.8em 0;
+    padding-top: 1em;
+
+    @media only screen and (min-width: 840px) {
+        justify-content: space-between;
+        
+        a,
+        .back-btn {
+            font-size: 1.1rem;
+            width: 10em;
+        }
+    }
+}
+
+.about-links a,
+.links-container a,
+.back-btn {
+    @include arrow-button-style;
+
+    &:hover,
+    &:active {
+        @include button-hover;
+    }
+}
+
+.back-btn {
+    @include button-style;
+    font-size: inherit;
+    font-family: inherit;
 }
 
 /* Footer */
@@ -497,7 +531,6 @@ main.home-container {
 
     .subtitle {
         padding: 0.6em 0;
-        font-size: 1.6rem;
         text-align: center;
         color: $secondary-green;
     }
@@ -520,28 +553,94 @@ main.home-container {
             }
         }
     }
+
+    @media only screen and (min-width: 1024px) {           
+        .home-links {
+            gap: 1.4em;
+        }
+
+        .subtitle {
+            font-size: 1.8rem;
+            text-align: center;
+        }
+    }
 }
 
 /************
 *** About ***
 *************/
 main.about-container {
+    flex-grow: 1;
 
-    h2 {
-        padding-bottom: 0.4em;
+    h1 {
+        padding: 0 0 0.4em 0;
+    }
+    
+    .about-text {
+        font-size: 1.1rem;
+        margin: auto 0;
+        p {
+            margin: 0.2em 2.2em 1.2em 0;
+            line-height: 1.7rem;
+        }
+    }
+    
+    .about-links {
+        margin: auto 0 1em 0;
+        @include flex-col;
+        gap: 1.1em;
+        font-size: 1.1rem;
     }
 
-    .about-text {
-        p {
-            margin: 0.2em 2em 0.6em 0;
-            line-height: 1.5rem;
+    @media only screen  and (min-width: 648px) {
+        .about-text {
+           p {
+                margin-bottom: 1em;
+           }
         }
     }
 
-    .about-links {
-        margin-top: 1em;
-        @include flex-col;
-        gap: 1.1em;
+    @media only screen and (min-width: 840px) {
+        padding: 8em 3em 1.6em 3em;
+
+        h1 {
+            padding: 0.4em 0 0.8em 0;
+            font-size: 2rem;
+        }
+
+        .about-text {
+            margin: auto 0;
+            p {
+                margin: 0.2em 0 1.6em 0;
+            }
+        }
+
+        .about-links {
+            font-size: 1.2rem;
+            flex-direction: row;
+            justify-content: space-between;
+    
+            a {
+                width: 12em;
+                justify-content: center;
+            }
+        }
+    }
+
+    @media only screen and (min-width: 1536px) {
+        .about-text {
+            p {
+                font-size: 1.2rem;
+            }
+        }
+        
+        .about-links {
+            font-size: 1.3rem;
+
+            a {
+                width: 18em;
+            }
+        }
     }
 }
 
@@ -1055,48 +1154,72 @@ main.checkout-container {
 *******************/
 main.contact-us-container {
     flex-grow: 1;
-    gap: 1.2em;
+    margin: 0 auto;
+    gap: 1em;
+    max-width: 30em;
 
     h1 {
         text-align: center;
     }
 
-    p {
-        font-size: 1.2rem;
-        line-height: 1.7rem;
-        letter-spacing: 0.05rem;
-    }
-    
-    form {
+    .contact-text {
         @include flex-col;
         gap: 1em;
-        border: 1px solid $light-green;
-        border-radius: 0.6em;
-        padding: 1em;
-        box-shadow: $box-shadow-default;
-        
-        input,
-        textarea {
-            padding: 0.5em;
-            width: 100%;
-            font-family: inherit;
-            font-size: 1.1rem;
-            height: 2.2em;
-            border: 1px solid $primary-grey;
-            border-radius: 0.4em;
-        }
-        
-        textarea {
-            height: 6em;
-        }
 
-        .submit-btn {
-            @include button-style;
+        p {
             font-size: 1.1rem;
+            line-height: 1.7rem;
             letter-spacing: 0.05rem;
+        }
+        
+        form {
+            @include flex-col;
+            gap: 1em;
+            border: 1px solid $light-green;
+            border-radius: 0.7em;
+            padding: 1em;
+            box-shadow: $box-shadow-default;
+            
+            input,
+            textarea {
+                padding: 0.45em;
+                width: 100%;
+                font-family: inherit;
+                font-size: 1.1rem;
+                height: 2.2em;
+                border: 1px solid $primary-grey;
+                border-radius: 0.6em;
+            }
+            
+            textarea {
+                height: 6em;
+            }
+            
+            .submit-btn {
+                @include button-style;
+                font-size: 1.1rem;
+                letter-spacing: 0.05rem;
+                
+                &:hover {
+                    @include button-hover;
+                }
+            }
+        }    
+    }
+    
+    @media only screen and (min-width: 1024px) {
+        gap: 0;
+        max-width: 100%;
+        h1 {
+            padding-top: 0.2em
+        }
+        .contact-text {
+            font-size: 1.2rem;
+            flex-direction: row;
+            margin-top: 2em;
 
-            &:hover {
-                @include button-hover;
+            form {
+                width: 80%;
             }
         }
     }
@@ -1140,9 +1263,9 @@ main.contact-us-container {
 
 .how-to-container {
     flex-grow: 1;
-    padding: 1.6em 2.6em;
+    padding: 8em 2.6em 1.6em 2.6em;
 
-    .aim-container,
+    .aim-setup-container,
     .setup-container,
     .gameplay-container,
     .smackdowns-container,
@@ -1150,38 +1273,17 @@ main.contact-us-container {
     .card-values-container,
     .calling-croc-container,
     .prohibited-container {
+        flex-grow: 1;
+        border: 1px solid red;
         @include flex-col;
         gap: 0.3em;
     }
 }
 
-.links-container {
-    display: flex;
-    justify-content: space-around;
-    margin: 0.8em 0;
-}
-
-.about-links a,
-.links-container a,
-.back-btn {
-    @include arrow-button-style;
-
-    &:hover,
-    &:active {
-        @include button-hover;
-    }
-}
-
-.back-btn {
-    @include button-style;
-    font-size: inherit;
-    font-family: inherit;
-}
-
 /*******************
 ****  AimSetup  ****
 *******************/
-.aim-container {
+.aim-setup-container {
     @include flex-col;
     gap: 0.3em;
 }
@@ -1242,12 +1344,8 @@ main.contact-us-container {
 
     .links-container {
         a {
-            font-size: 0.9rem;
+            width: auto;
         }
-    }
-
-    .back-btn {
-        font-size: 0.9rem;
     }
 }
 
@@ -1284,6 +1382,12 @@ main.contact-us-container {
 /***************************
 ****  Prohibited Plays  ****
 ****************************/
+
+.prohibited-container {
+    h4 {
+        padding-top: 1em;
+    }
+}
 
 /************************
 ****  Media Queries  ****
@@ -1346,18 +1450,6 @@ main.contact-us-container {
         }
     }
 
-    main.home-container {
-        .subtitle {
-            font-size: 1.8rem;
-            text-align: center;
-        }
-    }
-
-    .card,
-    .power-card {
-        width: calc(33.333% - 20px);
-        /* For 3 cards per row */
-    }
 }
 
 @media only screen and (min-width: 840px) {
@@ -1379,39 +1471,15 @@ main.contact-us-container {
             font-size: 2rem;
         }
     }
-
-    .card,
-    .power-card {
-        width: calc(25% - 20px);
-        /* For 4 cards per row */
-    }
 }
 
 @media only screen and (min-width: 1280px) {
-    
+
     footer {
         h4 {
             margin-top: 1.3em;
             font-size: 1.5rem;
         }
-    }
-
-    main.about-container {
-   
-        .about-links {
-            flex-direction: row;
-            justify-content: space-between;
-            width: 100%;
-            
-            a {
-                width: 10em;
-                justify-content: center;
-            }
-        }
-    }
-
-    .aim-container {
-        text-align: center;
     }
 
     .setup-container,
@@ -1422,42 +1490,6 @@ main.contact-us-container {
         margin-top: 2em;
     }
 
-    main.contact-us-container {
-        gap: 1em;
-  
-        p {
-            font-size: 0.8rem;
-            line-height: 1.5em;
-        }
-        
-        form.contact-form {
-            flex-direction: row;
-            
-            .form-inputs {
-                @include flex-col;
-                gap: 1em;
-                width: 30em;
-
-                input {
-                    font-size: 0.8rem;
-                }
-
-                textarea {
-                    font-size: 0.7rem;
-                    height: 8em;
-                }
-            }
-
-            .submit-btn {
-                margin-top: 0;
-                padding: 0 2em;
-                display: block;
-                margin: auto 0 0 2em;
-                height: 4em;
-                font-size: 1.1rem;
-            }
-        }
-    }
 }
 
 @media only screen and (min-width: 1536px) {
@@ -1498,7 +1530,7 @@ main.contact-us-container {
     }
 
     footer {
-        padding-top: 2em;
+
         h4 {
             margin: 1em 0 0 2em;
             font-size: 1.4rem;

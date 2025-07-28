@@ -67,31 +67,33 @@ const Contact = () => {
         <main className="contact-us-container">
 			{ showModal && thanksModal }
             <h1>Contact Us</h1>
-            <p>Have any questions? Suggestions? Feedback? Let us know!</p>
-            <form onSubmit={(e) => handleSubmit(e)}>
-					<input type="text" 
-						placeholder="Name *" 
-						value={name}
-						required 
-						onChange={(e)=> {
-						handleNameChange(e)
-					}}/>
-					<input type="email" 
-						placeholder="Email *" 
-						value={email} 
-						required 
-						onChange={(e)=> {
-						handleEmailChange(e)
-					}}/>
-					<textarea 
-						placeholder="Message *" 
-						value={message} 
-						required 
-						onChange={(e)=> {
-						handleMessageChange(e)
-					}}></textarea>
-                <button className="submit-btn" type="submit">Submit</button>
-            </form>
+			<div className='contact-text'>
+				<p>Have any questions? Suggestions? Feedback? Let us know!</p>
+				<form onSubmit={(e) => handleSubmit(e)}>
+						<input type="text" 
+							placeholder="Name *" 
+							value={name}
+							required 
+							onChange={(e)=> {
+								handleNameChange(e)
+						}}/>
+						<input type="email" 
+							placeholder="Email *" 
+							value={email} 
+							required 
+							onChange={(e)=> {
+								handleEmailChange(e)
+						}}/>
+						<textarea 
+							placeholder="Message *" 
+							value={message} 
+							required 
+							onChange={(e)=> {
+								handleMessageChange(e)
+						}}></textarea>
+					<button className="submit-btn" type="submit">Submit</button>
+				</form>
+			</div>
         </main>
     )
 }
