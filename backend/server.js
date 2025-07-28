@@ -7,9 +7,16 @@ app.use(express.json())
 
 const cors = require('cors')
 const allowedOrigins = [
+  "http://localhost:5172",
+  "http://localhost:5173",
   "http://localhost:5174", // local host for testing
   "https://crocodile-mk.vercel.app", // deployed frontend
 ]
+
+app.use((req, res, next) => {
+  console.log("🔍 Origin:", req.headers.origin)
+  next()
+})
 
 app.use(cors({
   origin: (origin, callback) => {
@@ -17,7 +24,7 @@ app.use(cors({
       callback(null, true)
     } else {
       console.log("❌ CORS blocked origin:", origin)
-      callback(new Error("Not allowed by CORS"))
+      callback(null, false)
     }
   },
   credentials: true,
