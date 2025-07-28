@@ -1,15 +1,19 @@
 $font-stack: 'Quicksand', sans-serif;
-$primary-green: #07543A;
+$crocodile-green: #07543A;
 $secondary-green: #0B6E4F;
+$light-green: #428061;
 $primary-black: #161925;
 $secondary-black: #050505;
 $primary-white: #FEFFFE;
 $secondary-white: #f7f7f7ee;
+$third-white: #d3d3d3;
+$primary-grey: #d3d3d3;
+
 
 $box-shadow-default: 2px 2px 8px rgba(0, 0, 0, 0.1), -1px -1px 4px rgba(255, 255, 255, 0.3);
 $box-shadow-hover: 3px 3px 10px rgba(0, 0, 0, 0.2), -2px -2px 5px rgba(255, 255, 255, 0.3);
 
-$transition-fast: all 250ms ease-in-out;
+$transition-fast: all 200ms ease-in-out;
 $transition-slow: all 500ms ease-in-out;
 
 @mixin flex-col() {
@@ -26,7 +30,7 @@ $transition-slow: all 500ms ease-in-out;
 @mixin button-style {
     @include flex-center;
     padding: 0.8em 1.2em;
-    background-color: $primary-green;
+    background-color: $crocodile-green;
     font-weight: bold;
     color: $primary-white;
     border: none;
@@ -36,8 +40,14 @@ $transition-slow: all 500ms ease-in-out;
     box-shadow: $box-shadow-default;
 }
 
-@mixin link-button-style {
-    @include flex-center;
+@mixin button-hover {
+    transform: scale(1.1);
+    background-color: $secondary-green;
+    box-shadow: $box-shadow-hover;
+}
+
+@mixin arrow-button-style {
+    @include button-style;
     gap: 0.5em;
 
     .arrow {
@@ -50,7 +60,6 @@ $transition-slow: all 500ms ease-in-out;
             border-bottom: 0.4em solid transparent;
             border-left: 0.6em solid $primary-white;
         }
-
         &.left {
             border-top: 0.4em solid transparent;
             border-bottom: 0.4em solid transparent;
@@ -59,13 +68,7 @@ $transition-slow: all 500ms ease-in-out;
     }
 }
 
-@mixin button-hover {
-    transform: scale(1.1);
-    background-color: $secondary-green;
-    box-shadow: $box-shadow-hover;
-}
-
-@mixin card-style($w: 90%, $max-w: 18em, $min-w: 15em) {
+@mixin product-card-style($w: 90%, $max-w: 18em, $min-w: 15em) {
     width: $w;
     max-width: $max-w;
     min-width: $min-w;
@@ -73,28 +76,24 @@ $transition-slow: all 500ms ease-in-out;
     gap: 1em;
     padding: 1em;
     background-color: $secondary-white;
-    border: 1px solid #d3d3d3;
+    border: 1px solid $primary-grey;
     border-radius: 0.6em;
     box-shadow: $box-shadow-default;
 }
 
-@mixin playing-card-style($width: 50%) {
-    width: $width;
-    margin-bottom: 1em;
-    @include flex-col;
-    @include flex-center;
-
-    h4 {
-        color: $primary-black;
-        text-align: center;
-    }
+@mixin playing-card-style() {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 3em;
+    padding: 1em;
 
     img {
-        width: 35%;
-        margin: 1em auto;
+        width: 5em;
+        height: auto;
         box-shadow: $box-shadow-default;
         transition: all 0.3s ease-in-out;
-
+        
         &:hover {
             box-shadow: $box-shadow-hover;
         }
@@ -124,6 +123,26 @@ $transition-slow: all 500ms ease-in-out;
     }
 }
 
+.loading {
+    width: 2em;
+    height: 2em;
+    margin: auto;
+    border: 0.2em solid $primary-grey;
+    border-top: 0.2em solid $crocodile-green;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -144,7 +163,7 @@ body {
 h1, 
 h2, 
 h4 {
-    color: $primary-green;
+    color: $crocodile-green;
 }
 
 h2 {
@@ -152,7 +171,6 @@ h2 {
 }
 
 h4 {
-    margin-top: 0.7em;
     font-size: 1.2rem;
 }
 
@@ -177,25 +195,35 @@ a {
 
 /* Header */
 header {
-    display: flex;
-    position: relative;
-    justify-content: start;
-    padding: 0.8em 1.5em 1.2em 1.5em;
-    box-shadow: $box-shadow-default;
-    
-    .header-logo {
-        cursor: pointer;
+    position: fixed;
+    z-index: 99;
+    height: 6.4em;
+    width: 100%;
+    border-bottom: 1px solid $secondary-white;
+    background-color: $primary-white;
 
-        img {
-            max-width: 8em;
-        }
-    
-        h1 {
-            font-size: 1.1rem;
-            letter-spacing: 0.25rem;
-            line-height: 1.3em;
-            border-top: 2px solid $primary-green;
-            border-bottom: 2px solid $primary-green;
+    .header-container{
+        display: flex;
+        position: relative;
+        width: 100%;
+        justify-content: start;
+        padding: 0.8em 1.5em 1.2em 1.5em;
+        box-shadow: $box-shadow-default;
+        
+        .header-logo {
+            cursor: pointer;
+            
+            img {
+                max-width: 8em;
+            }
+            
+            h1 {
+                font-size: 1.1rem;
+                letter-spacing: 0.25rem;
+                line-height: 1.3em;
+                border-top: 2px solid $crocodile-green;
+                border-bottom: 2px solid $crocodile-green;
+            }
         }
     }
 }
@@ -207,7 +235,7 @@ header {
     right: 2em;
     left: auto;
     transition: right 550ms ease-out 100ms;
-
+    
     a {
         .mobile-nav-cart-img-container {
             position: absolute;
@@ -231,7 +259,7 @@ header {
                 right: -0.02em;
                 font-size: 0.8rem;
                 font-weight: bold;
-                color: $primary-green;
+                color: $crocodile-green;
             }
 
             .underline {
@@ -241,7 +269,7 @@ header {
     }
 
     .hamburger-container {
-        z-index: 1001;
+        z-index: 101;
         position: relative;
         @include flex-center;
         height: 3.8em;
@@ -253,12 +281,12 @@ header {
         .hamburger::before,
         .hamburger::after {
             height: 0.18em;
-            background-color: $primary-green;
+            background-color: $crocodile-green;
             border-radius: 1.5em;
         }
 
         .hamburger {
-            z-index: 1001;
+            z-index: 101;
             width: 100%;
             transition: transform 500ms ease-in-out 50ms, background-color 500ms ease-in-out;
 
@@ -283,7 +311,7 @@ header {
     }
 
     &-links {
-        z-index: 1000;
+        z-index: 100;
         position: fixed;
         inset: 0 0 0 40%;
         padding: 6.6em 2.2em;
@@ -431,9 +459,8 @@ header {
 
 /* Main */
 main {
-    margin: auto auto;
-    padding: 0.4em 2em;
     @include flex-col;
+    padding: 8em 2em 1.6em 2em;
 }
 
 /* Footer */
@@ -444,7 +471,7 @@ footer {
     padding: 0.5em 0.2em 0.1em 0.2em;
 
     h4 {
-        margin-top: 1ch;
+        margin-top: 0.8em;
         margin-left: 5%;
         font-size: 1.2rem;
         
@@ -466,6 +493,7 @@ footer {
 main.home-container {
     width:90%;
     max-width: 28em;
+    margin: auto auto;
 
     .subtitle {
         padding: 0.6em 0;
@@ -500,7 +528,7 @@ main.home-container {
 main.about-container {
 
     h2 {
-        padding: 0.6em 0 0.4em 0;
+        padding-bottom: 0.4em;
     }
 
     .about-text {
@@ -521,10 +549,9 @@ main.about-container {
 **** Shop ****
 *************/
 main.shop-container {
-    padding: 0 1em;
+    flex-grow: 1;
 
     h2 {
-        padding: 0.7em 0 0.3em 0;
         text-align: center;
         font-size: 2rem;
     }
@@ -534,22 +561,25 @@ main.shop-container {
         justify-content: center;
         flex-wrap: wrap;
         gap: 1.5em;
-        margin: 0.6em 0 1em 0;
+        margin: 1.2em 0 0.8em 0;
     }
 
     .go-to-cart-btn { 
-        @include button-style;
-        @include link-button-style;
-        @include button-hover;
-        margin: 1.6em auto;
-        width: 80%;
-        max-width: 16em;
-        min-width: 10em;
+        @include arrow-button-style;
+        margin: 1em auto;
+        width: 100%;
+        max-width: 20em;
+        min-width: 12em;
+        
+        &:hover {
+            @include button-hover;
+        }
     }
+
 }
 
 .shop-product-card {
-    @include card-style(100%, 19em, 12em); 
+    @include product-card-style(100%, 20em, 12em); 
 
     @media screen and (min-width: 648px) {
         width: 45%;
@@ -603,7 +633,7 @@ main.shop-container {
 
             a {
                 font-size: 0.8rem;
-                color: $primary-green;
+                color: $crocodile-green;
                 transition: all 300ms ease-in-out;
                 padding: 0.5em 0.5em 0.2em 0.5em;
                 border-radius: 100%;
@@ -629,7 +659,7 @@ main.shop-container {
             justify-content: space-between;
             align-items: flex-start;
             font-size: 1.1rem;
-            color: $primary-green;
+            color: $crocodile-green;
 
             .title {
                 font-weight: 500;
@@ -650,7 +680,7 @@ main.shop-container {
                     .color-btn {
                         height: 1.3em;
                         width: 1.3em;
-                        border: 1px solid #e2e2e2;
+                        border: 1px solid $primary-grey;
                         border-radius: 100%;
 
                         &.active {
@@ -664,9 +694,9 @@ main.shop-container {
                         height: 2em;
                         text-align: center;
                         font-size: 0.75rem;
-                        background-color: #d3d3d3;
+                        background-color: $primary-grey;
                         color: $primary-black;
-                        border: 1px solid #d3d3d3;
+                        border: 1px solid $primary-grey;
                         padding: 0.2em;
                         border-radius: 0.3rem;
                     }
@@ -706,17 +736,16 @@ main.shop-container {
 main.cart-container {
     @include flex-col;
     align-items: center;
-    padding: 1em 1.6em;
     width: 100%;
     flex-grow: 1;
+    margin: auto auto;
     gap: 1.2em;
-
 
     h1 {
         padding: 0.1em 0;
     }
     .cart-product-card {
-        @include card-style(100%, 21em, 15em);
+        @include product-card-style(100%, 24em, 15em);
         padding: 0.6em;
         min-height: 7.2em; // img height 6 em + top and bottom padding 0.5em 
         flex-direction: row;
@@ -763,7 +792,7 @@ main.cart-container {
                 width: fit-content;
                 font-size: 0.8rem;
                 font-weight: 600;
-                color: $primary-green;
+                color: $crocodile-green;
                 border: 2px solid $secondary-green;
                 border-radius: 0.6em;
                 width: 4.8em; //ctrl container x 3
@@ -800,28 +829,26 @@ main.cart-container {
         width: 90%;
 
         a {
-            @include link-button-style;
+            @include arrow-button-style;
             width: 45%;
         }
     }
-
-    @media screen and (min-width: 648px) {
-        width: 45%;
-    }
-
-    // Optional: for large screens (3+ cards)
-    @media screen and (min-width: 1024px) {
-        width: 35%;
-    }
-}
-
-main.empty {
+    
     .empty-cart {
         margin: auto 0;
-
-        .link-shop {
-            margin-top: 2em;
-            @include button-style;
+    
+        p {
+            font-weight: bold;
+            font-size: 1.25rem;
+        }
+    
+        a {
+            margin-top: 1.6em;
+            font-size: 1.15rem;
+            @include arrow-button-style;
+            &:hover {
+                @include button-hover;
+            }
         }
     }
 }
@@ -833,7 +860,6 @@ main.empty {
 main.checkout-container {
     flex-grow: 1;
     width: 100%;
-    padding: 1em 2em;
     @include flex-col;
     justify-content: flex-start;
     gap: 1em;
@@ -849,20 +875,27 @@ main.checkout-container {
         justify-content: space-between;
         gap: 0.4em;
 
-        .status-container,
-        .status-place-order-container {
+        .shrink {
+            flex-grow: 0;
+        }
+    
+        .grow {
             flex-grow: 1;
+        }
+
+        .status-container {
             display: flex;
             gap: 0.4em;
             align-items: center;
             justify-content: space-between;
+
 
             span {
                 @include flex-center;
                 height: 1.5em;
                 width: 1.5em;
                 color: $primary-white;
-                background-color: $primary-green;
+                background-color: $crocodile-green;
                 border-radius: 100%;
             }
             .incomplete {
@@ -872,14 +905,14 @@ main.checkout-container {
             span.hr {
                 flex-grow: 1;
                 height: 0.1em;
-                background-color: #07543A;
+                background-color: $crocodile-green;
                 border-radius: 0;
             }
 
         }
-        .status-place-order-container,
-        .shrink {
-            flex-grow: 0;
+
+        .shrink-margin {
+            margin-right: 2.45em;
         }
     }
     @media only screen and (min-width: 840px) {
@@ -892,7 +925,6 @@ main.checkout-container {
     
             .status-container,
             .status-place-order-container {
-                flex-grow: 1;
                 display: flex;
                 gap: 0.4em;
                 align-items: center;
@@ -903,7 +935,7 @@ main.checkout-container {
                     height: 1.5em;
                     width: 1.5em;
                     color: $primary-white;
-                    background-color: $primary-green;
+                    background-color: $crocodile-green;
                     border-radius: 100%;
                 }
     
@@ -914,20 +946,18 @@ main.checkout-container {
                 span.hr {
                     flex-grow: 1;
                     height: 0.1em;
-                    background-color: #07543A;
+                    background-color: $crocodile-green;
                     border-radius: 0;
                 }
     
             }
     
-            .status-place-order-container {
-                flex-grow: 0;
-            }
         }
     }
     
     form {
         padding: 0.8em 1em;
+        margin: auto 0;
         border: 1px solid $secondary-green;
         border-radius: 0.8em;
         box-shadow: $box-shadow-default;
@@ -988,7 +1018,7 @@ main.checkout-container {
                         width: 100%;
                     }
                     span {
-                        color: $primary-green;
+                        color: $crocodile-green;
                         font-weight: 500;
                     }
                     
@@ -1024,15 +1054,15 @@ main.checkout-container {
 ***  Contact Us  ***
 *******************/
 main.contact-us-container {
+    flex-grow: 1;
     gap: 1.2em;
-    width: 90%;
 
     h1 {
         text-align: center;
     }
 
     p {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
         line-height: 1.7rem;
         letter-spacing: 0.05rem;
     }
@@ -1040,41 +1070,66 @@ main.contact-us-container {
     form {
         @include flex-col;
         gap: 1em;
-        border: 1px solid #8bc78b;
+        border: 1px solid $light-green;
         border-radius: 0.6em;
         padding: 1em;
         box-shadow: $box-shadow-default;
         
-        .form-inputs {
-            @include flex-col;
-            gap: 1em;
-
-            input,
-            textarea {
-                padding: 0.5em;
-                width: 100%;
-                font-family: inherit;
-                font-size: 1.1rem;
-                height: 2em;
-                border: 1px solid #C7D3DD;
-                border-radius: 2px;
-            }
-            
-            textarea {
-                height: 6em;
-            }
+        input,
+        textarea {
+            padding: 0.5em;
+            width: 100%;
+            font-family: inherit;
+            font-size: 1.1rem;
+            height: 2.2em;
+            border: 1px solid $primary-grey;
+            border-radius: 0.4em;
         }
-    
+        
+        textarea {
+            height: 6em;
+        }
+
         .submit-btn {
             @include button-style;
-            padding: 0.8em 0;
             font-size: 1.1rem;
             letter-spacing: 0.05rem;
 
             &:hover {
                 @include button-hover;
             }
+        }
+    }
+}
 
+.thanks-modal {
+    position: absolute;
+    inset: 0 0 0 0;
+    background-color: hsla(0, 0%, 5%, 0.6);
+    backdrop-filter: blur(0.4rem);
+    @include flex-center;
+    z-index: 200;
+
+    .modal {
+        position: relative;
+        p {
+            @include flex-center;
+            text-align: center;
+            width: 14em;
+            height: 8em;
+            padding: 1em;
+            font-weight: bold;
+            border-radius: 1em;
+            background-color: $primary-grey;
+        }
+
+        svg {
+            position: absolute;
+            top: 0.8em;
+            right: 0.6em;
+            color: $crocodile-green;
+            font-size: 1.5rem;
+            cursor: pointer;
         }
     }
 }
@@ -1102,15 +1157,14 @@ main.contact-us-container {
 
 .links-container {
     display: flex;
-    justify-content: space-between;
-    margin: 0.6em 0;
+    justify-content: space-around;
+    margin: 0.8em 0;
 }
 
 .about-links a,
 .links-container a,
 .back-btn {
-    @include button-style;
-    @include link-button-style;
+    @include arrow-button-style;
 
     &:hover,
     &:active {
@@ -1119,53 +1173,36 @@ main.contact-us-container {
 }
 
 .back-btn {
+    @include button-style;
     font-size: inherit;
     font-family: inherit;
-    font-weight: 600;
-    transition: $transition-fast;
 }
 
-/**************
-****  Aim  ****
-***************/
+/*******************
+****  AimSetup  ****
+*******************/
 .aim-container {
-    margin: auto auto;
-    width: 90%;
     @include flex-col;
     gap: 0.3em;
 }
 
-/****************
-****  Setup  ****
-*****************/
-
-.setup-container {
-    flex-grow: 1;
-    height: 100%;
-    @include flex-col;
-    gap: 0.6em;
-}
 /*******************
 ****  Gameplay  ****
 ********************/
-
 .gameplay-container {
 
     ul {
         @include croc-ul(green);
     }
 
-    ul:nth-of-type(1) li:nth-child(1){
-        padding-bottom: 0.5em;
-    }
-    
+    ul:nth-of-type(1) li:nth-child(1),
     ul:nth-of-type(2) li:nth-child(3) {
         padding-bottom: 0.5em;
     }
     
     .link-card-values,
     .link-power-cards {
-        color: $primary-green;
+        color: $crocodile-green;
         font-weight: bold;
         cursor: pointer;
         transition: $transition-fast;
@@ -1178,10 +1215,6 @@ main.contact-us-container {
     }
 }
 
-/***********************
-****  Calling Croc  ****
-************************/
-
 /*********************
 ****  Smackdowns  ****
 **********************/
@@ -1189,6 +1222,11 @@ main.contact-us-container {
 .smackdowns-container {
     ul {
         @include croc-ul(green);
+    }
+
+    .royal-croc {
+        font-weight: bold;
+        color: $crocodile-green;
     }
 }
 
@@ -1213,21 +1251,34 @@ main.contact-us-container {
     }
 }
 
-.cards, 
+.playing-cards, 
 .power-cards {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    @include flex-col;
 }
 
-.card {
-    @include playing-card-style(50%)
-}
-
+.playing-card,
 .power-card {
-    @include playing-card-style(45%);
-    justify-content: space-between;
-    margin: 1em auto;
+    @include playing-card-style();
+    @include playing-card-style();
+
+    .playing-card-info,
+    .power-card-info {
+        h4 {
+            color: $primary-black;
+        }
+
+        p {
+            font-size: 0.8rem;
+
+            span {
+                display: block;
+            }
+
+            .playing-card-value {
+                font-weight: bold;
+            }
+        }
+    }
 }
 
 /***************************
@@ -1243,7 +1294,7 @@ main.contact-us-container {
     .mobile-nav {
 
         &-links {
-            z-index: 1000;
+            z-index: 100;
             position: fixed;
             inset: 0 0 0 50%;
         }
@@ -1271,14 +1322,16 @@ main.contact-us-container {
     }
 
     header {
-        background-image: linear-gradient($secondary-green, $primary-green);
-        justify-content: space-between;
+        .header-container {
+            background-image: linear-gradient($secondary-green, $crocodile-green);
+            justify-content: space-between;
 
-        .header-logo {
-            h1 {
-                color: $primary-white;
-                border-top: 2px solid $primary-white;
-                border-bottom: 2px solid $primary-white;
+            .header-logo {
+                h1 {
+                    color: $primary-white;
+                    border-top: 2px solid $primary-white;
+                    border-bottom: 2px solid $primary-white;
+                }
             }
         }
     }
@@ -1410,32 +1463,34 @@ main.contact-us-container {
 @media only screen and (min-width: 1536px) {
 
     header {
-        padding: 0.6em 2.5em 1.2em 2.5em;
-
-        .header-logo {
-            img {
-                max-width: 9.5em;
-            }
-
-            h1 {
-                font-size: 1.4rem;
-            }
-        }
-
-        .desktop-nav {
-            font-size: 1.3rem;
-            gap: 1.5em;
+        .header-container {
+            padding: 0.6em 2.5em 1.2em 2.5em;
             
-            span {
-                height: 3px;
-            }
+            .header-logo {
+                img {
+                    max-width: 9.5em;
+                }
 
-            a {
-                .desktop-nav-cart-img-container {
-                    .cart-count {
-                        font-size: 1.15rem;
-                        bottom: 1.05em;
-                        right: 0.12em;
+                h1 {
+                    font-size: 1.4rem;
+                }
+            }
+            
+            .desktop-nav {
+                font-size: 1.3rem;
+                gap: 1.5em;
+                
+                span {
+                    height: 3px;
+                }
+                
+                a {
+                    .desktop-nav-cart-img-container {
+                        .cart-count {
+                            font-size: 1.15rem;
+                            bottom: 1.05em;
+                            right: 0.12em;
+                        }
                     }
                 }
             }

@@ -1,10 +1,12 @@
-import React from "react"
+import { useState, useEffect } from 'react'
+import { RxCross2 } from "react-icons/rx"
 
 const Contact = () => {
-	const [name, setName] = React.useState("")
-	const [email, setEmail] = React.useState("")
-	const [message, setMessage] = React.useState("")
-
+	const [name, setName] = useState<string>("")
+	const [email, setEmail] = useState<string>("")
+	const [message, setMessage] = useState<string>("")
+	const [showModal, setShowModal] = useState<boolean>(false)
+ 
 
 	const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
         setName(e.target.value)
@@ -17,7 +19,6 @@ const Contact = () => {
     const handleMessageChange = (e: React.ChangeEvent<HTMLTextAreaElement>): void => {
         setMessage(e.target.value)
     }
-
 
 	const handleSubmit = async (e: React.FormEvent) : Promise<void> => {
 		console.log( name, email, message)
@@ -33,13 +34,13 @@ const Contact = () => {
 			const data = await response.json()
 
 			if (response.ok) {
-				alert('Message sent successfully!')
+				setShowModal(true)
 			} else {
 				alert('Failed to send message: ' + data.error)
 			}
 		} catch (error) {
 			console.error('Submission error:', error)
-			alert('Error submitting form')
+			alert('Error submitting message')
 		}
 
 		setName("")
@@ -47,12 +48,27 @@ const Contact = () => {
 		setMessage("")
 	}
 
+	useEffect(()=> {
+		setTimeout(()=>{
+			setShowModal(false)
+		}, 5000)
+	}, [showModal])
+
+	const thanksModal = (
+		<div className='thanks-modal'>
+			<div className='modal'>
+				<p>Thanks for your enquiry!</p>
+				<RxCross2 onClick={()=> setShowModal(false)}/>
+			</div>
+		</div>
+	)
+
     return (
         <main className="contact-us-container">
+			{ showModal && thanksModal }
             <h1>Contact Us</h1>
-            <p>Have any questions? Suggestions? Feedback? <br />Let us know!</p>
+            <p>Have any questions? Suggestions? Feedback? Let us know!</p>
             <form onSubmit={(e) => handleSubmit(e)}>
-				<div className="form-inputs">
 					<input type="text" 
 						placeholder="Name *" 
 						value={name}
@@ -74,8 +90,7 @@ const Contact = () => {
 						onChange={(e)=> {
 						handleMessageChange(e)
 					}}></textarea>
-				</div>
-                <button className="btn submit-btn" type="submit">Submit</button>
+                <button className="submit-btn" type="submit">Submit</button>
             </form>
         </main>
     )

@@ -26,12 +26,12 @@ const Cart = () => {
   })
 
   return (
-    <main className={`cart-container ${cartCount === 0 ? "empty" : ""}`}>
+    <main className="cart-container">
       <h1>Your Shopping Cart</h1>
       {cart.length === 0 ? (
         <div className="empty-cart">
           <p>Your cart is empty!</p>
-          <Link to="/shop" className="link-shop">Go to Shop!</Link>
+          <Link to="/shop" className="link-shop">Go to Shop<span className="arrow right" /></Link>
         </div>
       ) : (
       <>

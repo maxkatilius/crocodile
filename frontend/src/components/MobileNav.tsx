@@ -62,15 +62,7 @@ const MobileNav = () => {
 								toggleNav()
 								toggleHowTo()
 							}}>
-								Aim
-							</NavLink>
-						</li>
-						<li>
-							<NavLink to="/how-to/setup" onClick={() => {
-								toggleNav()
-								toggleHowTo()
-							}}>
-								Setup
+								Aim / Setup
 							</NavLink>
 						</li>
 						<li>

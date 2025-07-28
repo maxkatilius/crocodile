@@ -18,14 +18,16 @@ const Header = () => {
 
 	return (
 		<header>
-			<div className="header-logo">
-				<img onClick={()=> navigate("/")} src={screenWidth < 768 ? crocHeaderImgGreen : crocHeaderImgWhite} />
-				<h1 onClick={()=> navigate("/")}>CROCODILE</h1>
+			<div className="header-container">
+				<div className="header-logo">
+					<img onClick={()=> navigate("/")} src={screenWidth < 768 ? crocHeaderImgGreen : crocHeaderImgWhite} />
+					<h1 onClick={()=> navigate("/")}>CROCODILE</h1>
+				</div>
+					{screenWidth < 768 
+					?	<MobileNav />
+					:	<DesktopNav />
+					}
 			</div>
-			{screenWidth < 768 
-			?	<MobileNav />
-			:	<DesktopNav />
-			}
 		</header>
 	)
 }

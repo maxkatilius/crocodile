@@ -1,5 +1,4 @@
-// import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom"
 
 const Smackdowns = () => {
 	const navigate = useNavigate();
@@ -45,6 +44,12 @@ const Smackdowns = () => {
 			<p>
 				Perform enough smackdowns to empty your hand, and you’ve 'done
 				the deed', ending the round with an instant win!
+			</p>
+			<p>
+				The only time a deed done can be beat by the 
+				<span className="royal-croc"> Royal Croc</span>: 
+				A perfect full hand worth -2 in total. 
+				Complete with the two Red Kings, and two Jokers.
 			</p>
 			<h4>Chaining Smackdowns</h4>
 			<p>

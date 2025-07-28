@@ -30,44 +30,52 @@ const PowerCards = () => {
 			</p>
 			<div className="power-cards">
 				<div className="power-card">
-					<h4>7 - The Self-Peek or 'Selfie'</h4>
 					<img
 						src={SevenOfClubs}
 						alt="7 of clubs playing card."
 					/>
-					<p>Have a peek at one of your own face-down cards.</p>
+					<div className="power-card-info">
+						<h4>7 - The Self-Peek or 'Selfie'</h4>
+						<p>Have a peek at one of your own face-down cards.</p>
+					</div>
 				</div>
 				<div className="power-card">
-					<h4>8 - The Sneak-a-Peek or 'Sneaky'</h4>
 					<img
 						src={EightOfDiamonds}
 						alt="8 of diamonds playing card."
-					/>
-					<p>Sneak a peek at another player's face-down card.</p>
+						/>
+					<div className="power-card-info">
+						<h4>8 - The Sneak-a-Peek or 'Sneaky'</h4>
+						<p>Sneak a peek at another player's face-down card.</p>
+					</div>
 				</div>
 				<div className="power-card">
-					<h4>9 - The Blind Swap or 'Switcharoo'</h4>
 					<img
 						src={NineOfSpades}
 						alt="9 of spades playing card."
 					/>
-					<p>
+					<div className="power-card-info">
+						<h4>9 - The Blind Swap or 'Switcharoo'</h4>
+						<p>
 						Mix things up! Swap two face-down cards on the table. It
 						can be between your card and another player's, or
 						between two other players, sowing confusion.
-					</p>
+						</p>
+					</div>
 				</div>
 				<div className="power-card">
-					<h4>10 - The Power Swap or 'The Punisher'</h4>
 					<img
 						src={TenOfHearts}
 						alt="10 of hearts playing card."
-					/>
-					<p>
-						The ultimate power play! View one of your cards and
-						another player's card. Decide to swap them or not. It's
-						a combination of all previous power cards in one.
-					</p>
+						/>
+					<div className="power-card-info">
+						<h4>10 - The Power Swap or 'The Punisher'</h4>
+						<p>
+							The ultimate power play! View one of your cards and
+							another player's card. Decide to swap them or not. It's
+							a combination of all previous power cards in one.
+						</p>
+					</div>
 				</div>
 			</div>
 			<div className="links-container">

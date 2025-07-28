@@ -90,22 +90,22 @@ const Checkout = () => {
   // HTML Elements
   const checkoutStatusBar = (
     <div className="checkout-status-bar">
-      <div className="status-container">
+      <div className={`status-container one ${screenWidth > 480 ? "grow" : ""}`}>
         <span>{status > 1 ? "✓" : "1"}</span> 
         <p>Personal Details</p>
-        <span className="hr"></span>
+        {screenWidth > 480 ? <span className="hr"></span> : ""}
       </div>
-      <div className={`status-container ${screenWidth < 840 ? "shrink" : ""}`}>
+      <div className={`status-container two ${screenWidth > 550 ? "grow" : "shrink"}`}>
         <span className={`${status < 2 ? "incomplete" : ""}`}>{status > 2 ? "✓" : "2"}</span>
         <p>Shipping Address</p>
-        {screenWidth > 840 ? <span className="hr"></span> : ""}
+        {screenWidth > 550 ? <span className="hr"></span> : ""}
       </div>
-      <div className="status-container">
+      <div className={`status-container three ${screenWidth > 480 ? "grow" : ""}`}>
         <span className={`${status < 3 ? "incomplete" : ""}`}>{status > 3 ? "✓" : "3"}</span>
         <p>Confirm</p>
-        <span className="hr"></span>
+         {screenWidth > 480 ? <span className="hr"></span> : ""}
       </div>
-      <div className="status-place-order-container">
+      <div className={`status-container four ${screenWidth > 480 ? "shrink" : "shrink shrink-margin"}`}>
         <span className={`${status < 4 ? "incomplete" : ""}`}>{status > 4 ? "✓" : "4"}</span> 
         <p>Place Order</p>
       </div>
@@ -357,91 +357,3 @@ const Checkout = () => {
 }
 
 export default Checkout
-
-
-
-  // const personalButtons = (
-  //   <div className="checkout-ctrls">
-  //     <button 
-  //       onClick={() => navigate(-1)}
-  //       >
-  //       Back
-  //     </button>
-  //     <button
-  //       type="button"
-  //       disabled={!(fname && lname && email)}
-  //       onClick={()=> {
-  //         setStatus(2)
-  //         setPersonalStatus("complete")
-  //         setShippingStatus("active")
-  //       }}
-  //       >
-  //       Next
-  //     </button>
-  //   </div>
-  // )
-
-   // const shippingButtons = (
-  //   <div className="checkout-ctrls">
-  //     <button 
-  //       onClick={() => {
-  //         setStatus(1)
-  //         setShippingStatus("incomplete")
-  //         setPersonalStatus("active")
-  //       }}
-  //       >
-  //       Back
-  //     </button>
-  //     <button
-  //       type="button"
-  //       disabled={!(address && city && postcode)} 
-  //       onClick={()=> {
-  //         setStatus(3)
-  //         setShippingStatus("complete")
-  //         setConfirmedStatus("active")
-  //       }}
-  //       >
-  //       Next
-  //     </button>
-  //   </div>
-  // )
-  
-  //   <div className="checkout-ctrls">
-  //   <button 
-  //     onClick={() => {
-  //       setStatus(2)
-  //       setShippingStatus("active")
-  //       setConfirmedStatus("incomplete")
-  //     }
-  //   }
-  //   >
-  //     Back
-  //   </button>
-  //   <button 
-  //     type="button"
-  //     onClick={()=> {
-  //       setStatus("purchase")
-  //       setConfirmedStatus("complete")
-  //     }}
-  //   >
-  //     Next
-  //   </button>
-  // </div>
-
-  // <div className="checkout-ctrls">
-  //   <button 
-  //     onClick={() =>{ 
-  //       setStatus(3)
-  //       setConfirmedStatus("active")
-  //     }}
-  //   >
-  //     Back
-  //   </button>
-  //   <button 
-  //     onClick={()=> {
-  //       setStatus(4)
-  //     }}
-  //   >
-  //     Place Order
-  //   </button>
-  // </div>

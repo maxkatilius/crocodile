@@ -8,8 +8,7 @@ import Cart from "./pages/Cart"
 import Checkout from "./pages/Checkout"
 import Contact from "./pages/Contact"
 import HowTo from "./components/HowTo"
-import Aim from "./pages/Aim"
-import Setup from "./pages/Setup"
+import AimSetup from "./pages/AimSetup"
 import Gameplay from "./pages/Gameplay"
 import CardValues from "./pages/CardValues"
 import CallingCroc from "./pages/CallingCroc"
@@ -31,8 +30,7 @@ const App = () => {
 							<Route path ="checkout" element={<Checkout />} />
 							<Route path="contact" element={<Contact />} />
 							<Route path="how-to" element={<HowTo />}>
-								<Route index element={<Aim />} />
-								<Route path="setup" element={<Setup />} />
+								<Route index element={<AimSetup />} />
 								<Route path="gameplay" element={<Gameplay />} />
 								<Route path="card-values" element={<CardValues />} />
 								<Route path="calling-croc" element={<CallingCroc />} />
