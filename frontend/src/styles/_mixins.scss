@@ -136,15 +136,13 @@
 }
 
 @mixin loading() {
-    .loading {
-        width: 2em;
-        height: 2em;
-        margin: auto;
-        border: 0.2em solid $primary-grey;
-        border-top: 0.2em solid $crocodile-green;
-        border-radius: 50%;
-        animation: spin 1s linear infinite;
-    }
+    width: 2em;
+    height: 2em;
+    margin: auto;
+    border: 0.2em solid $primary-grey;
+    border-top: 0.2em solid $crocodile-green;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
 
     @keyframes spin {
         0% {

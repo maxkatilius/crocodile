@@ -28,6 +28,10 @@ main.shop-container {
         }
     }
 
+    .loading {
+        @include loading;
+    }
+
 }
 
 .shop-product-card {

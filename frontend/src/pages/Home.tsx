@@ -12,7 +12,7 @@ const Home = () => {
 				</p>
 			</div>
 			<div className="home-links">
-				<Link to="/how-to">How to play</Link>
+				<Link to="/how-to">How to Play</Link>
 				<Link to="/about">About</Link>
 				<Link to="/shop">Shop</Link>
 				<Link to="/contact">Contact Us</Link>

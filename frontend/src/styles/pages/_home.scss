@@ -1,15 +1,19 @@
 @use "../index" as *;
 
 main.home-container {
+    padding: 8em 2em 1.6em 2em; // large top padding to account for header height
+    margin: auto auto;
+    flex-grow: 1;
     width: 90%;
     max-width: 28em;
-    margin: auto auto;
+    @include flex-col;
+    justify-content: space-evenly;
 
     .home-text {
         .subtitle {
             padding: 0.6em 0;
             text-align: center;
-            color: $secondary-green;
+            color: $crocodile-green;
         }
 
         .tagline {
@@ -31,27 +35,87 @@ main.home-container {
         }
     }
 
-    @media only screen and (min-width: 1024px) {
-        max-width: 34em;
-
+    @media only screen and (min-width: 840px) {
+        max-width: 100%;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 2em;
+        padding: 10em 2em 1.6em 2em;
+        
         .home-text {
-            .home-links {
-                gap: 1.4em;
+            max-width: 70%;
+            
+            .subtitle {
+                padding: 0 0 1em 0;
+                font-size: 3rem;
+                text-align: center;
             }
 
-            .subtitle {
-                font-size: 2.2rem;
+            .tagline {
+                font-size: 1.4rem;
+                width: 80%;
+                margin: auto auto;
                 text-align: center;
+            }
+        }
+        .home-links {
+            max-width: 100%;
+            font-size: 1.4rem;
+            gap: 1.4em;
+            a {
+                width: 10em;
             }
         }
     }
 
-    @media only screen and (min-width: 1536px) {
-        max-width: 38em;
+    @media only screen and (min-width: 1024px) {
+        padding: 14em 2em 1.6em 2em;
+        align-items: flex-start;
 
         .home-text {
+    
             .subtitle {
-                font-size: 2.2rem;
+                font-size: 3rem;
+            }
+    
+            .tagline {
+                font-size: 1.5rem;
+            }
+        }
+    
+        .home-links {
+            font-size: 1.3rem;
+            gap: 1.6em;
+        }
+    }
+
+    @media only screen and (min-width: 1536px) {
+        padding: 14em 0em 1.6em 0em;
+        width: 100%;
+
+        .home-text {
+            max-width: 70%;
+            gap: 3em;
+    
+            .subtitle {
+                padding: 0 0 1.4em 0;
+                font-size: 3.5rem;
+            }
+    
+            .tagline {
+                font-size: 1.85rem;
+                width: 60%;
+                line-height: 1.85;
+            }
+        }
+    
+        .home-links {
+            font-size: 1.6rem;
+            gap: 1.6em;
+    
+            a {
+                width: 11em;
             }
         }
     }

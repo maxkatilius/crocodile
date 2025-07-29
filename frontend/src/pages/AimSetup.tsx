@@ -9,7 +9,7 @@ const AimSetup = () => {
 				<strong> OR</strong> empty your hand first,
 				otherwise known as 'doing the deed'.
 			</p>
-			<h2>Setup</h2>
+			<h2 className="setup-title">Setup</h2>
 			<p>Each player is dealt four cards face-down in a 2x2 square.</p>
 			<p>
 				For a classic deal, give out two cards (the bottom row) to each

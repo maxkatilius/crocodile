@@ -1,3 +1,71 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Quicksand", sans-serif;
+  background-color: #FEFFFE;
+  color: #161925;
+  display: flex;
+  justify-content: center;
+}
+
+.site-container {
+  min-height: 100dvh;
+  min-width: 100dvw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Main */
+main {
+  display: flex;
+  flex-direction: column;
+  padding: 8em 2em 1.6em 2em;
+}
+
+/***************
+** Typography **
+***************/
+h1,
+h2,
+h4 {
+  color: #07543A;
+}
+
+h2 {
+  font-size: 1.65rem;
+}
+
+h4 {
+  font-size: 1.2rem;
+}
+
+p {
+  margin: 0.5em 0;
+  line-height: 1.4;
+}
+
+a {
+  text-decoration: none;
+}
+
+@media only screen and (min-width: 768px) {
+  html {
+    font-size: 1.2rem;
+  }
+}
+@media only screen and (min-width: 1536px) {
+  h1 {
+    font-size: 2.4rem;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+}
 header {
   position: fixed;
   z-index: 99;
@@ -283,66 +351,6 @@ header .header-container .header-logo h1 {
   width: 100%;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-@media only screen and (min-width: 768px) {
-  html {
-    font-size: 1.2rem;
-  }
-}
-body {
-  font-family: "Quicksand", sans-serif;
-  background-color: #FEFFFE;
-  color: #161925;
-  display: flex;
-  justify-content: center;
-}
-
-.site-container {
-  min-height: 100dvh;
-  min-width: 100dvw;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-/* Main */
-main {
-  display: flex;
-  flex-direction: column;
-  padding: 8em 2em 1.6em 2em;
-}
-
-/***************
-** Typography **
-***************/
-h1,
-h2,
-h4 {
-  color: #07543A;
-}
-
-h2 {
-  font-size: 1.65rem;
-}
-
-h4 {
-  font-size: 1.2rem;
-}
-
-p {
-  margin: 0.5em 0;
-  line-height: 1.4;
-}
-
-a {
-  text-decoration: none;
-}
-
 footer {
   display: flex;
   justify-content: space-between;
@@ -393,22 +401,27 @@ footer img {
 @media only screen and (min-width: 1536px) {
   footer h4 {
     margin: 1em 0 0 2em;
-    font-size: 1.4rem;
+    font-size: 1.5rem;
   }
   footer img {
-    min-width: 8em;
+    min-width: 8.4em;
   }
 }
 
 main.home-container {
+  padding: 8em 2em 1.6em 2em;
+  margin: auto auto;
+  flex-grow: 1;
   width: 90%;
   max-width: 28em;
-  margin: auto auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 main.home-container .home-text .subtitle {
   padding: 0.6em 0;
   text-align: center;
-  color: #0B6E4F;
+  color: #07543A;
 }
 main.home-container .home-text .tagline {
   margin-bottom: 2em;
@@ -440,580 +453,79 @@ main.home-container .home-links a:hover {
   background-color: #0B6E4F;
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2), -2px -2px 5px rgba(255, 255, 255, 0.3);
 }
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 840px) {
   main.home-container {
-    max-width: 34em;
+    max-width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    padding: 10em 2em 1.6em 2em;
   }
-  main.home-container .home-text .home-links {
-    gap: 1.4em;
+  main.home-container .home-text {
+    max-width: 70%;
   }
   main.home-container .home-text .subtitle {
-    font-size: 2.2rem;
+    padding: 0 0 1em 0;
+    font-size: 3rem;
     text-align: center;
+  }
+  main.home-container .home-text .tagline {
+    font-size: 1.4rem;
+    width: 80%;
+    margin: auto auto;
+    text-align: center;
+  }
+  main.home-container .home-links {
+    max-width: 100%;
+    font-size: 1.4rem;
+    gap: 1.4em;
+  }
+  main.home-container .home-links a {
+    width: 10em;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  main.home-container {
+    padding: 14em 2em 1.6em 2em;
+    align-items: flex-start;
+  }
+  main.home-container .home-text .subtitle {
+    font-size: 3rem;
+  }
+  main.home-container .home-text .tagline {
+    font-size: 1.5rem;
+  }
+  main.home-container .home-links {
+    font-size: 1.3rem;
+    gap: 1.6em;
   }
 }
 @media only screen and (min-width: 1536px) {
   main.home-container {
-    max-width: 38em;
+    padding: 14em 0em 1.6em 0em;
+    width: 100%;
+  }
+  main.home-container .home-text {
+    max-width: 70%;
+    gap: 3em;
   }
   main.home-container .home-text .subtitle {
-    font-size: 2.2rem;
+    padding: 0 0 1.4em 0;
+    font-size: 3.5rem;
   }
-}
-
-main.shop-container {
-  flex-grow: 1;
-}
-main.shop-container h2 {
-  text-align: center;
-  font-size: 2rem;
-}
-main.shop-container .products-container {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1.5em;
-  margin: 1.2em 0 0.8em 0;
-}
-main.shop-container .go-to-cart-btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0.8em 1.2em;
-  background-color: #07543A;
-  font-weight: bold;
-  color: #FEFFFE;
-  border: none;
-  border-radius: 0.7em;
-  cursor: pointer;
-  transition: all 200ms ease-in-out;
-  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1), -1px -1px 4px rgba(255, 255, 255, 0.3);
-  gap: 0.5em;
-  margin: 1em auto;
-  width: 100%;
-  max-width: 20em;
-  min-width: 12em;
-}
-main.shop-container .go-to-cart-btn .arrow {
-  width: 0;
-  height: 0;
-  display: inline-block;
-}
-main.shop-container .go-to-cart-btn .arrow.right {
-  border-top: 0.4em solid transparent;
-  border-bottom: 0.4em solid transparent;
-  border-left: 0.6em solid #FEFFFE;
-}
-main.shop-container .go-to-cart-btn .arrow.left {
-  border-top: 0.4em solid transparent;
-  border-bottom: 0.4em solid transparent;
-  border-right: 0.6em solid #FEFFFE;
-}
-main.shop-container .go-to-cart-btn:hover {
-  transform: scale(1.1);
-  background-color: #0B6E4F;
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2), -2px -2px 5px rgba(255, 255, 255, 0.3);
-}
-
-.shop-product-card {
-  width: 100%;
-  max-width: 20em;
-  min-width: 12em;
-  display: flex;
-  flex-direction: column;
-  gap: 1em;
-  padding: 1em;
-  background-color: rgba(247, 247, 247, 0.9333333333);
-  border: 1px solid #d3d3d3;
-  border-radius: 0.6em;
-  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1), -1px -1px 4px rgba(255, 255, 255, 0.3);
-}
-@media screen and (min-width: 648px) {
-  .shop-product-card {
-    width: 45%;
+  main.home-container .home-text .tagline {
+    font-size: 1.85rem;
+    width: 60%;
+    line-height: 1.85;
   }
-}
-@media screen and (min-width: 1024px) {
-  .shop-product-card {
-    width: 35%;
+  main.home-container .home-links {
+    font-size: 1.6rem;
+    gap: 1.6em;
   }
-}
-.shop-product-card .image-section {
-  position: relative;
-  display: flex;
-  align-items: start;
-  gap: 1em;
-  height: 12em;
-  width: 100%;
-}
-.shop-product-card .image-section .thumbnails {
-  display: flex;
-  flex-direction: column;
-  gap: 0.4em;
-}
-.shop-product-card .image-section .thumbnails img {
-  width: 2em;
-  height: 2em;
-  object-fit: cover;
-  border-radius: 0.4em;
-  opacity: 0.6;
-  cursor: pointer;
-  transition: opacity 200 ease-in;
-}
-.shop-product-card .image-section .thumbnails img:hover, .shop-product-card .image-section .thumbnails img.selected {
-  opacity: 100%;
-}
-.shop-product-card .image-section .main-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 1em;
-  display: block;
-}
-.shop-product-card .image-section .full-screen-btn {
-  position: absolute;
-  bottom: 0.6em;
-  right: 0.6em;
-}
-.shop-product-card .image-section .full-screen-btn a {
-  font-size: 0.8rem;
-  color: #07543A;
-  transition: all 300ms ease-in-out;
-  padding: 0.5em 0.5em 0.2em 0.5em;
-  border-radius: 100%;
-}
-.shop-product-card .image-section .full-screen-btn a:hover {
-  background-color: rgba(0, 0, 0, 0.3);
-  font-size: 0.9rem;
-}
-.shop-product-card .product-info {
-  display: flex;
-  flex-direction: column;
-  gap: 0.4em;
-}
-.shop-product-card .product-info p {
-  margin: 0;
-}
-.shop-product-card .product-info .product-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  font-size: 1.1rem;
-  color: #07543A;
-}
-.shop-product-card .product-info .product-header .title {
-  font-weight: 500;
-  line-height: 1;
-}
-.shop-product-card .product-info .product-header .product-selectors {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  margin-right: 0.2em;
-  gap: 0.4em;
-}
-.shop-product-card .product-info .product-header .product-selectors .color-selector {
-  margin-left: auto;
-  display: flex;
-  gap: 0.4em;
-}
-.shop-product-card .product-info .product-header .product-selectors .color-selector .color-btn {
-  height: 1.3em;
-  width: 1.3em;
-  border: 1px solid #d3d3d3;
-  border-radius: 100%;
-}
-.shop-product-card .product-info .product-header .product-selectors .color-selector .color-btn.active {
-  border: 1px solid black;
-}
-.shop-product-card .product-info .product-header .product-selectors .size-selector-wrapper .size-selector {
-  height: 2em;
-  text-align: center;
-  font-size: 0.75rem;
-  background-color: #d3d3d3;
-  color: #161925;
-  border: 1px solid #d3d3d3;
-  padding: 0.2em;
-  border-radius: 0.3rem;
-}
-.shop-product-card .product-info .price {
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #161925;
-}
-.shop-product-card .product-info .description {
-  font-size: 0.9rem;
-}
-.shop-product-card .add-to-cart-btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0.8em 1.2em;
-  background-color: #07543A;
-  font-weight: bold;
-  color: #FEFFFE;
-  border: none;
-  border-radius: 0.7em;
-  cursor: pointer;
-  transition: all 200ms ease-in-out;
-  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1), -1px -1px 4px rgba(255, 255, 255, 0.3);
-  align-self: flex-start;
-  margin-top: auto;
-  font-weight: normal;
-  letter-spacing: 0.05rem;
-}
-.shop-product-card .add-to-cart-btn:hover {
-  transform: scale(1.05);
-  background-color: #0B6E4F;
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2), -2px -2px 5px rgba(255, 255, 255, 0.3);
-}
-
-.how-to-container {
-  flex-grow: 1;
-  padding: 8em 2.6em 1.6em 2.6em;
-}
-.how-to-container .aim-setup-container,
-.how-to-container .setup-container,
-.how-to-container .gameplay-container,
-.how-to-container .smackdowns-container,
-.how-to-container .power-cards-container,
-.how-to-container .card-values-container,
-.how-to-container .calling-croc-container,
-.how-to-container .prohibited-container {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 0.3em;
-}
-.how-to-container .aim-setup-container .links-container,
-.how-to-container .setup-container .links-container,
-.how-to-container .gameplay-container .links-container,
-.how-to-container .smackdowns-container .links-container,
-.how-to-container .power-cards-container .links-container,
-.how-to-container .card-values-container .links-container,
-.how-to-container .calling-croc-container .links-container,
-.how-to-container .prohibited-container .links-container {
-  display: flex;
-  justify-content: space-around;
-  margin: auto 0 0.8em 0;
-  padding-top: 1em;
-}
-@media only screen and (min-width: 840px) {
-  .how-to-container .aim-setup-container .links-container,
-  .how-to-container .setup-container .links-container,
-  .how-to-container .gameplay-container .links-container,
-  .how-to-container .smackdowns-container .links-container,
-  .how-to-container .power-cards-container .links-container,
-  .how-to-container .card-values-container .links-container,
-  .how-to-container .calling-croc-container .links-container,
-  .how-to-container .prohibited-container .links-container {
-    justify-content: space-between;
+  main.home-container .home-links a {
+    width: 11em;
   }
-  .how-to-container .aim-setup-container .links-container a,
-  .how-to-container .aim-setup-container .links-container .back-btn,
-  .how-to-container .setup-container .links-container a,
-  .how-to-container .setup-container .links-container .back-btn,
-  .how-to-container .gameplay-container .links-container a,
-  .how-to-container .gameplay-container .links-container .back-btn,
-  .how-to-container .smackdowns-container .links-container a,
-  .how-to-container .smackdowns-container .links-container .back-btn,
-  .how-to-container .power-cards-container .links-container a,
-  .how-to-container .power-cards-container .links-container .back-btn,
-  .how-to-container .card-values-container .links-container a,
-  .how-to-container .card-values-container .links-container .back-btn,
-  .how-to-container .calling-croc-container .links-container a,
-  .how-to-container .calling-croc-container .links-container .back-btn,
-  .how-to-container .prohibited-container .links-container a,
-  .how-to-container .prohibited-container .links-container .back-btn {
-    font-size: 1.1rem;
-    width: 10em;
-  }
-}
-.how-to-container .aim-setup-container .links-container a,
-.how-to-container .aim-setup-container .links-container .back-btn,
-.how-to-container .setup-container .links-container a,
-.how-to-container .setup-container .links-container .back-btn,
-.how-to-container .gameplay-container .links-container a,
-.how-to-container .gameplay-container .links-container .back-btn,
-.how-to-container .smackdowns-container .links-container a,
-.how-to-container .smackdowns-container .links-container .back-btn,
-.how-to-container .power-cards-container .links-container a,
-.how-to-container .power-cards-container .links-container .back-btn,
-.how-to-container .card-values-container .links-container a,
-.how-to-container .card-values-container .links-container .back-btn,
-.how-to-container .calling-croc-container .links-container a,
-.how-to-container .calling-croc-container .links-container .back-btn,
-.how-to-container .prohibited-container .links-container a,
-.how-to-container .prohibited-container .links-container .back-btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0.8em 1.2em;
-  background-color: #07543A;
-  font-weight: bold;
-  color: #FEFFFE;
-  border: none;
-  border-radius: 0.7em;
-  cursor: pointer;
-  transition: all 200ms ease-in-out;
-  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1), -1px -1px 4px rgba(255, 255, 255, 0.3);
-  gap: 0.5em;
-}
-.how-to-container .aim-setup-container .links-container a .arrow,
-.how-to-container .aim-setup-container .links-container .back-btn .arrow,
-.how-to-container .setup-container .links-container a .arrow,
-.how-to-container .setup-container .links-container .back-btn .arrow,
-.how-to-container .gameplay-container .links-container a .arrow,
-.how-to-container .gameplay-container .links-container .back-btn .arrow,
-.how-to-container .smackdowns-container .links-container a .arrow,
-.how-to-container .smackdowns-container .links-container .back-btn .arrow,
-.how-to-container .power-cards-container .links-container a .arrow,
-.how-to-container .power-cards-container .links-container .back-btn .arrow,
-.how-to-container .card-values-container .links-container a .arrow,
-.how-to-container .card-values-container .links-container .back-btn .arrow,
-.how-to-container .calling-croc-container .links-container a .arrow,
-.how-to-container .calling-croc-container .links-container .back-btn .arrow,
-.how-to-container .prohibited-container .links-container a .arrow,
-.how-to-container .prohibited-container .links-container .back-btn .arrow {
-  width: 0;
-  height: 0;
-  display: inline-block;
-}
-.how-to-container .aim-setup-container .links-container a .arrow.right,
-.how-to-container .aim-setup-container .links-container .back-btn .arrow.right,
-.how-to-container .setup-container .links-container a .arrow.right,
-.how-to-container .setup-container .links-container .back-btn .arrow.right,
-.how-to-container .gameplay-container .links-container a .arrow.right,
-.how-to-container .gameplay-container .links-container .back-btn .arrow.right,
-.how-to-container .smackdowns-container .links-container a .arrow.right,
-.how-to-container .smackdowns-container .links-container .back-btn .arrow.right,
-.how-to-container .power-cards-container .links-container a .arrow.right,
-.how-to-container .power-cards-container .links-container .back-btn .arrow.right,
-.how-to-container .card-values-container .links-container a .arrow.right,
-.how-to-container .card-values-container .links-container .back-btn .arrow.right,
-.how-to-container .calling-croc-container .links-container a .arrow.right,
-.how-to-container .calling-croc-container .links-container .back-btn .arrow.right,
-.how-to-container .prohibited-container .links-container a .arrow.right,
-.how-to-container .prohibited-container .links-container .back-btn .arrow.right {
-  border-top: 0.4em solid transparent;
-  border-bottom: 0.4em solid transparent;
-  border-left: 0.6em solid #FEFFFE;
-}
-.how-to-container .aim-setup-container .links-container a .arrow.left,
-.how-to-container .aim-setup-container .links-container .back-btn .arrow.left,
-.how-to-container .setup-container .links-container a .arrow.left,
-.how-to-container .setup-container .links-container .back-btn .arrow.left,
-.how-to-container .gameplay-container .links-container a .arrow.left,
-.how-to-container .gameplay-container .links-container .back-btn .arrow.left,
-.how-to-container .smackdowns-container .links-container a .arrow.left,
-.how-to-container .smackdowns-container .links-container .back-btn .arrow.left,
-.how-to-container .power-cards-container .links-container a .arrow.left,
-.how-to-container .power-cards-container .links-container .back-btn .arrow.left,
-.how-to-container .card-values-container .links-container a .arrow.left,
-.how-to-container .card-values-container .links-container .back-btn .arrow.left,
-.how-to-container .calling-croc-container .links-container a .arrow.left,
-.how-to-container .calling-croc-container .links-container .back-btn .arrow.left,
-.how-to-container .prohibited-container .links-container a .arrow.left,
-.how-to-container .prohibited-container .links-container .back-btn .arrow.left {
-  border-top: 0.4em solid transparent;
-  border-bottom: 0.4em solid transparent;
-  border-right: 0.6em solid #FEFFFE;
-}
-.how-to-container .aim-setup-container .links-container .back-btn,
-.how-to-container .setup-container .links-container .back-btn,
-.how-to-container .gameplay-container .links-container .back-btn,
-.how-to-container .smackdowns-container .links-container .back-btn,
-.how-to-container .power-cards-container .links-container .back-btn,
-.how-to-container .card-values-container .links-container .back-btn,
-.how-to-container .calling-croc-container .links-container .back-btn,
-.how-to-container .prohibited-container .links-container .back-btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0.8em 1.2em;
-  background-color: #07543A;
-  font-weight: bold;
-  color: #FEFFFE;
-  border: none;
-  border-radius: 0.7em;
-  cursor: pointer;
-  transition: all 200ms ease-in-out;
-  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1), -1px -1px 4px rgba(255, 255, 255, 0.3);
-  font-size: inherit;
-  font-family: inherit;
-}
-@media only screen and (min-width: 1280px) {
-  .how-to-container .setup-container,
-  .how-to-container .gameplay-container,
-  .how-to-container .calling-croc-container,
-  .how-to-container .smackdowns-container,
-  .how-to-container .power-cards-container {
-    margin-top: 2em;
-  }
-}
-
-.aim-setup-container {
-  display: flex;
-  flex-direction: column;
-  gap: 0.3em;
-}
-
-.gameplay-container ul {
-  margin-bottom: 1em;
-  list-style-type: none;
-}
-.gameplay-container ul li {
-  position: relative;
-  padding: 0.8em 0 0 4em;
-}
-.gameplay-container ul li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-30%);
-  width: 2.6em;
-  height: 1.2em;
-  background-image: url("https://cdn.jsdelivr.net/gh/maxkatilius/crocodile/frontend/src/assets/images/logos/croc-head-green.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-.gameplay-container ul:nth-of-type(1) li:nth-child(1),
-.gameplay-container ul:nth-of-type(2) li:nth-child(3) {
-  padding-bottom: 0.5em;
-}
-.gameplay-container .link-card-values,
-.gameplay-container .link-power-cards {
-  color: #07543A;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 200ms ease-in-out;
-}
-.gameplay-container .link-card-values:hover,
-.gameplay-container .link-power-cards:hover {
-  color: #0B6E4F;
-  transform: scale(1);
-  font-size: 1.1rem;
-}
-
-.smackdowns-container ul {
-  margin-bottom: 1em;
-  list-style-type: none;
-}
-.smackdowns-container ul li {
-  position: relative;
-  padding: 0.8em 0 0 4em;
-}
-.smackdowns-container ul li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-30%);
-  width: 2.6em;
-  height: 1.2em;
-  background-image: url("https://cdn.jsdelivr.net/gh/maxkatilius/crocodile/frontend/src/assets/images/logos/croc-head-green.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-.smackdowns-container .royal-croc {
-  font-weight: bold;
-  color: #07543A;
-}
-
-.card-values-container h4,
-.power-cards-container h4 {
-  font-size: 1.05rem;
-}
-.card-values-container .links-container a,
-.power-cards-container .links-container a {
-  width: auto;
-}
-
-.playing-cards,
-.power-cards {
-  display: flex;
-  flex-direction: column;
-}
-
-.playing-card,
-.power-card {
-  display: flex;
-  align-items: flex-start;
-  gap: 3em;
-  padding: 1em;
-  display: flex;
-  align-items: flex-start;
-  gap: 3em;
-  padding: 1em;
-}
-.playing-card img,
-.power-card img {
-  width: 5em;
-  height: auto;
-  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1), -1px -1px 4px rgba(255, 255, 255, 0.3);
-  transition: all 0.3s ease-in-out;
-}
-.playing-card img:hover,
-.power-card img:hover {
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2), -2px -2px 5px rgba(255, 255, 255, 0.3);
-}
-.playing-card img,
-.power-card img {
-  width: 5em;
-  height: auto;
-  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1), -1px -1px 4px rgba(255, 255, 255, 0.3);
-  transition: all 0.3s ease-in-out;
-}
-.playing-card img:hover,
-.power-card img:hover {
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2), -2px -2px 5px rgba(255, 255, 255, 0.3);
-}
-.playing-card .playing-card-info h4,
-.playing-card .power-card-info h4,
-.power-card .playing-card-info h4,
-.power-card .power-card-info h4 {
-  color: #161925;
-}
-.playing-card .playing-card-info p,
-.playing-card .power-card-info p,
-.power-card .playing-card-info p,
-.power-card .power-card-info p {
-  font-size: 0.8rem;
-}
-.playing-card .playing-card-info p span,
-.playing-card .power-card-info p span,
-.power-card .playing-card-info p span,
-.power-card .power-card-info p span {
-  display: block;
-}
-.playing-card .playing-card-info p .playing-card-value,
-.playing-card .power-card-info p .playing-card-value,
-.power-card .playing-card-info p .playing-card-value,
-.power-card .power-card-info p .playing-card-value {
-  font-weight: bold;
-}
-
-@media only screen and (min-width: 1024px) {
-  .playing-cards,
-  .power-cards {
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-  .playing-cards .playing-card,
-  .playing-cards .power-card,
-  .power-cards .playing-card,
-  .power-cards .power-card {
-    width: 40%;
-    margin-right: auto;
-  }
-}
-.calling-croc-container h2 {
-  padding-bottom: 0.6em;
-}
-
-.prohibited-container h4 {
-  padding-top: 1em;
 }
 
 main.about-container {
@@ -1178,17 +690,1088 @@ main.about-container .about-links a:hover {
   }
 }
 @media only screen and (min-width: 1536px) {
-  main.about-container .about-text p {
-    font-size: 1.2rem;
+  main.about-container {
+    width: 90%;
+    margin: auto auto;
   }
-  main.about-container .about-links {
+  main.about-container h1 {
+    font-size: 3em;
+    margin-top: 0.2em;
+    text-align: center;
+  }
+  main.about-container .about-text p {
     font-size: 1.3rem;
+    line-height: 1.6;
   }
   main.about-container .about-links a {
-    width: 18em;
+    font-size: 1.5rem;
+    width: 30%;
   }
 }
 
+main.shop-container {
+  flex-grow: 1;
+}
+main.shop-container h2 {
+  text-align: center;
+  font-size: 2rem;
+}
+main.shop-container .products-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5em;
+  margin: 1.2em 0 0.8em 0;
+}
+main.shop-container .go-to-cart-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.8em 1.2em;
+  background-color: #07543A;
+  font-weight: bold;
+  color: #FEFFFE;
+  border: none;
+  border-radius: 0.7em;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1), -1px -1px 4px rgba(255, 255, 255, 0.3);
+  gap: 0.5em;
+  margin: 1em auto;
+  width: 100%;
+  max-width: 20em;
+  min-width: 12em;
+}
+main.shop-container .go-to-cart-btn .arrow {
+  width: 0;
+  height: 0;
+  display: inline-block;
+}
+main.shop-container .go-to-cart-btn .arrow.right {
+  border-top: 0.4em solid transparent;
+  border-bottom: 0.4em solid transparent;
+  border-left: 0.6em solid #FEFFFE;
+}
+main.shop-container .go-to-cart-btn .arrow.left {
+  border-top: 0.4em solid transparent;
+  border-bottom: 0.4em solid transparent;
+  border-right: 0.6em solid #FEFFFE;
+}
+main.shop-container .go-to-cart-btn:hover {
+  transform: scale(1.1);
+  background-color: #0B6E4F;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2), -2px -2px 5px rgba(255, 255, 255, 0.3);
+}
+main.shop-container .loading {
+  width: 2em;
+  height: 2em;
+  margin: auto;
+  border: 0.2em solid #d3d3d3;
+  border-top: 0.2em solid #07543A;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.shop-product-card {
+  width: 100%;
+  max-width: 20em;
+  min-width: 12em;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding: 1em;
+  background-color: rgba(247, 247, 247, 0.9333333333);
+  border: 1px solid #d3d3d3;
+  border-radius: 0.6em;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1), -1px -1px 4px rgba(255, 255, 255, 0.3);
+}
+@media screen and (min-width: 648px) {
+  .shop-product-card {
+    width: 45%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .shop-product-card {
+    width: 35%;
+  }
+}
+.shop-product-card .image-section {
+  position: relative;
+  display: flex;
+  align-items: start;
+  gap: 1em;
+  height: 12em;
+  width: 100%;
+}
+.shop-product-card .image-section .thumbnails {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4em;
+}
+.shop-product-card .image-section .thumbnails img {
+  width: 2em;
+  height: 2em;
+  object-fit: cover;
+  border-radius: 0.4em;
+  opacity: 0.6;
+  cursor: pointer;
+  transition: opacity 200 ease-in;
+}
+.shop-product-card .image-section .thumbnails img:hover, .shop-product-card .image-section .thumbnails img.selected {
+  opacity: 100%;
+}
+.shop-product-card .image-section .main-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1em;
+  display: block;
+}
+.shop-product-card .image-section .full-screen-btn {
+  position: absolute;
+  bottom: 0.6em;
+  right: 0.6em;
+}
+.shop-product-card .image-section .full-screen-btn a {
+  font-size: 0.8rem;
+  color: #07543A;
+  transition: all 300ms ease-in-out;
+  padding: 0.5em 0.5em 0.2em 0.5em;
+  border-radius: 100%;
+}
+.shop-product-card .image-section .full-screen-btn a:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+  font-size: 0.9rem;
+}
+.shop-product-card .product-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4em;
+}
+.shop-product-card .product-info p {
+  margin: 0;
+}
+.shop-product-card .product-info .product-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  font-size: 1.1rem;
+  color: #07543A;
+}
+.shop-product-card .product-info .product-header .title {
+  font-weight: 500;
+  line-height: 1;
+}
+.shop-product-card .product-info .product-header .product-selectors {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-right: 0.2em;
+  gap: 0.4em;
+}
+.shop-product-card .product-info .product-header .product-selectors .color-selector {
+  margin-left: auto;
+  display: flex;
+  gap: 0.4em;
+}
+.shop-product-card .product-info .product-header .product-selectors .color-selector .color-btn {
+  height: 1.3em;
+  width: 1.3em;
+  border: 1px solid #d3d3d3;
+  border-radius: 100%;
+}
+.shop-product-card .product-info .product-header .product-selectors .color-selector .color-btn.active {
+  border: 1px solid black;
+}
+.shop-product-card .product-info .product-header .product-selectors .size-selector-wrapper .size-selector {
+  height: 2em;
+  text-align: center;
+  font-size: 0.75rem;
+  background-color: #d3d3d3;
+  color: #161925;
+  border: 1px solid #d3d3d3;
+  padding: 0.2em;
+  border-radius: 0.3rem;
+}
+.shop-product-card .product-info .price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #161925;
+}
+.shop-product-card .product-info .description {
+  font-size: 0.9rem;
+}
+.shop-product-card .add-to-cart-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.8em 1.2em;
+  background-color: #07543A;
+  font-weight: bold;
+  color: #FEFFFE;
+  border: none;
+  border-radius: 0.7em;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1), -1px -1px 4px rgba(255, 255, 255, 0.3);
+  align-self: flex-start;
+  margin-top: auto;
+  font-weight: normal;
+  letter-spacing: 0.05rem;
+}
+.shop-product-card .add-to-cart-btn:hover {
+  transform: scale(1.05);
+  background-color: #0B6E4F;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2), -2px -2px 5px rgba(255, 255, 255, 0.3);
+}
+
+main.cart-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  flex-grow: 1;
+  margin: auto auto;
+  gap: 1.2em;
+}
+main.cart-container h1 {
+  padding: 0.1em 0;
+}
+main.cart-container .cart-product-card {
+  width: 100%;
+  max-width: 24em;
+  min-width: 15em;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding: 1em;
+  background-color: rgba(247, 247, 247, 0.9333333333);
+  border: 1px solid #d3d3d3;
+  border-radius: 0.6em;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1), -1px -1px 4px rgba(255, 255, 255, 0.3);
+  padding: 0.6em;
+  min-height: 7.2em;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 1em;
+}
+main.cart-container .cart-product-card * {
+  margin: 0;
+  padding: 0;
+}
+main.cart-container .cart-product-card img {
+  height: 6em;
+  width: 6em;
+  border-radius: 0.6em;
+}
+main.cart-container .cart-product-card-info {
+  flex-grow: 1;
+  height: 6em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+main.cart-container .cart-product-card-info .title {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.5em;
+}
+main.cart-container .cart-product-card-info .title h4 {
+  font-weight: 500;
+  font-size: 1rem;
+}
+main.cart-container .cart-product-card-info .title p {
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+main.cart-container .cart-product-card-info .cart-product-ctrls {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #07543A;
+  border: 2px solid #0B6E4F;
+  border-radius: 0.6em;
+  width: 4.8em;
+}
+main.cart-container .cart-product-card-info .cart-product-ctrls .ctrl-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1.6em;
+  height: 1.6em;
+}
+main.cart-container .cart-product-card-info .cart-product-ctrls .plus,
+main.cart-container .cart-product-card-info .cart-product-ctrls .minus,
+main.cart-container .cart-product-card-info .cart-product-ctrls .delete {
+  margin-top: 0.05rem;
+  font-size: 0.7rem;
+  cursor: pointer;
+}
+main.cart-container .cart-product-card-info .cart-product-ctrls .delete {
+  font-size: 0.65rem;
+}
+main.cart-container .subtotal {
+  justify-self: flex-start;
+  align-self: flex-end;
+  margin: -0.5em 0.3em 0 0;
+}
+main.cart-container .links-container {
+  display: flex;
+  justify-content: space-around;
+  margin: auto 0 0.8em 0;
+  padding-top: 1em;
+  margin-top: auto;
+  width: 90%;
+}
+@media only screen and (min-width: 840px) {
+  main.cart-container .links-container {
+    justify-content: space-between;
+  }
+  main.cart-container .links-container a,
+  main.cart-container .links-container .back-btn {
+    font-size: 1.1rem;
+    width: 10em;
+  }
+}
+main.cart-container .links-container a,
+main.cart-container .links-container .back-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.8em 1.2em;
+  background-color: #07543A;
+  font-weight: bold;
+  color: #FEFFFE;
+  border: none;
+  border-radius: 0.7em;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1), -1px -1px 4px rgba(255, 255, 255, 0.3);
+  gap: 0.5em;
+}
+main.cart-container .links-container a .arrow,
+main.cart-container .links-container .back-btn .arrow {
+  width: 0;
+  height: 0;
+  display: inline-block;
+}
+main.cart-container .links-container a .arrow.right,
+main.cart-container .links-container .back-btn .arrow.right {
+  border-top: 0.4em solid transparent;
+  border-bottom: 0.4em solid transparent;
+  border-left: 0.6em solid #FEFFFE;
+}
+main.cart-container .links-container a .arrow.left,
+main.cart-container .links-container .back-btn .arrow.left {
+  border-top: 0.4em solid transparent;
+  border-bottom: 0.4em solid transparent;
+  border-right: 0.6em solid #FEFFFE;
+}
+main.cart-container .links-container .back-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.8em 1.2em;
+  background-color: #07543A;
+  font-weight: bold;
+  color: #FEFFFE;
+  border: none;
+  border-radius: 0.7em;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1), -1px -1px 4px rgba(255, 255, 255, 0.3);
+  font-size: inherit;
+  font-family: inherit;
+}
+main.cart-container .links-container a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.8em 1.2em;
+  background-color: #07543A;
+  font-weight: bold;
+  color: #FEFFFE;
+  border: none;
+  border-radius: 0.7em;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1), -1px -1px 4px rgba(255, 255, 255, 0.3);
+  gap: 0.5em;
+  width: 45%;
+}
+main.cart-container .links-container a .arrow {
+  width: 0;
+  height: 0;
+  display: inline-block;
+}
+main.cart-container .links-container a .arrow.right {
+  border-top: 0.4em solid transparent;
+  border-bottom: 0.4em solid transparent;
+  border-left: 0.6em solid #FEFFFE;
+}
+main.cart-container .links-container a .arrow.left {
+  border-top: 0.4em solid transparent;
+  border-bottom: 0.4em solid transparent;
+  border-right: 0.6em solid #FEFFFE;
+}
+main.cart-container .empty-cart {
+  margin: auto 0;
+}
+main.cart-container .empty-cart p {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+main.cart-container .empty-cart a {
+  margin-top: 1.6em;
+  font-size: 1.15rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.8em 1.2em;
+  background-color: #07543A;
+  font-weight: bold;
+  color: #FEFFFE;
+  border: none;
+  border-radius: 0.7em;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1), -1px -1px 4px rgba(255, 255, 255, 0.3);
+  gap: 0.5em;
+}
+main.cart-container .empty-cart a .arrow {
+  width: 0;
+  height: 0;
+  display: inline-block;
+}
+main.cart-container .empty-cart a .arrow.right {
+  border-top: 0.4em solid transparent;
+  border-bottom: 0.4em solid transparent;
+  border-left: 0.6em solid #FEFFFE;
+}
+main.cart-container .empty-cart a .arrow.left {
+  border-top: 0.4em solid transparent;
+  border-bottom: 0.4em solid transparent;
+  border-right: 0.6em solid #FEFFFE;
+}
+main.cart-container .empty-cart a:hover {
+  transform: scale(1.1);
+  background-color: #0B6E4F;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2), -2px -2px 5px rgba(255, 255, 255, 0.3);
+}
+
+main.checkout-container {
+  flex-grow: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 1em;
+}
+main.checkout-container h1 {
+  margin: 0 auto;
+}
+main.checkout-container .checkout-status-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.4em;
+}
+main.checkout-container .checkout-status-bar .shrink {
+  flex-grow: 0;
+}
+main.checkout-container .checkout-status-bar .grow {
+  flex-grow: 1;
+}
+main.checkout-container .checkout-status-bar .status-container {
+  display: flex;
+  gap: 0.4em;
+  align-items: center;
+  justify-content: space-between;
+}
+main.checkout-container .checkout-status-bar .status-container span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 1.5em;
+  width: 1.5em;
+  color: #FEFFFE;
+  background-color: #07543A;
+  border-radius: 100%;
+}
+main.checkout-container .checkout-status-bar .status-container .incomplete {
+  opacity: 0.5;
+}
+main.checkout-container .checkout-status-bar .status-container span.hr {
+  flex-grow: 1;
+  height: 0.1em;
+  background-color: #07543A;
+  border-radius: 0;
+}
+main.checkout-container .checkout-status-bar .shrink-margin {
+  margin-right: 2.45em;
+}
+@media only screen and (min-width: 840px) {
+  main.checkout-container .checkout-status-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.4em;
+  }
+  main.checkout-container .checkout-status-bar .status-container,
+  main.checkout-container .checkout-status-bar .status-place-order-container {
+    display: flex;
+    gap: 0.4em;
+    align-items: center;
+    justify-content: space-between;
+  }
+  main.checkout-container .checkout-status-bar .status-container span,
+  main.checkout-container .checkout-status-bar .status-place-order-container span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 1.5em;
+    width: 1.5em;
+    color: #FEFFFE;
+    background-color: #07543A;
+    border-radius: 100%;
+  }
+  main.checkout-container .checkout-status-bar .status-container .incomplete,
+  main.checkout-container .checkout-status-bar .status-place-order-container .incomplete {
+    opacity: 0.5;
+  }
+  main.checkout-container .checkout-status-bar .status-container span.hr,
+  main.checkout-container .checkout-status-bar .status-place-order-container span.hr {
+    flex-grow: 1;
+    height: 0.1em;
+    background-color: #07543A;
+    border-radius: 0;
+  }
+}
+main.checkout-container form {
+  padding: 0.8em 1em;
+  margin: auto 0;
+  border: 1px solid #0B6E4F;
+  border-radius: 0.8em;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1), -1px -1px 4px rgba(255, 255, 255, 0.3);
+}
+main.checkout-container form .details-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.3em;
+}
+main.checkout-container form .details-container input {
+  padding: 0.2em;
+  margin: 0.2em 0 1em 0;
+  font-size: 1rem;
+}
+main.checkout-container form .order {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+main.checkout-container form .order * {
+  margin: 0;
+  padding: 0;
+}
+main.checkout-container form .order h2 {
+  margin: 0 auto 0.2em auto;
+}
+main.checkout-container form .order .total {
+  margin-left: auto;
+  padding-right: 0.5em;
+}
+main.checkout-container form .order .checkout-product-card {
+  display: flex;
+  align-items: flex-end;
+  gap: 1em;
+}
+main.checkout-container form .order .checkout-product-card img {
+  height: 4em;
+  width: 4em;
+  border: none;
+  border-radius: 0.2em;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1), -1px -1px 4px rgba(255, 255, 255, 0.3);
+}
+main.checkout-container form .order .checkout-product-card .product-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 4em;
+  width: 100%;
+}
+main.checkout-container form .order .checkout-product-card .product-text .product-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+}
+main.checkout-container form .order .checkout-product-card .product-text span {
+  color: #07543A;
+  font-weight: 500;
+}
+main.checkout-container form .order .checkout-product-card .product-text p {
+  font-size: 0.8rem;
+}
+main.checkout-container form .order .checkout-product-card .product-text .subtotal {
+  margin-left: auto;
+}
+main.checkout-container form .checkout-ctrls,
+main.checkout-container form .order-ctrls,
+main.checkout-container form .thanks-ctrls {
+  margin-top: 1em;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+main.checkout-container form .checkout-ctrls button,
+main.checkout-container form .checkout-ctrls a,
+main.checkout-container form .order-ctrls button,
+main.checkout-container form .order-ctrls a,
+main.checkout-container form .thanks-ctrls button,
+main.checkout-container form .thanks-ctrls a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.8em 1.2em;
+  background-color: #07543A;
+  font-weight: bold;
+  color: #FEFFFE;
+  border: none;
+  border-radius: 0.7em;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1), -1px -1px 4px rgba(255, 255, 255, 0.3);
+  width: 40%;
+}
+
+.how-to-container {
+  flex-grow: 1;
+  padding: 8em 2.6em 1.6em 2.6em;
+}
+
+.aim-setup-container,
+.setup-container,
+.gameplay-container,
+.smackdowns-container,
+.power-cards-container,
+.card-values-container,
+.calling-croc-container,
+.prohibited-container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3em;
+}
+.aim-setup-container .links-container,
+.setup-container .links-container,
+.gameplay-container .links-container,
+.smackdowns-container .links-container,
+.power-cards-container .links-container,
+.card-values-container .links-container,
+.calling-croc-container .links-container,
+.prohibited-container .links-container {
+  display: flex;
+  justify-content: space-around;
+  margin: auto 0 0.8em 0;
+  padding-top: 1em;
+}
+@media only screen and (min-width: 840px) {
+  .aim-setup-container .links-container,
+  .setup-container .links-container,
+  .gameplay-container .links-container,
+  .smackdowns-container .links-container,
+  .power-cards-container .links-container,
+  .card-values-container .links-container,
+  .calling-croc-container .links-container,
+  .prohibited-container .links-container {
+    justify-content: space-between;
+  }
+  .aim-setup-container .links-container a,
+  .aim-setup-container .links-container .back-btn,
+  .setup-container .links-container a,
+  .setup-container .links-container .back-btn,
+  .gameplay-container .links-container a,
+  .gameplay-container .links-container .back-btn,
+  .smackdowns-container .links-container a,
+  .smackdowns-container .links-container .back-btn,
+  .power-cards-container .links-container a,
+  .power-cards-container .links-container .back-btn,
+  .card-values-container .links-container a,
+  .card-values-container .links-container .back-btn,
+  .calling-croc-container .links-container a,
+  .calling-croc-container .links-container .back-btn,
+  .prohibited-container .links-container a,
+  .prohibited-container .links-container .back-btn {
+    font-size: 1.1rem;
+    width: 10em;
+  }
+}
+.aim-setup-container .links-container a,
+.aim-setup-container .links-container .back-btn,
+.setup-container .links-container a,
+.setup-container .links-container .back-btn,
+.gameplay-container .links-container a,
+.gameplay-container .links-container .back-btn,
+.smackdowns-container .links-container a,
+.smackdowns-container .links-container .back-btn,
+.power-cards-container .links-container a,
+.power-cards-container .links-container .back-btn,
+.card-values-container .links-container a,
+.card-values-container .links-container .back-btn,
+.calling-croc-container .links-container a,
+.calling-croc-container .links-container .back-btn,
+.prohibited-container .links-container a,
+.prohibited-container .links-container .back-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.8em 1.2em;
+  background-color: #07543A;
+  font-weight: bold;
+  color: #FEFFFE;
+  border: none;
+  border-radius: 0.7em;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1), -1px -1px 4px rgba(255, 255, 255, 0.3);
+  gap: 0.5em;
+}
+.aim-setup-container .links-container a .arrow,
+.aim-setup-container .links-container .back-btn .arrow,
+.setup-container .links-container a .arrow,
+.setup-container .links-container .back-btn .arrow,
+.gameplay-container .links-container a .arrow,
+.gameplay-container .links-container .back-btn .arrow,
+.smackdowns-container .links-container a .arrow,
+.smackdowns-container .links-container .back-btn .arrow,
+.power-cards-container .links-container a .arrow,
+.power-cards-container .links-container .back-btn .arrow,
+.card-values-container .links-container a .arrow,
+.card-values-container .links-container .back-btn .arrow,
+.calling-croc-container .links-container a .arrow,
+.calling-croc-container .links-container .back-btn .arrow,
+.prohibited-container .links-container a .arrow,
+.prohibited-container .links-container .back-btn .arrow {
+  width: 0;
+  height: 0;
+  display: inline-block;
+}
+.aim-setup-container .links-container a .arrow.right,
+.aim-setup-container .links-container .back-btn .arrow.right,
+.setup-container .links-container a .arrow.right,
+.setup-container .links-container .back-btn .arrow.right,
+.gameplay-container .links-container a .arrow.right,
+.gameplay-container .links-container .back-btn .arrow.right,
+.smackdowns-container .links-container a .arrow.right,
+.smackdowns-container .links-container .back-btn .arrow.right,
+.power-cards-container .links-container a .arrow.right,
+.power-cards-container .links-container .back-btn .arrow.right,
+.card-values-container .links-container a .arrow.right,
+.card-values-container .links-container .back-btn .arrow.right,
+.calling-croc-container .links-container a .arrow.right,
+.calling-croc-container .links-container .back-btn .arrow.right,
+.prohibited-container .links-container a .arrow.right,
+.prohibited-container .links-container .back-btn .arrow.right {
+  border-top: 0.4em solid transparent;
+  border-bottom: 0.4em solid transparent;
+  border-left: 0.6em solid #FEFFFE;
+}
+.aim-setup-container .links-container a .arrow.left,
+.aim-setup-container .links-container .back-btn .arrow.left,
+.setup-container .links-container a .arrow.left,
+.setup-container .links-container .back-btn .arrow.left,
+.gameplay-container .links-container a .arrow.left,
+.gameplay-container .links-container .back-btn .arrow.left,
+.smackdowns-container .links-container a .arrow.left,
+.smackdowns-container .links-container .back-btn .arrow.left,
+.power-cards-container .links-container a .arrow.left,
+.power-cards-container .links-container .back-btn .arrow.left,
+.card-values-container .links-container a .arrow.left,
+.card-values-container .links-container .back-btn .arrow.left,
+.calling-croc-container .links-container a .arrow.left,
+.calling-croc-container .links-container .back-btn .arrow.left,
+.prohibited-container .links-container a .arrow.left,
+.prohibited-container .links-container .back-btn .arrow.left {
+  border-top: 0.4em solid transparent;
+  border-bottom: 0.4em solid transparent;
+  border-right: 0.6em solid #FEFFFE;
+}
+.aim-setup-container .links-container .back-btn,
+.setup-container .links-container .back-btn,
+.gameplay-container .links-container .back-btn,
+.smackdowns-container .links-container .back-btn,
+.power-cards-container .links-container .back-btn,
+.card-values-container .links-container .back-btn,
+.calling-croc-container .links-container .back-btn,
+.prohibited-container .links-container .back-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.8em 1.2em;
+  background-color: #07543A;
+  font-weight: bold;
+  color: #FEFFFE;
+  border: none;
+  border-radius: 0.7em;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1), -1px -1px 4px rgba(255, 255, 255, 0.3);
+  font-size: inherit;
+  font-family: inherit;
+}
+
+.aim-setup-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3em;
+}
+
+.gameplay-container ul {
+  margin-bottom: 1em;
+  list-style-type: none;
+}
+.gameplay-container ul li {
+  position: relative;
+  padding: 0.8em 0 0 4em;
+}
+.gameplay-container ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-30%);
+  width: 2.6em;
+  height: 1.2em;
+  background-image: url("https://cdn.jsdelivr.net/gh/maxkatilius/crocodile/frontend/src/assets/images/logos/croc-head-green.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.gameplay-container ul:nth-of-type(1) li:nth-child(1),
+.gameplay-container ul:nth-of-type(2) li:nth-child(3) {
+  padding-bottom: 0.5em;
+}
+.gameplay-container .link-card-values,
+.gameplay-container .link-power-cards {
+  color: #07543A;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+}
+.gameplay-container .link-card-values:hover,
+.gameplay-container .link-power-cards:hover {
+  color: #0B6E4F;
+  transform: scale(1);
+  font-size: 1.1rem;
+}
+
+.smackdowns-container ul {
+  margin-bottom: 1em;
+  list-style-type: none;
+}
+.smackdowns-container ul li {
+  position: relative;
+  padding: 0.8em 0 0 4em;
+}
+.smackdowns-container ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-30%);
+  width: 2.6em;
+  height: 1.2em;
+  background-image: url("https://cdn.jsdelivr.net/gh/maxkatilius/crocodile/frontend/src/assets/images/logos/croc-head-green.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.smackdowns-container .royal-croc {
+  font-weight: bold;
+  color: #07543A;
+}
+
+.card-values-container h4,
+.power-cards-container h4 {
+  font-size: 1.05rem;
+}
+.card-values-container .links-container a,
+.card-values-container .links-container .back-btn,
+.power-cards-container .links-container a,
+.power-cards-container .links-container .back-btn {
+  width: auto;
+}
+
+.playing-cards,
+.power-cards {
+  display: flex;
+  flex-direction: column;
+}
+
+.playing-card,
+.power-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 3em;
+  padding: 1em;
+  display: flex;
+  align-items: flex-start;
+  gap: 3em;
+  padding: 1em;
+}
+.playing-card img,
+.power-card img {
+  width: 5em;
+  height: auto;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1), -1px -1px 4px rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease-in-out;
+}
+.playing-card img:hover,
+.power-card img:hover {
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2), -2px -2px 5px rgba(255, 255, 255, 0.3);
+}
+.playing-card img,
+.power-card img {
+  width: 5em;
+  height: auto;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1), -1px -1px 4px rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease-in-out;
+}
+.playing-card img:hover,
+.power-card img:hover {
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2), -2px -2px 5px rgba(255, 255, 255, 0.3);
+}
+.playing-card .playing-card-info h4,
+.playing-card .power-card-info h4,
+.power-card .playing-card-info h4,
+.power-card .power-card-info h4 {
+  color: #161925;
+}
+.playing-card .playing-card-info p,
+.playing-card .power-card-info p,
+.power-card .playing-card-info p,
+.power-card .power-card-info p {
+  font-size: 0.8rem;
+}
+.playing-card .playing-card-info p span,
+.playing-card .power-card-info p span,
+.power-card .playing-card-info p span,
+.power-card .power-card-info p span {
+  display: block;
+}
+.playing-card .playing-card-info p .playing-card-value,
+.playing-card .power-card-info p .playing-card-value,
+.power-card .playing-card-info p .playing-card-value,
+.power-card .power-card-info p .playing-card-value {
+  font-weight: bold;
+}
+
+@media only screen and (min-width: 1024px) {
+  .playing-cards,
+  .power-cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .playing-cards .playing-card,
+  .playing-cards .power-card,
+  .power-cards .playing-card,
+  .power-cards .power-card {
+    width: 40%;
+    margin-right: auto;
+  }
+}
+.calling-croc-container h2 {
+  padding-bottom: 0.6em;
+}
+
+.prohibited-container h4 {
+  padding-top: 1em;
+}
+
+@media only screen and (min-width: 1024px) {
+  .aim-setup-container h2,
+  .gameplay-container h2,
+  .calling-croc-container h2,
+  .smackdowns-container h2,
+  .power-cards-container h2,
+  .card-values-container h2,
+  .prohibited-container h2 {
+    margin-top: 0.4em;
+    font-size: 2rem;
+  }
+  .aim-setup-container p,
+  .aim-setup-container ul li,
+  .gameplay-container p,
+  .gameplay-container ul li,
+  .calling-croc-container p,
+  .calling-croc-container ul li,
+  .smackdowns-container p,
+  .smackdowns-container ul li,
+  .power-cards-container p,
+  .power-cards-container ul li,
+  .card-values-container p,
+  .card-values-container ul li,
+  .prohibited-container p,
+  .prohibited-container ul li {
+    font-size: 1.2rem;
+  }
+}
+@media only screen and (min-width: 1536px) {
+  .aim-setup-container h2,
+  .gameplay-container h2,
+  .calling-croc-container h2,
+  .smackdowns-container h2,
+  .power-cards-container h2,
+  .card-values-container h2,
+  .prohibited-container h2 {
+    margin-top: 0.6em;
+    font-size: 2.2rem;
+  }
+  .aim-setup-container p,
+  .aim-setup-container ul li,
+  .gameplay-container p,
+  .gameplay-container ul li,
+  .calling-croc-container p,
+  .calling-croc-container ul li,
+  .smackdowns-container p,
+  .smackdowns-container ul li,
+  .power-cards-container p,
+  .power-cards-container ul li,
+  .card-values-container p,
+  .card-values-container ul li,
+  .prohibited-container p,
+  .prohibited-container ul li {
+    font-size: 1.4rem;
+  }
+  .aim-setup-container .links-container a,
+  .aim-setup-container .back-btn,
+  .gameplay-container .links-container a,
+  .gameplay-container .back-btn,
+  .calling-croc-container .links-container a,
+  .calling-croc-container .back-btn,
+  .smackdowns-container .links-container a,
+  .smackdowns-container .back-btn,
+  .power-cards-container .links-container a,
+  .power-cards-container .back-btn,
+  .card-values-container .links-container a,
+  .card-values-container .back-btn,
+  .prohibited-container .links-container a,
+  .prohibited-container .back-btn {
+    font-size: 1.4rem;
+  }
+}
 main.contact-us-container {
   flex-grow: 1;
   margin: 0 auto;

@@ -95,6 +95,7 @@ main.cart-container {
     }
 
     .links-container {
+        @include links-container-style;
         margin-top: auto;
         width: 90%;
 
