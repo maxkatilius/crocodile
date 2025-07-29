@@ -300,7 +300,7 @@ const Checkout = () => {
 
   const thanksSection = (
     <div className="details-container thanks">
-      <p>Thanks for purchasing from Crocodile! Your order has been placed! Order #{orderId} (not really, we can't accept your money just yet)</p>
+      <p><span>Thanks</span> for purchasing from Crocodile! Your order has been placed! Order #{orderId} (not really, we can't accept your money just yet)</p>
       <div className="thanks-ctrls">
         <Link to={"/shop"}>Shop</Link>
         <Link to={"/"}>Home</Link>

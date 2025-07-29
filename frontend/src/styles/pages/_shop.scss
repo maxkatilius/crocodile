@@ -2,6 +2,8 @@
 
 main.shop-container {
     flex-grow: 1;
+    @include flex-col;
+    padding: 8em 2em 1.6em 2em; // Large top padding to account for height of fixed header
 
     h2 {
         text-align: center;

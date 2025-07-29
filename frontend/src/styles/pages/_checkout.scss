@@ -3,6 +3,7 @@
 main.checkout-container {
     flex-grow: 1;
     width: 100%;
+    padding: 8em 2em 1.6em 2em; // Large top padding to account for height of fixed header
     @include flex-col;
     justify-content: flex-start;
     gap: 1em;
@@ -60,87 +61,68 @@ main.checkout-container {
         }
     }
 
-    @media only screen and (min-width: 840px) {
-        .checkout-status-bar {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-between;
-            gap: 0.4em;
-
-            .status-container,
-            .status-place-order-container {
-                display: flex;
-                gap: 0.4em;
-                align-items: center;
-                justify-content: space-between;
-
-                span {
-                    @include flex-center;
-                    height: 1.5em;
-                    width: 1.5em;
-                    color: $primary-white;
-                    background-color: $crocodile-green;
-                    border-radius: 100%;
-                }
-
-                .incomplete {
-                    opacity: 0.5;
-                }
-
-                span.hr {
-                    flex-grow: 1;
-                    height: 0.1em;
-                    background-color: $crocodile-green;
-                    border-radius: 0;
-                }
-
-            }
-
-        }
-    }
-
     form {
         padding: 0.8em 1em;
         margin: auto 0;
         border: 1px solid $secondary-green;
         border-radius: 0.8em;
         box-shadow: $box-shadow-default;
+        @include flex-col;
+        justify-content: space-between;
 
         .details-container {
             @include flex-col;
             margin-top: 0.3em;
+            height: 100%;
+
+            label {
+                font-size: 1.1rem;
+            }
 
             input {
-                padding: 0.2em;
-                margin: 0.2em 0 1em 0;
-                font-size: 1rem;
+                padding: 0.4em 0.5em;
+                margin: 0.4em 0 1em 0;
+                font-size: 0.9rem;
+                border: 1px solid $primary-grey;
+                border-radius: 0.2em;
+            }
+        }
+
+        .confirm {
+            flex-grow: 1;
+            @include flex-col;
+            justify-content: flex-start;
+            gap: 1em;
+            p {
+                font-size: 1.1rem;
             }
         }
 
         .order {
             @include flex-col;
             gap: 1em;
-
+            
             * {
                 margin: 0;
                 padding: 0;
             }
-
+            
             h2 {
                 margin: 0 auto 0.2em auto;
             }
-
+            
             .total {
                 margin-left: auto;
-                padding-right: 0.5em;
+                border-top: 1px solid $primary-grey;
+                padding: 0.3em 0.4em 0 0;
             }
 
             .checkout-product-card {
-
                 display: flex;
                 align-items: flex-end;
                 gap: 1em;
+                padding-bottom: 0.6em;
+                border-bottom: 1px solid $primary-grey;
 
                 img {
                     height: 4em;
@@ -176,21 +158,349 @@ main.checkout-container {
                         margin-left: auto;
                     }
                 }
+                &:last-of-type {
+                    border: none;
+                }
             }
         }
+        .thanks {
+            flex-grow: 1;
+            @include flex-col;
+            justify-content: space-between;
+            gap: 1em;
+            padding: 0.6em;
+            p {
+                margin: auto auto;
+                span {
+                    font-weight: 600;
+                    color: $crocodile-green;
+                }
+            }
+        }
+
 
         .checkout-ctrls,
         .order-ctrls,
         .thanks-ctrls {
-            margin-top: 1em;
             display: flex;
             justify-content: space-between;
             width: 100%;
+            margin-top: 0.6em;
 
             button,
             a {
                 @include button-style;
                 width: 40%;
+                font-size: 0.85rem;
+                letter-spacing: 0.05rem;
+            }
+        }
+    }
+
+    @media only screen and (min-width: 648px) {
+    padding: 8em 4em 1.6em 4em;
+        form {
+            width: 100%;
+            margin: auto auto;
+            min-height: 20em;
+
+            .details-container {
+                height: 100%;
+                label {
+                    font-size: 1.2rem;
+                }
+                input {
+                    font-size: 1rem;
+                }
+
+            }
+            .thanks {
+                padding: 0.8em;
+
+                p {
+                    width: 80%;
+                    font-size: 1.2rem;
+                }
+            }
+        }
+    }
+
+    @media only screen and (min-width: 840px) {
+        h1 {
+            font-size: 2rem;
+        }
+
+        .checkout-status-bar {
+            .status-container,
+            .status-place-order-container {
+                span {
+                    height: 1.5em;
+                    width: 1.5em;
+                    color: $primary-white;
+                }
+            }
+        }
+
+        form {
+            min-height: 24em;
+            padding: 1.8em;
+
+            .details-container {
+                height: 100%;
+
+                label {
+                    font-size: 1.2rem;
+                }
+
+                input {
+                    font-size: 1rem;
+                }
+            }
+
+            .confirm {
+                gap: 1.2em;
+                p {
+                    font-size: 1.3rem;
+                }
+            }
+
+            .order {
+                gap: 1.2em;
+
+                .checkout-product-card {
+                    gap: 1.2em;
+
+                    img {
+                        height: 5em;
+                        width: 5em;
+                    }
+
+                    .product-text {
+                        height: 5em;
+                        .product-info {
+                            .title,
+                            h5 {
+                                font-size: 1.2rem;
+                            }
+                        }
+                        p {
+                            font-size: 1rem;
+                        }
+                    }
+                }
+                .total {
+                    font-size: 1.4rem;
+                    margin-bottom: 0.4em;
+                }
+            }
+
+            .thanks {
+                p {
+                    width: 90%;
+                    font-size: 1.3rem;
+                    line-height: 1.6;
+                }
+            }
+            
+            .checkout-ctrls,
+            .order-ctrls,
+            .thanks-ctrls {
+                button,
+                a {
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+
+    @media only screen and (min-width: 1024px) {
+        h1 {
+            font-size: 2.4rem;
+        }
+
+        .checkout-status-bar {
+
+            .status-container,
+            .status-place-order-container {
+                p {
+                    font-size: 1.2rem;
+                }
+            }
+        }
+
+        form {
+            min-height: 24em;
+            padding: 1.8em;
+
+            .details-container {
+                height: 100%;
+
+                label {
+                    font-size: 1.2rem;
+                }
+
+                input {
+                    font-size: 1rem;
+                }
+            }
+
+            .confirm {
+                gap: 1.2em;
+
+                p {
+                    font-size: 1.3rem;
+                }
+            }
+
+            .order {
+                gap: 1.2em;
+                padding: 0 1.4em;
+
+                .checkout-product-card {
+                    gap: 1.2em;
+                    padding-bottom: 0.9em;
+                    
+                    img {
+                        height: 5em;
+                        width: 5em;
+                    }
+
+                    .product-text {
+                        height: 5em;
+
+                        .product-info {
+                            .title {
+                                font-size: 1.5rem;
+                            }
+                            h5 {
+                                font-size: 1.35rem;
+                            }
+                        }
+
+                        p {
+                            font-size: 1.2rem;
+                        }
+                    }
+                }
+
+                .total {
+                    font-size: 1.5rem;
+                }
+            }
+
+            .thanks {
+                p {
+                    width: 100%;
+                    font-size: 1.4rem;
+                    line-height: 1.8;
+                }
+            }
+
+            .checkout-ctrls,
+            .order-ctrls,
+            .thanks-ctrls {
+
+                button,
+                a {
+                    font-size: 1.1rem;
+                }
+            }
+        }
+    }
+
+    @media only screen and (min-width: 1536px) {
+        padding: 8em 7em 1.6em 7em;
+
+        h1 {
+            font-size: 2.6rem;
+        }
+        .checkout-status-bar {
+            .status-container {
+                span {
+                    font-size: 1.4rem;
+                }
+                p {
+                    font-size: 1.4rem;
+                }
+            }
+        }
+        form {
+            min-height: 34em;
+            padding: 1.8em;
+
+            .details-container {
+
+                label {
+                    font-size: 1.6rem;
+                }
+
+                input {
+                    font-size: 1.4rem;
+                }
+            }
+
+            .confirm {
+                p {
+                    font-size: 1.6rem;
+                }
+            }
+
+            .order {
+                gap: 1.4em;
+                padding: 0 2em;
+
+                h2 {
+                    font-size: 2.2rem;
+                }
+
+                .checkout-product-card {
+                    gap: 1.6em;
+
+                    img {
+                        height: 8em;
+                        width: 8em;
+                    }
+
+                    .product-text {
+                        height: 8em;
+
+                        .product-info {
+
+                            .title {
+                                font-size: 1.6rem;
+                            }
+
+                            h5 {
+                                font-size: 1.45rem;
+                            }
+                        }
+
+                        p {
+                            font-size: 1.3rem;
+                        }
+                    }
+                }
+
+                .total {
+                    font-size: 1.6rem;
+                }
+            }
+
+            .thanks {
+                p {
+                    font-size: 1.6rem;
+                    line-height: 2;
+                }
+            }
+
+            .checkout-ctrls,
+            .order-ctrls,
+            .thanks-ctrls {
+
+                button,
+                a {
+                    font-size: 1.3em;
+                }
             }
         }
     }

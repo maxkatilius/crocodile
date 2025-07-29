@@ -1,12 +1,12 @@
 @use "../index" as *;
 
 main.home-container {
-    padding: 8em 2em 1.6em 2em; // large top padding to account for header height
-    margin: auto auto;
     flex-grow: 1;
+    @include flex-col;
+    padding: 8em 2em 1.6em 2em; // Large top padding to account for height of fixed header
+    margin: auto auto;
     width: 90%;
     max-width: 28em;
-    @include flex-col;
     justify-content: space-evenly;
 
     .home-text {

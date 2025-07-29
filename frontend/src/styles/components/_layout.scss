@@ -21,12 +21,6 @@ body {
     justify-content: space-between;
 }
 
-/* Main */
-main {
-    @include flex-col;
-    padding: 8em 2em 1.6em 2em; // large top padding to account for header height
-}
-
 /***************
 ** Typography **
 ***************/

@@ -2,6 +2,8 @@
 
 main.contact-us-container {
     flex-grow: 1;
+    @include flex-col;
+    padding: 8em 2em 1.6em 2em; // Large top padding to account for height of fixed header
     margin: 0 auto;
     gap: 1em;
     max-width: 30em;
@@ -87,7 +89,7 @@ main.contact-us-container {
 
     @media only screen and (min-width: 1536px) {
         h1 {
-            font-size: 3rem;
+            font-size: 2.6rem;
         }
         .contact-text {
             

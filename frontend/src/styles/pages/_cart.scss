@@ -1,11 +1,12 @@
 @use "../index" as *;
 
 main.cart-container {
+    flex-grow: 1;
+    width: 100%;
+    padding: 8em 2em 1.6em 2em; // Large top padding to account for height of fixed header
+    margin: auto auto;
     @include flex-col;
     align-items: center;
-    width: 100%;
-    flex-grow: 1;
-    margin: auto auto;
     gap: 1.2em;
 
     h1 {
@@ -13,7 +14,7 @@ main.cart-container {
     }
 
     .cart-product-card {
-        @include product-card-style(100%, 24em, 15em);
+        @include product-card-style(100%, 100%, 100%);
         padding: 0.6em;
         min-height: 7.2em; // img height 6 em + top and bottom padding 0.5em 
         flex-direction: row;
@@ -120,6 +121,203 @@ main.cart-container {
 
             &:hover {
                 @include button-hover;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 648px) {
+    main.cart-container {
+        .cart-product-card {
+            padding: 1em 2em;
+            min-height: 10em; // img height 6 em + top and bottom padding 0.5em 
+
+            img {
+                height: 8em;
+                width: 8em; 
+            }
+
+            &-info {
+                height: 8em;    
+                .title {
+                    h4 {
+                        font-size: 1.3rem;
+                    }
+
+                    p {
+                        font-size: 1.3em;
+                    }
+                }
+
+                .variant-details {
+                    font-size: 1.1rem;
+                }
+
+                .cart-product-ctrls {
+                    font-size: 1rem;
+                    border-radius: 0.6em;
+                    width: 5.4em; //ctrl container x 3
+
+                    .ctrl-container {
+                        @include flex-center;
+                        width: 1.8em;
+                        height: 1.8em;
+                    }
+
+                    .plus,
+                    .minus,
+                    .delete {
+                        font-size: 1rem;
+                    }
+
+                    .delete {
+                        font-size: 0.9rem;
+                    }
+                }
+            }
+        }
+
+        .subtotal {
+            font-size: 1.2rem;
+        }
+
+        .links-container {
+            a {
+                font-size: 1.1rem;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 840px) {
+    main.cart-container {
+        h1 {
+            font-size: 2rem;
+        }
+        .subtotal {
+            margin-top: 0.2em;
+            font-size: 1.4rem;
+        }
+
+        .links-container {
+            a {
+                font-size: 1.3rem;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    main.cart-container {
+        width: 80%;
+        h1 {
+            font-size: 2.4rem;
+            margin-bottom: 0.2em;
+        }
+
+        .cart-product-card {
+            img {
+                height: 8em;
+                width: 8em;
+            }
+
+            &-info {
+                height: 8em;
+
+                .title {
+                    h4 {
+                        font-size: 1.5rem;
+                    }
+
+                    p {
+                        font-size: 1.4em;
+                    }
+                }
+
+                .variant-details {
+                    font-size: 1.2rem;
+                }
+            }
+        }
+        .subtotal {
+            font-size: 1.5rem;
+        }
+
+        .links-container {
+            justify-content: space-between;
+            width: 100%;
+            a {
+                font-size: 1.5rem;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1536px) {
+    main.cart-container {
+        width: 70%;
+        h1 {
+            font-size: 2.6rem;
+        }
+
+        .cart-product-card {
+            padding: 1em 2em;
+            min-height: 12em; // img height 6 em + top and bottom padding 0.5em 
+
+            img {
+                height: 10em;
+                width: 10em;
+            }
+
+            &-info {
+                height: 10em;
+
+                .title {
+                    h4 {
+                        font-size: 1.8rem;
+                    }
+
+                    p {
+                        margin-right: 0.2em;
+                        font-size: 1.7em;
+                    }
+                }
+
+                .variant-details {
+                    font-size: 1.4rem;
+                }
+
+                .cart-product-ctrls {
+                    font-size: 1.4rem;
+                    width: 5.7em; //ctrl container x 3
+
+                    .ctrl-container {
+                        @include flex-center;
+                        width: 1.9em;
+                        height: 1.9em;
+                    }
+
+                    .plus,
+                    .minus,
+                    .delete {
+                        font-size: 1.4rem;
+                    }
+
+                    .delete {
+                        font-size: 1.35rem;
+                    }
+                }
+            }
+        }
+        .subtotal {
+            font-size: 1.7rem;
+        }
+
+        .links-container {
+            width: 100%;
+
+            a {
+                font-size: 1.6rem;
             }
         }
     }
