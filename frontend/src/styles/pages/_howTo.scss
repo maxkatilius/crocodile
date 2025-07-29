@@ -111,19 +111,6 @@
 	}
 }
 
-@media only screen and (min-width: 1024px) {
-	.playing-cards,
-	.power-cards {
-		flex-direction: row;
-		flex-wrap: wrap;
-
-		.playing-card,
-		.power-card {
-			width: 40%;
-			margin-right: auto;
-		}
-	}
-}
 
 // Calling Croc
 .calling-croc-container {
@@ -140,26 +127,61 @@
 }
 
  @media only screen and (min-width: 1024px) {
-    .aim-setup-container,
-    .gameplay-container,
-    .calling-croc-container,
-    .smackdowns-container,
-    .power-cards-container,
-    .card-values-container,
-    .prohibited-container {
+	.how-to-container {
+		padding: 8em 4em 1.6em 4em;
+		.aim-setup-container,
+		.gameplay-container,
+		.calling-croc-container,
+		.smackdowns-container,
+		.power-cards-container,
+		.card-values-container,
+		.prohibited-container {
+			
+			h2 {
+				margin-top: 0.4em;
+				font-size: 2rem;
+			}
+			
+			p,
+			ul li {
+				font-size: 1.2rem;
+			}
 
-        h2 {
-            margin-top: 0.4em;
-            font-size: 2rem;
-        }
-        
-        p,
-        ul li {
-            font-size: 1.2rem;
-        }
-    }
+			h4 {
+				margin-top: 0.5em;
+				font-size: 1.5rem;
+			}
+		}
+		
+		.card-values-container,
+		.power-cards-container {
+	
+			.playing-cards,
+			.power-cards {
+				flex-direction: row;
+				flex-wrap: wrap;
+	
+				.playing-card,
+				.power-card {
+					width: 40%;
+					margin-right: auto;
+					
+					img {
+						width: 7em;
+					}
+				}
+			}
+		}
+
+		.card-values-container {
+			.playing-card-info {
+				h4 {
+					font-size: 1.3rem;
+				}
+			}
+		}
+	}
 }
-        
 
  @media only screen and (min-width: 1536px) {
     .aim-setup-container,
@@ -181,10 +203,18 @@
         }
         
         .links-container a,
-        .back-btn {
+        .links-container .back-btn {
             font-size: 1.4rem;
         }
+
     }
+
+	.smackdowns-container {
+		h4 {
+			margin-top: 0.6em;
+			font-size: 1.7rem;
+		}
+	}
 }
 
 

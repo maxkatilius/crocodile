@@ -113,16 +113,6 @@
     margin: auto 0 0.8em 0;
     padding-top: 1em;
     
-    @media only screen and (min-width: 840px) {
-        justify-content: space-between;
-        
-        a,
-        .back-btn {
-            font-size: 1.1rem;
-            width: 10em;
-        }
-    }
-    
     a,
     .back-btn {
         @include arrow-button-style;
@@ -132,6 +122,16 @@
         @include button-style;
         font-size: inherit;
         font-family: inherit;
+    }
+
+    @media only screen and (min-width: 840px) {
+        justify-content: space-between;
+
+        a,
+        .back-btn {
+            font-size: 1.1rem;
+            width: 10em;
+        }
     }
 }
 

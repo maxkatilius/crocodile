@@ -54,26 +54,60 @@ main.contact-us-container {
             }
         }
     }
-
+    
     @media only screen and (min-width: 1024px) {
         gap: 0;
         max-width: 100%;
-
+        
         h1 {
-            padding-top: 0.2em;
+            margin-bottom: 1em;
             font-size: 2.4em;
         }
 
         .contact-text {
-            font-size: 2rem;
             flex-direction: row;
-            margin-top: 2em;
-            border: 1px solid red;
-            margin: auto auto;
+            margin: 0em 0 0 0;
+            align-items: flex-start;
+            padding: 0 2em;
+            
+            p {
+                margin: 0;
+                width: 45%;
+                font-size: 1.6rem;
+                line-height: 1.8;
+            }
 
             form {
-                width: 80%;
-                gap: 0.6em;
+                width: 45%;
+                gap: 0.8em;
+                margin-left: auto;
+            }
+        }
+    }
+
+    @media only screen and (min-width: 1536px) {
+        h1 {
+            font-size: 3rem;
+        }
+        .contact-text {
+            
+            p {
+                font-size: 1.8rem;
+                line-height: 1.8;
+            }
+
+            form {
+                padding: 1.4em;
+                gap: 1.2em;
+
+                input,
+                textarea {
+                    height: 2.8em;
+                    font-size: 1.3rem;
+                }
+                textarea {
+                    height: 7em;
+                }
             }
         }
     }

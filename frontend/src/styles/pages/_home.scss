@@ -33,6 +33,12 @@ main.home-container {
                 @include button-hover;
             }
         }
+        .back-btn {
+            @include button-style;
+            &:hover {
+                @include button-hover;
+            }
+        }
     }
 
     @media only screen and (min-width: 840px) {
@@ -49,14 +55,12 @@ main.home-container {
             .subtitle {
                 padding: 0 0 1em 0;
                 font-size: 3rem;
-                text-align: center;
             }
 
             .tagline {
                 font-size: 1.4rem;
                 width: 80%;
                 margin: auto auto;
-                text-align: center;
             }
         }
         .home-links {
@@ -68,19 +72,20 @@ main.home-container {
             }
         }
     }
-
+    
     @media only screen and (min-width: 1024px) {
         padding: 14em 2em 1.6em 2em;
         align-items: flex-start;
-
+        
         .home-text {
-    
+            
             .subtitle {
                 font-size: 3rem;
             }
-    
+            
             .tagline {
                 font-size: 1.5rem;
+                text-align: center;
             }
         }
     
@@ -100,19 +105,19 @@ main.home-container {
     
             .subtitle {
                 padding: 0 0 1.4em 0;
-                font-size: 3.5rem;
+                font-size: 3.3rem;
             }
     
             .tagline {
-                font-size: 1.85rem;
+                font-size: 1.7rem;
                 width: 60%;
                 line-height: 1.85;
             }
         }
     
         .home-links {
-            font-size: 1.6rem;
-            gap: 1.6em;
+            font-size: 1.5rem;
+            gap: 1.5em;
     
             a {
                 width: 11em;
