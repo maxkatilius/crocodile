@@ -5,16 +5,17 @@ header {
     z-index: 99;
     height: 6.4em;
     width: 100%;
+    padding: 0.8em 2em 1.2em 1.5em;
     border-bottom: 1px solid $secondary-white;
     background-color: $primary-white;
-
+    box-shadow: $box-shadow-default;
+    
     .header-container {
-        display: flex;
         position: relative;
+        height: 100%;
         width: 100%;
+        display: flex;
         justify-content: start;
-        padding: 0.8em 1.5em 1.2em 1.5em;
-        box-shadow: $box-shadow-default;
 
         .header-logo {
             cursor: pointer;
@@ -23,7 +24,7 @@ header {
                 max-width: 8em;
             }
 
-            h1 {
+            h2 {
                 font-size: 1.1rem;
                 letter-spacing: 0.25rem;
                 line-height: 1.3em;
@@ -35,11 +36,10 @@ header {
 }
 
 // Mobile Nav
-
 .mobile-nav {
     position: absolute;
-    bottom: 0.35em;
-    right: 2em;
+    bottom: -0.8em;
+    right: 0em;
     left: auto;
     transition: right 550ms ease-out 100ms;
 
@@ -49,7 +49,7 @@ header {
             width: 1.2em;
             height: 1.2em;
             right: 0.7em;
-            bottom: 3.5em;
+            bottom: 3.3em;
             transition: opacity 300ms ease-in 600ms;
 
             img {
@@ -62,15 +62,11 @@ header {
                 @include flex-center;
                 width: 1.4em;
                 height: 1.4em;
-                bottom: 0.7em;
-                right: -0.02em;
-                font-size: 0.8rem;
+                bottom: 0.95em;
+                right: 0.05em;
+                font-size: 0.7rem;
                 font-weight: bold;
                 color: $crocodile-green;
-            }
-
-            .underline {
-                bottom: -0.18em;
             }
         }
     }
@@ -79,7 +75,7 @@ header {
         z-index: 101;
         position: relative;
         @include flex-center;
-        height: 3.8em;
+        height: 3.7em;
         width: 2.4em;
         cursor: pointer;
         transition: all 400ms ease-in-out;
@@ -87,7 +83,7 @@ header {
         .hamburger,
         .hamburger::before,
         .hamburger::after {
-            height: 0.18em;
+            height: 0.12em;
             background-color: $crocodile-green;
             border-radius: 1.5em;
         }
@@ -206,10 +202,9 @@ header {
 }
 
 // Desktop Nav
-
 .desktop-nav {
     display: flex;
-    gap: 1em;
+    gap: 1.4em;
     align-self: flex-end;
     font-weight: bold;
 
@@ -217,8 +212,10 @@ header {
         position: relative;
         @include flex-col;
         @include flex-center;
-        padding-bottom: 0.2em;
+        padding-bottom: 0.15em;
         color: $primary-white;
+        text-transform: uppercase;
+        letter-spacing: 0.05rem;
 
         .underline {
             position: absolute;
@@ -282,14 +279,14 @@ header {
     }
 }
 
-@media only screen and (min-width: 736px) {
+@media only screen and (min-width: 768px) {
     header {
+        background-image: linear-gradient($secondary-green, $crocodile-green);
         .header-container {
-            background-image: linear-gradient($secondary-green, $crocodile-green);
             justify-content: space-between;
             
             .header-logo {
-                h1 {
+                h2 {
                     color: $primary-white;
                     border-top: 2px solid $primary-white;
                     border-bottom: 2px solid $primary-white;
@@ -299,36 +296,65 @@ header {
     }
 }
 
+@media only screen and (min-width: 1048px) { 
+    header {
+        height: 7em;
+        padding: 1em 2.5em 1em 2em;
+        .header-container {
+
+            .header-logo {
+                img {
+                    max-width: 8.4em;
+                }
+
+                h2 {
+                    font-size: 1.15rem;
+                }
+            }
+    
+            .desktop-nav {
+                gap: 1.2em;
+    
+                a {
+                    font-size: 1.1rem;
+                }
+                .desktop-nav-cart-img-container {
+                    .cart-count {
+                        bottom: 1em;
+                        right: 0.15em;
+                    }
+                }
+            }
+        }
+    }
+}
+
 @media only screen and (min-width: 1536px) {
     header {
-
+        height: 7.8em;
+        padding: 1.1em 2em 1.2em 3em;
         .header-container {
-            padding: 0.6em 2.5em 1.2em 2.5em;
             
             .header-logo {
                 img {
-                    max-width: 8.6em;
+                    max-width: 9.5em;
                 }
                 
-                h1 {
-                    font-size: 1.2rem;
+                h2 {
+                    font-size: 1.35rem;
                 }
             }
 
             .desktop-nav {
-                font-size: 1.2rem;
-                gap: 1.5em;
-                
-                span {
-                    height: 3px;
-                }
-                
+                gap: 2.8em;
+                margin-bottom: 0.2em;
                 a {
+                    font-size: 1.3rem;
                     .desktop-nav-cart-img-container {
                         .cart-count {
-                            font-size: 1.15rem;
-                            bottom: 1em;
-                            right: 0.05em;
+                            font-size: 1rem;
+                            right: 0.25em;
+                            bottom: 1.3em;
                         }
                     }
                 }

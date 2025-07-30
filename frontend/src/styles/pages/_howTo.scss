@@ -2,9 +2,7 @@
 
 // How To
 .how-to-container {
-	flex-grow: 1;
-	@include flex-col;
-	padding: 8em 2em 1.6em 2em; // Large top padding to account for height of fixed header
+	border: 1px solid red;
 }
 
 .aim-setup-container,
@@ -18,15 +16,29 @@
 	flex-grow: 1;
 	@include flex-col;
 	gap: 0.3em;
-	.links-container {
-		@include links-container-style;
-	}
+
+}
+
+h2 {
+	margin-bottom: 0.2em;
+}
+
+p {
+	line-height: 1.6;
+}
+
+.links-container {
+	@include links-container-style;
 }
 
 // AimSetup
 .aim-setup-container {
-	@include flex-col;
-	gap: 0.3em;
+	.aim-setup-text {
+		flex-grow: 1;
+		@include flex-col;
+		gap: 1em;
+		justify-content: space-evenly;
+	}
 }
 
 // Gameplay
@@ -75,8 +87,7 @@
 	}
 
 	.links-container {
-		a,
-        .back-btn {
+		a {
 			width: auto;
 		}
 	}
@@ -91,6 +102,11 @@
 .power-card {
 	@include playing-card-style;
 	@include playing-card-style;
+
+	h4 {
+		padding: 0;
+		margin: 0;
+	}
 
 	.playing-card-info,
 	.power-card-info {
@@ -112,7 +128,6 @@
 	}
 }
 
-
 // Calling Croc
 .calling-croc-container {
 	h2 {
@@ -120,16 +135,59 @@
 	}
 }
 
-// Prohibited Plays
-.prohibited-container {
+@media only screen and (min-width: 648px) {
+	h2 {
+		font-size: 1.9rem;
+	}
+
 	h4 {
-		padding-top: 1em;
+		font-size: 1.4rem;
+		margin: 1em 0 0.3em 0;
+	}
+
+	p,
+	ul li {
+		font-size: 1.2rem;
+	}
+
+	.links-container {
+		a,
+		.back-btn {
+			font-size: 1.2rem;
+		}
+	}
+
+	.playing-cards,
+	.power-cards {
+		justify-content: flex-start;
+		.playing-card-info,
+		.power-card-info {
+			h4 {
+				font-size: 1.3rem;
+			}
+
+			p {
+			font-size: 1rem;
+				span {
+					display: block;
+				}
+				
+				.playing-card-value {
+					font-weight: bold;
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (min-width: 840px) {
+	p { 
+		line-height: 1.8;
 	}
 }
 
  @media only screen and (min-width: 1024px) {
 	.how-to-container {
-		padding: 8em 4em 1.6em 4em;
 		.aim-setup-container,
 		.gameplay-container,
 		.calling-croc-container,
@@ -139,21 +197,25 @@
 		.prohibited-container {
 			
 			h2 {
-				margin-top: 0.4em;
-				font-size: 2rem;
+				font-size: 2.2rem;
 			}
 			
 			p,
 			ul li {
-				font-size: 1.2rem;
+				font-size: 1.3rem;
 			}
 
 			h4 {
-				margin-top: 0.5em;
 				font-size: 1.5rem;
 			}
 		}
 		
+		.links-container {
+			a,
+			.back-btn {
+				font-size: 1.3rem;
+			}
+		}
 		.card-values-container,
 		.power-cards-container {
 	
@@ -161,10 +223,11 @@
 			.power-cards {
 				flex-direction: row;
 				flex-wrap: wrap;
+				gap: 2em;
 	
 				.playing-card,
 				.power-card {
-					width: 40%;
+					width: 45%;
 					margin-right: auto;
 					
 					img {
@@ -185,49 +248,45 @@
 }
 
  @media only screen and (min-width: 1536px) {
-    .aim-setup-container,
-    .gameplay-container,
-    .calling-croc-container,
-    .smackdowns-container,
-    .power-cards-container,
-    .card-values-container,
-    .prohibited-container {
+	.how-to-container {
+		.aim-setup-container,
+		.gameplay-container,
+		.calling-croc-container,
+		.smackdowns-container,
+		.power-cards-container,
+		.card-values-container,
+		.prohibited-container {
+			
+			h2 {
+				font-size: 2.8rem;
+			}
+			
+			p,
+			ul li {
+				font-size: 1.7rem;
+			}
+			
+			.links-container a,
+			.links-container .back-btn {
+				font-size: 1.6rem;
+			}
+			
+		}
 
-        h2 {
-            margin-top: 0.6em;
-            font-size: 2.2rem;
-        }
-        
-        p,
-        ul li {
-            font-size: 1.4rem;
-        }
-        
-        .links-container a,
-        .links-container .back-btn {
-            font-size: 1.4rem;
-        }
-
-    }
-
-	.smackdowns-container {
-		h4 {
-			margin-top: 0.6em;
-			font-size: 1.7rem;
+		.aim-setup-container {
+			h2 {
+				margin-bottom: 0.4em;
+			}
+			.aim-setup-text {
+				gap: 1.6em;
+			}
+		}
+		
+		.smackdowns-container {
+			h4 {
+				margin-top: 0.6em;
+				font-size: 1.7rem;
+			}
 		}
 	}
-}
-
-
-// @media only screen and (min-width: 1280px) {
-
-//     .aim-setup-container,
-//     .gameplay-container,
-//     .calling-croc-container,
-//     .smackdowns-container,
-//     .power-cards-container,
-//     .card-values-container,
-//     .prohibited-container {
-        
-//     }
-// }
+ }

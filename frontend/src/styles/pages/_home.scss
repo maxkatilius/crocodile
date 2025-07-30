@@ -3,21 +3,26 @@
 main.home-container {
     flex-grow: 1;
     @include flex-col;
-    padding: 8em 2em 1.6em 2em; // Large top padding to account for height of fixed header
-    margin: auto auto;
-    width: 90%;
-    max-width: 28em;
-    justify-content: space-evenly;
+    justify-content: center;
+    padding: 1em 3em;
+    margin: 6.4em auto 0 auto; // 6.4em = fixed header height
+    height: calc(100% - 6.4em); // occupy available height - header height
+    min-width: 22em;
+    width: 100%;
+    max-width: 34em;
 
     .home-text {
+        min-width: 18em;
+        width: 80%;
+        max-width: 28em;
+        margin: 0 auto;
         .subtitle {
-            padding: 0.6em 0;
             text-align: center;
             color: $crocodile-green;
         }
-
+        
         .tagline {
-            margin-bottom: 2em;
+            margin: 2em auto;
         }
     }
 
@@ -28,6 +33,10 @@ main.home-container {
         a {
             @include button-style;
             @include flex-center;
+            margin: auto auto;
+            min-width: 18em;
+            width: 80%;
+            max-width: 28em;
 
             &:hover {
                 @include button-hover;
@@ -41,42 +50,57 @@ main.home-container {
         }
     }
 
+    @media only screen and (min-width: 648px) { 
+        .home-text {
+            .subtitle {
+                font-size: 2.1rem;
+            }
+            .tagline {
+                font-size: 1.1rem;
+                text-align: center;
+            }
+
+        }
+        
+        .home-links {
+            a {
+                font-size: 1.1rem;
+            }
+        }
+    }
+
     @media only screen and (min-width: 840px) {
         max-width: 100%;
         flex-direction: row;
-        justify-content: center;
         align-items: center;
         gap: 2em;
-        padding: 10em 2em 1.6em 2em;
         
         .home-text {
             max-width: 70%;
             
             .subtitle {
-                padding: 0 0 1em 0;
-                font-size: 3rem;
+                font-size: 2.6rem;
             }
 
             .tagline {
                 font-size: 1.4rem;
                 width: 80%;
-                margin: auto auto;
             }
         }
         .home-links {
-            max-width: 100%;
-            font-size: 1.4rem;
-            gap: 1.4em;
+            gap: 1.2em;
             a {
-                width: 10em;
+                width: 8em;
+                font-size: 1.15rem;
             }
         }
     }
     
-    @media only screen and (min-width: 1024px) {
-        padding: 14em 2em 1.6em 2em;
-        align-items: flex-start;
-        
+    @media only screen and (min-width: 1024px) {      
+        padding: 1em 3em 1em 1em;
+        margin: 7em auto 0 auto;
+        height: calc(100% - 7em);
+
         .home-text {
             
             .subtitle {
@@ -90,38 +114,54 @@ main.home-container {
         }
     
         .home-links {
-            font-size: 1.3rem;
+            gap: 1.4em;
+            a {
+                font-size: 1.2rem;
+            }
+        }
+    }
+    
+    @media only screen and (min-width: 1024px) {
+        padding: 1em 3em 1em 2em;
+        .home-text {
+            .subtitle {
+                font-size: 3.3rem;
+            }
+            .tagline {
+                width: 70%;
+                line-height: 1.7;
+            }
+        }    
+        .home-links {
             gap: 1.6em;
+            a {
+                font-size: 1.25rem;
+            }
         }
     }
 
     @media only screen and (min-width: 1536px) {
-        padding: 14em 0em 1.6em 0em;
-        width: 100%;
-
+        margin: 7.8em auto 0 auto;
+        height: calc(100% - 7.8em);
+        padding: 1em 5em 1em 2em;
+        
         .home-text {
-            max-width: 70%;
-            gap: 3em;
-    
             .subtitle {
-                padding: 0 0 1.4em 0;
-                font-size: 3.3rem;
+                font-size: 3.5rem;
             }
     
             .tagline {
-                font-size: 1.7rem;
-                width: 60%;
-                line-height: 1.85;
+                font-size: 1.9rem
             }
         }
     
         .home-links {
-            font-size: 1.5rem;
-            gap: 1.5em;
+            gap: 2em;
     
             a {
-                width: 11em;
+                font-size: 1.6rem;
             }
         }
+
     }
 }

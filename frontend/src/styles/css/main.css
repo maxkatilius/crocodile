@@ -20,6 +20,33 @@ body {
   justify-content: space-between;
 }
 
+main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  margin: 6.4em auto 0 auto;
+  padding: 2em;
+  height: calc(100% - 6.4em);
+}
+@media only screen and (min-width: 648px) {
+  main {
+    padding: 2em 4em;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  main {
+    margin: 7em auto 0 auto;
+    height: calc(100% - 7em);
+  }
+}
+@media only screen and (min-width: 1536px) {
+  main {
+    padding: 2em 6em;
+    margin: 7.8em auto auto auto;
+    height: calc(100% - 7.8em);
+  }
+}
+
 /***************
 ** Typography **
 ***************/
@@ -37,43 +64,35 @@ h4 {
   font-size: 1.2rem;
 }
 
-p {
-  margin: 0.5em 0;
+p,
+ul li {
   line-height: 1.4;
+}
+
+p {
+  margin: 0.3em 0;
 }
 
 a {
   text-decoration: none;
 }
 
-@media only screen and (min-width: 768px) {
-  html {
-    font-size: 1.2rem;
-  }
-}
-@media only screen and (min-width: 1536px) {
-  h1 {
-    font-size: 2.4rem;
-  }
-  h2 {
-    font-size: 2rem;
-  }
-}
 header {
   position: fixed;
   z-index: 99;
   height: 6.4em;
   width: 100%;
+  padding: 0.8em 2em 1.2em 1.5em;
   border-bottom: 1px solid rgba(247, 247, 247, 0.9333333333);
   background-color: #FEFFFE;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1), -1px -1px 4px rgba(255, 255, 255, 0.3);
 }
 header .header-container {
-  display: flex;
   position: relative;
+  height: 100%;
   width: 100%;
+  display: flex;
   justify-content: start;
-  padding: 0.8em 1.5em 1.2em 1.5em;
-  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1), -1px -1px 4px rgba(255, 255, 255, 0.3);
 }
 header .header-container .header-logo {
   cursor: pointer;
@@ -81,7 +100,7 @@ header .header-container .header-logo {
 header .header-container .header-logo img {
   max-width: 8em;
 }
-header .header-container .header-logo h1 {
+header .header-container .header-logo h2 {
   font-size: 1.1rem;
   letter-spacing: 0.25rem;
   line-height: 1.3em;
@@ -91,8 +110,8 @@ header .header-container .header-logo h1 {
 
 .mobile-nav {
   position: absolute;
-  bottom: 0.35em;
-  right: 2em;
+  bottom: -0.8em;
+  right: 0em;
   left: auto;
   transition: right 550ms ease-out 100ms;
 }
@@ -101,7 +120,7 @@ header .header-container .header-logo h1 {
   width: 1.2em;
   height: 1.2em;
   right: 0.7em;
-  bottom: 3.5em;
+  bottom: 3.3em;
   transition: opacity 300ms ease-in 600ms;
 }
 .mobile-nav a .mobile-nav-cart-img-container img {
@@ -115,14 +134,11 @@ header .header-container .header-logo h1 {
   align-items: center;
   width: 1.4em;
   height: 1.4em;
-  bottom: 0.7em;
-  right: -0.02em;
-  font-size: 0.8rem;
+  bottom: 0.95em;
+  right: 0.05em;
+  font-size: 0.7rem;
   font-weight: bold;
   color: #07543A;
-}
-.mobile-nav a .mobile-nav-cart-img-container .underline {
-  bottom: -0.18em;
 }
 .mobile-nav .hamburger-container {
   z-index: 101;
@@ -130,7 +146,7 @@ header .header-container .header-logo h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 3.8em;
+  height: 3.7em;
   width: 2.4em;
   cursor: pointer;
   transition: all 400ms ease-in-out;
@@ -138,7 +154,7 @@ header .header-container .header-logo h1 {
 .mobile-nav .hamburger-container .hamburger,
 .mobile-nav .hamburger-container .hamburger::before,
 .mobile-nav .hamburger-container .hamburger::after {
-  height: 0.18em;
+  height: 0.12em;
   background-color: #07543A;
   border-radius: 1.5em;
 }
@@ -246,7 +262,7 @@ header .header-container .header-logo h1 {
 
 .desktop-nav {
   display: flex;
-  gap: 1em;
+  gap: 1.4em;
   align-self: flex-end;
   font-weight: bold;
 }
@@ -257,8 +273,10 @@ header .header-container .header-logo h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-bottom: 0.2em;
+  padding-bottom: 0.15em;
   color: #FEFFFE;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
 }
 .desktop-nav a .underline {
   position: absolute;
@@ -310,38 +328,63 @@ header .header-container .header-logo h1 {
     right: calc(50% - 2em - 2.6em);
   }
 }
-@media only screen and (min-width: 736px) {
-  header .header-container {
+@media only screen and (min-width: 768px) {
+  header {
     background-image: linear-gradient(#0B6E4F, #07543A);
+  }
+  header .header-container {
     justify-content: space-between;
   }
-  header .header-container .header-logo h1 {
+  header .header-container .header-logo h2 {
     color: #FEFFFE;
     border-top: 2px solid #FEFFFE;
     border-bottom: 2px solid #FEFFFE;
   }
 }
-@media only screen and (min-width: 1536px) {
-  header .header-container {
-    padding: 0.6em 2.5em 1.2em 2.5em;
+@media only screen and (min-width: 1048px) {
+  header {
+    height: 7em;
+    padding: 1em 2.5em 1em 2em;
   }
   header .header-container .header-logo img {
-    max-width: 8.6em;
+    max-width: 8.4em;
   }
-  header .header-container .header-logo h1 {
-    font-size: 1.2rem;
+  header .header-container .header-logo h2 {
+    font-size: 1.15rem;
   }
   header .header-container .desktop-nav {
-    font-size: 1.2rem;
-    gap: 1.5em;
+    gap: 1.2em;
   }
-  header .header-container .desktop-nav span {
-    height: 3px;
+  header .header-container .desktop-nav a {
+    font-size: 1.1rem;
+  }
+  header .header-container .desktop-nav .desktop-nav-cart-img-container .cart-count {
+    bottom: 1em;
+    right: 0.15em;
+  }
+}
+@media only screen and (min-width: 1536px) {
+  header {
+    height: 7.8em;
+    padding: 1.1em 2em 1.2em 3em;
+  }
+  header .header-container .header-logo img {
+    max-width: 9.5em;
+  }
+  header .header-container .header-logo h2 {
+    font-size: 1.35rem;
+  }
+  header .header-container .desktop-nav {
+    gap: 2.8em;
+    margin-bottom: 0.2em;
+  }
+  header .header-container .desktop-nav a {
+    font-size: 1.3rem;
   }
   header .header-container .desktop-nav a .desktop-nav-cart-img-container .cart-count {
-    font-size: 1.15rem;
-    bottom: 1em;
-    right: 0.05em;
+    font-size: 1rem;
+    right: 0.25em;
+    bottom: 1.3em;
   }
 }
 footer {
@@ -405,19 +448,26 @@ main.home-container {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  padding: 8em 2em 1.6em 2em;
-  margin: auto auto;
-  width: 90%;
+  justify-content: center;
+  padding: 1em 3em;
+  margin: 6.4em auto 0 auto;
+  height: calc(100% - 6.4em);
+  min-width: 22em;
+  width: 100%;
+  max-width: 34em;
+}
+main.home-container .home-text {
+  min-width: 18em;
+  width: 80%;
   max-width: 28em;
-  justify-content: space-evenly;
+  margin: 0 auto;
 }
 main.home-container .home-text .subtitle {
-  padding: 0.6em 0;
   text-align: center;
   color: #07543A;
 }
 main.home-container .home-text .tagline {
-  margin-bottom: 2em;
+  margin: 2em auto;
 }
 main.home-container .home-links {
   display: flex;
@@ -440,6 +490,10 @@ main.home-container .home-links a {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: auto auto;
+  min-width: 18em;
+  width: 80%;
+  max-width: 28em;
 }
 main.home-container .home-links a:hover {
   transform: scale(1.1);
@@ -465,40 +519,48 @@ main.home-container .home-links .back-btn:hover {
   background-color: #0B6E4F;
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2), -2px -2px 5px rgba(255, 255, 255, 0.3);
 }
+@media only screen and (min-width: 648px) {
+  main.home-container .home-text .subtitle {
+    font-size: 2.1rem;
+  }
+  main.home-container .home-text .tagline {
+    font-size: 1.1rem;
+    text-align: center;
+  }
+  main.home-container .home-links a {
+    font-size: 1.1rem;
+  }
+}
 @media only screen and (min-width: 840px) {
   main.home-container {
     max-width: 100%;
     flex-direction: row;
-    justify-content: center;
     align-items: center;
     gap: 2em;
-    padding: 10em 2em 1.6em 2em;
   }
   main.home-container .home-text {
     max-width: 70%;
   }
   main.home-container .home-text .subtitle {
-    padding: 0 0 1em 0;
-    font-size: 3rem;
+    font-size: 2.6rem;
   }
   main.home-container .home-text .tagline {
     font-size: 1.4rem;
     width: 80%;
-    margin: auto auto;
   }
   main.home-container .home-links {
-    max-width: 100%;
-    font-size: 1.4rem;
-    gap: 1.4em;
+    gap: 1.2em;
   }
   main.home-container .home-links a {
-    width: 10em;
+    width: 8em;
+    font-size: 1.15rem;
   }
 }
 @media only screen and (min-width: 1024px) {
   main.home-container {
-    padding: 14em 2em 1.6em 2em;
-    align-items: flex-start;
+    padding: 1em 3em 1em 1em;
+    margin: 7em auto 0 auto;
+    height: calc(100% - 7em);
   }
   main.home-container .home-text .subtitle {
     font-size: 3rem;
@@ -508,66 +570,65 @@ main.home-container .home-links .back-btn:hover {
     text-align: center;
   }
   main.home-container .home-links {
-    font-size: 1.3rem;
+    gap: 1.4em;
+  }
+  main.home-container .home-links a {
+    font-size: 1.2rem;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  main.home-container {
+    padding: 1em 3em 1em 2em;
+  }
+  main.home-container .home-text .subtitle {
+    font-size: 3.3rem;
+  }
+  main.home-container .home-text .tagline {
+    width: 70%;
+    line-height: 1.7;
+  }
+  main.home-container .home-links {
     gap: 1.6em;
+  }
+  main.home-container .home-links a {
+    font-size: 1.25rem;
   }
 }
 @media only screen and (min-width: 1536px) {
   main.home-container {
-    padding: 14em 0em 1.6em 0em;
-    width: 100%;
-  }
-  main.home-container .home-text {
-    max-width: 70%;
-    gap: 3em;
+    margin: 7.8em auto 0 auto;
+    height: calc(100% - 7.8em);
+    padding: 1em 5em 1em 2em;
   }
   main.home-container .home-text .subtitle {
-    padding: 0 0 1.4em 0;
-    font-size: 3.3rem;
+    font-size: 3.5rem;
   }
   main.home-container .home-text .tagline {
-    font-size: 1.7rem;
-    width: 60%;
-    line-height: 1.85;
+    font-size: 1.9rem;
   }
   main.home-container .home-links {
-    font-size: 1.5rem;
-    gap: 1.5em;
+    gap: 2em;
   }
   main.home-container .home-links a {
-    width: 11em;
+    font-size: 1.6rem;
   }
 }
 
-main.about-container {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  padding: 8em 2em 1.6em 2em;
-}
-main.about-container h1 {
-  padding: 0 0 0.4em 0;
-}
-main.about-container .about-text {
+main .about-text p {
   font-size: 1.1rem;
-  margin: auto 0;
+  line-height: 1.7;
 }
-main.about-container .about-text p {
-  margin: 0.2em 2.2em 1.2em 0;
-  line-height: 1.7rem;
-}
-main.about-container .about-links {
+main .about-links {
   display: flex;
   justify-content: space-around;
   margin: auto 0 0.8em 0;
   padding-top: 1em;
-  margin: auto 0 1em 0;
   display: flex;
   flex-direction: column;
   gap: 1.1em;
 }
-main.about-container .about-links a,
-main.about-container .about-links .back-btn {
+main .about-links a,
+main .about-links .back-btn {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -582,25 +643,25 @@ main.about-container .about-links .back-btn {
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1), -1px -1px 4px rgba(255, 255, 255, 0.3);
   gap: 0.5em;
 }
-main.about-container .about-links a .arrow,
-main.about-container .about-links .back-btn .arrow {
+main .about-links a .arrow,
+main .about-links .back-btn .arrow {
   width: 0;
   height: 0;
   display: inline-block;
 }
-main.about-container .about-links a .arrow.right,
-main.about-container .about-links .back-btn .arrow.right {
+main .about-links a .arrow.right,
+main .about-links .back-btn .arrow.right {
   border-top: 0.4em solid transparent;
   border-bottom: 0.4em solid transparent;
   border-left: 0.6em solid #FEFFFE;
 }
-main.about-container .about-links a .arrow.left,
-main.about-container .about-links .back-btn .arrow.left {
+main .about-links a .arrow.left,
+main .about-links .back-btn .arrow.left {
   border-top: 0.4em solid transparent;
   border-bottom: 0.4em solid transparent;
   border-right: 0.6em solid #FEFFFE;
 }
-main.about-container .about-links .back-btn {
+main .about-links .back-btn {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -617,16 +678,16 @@ main.about-container .about-links .back-btn {
   font-family: inherit;
 }
 @media only screen and (min-width: 840px) {
-  main.about-container .about-links {
+  main .about-links {
     justify-content: space-between;
   }
-  main.about-container .about-links a,
-  main.about-container .about-links .back-btn {
+  main .about-links a,
+  main .about-links .back-btn {
     font-size: 1.1rem;
     width: 10em;
   }
 }
-main.about-container .about-links a {
+main .about-links a {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -654,74 +715,83 @@ main.about-container .about-links a {
   gap: 0.5em;
   font-size: 1.1rem;
 }
-main.about-container .about-links a .arrow {
+main .about-links a .arrow {
   width: 0;
   height: 0;
   display: inline-block;
 }
-main.about-container .about-links a .arrow.right {
+main .about-links a .arrow.right {
   border-top: 0.4em solid transparent;
   border-bottom: 0.4em solid transparent;
   border-left: 0.6em solid #FEFFFE;
 }
-main.about-container .about-links a .arrow.left {
+main .about-links a .arrow.left {
   border-top: 0.4em solid transparent;
   border-bottom: 0.4em solid transparent;
   border-right: 0.6em solid #FEFFFE;
 }
-main.about-container .about-links a:hover {
+main .about-links a:hover {
   transform: scale(1.1);
   background-color: #0B6E4F;
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2), -2px -2px 5px rgba(255, 255, 255, 0.3);
 }
 @media only screen and (min-width: 648px) {
-  main.about-container .about-text p {
-    margin-bottom: 1em;
+  main h1 {
+    font-size: 2.2rem;
+  }
+  main .about-text p {
+    margin: 1em 0;
+  }
+  main .about-links {
+    margin: auto auto;
+    letter-spacing: 0.05rem;
+    width: 80%;
+    gap: 1.2em;
+  }
+  main .about-links a {
+    font-size: 1.3rem;
   }
 }
 @media only screen and (min-width: 840px) {
-  main.about-container {
-    padding: 8em 3em 1.6em 3em;
+  main h1 {
+    font-size: 2.4rem;
   }
-  main.about-container h1 {
-    padding: 0 0 0.8em 0;
-    font-size: 2rem;
+  main .about-text p {
+    font-size: 1.4rem;
+    line-height: 1.7;
   }
-  main.about-container .about-text {
+  main .about-links {
     margin: auto 0;
-  }
-  main.about-container .about-text p {
-    margin: 0.2em 0 1.6em 0;
-  }
-  main.about-container .about-links {
-    font-size: 1.2rem;
+    width: 100%;
     flex-direction: row;
     justify-content: space-between;
   }
-  main.about-container .about-links a {
-    width: 12em;
-    justify-content: center;
+  main .about-links a {
+    width: 30%;
+    font-size: 1.5rem;
   }
 }
-@media only screen and (min-width: 840px) {
-  main.about-container h1 {
-    font-size: 2.4rem;
+@media only screen and (min-width: 1024px) {
+  main {
+    width: 90%;
+  }
+  main h1 {
+    font-size: 2.6rem;
     text-align: center;
+  }
+  main .about-text p {
+    margin: 1.4em 0;
   }
 }
 @media only screen and (min-width: 1536px) {
-  main.about-container {
-    width: 90%;
-    margin: auto auto;
+  main h1 {
+    font-size: 3rem;
   }
-  main.about-container h1 {
-    font-size: 2.6rem;
+  main .about-text p {
+    font-size: 1.7rem;
+    line-height: 1.8;
   }
-  main.about-container .about-text p {
-    font-size: 1.3rem;
-    line-height: 1.6;
-  }
-  main.about-container .about-links a {
+  main .about-links a {
     font-size: 1.5rem;
     width: 30%;
   }
@@ -731,7 +801,8 @@ main.shop-container {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  padding: 8em 2em 1.6em 2em;
+  margin: 6.4em auto 0 auto;
+  height: calc(100% - 6.4em);
 }
 main.shop-container h2 {
   text-align: center;
@@ -997,6 +1068,10 @@ main.shop-container .loading {
   }
 }
 @media only screen and (min-width: 1024px) {
+  main.shop-container {
+    margin: 7em auto 0 auto;
+    height: calc(100% - 7em);
+  }
   main.shop-container h2 {
     font-size: 2.3rem;
   }
@@ -1038,6 +1113,10 @@ main.shop-container .loading {
   }
 }
 @media only screen and (min-width: 1536px) {
+  main.shop-container {
+    margin: 7.8em auto 0 auto;
+    height: calc(100% - 7.8em);
+  }
   main.shop-container h2 {
     font-size: 2.6em;
   }
@@ -1055,8 +1134,8 @@ main.shop-container .loading {
 main.cart-container {
   flex-grow: 1;
   width: 100%;
-  padding: 8em 2em 1.6em 2em;
-  margin: auto auto;
+  margin: 6.4em auto 0 auto;
+  height: calc(100% - 6.4em);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1353,6 +1432,8 @@ main.cart-container .empty-cart a:hover {
 }
 @media only screen and (min-width: 1024px) {
   main.cart-container {
+    margin: 7em auto 0 auto;
+    height: calc(100% - 7em);
     width: 80%;
   }
   main.cart-container h1 {
@@ -1388,6 +1469,8 @@ main.cart-container .empty-cart a:hover {
 }
 @media only screen and (min-width: 1536px) {
   main.cart-container {
+    margin: 7.8em auto 0 auto;
+    height: calc(100% - 7.8em);
     width: 70%;
   }
   main.cart-container h1 {
@@ -1446,7 +1529,8 @@ main.cart-container .empty-cart a:hover {
 main.checkout-container {
   flex-grow: 1;
   width: 100%;
-  padding: 8em 2em 1.6em 2em;
+  margin: 6.4em auto 0 auto;
+  height: calc(100% - 6.4em);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -1728,6 +1812,10 @@ main.checkout-container form .thanks-ctrls a {
   }
 }
 @media only screen and (min-width: 1024px) {
+  main.checkout-container {
+    margin: 7em auto 0 auto;
+    height: calc(100% - 7em);
+  }
   main.checkout-container h1 {
     font-size: 2.4rem;
   }
@@ -1797,7 +1885,8 @@ main.checkout-container form .thanks-ctrls a {
 }
 @media only screen and (min-width: 1536px) {
   main.checkout-container {
-    padding: 8em 7em 1.6em 7em;
+    margin: 7.8em auto 0 auto;
+    height: calc(100% - 7.8em);
   }
   main.checkout-container h1 {
     font-size: 2.6rem;
@@ -1865,10 +1954,7 @@ main.checkout-container form .thanks-ctrls a {
 }
 
 .how-to-container {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  padding: 8em 2em 1.6em 2em;
+  border: 1px solid red;
 }
 
 .aim-setup-container,
@@ -1884,35 +1970,23 @@ main.checkout-container form .thanks-ctrls a {
   flex-direction: column;
   gap: 0.3em;
 }
-.aim-setup-container .links-container,
-.setup-container .links-container,
-.gameplay-container .links-container,
-.smackdowns-container .links-container,
-.power-cards-container .links-container,
-.card-values-container .links-container,
-.calling-croc-container .links-container,
-.prohibited-container .links-container {
+
+h2 {
+  margin-bottom: 0.2em;
+}
+
+p {
+  line-height: 1.6;
+}
+
+.links-container {
   display: flex;
   justify-content: space-around;
   margin: auto 0 0.8em 0;
   padding-top: 1em;
 }
-.aim-setup-container .links-container a,
-.aim-setup-container .links-container .back-btn,
-.setup-container .links-container a,
-.setup-container .links-container .back-btn,
-.gameplay-container .links-container a,
-.gameplay-container .links-container .back-btn,
-.smackdowns-container .links-container a,
-.smackdowns-container .links-container .back-btn,
-.power-cards-container .links-container a,
-.power-cards-container .links-container .back-btn,
-.card-values-container .links-container a,
-.card-values-container .links-container .back-btn,
-.calling-croc-container .links-container a,
-.calling-croc-container .links-container .back-btn,
-.prohibited-container .links-container a,
-.prohibited-container .links-container .back-btn {
+.links-container a,
+.links-container .back-btn {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1927,74 +2001,25 @@ main.checkout-container form .thanks-ctrls a {
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1), -1px -1px 4px rgba(255, 255, 255, 0.3);
   gap: 0.5em;
 }
-.aim-setup-container .links-container a .arrow,
-.aim-setup-container .links-container .back-btn .arrow,
-.setup-container .links-container a .arrow,
-.setup-container .links-container .back-btn .arrow,
-.gameplay-container .links-container a .arrow,
-.gameplay-container .links-container .back-btn .arrow,
-.smackdowns-container .links-container a .arrow,
-.smackdowns-container .links-container .back-btn .arrow,
-.power-cards-container .links-container a .arrow,
-.power-cards-container .links-container .back-btn .arrow,
-.card-values-container .links-container a .arrow,
-.card-values-container .links-container .back-btn .arrow,
-.calling-croc-container .links-container a .arrow,
-.calling-croc-container .links-container .back-btn .arrow,
-.prohibited-container .links-container a .arrow,
-.prohibited-container .links-container .back-btn .arrow {
+.links-container a .arrow,
+.links-container .back-btn .arrow {
   width: 0;
   height: 0;
   display: inline-block;
 }
-.aim-setup-container .links-container a .arrow.right,
-.aim-setup-container .links-container .back-btn .arrow.right,
-.setup-container .links-container a .arrow.right,
-.setup-container .links-container .back-btn .arrow.right,
-.gameplay-container .links-container a .arrow.right,
-.gameplay-container .links-container .back-btn .arrow.right,
-.smackdowns-container .links-container a .arrow.right,
-.smackdowns-container .links-container .back-btn .arrow.right,
-.power-cards-container .links-container a .arrow.right,
-.power-cards-container .links-container .back-btn .arrow.right,
-.card-values-container .links-container a .arrow.right,
-.card-values-container .links-container .back-btn .arrow.right,
-.calling-croc-container .links-container a .arrow.right,
-.calling-croc-container .links-container .back-btn .arrow.right,
-.prohibited-container .links-container a .arrow.right,
-.prohibited-container .links-container .back-btn .arrow.right {
+.links-container a .arrow.right,
+.links-container .back-btn .arrow.right {
   border-top: 0.4em solid transparent;
   border-bottom: 0.4em solid transparent;
   border-left: 0.6em solid #FEFFFE;
 }
-.aim-setup-container .links-container a .arrow.left,
-.aim-setup-container .links-container .back-btn .arrow.left,
-.setup-container .links-container a .arrow.left,
-.setup-container .links-container .back-btn .arrow.left,
-.gameplay-container .links-container a .arrow.left,
-.gameplay-container .links-container .back-btn .arrow.left,
-.smackdowns-container .links-container a .arrow.left,
-.smackdowns-container .links-container .back-btn .arrow.left,
-.power-cards-container .links-container a .arrow.left,
-.power-cards-container .links-container .back-btn .arrow.left,
-.card-values-container .links-container a .arrow.left,
-.card-values-container .links-container .back-btn .arrow.left,
-.calling-croc-container .links-container a .arrow.left,
-.calling-croc-container .links-container .back-btn .arrow.left,
-.prohibited-container .links-container a .arrow.left,
-.prohibited-container .links-container .back-btn .arrow.left {
+.links-container a .arrow.left,
+.links-container .back-btn .arrow.left {
   border-top: 0.4em solid transparent;
   border-bottom: 0.4em solid transparent;
   border-right: 0.6em solid #FEFFFE;
 }
-.aim-setup-container .links-container .back-btn,
-.setup-container .links-container .back-btn,
-.gameplay-container .links-container .back-btn,
-.smackdowns-container .links-container .back-btn,
-.power-cards-container .links-container .back-btn,
-.card-values-container .links-container .back-btn,
-.calling-croc-container .links-container .back-btn,
-.prohibited-container .links-container .back-btn {
+.links-container .back-btn {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -2011,41 +2036,22 @@ main.checkout-container form .thanks-ctrls a {
   font-family: inherit;
 }
 @media only screen and (min-width: 840px) {
-  .aim-setup-container .links-container,
-  .setup-container .links-container,
-  .gameplay-container .links-container,
-  .smackdowns-container .links-container,
-  .power-cards-container .links-container,
-  .card-values-container .links-container,
-  .calling-croc-container .links-container,
-  .prohibited-container .links-container {
+  .links-container {
     justify-content: space-between;
   }
-  .aim-setup-container .links-container a,
-  .aim-setup-container .links-container .back-btn,
-  .setup-container .links-container a,
-  .setup-container .links-container .back-btn,
-  .gameplay-container .links-container a,
-  .gameplay-container .links-container .back-btn,
-  .smackdowns-container .links-container a,
-  .smackdowns-container .links-container .back-btn,
-  .power-cards-container .links-container a,
-  .power-cards-container .links-container .back-btn,
-  .card-values-container .links-container a,
-  .card-values-container .links-container .back-btn,
-  .calling-croc-container .links-container a,
-  .calling-croc-container .links-container .back-btn,
-  .prohibited-container .links-container a,
-  .prohibited-container .links-container .back-btn {
+  .links-container a,
+  .links-container .back-btn {
     font-size: 1.1rem;
     width: 10em;
   }
 }
 
-.aim-setup-container {
+.aim-setup-container .aim-setup-text {
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
-  gap: 0.3em;
+  gap: 1em;
+  justify-content: space-evenly;
 }
 
 .gameplay-container ul {
@@ -2116,9 +2122,7 @@ main.checkout-container form .thanks-ctrls a {
   font-size: 1.05rem;
 }
 .card-values-container .links-container a,
-.card-values-container .links-container .back-btn,
-.power-cards-container .links-container a,
-.power-cards-container .links-container .back-btn {
+.power-cards-container .links-container a {
   width: auto;
 }
 
@@ -2161,6 +2165,11 @@ main.checkout-container form .thanks-ctrls a {
 .power-card img:hover {
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2), -2px -2px 5px rgba(255, 255, 255, 0.3);
 }
+.playing-card h4,
+.power-card h4 {
+  padding: 0;
+  margin: 0;
+}
 .playing-card .playing-card-info h4,
 .playing-card .power-card-info h4,
 .power-card .playing-card-info h4,
@@ -2190,14 +2199,57 @@ main.checkout-container form .thanks-ctrls a {
   padding-bottom: 0.6em;
 }
 
-.prohibited-container h4 {
-  padding-top: 1em;
-}
-
-@media only screen and (min-width: 1024px) {
-  .how-to-container {
-    padding: 8em 4em 1.6em 4em;
+@media only screen and (min-width: 648px) {
+  h2 {
+    font-size: 1.9rem;
   }
+  h4 {
+    font-size: 1.4rem;
+    margin: 1em 0 0.3em 0;
+  }
+  p,
+  ul li {
+    font-size: 1.2rem;
+  }
+  .links-container a,
+  .links-container .back-btn {
+    font-size: 1.2rem;
+  }
+  .playing-cards,
+  .power-cards {
+    justify-content: flex-start;
+  }
+  .playing-cards .playing-card-info h4,
+  .playing-cards .power-card-info h4,
+  .power-cards .playing-card-info h4,
+  .power-cards .power-card-info h4 {
+    font-size: 1.3rem;
+  }
+  .playing-cards .playing-card-info p,
+  .playing-cards .power-card-info p,
+  .power-cards .playing-card-info p,
+  .power-cards .power-card-info p {
+    font-size: 1rem;
+  }
+  .playing-cards .playing-card-info p span,
+  .playing-cards .power-card-info p span,
+  .power-cards .playing-card-info p span,
+  .power-cards .power-card-info p span {
+    display: block;
+  }
+  .playing-cards .playing-card-info p .playing-card-value,
+  .playing-cards .power-card-info p .playing-card-value,
+  .power-cards .playing-card-info p .playing-card-value,
+  .power-cards .power-card-info p .playing-card-value {
+    font-weight: bold;
+  }
+}
+@media only screen and (min-width: 840px) {
+  p {
+    line-height: 1.8;
+  }
+}
+@media only screen and (min-width: 1024px) {
   .how-to-container .aim-setup-container h2,
   .how-to-container .gameplay-container h2,
   .how-to-container .calling-croc-container h2,
@@ -2205,8 +2257,7 @@ main.checkout-container form .thanks-ctrls a {
   .how-to-container .power-cards-container h2,
   .how-to-container .card-values-container h2,
   .how-to-container .prohibited-container h2 {
-    margin-top: 0.4em;
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
   .how-to-container .aim-setup-container p,
   .how-to-container .aim-setup-container ul li,
@@ -2222,7 +2273,7 @@ main.checkout-container form .thanks-ctrls a {
   .how-to-container .card-values-container ul li,
   .how-to-container .prohibited-container p,
   .how-to-container .prohibited-container ul li {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
   .how-to-container .aim-setup-container h4,
   .how-to-container .gameplay-container h4,
@@ -2231,8 +2282,11 @@ main.checkout-container form .thanks-ctrls a {
   .how-to-container .power-cards-container h4,
   .how-to-container .card-values-container h4,
   .how-to-container .prohibited-container h4 {
-    margin-top: 0.5em;
     font-size: 1.5rem;
+  }
+  .how-to-container .links-container a,
+  .how-to-container .links-container .back-btn {
+    font-size: 1.3rem;
   }
   .how-to-container .card-values-container .playing-cards,
   .how-to-container .card-values-container .power-cards,
@@ -2240,6 +2294,7 @@ main.checkout-container form .thanks-ctrls a {
   .how-to-container .power-cards-container .power-cards {
     flex-direction: row;
     flex-wrap: wrap;
+    gap: 2em;
   }
   .how-to-container .card-values-container .playing-cards .playing-card,
   .how-to-container .card-values-container .playing-cards .power-card,
@@ -2249,7 +2304,7 @@ main.checkout-container form .thanks-ctrls a {
   .how-to-container .power-cards-container .playing-cards .power-card,
   .how-to-container .power-cards-container .power-cards .playing-card,
   .how-to-container .power-cards-container .power-cards .power-card {
-    width: 40%;
+    width: 45%;
     margin-right: auto;
   }
   .how-to-container .card-values-container .playing-cards .playing-card img,
@@ -2267,49 +2322,54 @@ main.checkout-container form .thanks-ctrls a {
   }
 }
 @media only screen and (min-width: 1536px) {
-  .aim-setup-container h2,
-  .gameplay-container h2,
-  .calling-croc-container h2,
-  .smackdowns-container h2,
-  .power-cards-container h2,
-  .card-values-container h2,
-  .prohibited-container h2 {
-    margin-top: 0.6em;
-    font-size: 2.2rem;
+  .how-to-container .aim-setup-container h2,
+  .how-to-container .gameplay-container h2,
+  .how-to-container .calling-croc-container h2,
+  .how-to-container .smackdowns-container h2,
+  .how-to-container .power-cards-container h2,
+  .how-to-container .card-values-container h2,
+  .how-to-container .prohibited-container h2 {
+    font-size: 2.8rem;
   }
-  .aim-setup-container p,
-  .aim-setup-container ul li,
-  .gameplay-container p,
-  .gameplay-container ul li,
-  .calling-croc-container p,
-  .calling-croc-container ul li,
-  .smackdowns-container p,
-  .smackdowns-container ul li,
-  .power-cards-container p,
-  .power-cards-container ul li,
-  .card-values-container p,
-  .card-values-container ul li,
-  .prohibited-container p,
-  .prohibited-container ul li {
-    font-size: 1.4rem;
+  .how-to-container .aim-setup-container p,
+  .how-to-container .aim-setup-container ul li,
+  .how-to-container .gameplay-container p,
+  .how-to-container .gameplay-container ul li,
+  .how-to-container .calling-croc-container p,
+  .how-to-container .calling-croc-container ul li,
+  .how-to-container .smackdowns-container p,
+  .how-to-container .smackdowns-container ul li,
+  .how-to-container .power-cards-container p,
+  .how-to-container .power-cards-container ul li,
+  .how-to-container .card-values-container p,
+  .how-to-container .card-values-container ul li,
+  .how-to-container .prohibited-container p,
+  .how-to-container .prohibited-container ul li {
+    font-size: 1.7rem;
   }
-  .aim-setup-container .links-container a,
-  .aim-setup-container .links-container .back-btn,
-  .gameplay-container .links-container a,
-  .gameplay-container .links-container .back-btn,
-  .calling-croc-container .links-container a,
-  .calling-croc-container .links-container .back-btn,
-  .smackdowns-container .links-container a,
-  .smackdowns-container .links-container .back-btn,
-  .power-cards-container .links-container a,
-  .power-cards-container .links-container .back-btn,
-  .card-values-container .links-container a,
-  .card-values-container .links-container .back-btn,
-  .prohibited-container .links-container a,
-  .prohibited-container .links-container .back-btn {
-    font-size: 1.4rem;
+  .how-to-container .aim-setup-container .links-container a,
+  .how-to-container .aim-setup-container .links-container .back-btn,
+  .how-to-container .gameplay-container .links-container a,
+  .how-to-container .gameplay-container .links-container .back-btn,
+  .how-to-container .calling-croc-container .links-container a,
+  .how-to-container .calling-croc-container .links-container .back-btn,
+  .how-to-container .smackdowns-container .links-container a,
+  .how-to-container .smackdowns-container .links-container .back-btn,
+  .how-to-container .power-cards-container .links-container a,
+  .how-to-container .power-cards-container .links-container .back-btn,
+  .how-to-container .card-values-container .links-container a,
+  .how-to-container .card-values-container .links-container .back-btn,
+  .how-to-container .prohibited-container .links-container a,
+  .how-to-container .prohibited-container .links-container .back-btn {
+    font-size: 1.6rem;
   }
-  .smackdowns-container h4 {
+  .how-to-container .aim-setup-container h2 {
+    margin-bottom: 0.4em;
+  }
+  .how-to-container .aim-setup-container .aim-setup-text {
+    gap: 1.6em;
+  }
+  .how-to-container .smackdowns-container h4 {
     margin-top: 0.6em;
     font-size: 1.7rem;
   }
@@ -2318,8 +2378,8 @@ main.contact-us-container {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  padding: 8em 2em 1.6em 2em;
-  margin: 0 auto;
+  margin: 6.4em auto 0 auto;
+  height: calc(100% - 6.4em);
   gap: 1em;
   max-width: 30em;
 }
@@ -2381,6 +2441,8 @@ main.contact-us-container .contact-text form .submit-btn:hover {
 }
 @media only screen and (min-width: 1024px) {
   main.contact-us-container {
+    margin: 7em auto 0 auto;
+    height: calc(100% - 7em);
     gap: 0;
     max-width: 100%;
   }
@@ -2407,6 +2469,10 @@ main.contact-us-container .contact-text form .submit-btn:hover {
   }
 }
 @media only screen and (min-width: 1536px) {
+  main.contact-us-container {
+    margin: 7.8em auto 0 auto;
+    height: calc(100% - 7.8em);
+  }
   main.contact-us-container h1 {
     font-size: 2.6rem;
   }

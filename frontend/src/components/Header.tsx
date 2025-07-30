@@ -21,7 +21,7 @@ const Header = () => {
 			<div className="header-container">
 				<div className="header-logo">
 					<img onClick={()=> navigate("/")} src={screenWidth < 768 ? crocHeaderImgGreen : crocHeaderImgWhite} />
-					<h1 onClick={()=> navigate("/")}>CROCODILE</h1>
+					<h2 onClick={()=> navigate("/")}>CROCODILE</h2>
 				</div>
 					{screenWidth < 768 
 					?	<MobileNav />

@@ -1,27 +1,15 @@
 @use "../index" as *;
 
-main.about-container {
-    flex-grow: 1;
-    @include flex-col;
-    padding: 8em 2em 1.6em 2em; // Large top padding to account for height of fixed header
-
-    h1 {
-        padding: 0 0 0.4em 0;
-    }
-
-    .about-text {
-        font-size: 1.1rem;
-        margin: auto 0;
-
+main {
+    .about-text {        
         p {
-            margin: 0.2em 2.2em 1.2em 0;
-            line-height: 1.7rem;
+            font-size: 1.1rem;
+            line-height: 1.7;
         }
     }
 
     .about-links {
         @include links-container-style;
-        margin: auto 0 1em 0;
         @include flex-col;
         gap: 1.1em;
 
@@ -36,59 +24,78 @@ main.about-container {
     }
 
     @media only screen and (min-width: 648px) {
-        .about-text {
-            p {
-                margin-bottom: 1em;
-            }
-        }
-    }
-
-    @media only screen and (min-width: 840px) {
-        padding: 8em 3em 1.6em 3em;
-
         h1 {
-            padding: 0 0 0.8em 0;
-            font-size: 2rem;
+            font-size: 2.2rem;
         }
 
         .about-text {
-            margin: auto 0;
-
             p {
-                margin: 0.2em 0 1.6em 0;
+                margin: 1em 0;
             }
         }
 
         .about-links {
-            font-size: 1.2rem;
+            margin: auto auto;
+            letter-spacing: 0.05rem;
+            width: 80%;
+            gap: 1.2em;
+
+            a {
+                font-size: 1.3rem;
+                }
+            }
+    }
+
+    @media only screen and (min-width: 840px) {
+        h1 {
+            font-size: 2.4rem;
+        }
+
+        .about-text {
+
+            p {
+                font-size: 1.4rem;
+                line-height: 1.7;
+            }
+        }
+
+        .about-links {
+            margin: auto 0;
+            width: 100%;
             flex-direction: row;
             justify-content: space-between;
 
             a {
-                width: 12em;
-                justify-content: center;
+                width: 30%;
+                font-size: 1.5rem;
             }
         }
     }
 
-    @media only screen and (min-width: 840px) { 
+    @media only screen and (min-width: 1024px) { 
+        width: 90%;
+        
         h1 {
-            font-size: 2.4rem;
+            font-size: 2.6rem;
             text-align: center;
+        }
+
+        .about-text {
+            p {
+                margin: 1.4em 0;
+            }
         }
     }
 
     @media only screen and (min-width: 1536px) {
-        width: 90%;
-        margin: auto auto;
         h1 {
-            font-size: 2.6rem;
+            font-size: 3rem;
         }
         
         .about-text {
             p {
-                font-size: 1.3rem;
-                line-height: 1.6;
+                font-size: 1.7rem;
+                line-height: 1.8;
             }
         }
 

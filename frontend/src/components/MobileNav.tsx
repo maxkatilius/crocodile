@@ -25,7 +25,6 @@ const MobileNav = () => {
 				<span className="mobile-nav-cart-img-container">
 					<img src={CartImg} />
 					<span className="cart-count">{cartCount > 0 ? cartCount : ""}</span>
-					<span className="underline"></span>
 				</span>
 			</NavLink>
 			<div className="mobile-nav-barrier"></div>

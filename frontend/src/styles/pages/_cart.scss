@@ -3,8 +3,8 @@
 main.cart-container {
     flex-grow: 1;
     width: 100%;
-    padding: 8em 2em 1.6em 2em; // Large top padding to account for height of fixed header
-    margin: auto auto;
+    margin: 6.4em auto 0 auto; // 6.4em = fixed header height
+    height: calc(100% - 6.4em); // occupy available height - header height
     @include flex-col;
     align-items: center;
     gap: 1.2em;
@@ -209,6 +209,8 @@ main.cart-container {
 
 @media only screen and (min-width: 1024px) {
     main.cart-container {
+        margin: 7em auto 0 auto;
+        height: calc(100% - 7em);
         width: 80%;
         h1 {
             font-size: 2.4rem;
@@ -255,6 +257,8 @@ main.cart-container {
 
 @media only screen and (min-width: 1536px) {
     main.cart-container {
+        margin: 7.8em auto 0 auto;
+        height: calc(100% - 7.8em);
         width: 70%;
         h1 {
             font-size: 2.6rem;
