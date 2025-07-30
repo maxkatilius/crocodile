@@ -51,7 +51,7 @@ const Contact = () => {
 	useEffect(()=> {
 		setTimeout(()=>{
 			setShowModal(false)
-		}, 5000)
+		}, 3000)
 	}, [showModal])
 
 	const thanksModal = (

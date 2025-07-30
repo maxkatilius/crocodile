@@ -22,7 +22,7 @@ const Shop = () => {
 					setProducts(res.data)
 				}
 			})
-			.catch(err => console.error(err))
+			.catch(err => console.log(err))
 	}, [])
 
 	const productEls = products
@@ -38,7 +38,7 @@ const Shop = () => {
 
 	return (
 		<main className="shop-container">
-			<h2>The Croc Shop</h2>
+			<h1>The Croc Shop</h1>
 			{products ? (
 				<>
 					<div className="products-container">

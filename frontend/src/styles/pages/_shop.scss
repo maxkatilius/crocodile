@@ -1,14 +1,8 @@
 @use "../index" as *;
 
 main.shop-container {
-    flex-grow: 1;
-    @include flex-col;
-    margin: 6.4em auto 0 auto; // 6.4em = fixed header height
-    height: calc(100% - 6.4em); // occupy available height - header height
-
-    h2 {
+    h1 {
         text-align: center;
-        font-size: 2rem;
     }
 
     .products-container {
@@ -177,10 +171,7 @@ main.shop-container {
     .loading {
         @include loading;
     }
-}
-
-@media only screen and (min-width: 648px) {
-    main.shop-container {
+    @media only screen and (min-width: 648px) {
         .products-container {
             gap: 2em;
             .shop-product-card {
@@ -196,10 +187,8 @@ main.shop-container {
             font-size: 1.3rem;
         }
     }
-}
 
-@media only screen and (min-width: 840px) {
-    main.shop-container {
+    @media only screen and (min-width: 840px) {
         .products-container {
             .shop-product-card {
                 max-width: 18em;
@@ -256,95 +245,83 @@ main.shop-container {
             max-width: 28em;
         }
     }
-}
-
-@media only screen and (min-width: 1024px) {
-    main.shop-container {
-        margin: 7em auto 0 auto;
-        height: calc(100% - 7em);
-        h2 {
-            font-size: 2.3rem;
-        }
-        .products-container {
-            gap: 2.2em;
-            .shop-product-card {
-                width: 40%;
-                max-width: 20em;
-                .image-section {
-                    height: 16em;
-                }
-
-                .product-info {
-                    .product-header {
-                        .title {
-                            font-size: 1.3rem;
-                        }
-
-                        .product-selectors {
-                            .color-selector {
-                                .color-btn {
-                                    height: 1.6em;
-                                    width: 1.6em;
-
-                                }
+    
+    @media only screen and (min-width: 1024px) {
+            .products-container {
+                gap: 2.2em;
+                .shop-product-card {
+                    width: 40%;
+                    max-width: 20em;
+                    .image-section {
+                        height: 16em;
+                    }
+    
+                    .product-info {
+                        .product-header {
+                            .title {
+                                font-size: 1.3rem;
                             }
-
-                            .size-selector-wrapper {
-                                .size-selector {
-                                    display: inline-block;
-                                    height: 2.2em;
-                                    font-size: 0.9rem;
-                                    padding: 0.25em 0.35em;
+    
+                            .product-selectors {
+                                .color-selector {
+                                    .color-btn {
+                                        height: 1.6em;
+                                        width: 1.6em;
+    
+                                    }
+                                }
+    
+                                .size-selector-wrapper {
+                                    .size-selector {
+                                        display: inline-block;
+                                        height: 2.2em;
+                                        font-size: 0.9rem;
+                                        padding: 0.25em 0.35em;
+                                    }
                                 }
                             }
                         }
+    
+                        .price {
+                            font-size: 1.2rem;
+    
+                        }
+    
+                        .description {
+                            font-size: 1.1rem;
+                        }
                     }
-
-                    .price {
-                        font-size: 1.2rem;
-
+                    .add-to-cart-btn {
+                        font-size: 0.9rem;
                     }
-
-                    .description {
-                        font-size: 1.1rem;
-                    }
-                }
-                .add-to-cart-btn {
-                    font-size: 0.9rem;
                 }
             }
-        }
-
-        .go-to-cart-btn {
-            max-width: 16em;
-            margin: 2.4em 1.2em 0 auto;
-        }
-    }
-}
-
-@media only screen and (min-width: 1536px) {
-    main.shop-container {
-        margin: 7.8em auto 0 auto;
-        height: calc(100% - 7.8em);
-        h2 {
-            font-size: 2.6em;
-        }
-        .products-container {
-
-            .shop-product-card {
-                width: 40%;
-                max-width: 22em;
-
-                .image-section {
-                    height: 18em;
-                }
-
-                .add-to-cart-btn {
-                    font-size: 1rem;
-                }
+    
+            .go-to-cart-btn {
+                max-width: 16em;
+                margin: 2.4em 1.2em 0 auto;
             }
-
         }
-    }
-
+    
+    @media only screen and (min-width: 1536px) {
+            .products-container {
+    
+                .shop-product-card {
+                    width: 40%;
+                    max-width: 22em;
+    
+                    .image-section {
+                        height: 18em;
+                    }
+    
+                    .add-to-cart-btn {
+                        font-size: 1rem;
+                    }
+                }
+    
+            }
+        }
 }
+
+
+

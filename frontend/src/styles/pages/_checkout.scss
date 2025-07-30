@@ -1,11 +1,7 @@
 @use "../index" as *;
 
 main.checkout-container {
-    flex-grow: 1;
     width: 100%;
-    margin: 6.4em auto 0 auto; // 6.4em = fixed header height
-    height: calc(100% - 6.4em); // occupy available height - header height
-    @include flex-col;
     justify-content: flex-start;
     gap: 1em;
 
@@ -199,7 +195,6 @@ main.checkout-container {
     }
 
     @media only screen and (min-width: 648px) {
-    padding: 8em 4em 1.6em 4em;
         form {
             width: 100%;
             margin: auto auto;
@@ -227,9 +222,6 @@ main.checkout-container {
     }
 
     @media only screen and (min-width: 840px) {
-        h1 {
-            font-size: 2rem;
-        }
 
         .checkout-status-bar {
             .status-container,
@@ -315,12 +307,6 @@ main.checkout-container {
     }
 
     @media only screen and (min-width: 1024px) {
-        margin: 7em auto 0 auto;
-        height: calc(100% - 7em);
-        h1 {
-            font-size: 2.4rem;
-        }
-
         .checkout-status-bar {
 
             .status-container,
@@ -405,6 +391,7 @@ main.checkout-container {
 
                 button,
                 a {
+                    width: 25%;
                     font-size: 1.1rem;
                 }
             }
@@ -412,11 +399,6 @@ main.checkout-container {
     }
 
     @media only screen and (min-width: 1536px) {
-        margin: 7.8em auto 0 auto;
-        height: calc(100% - 7.8em);
-        h1 {
-            font-size: 2.6rem;
-        }
         .checkout-status-bar {
             .status-container {
                 span {
