@@ -1,10 +1,11 @@
 import { Link, useNavigate } from "react-router-dom";
-import KingOfHearts from "../assets/images/card_images/king_of_hearts.png";
-import Joker from "../assets/images/card_images/joker.png";
-import AceOfSpades from "../assets/images/card_images/ace_of_spades.png";
-import TwoOfDiamonds from "../assets/images/card_images/2_of_diamonds.png";
-import ThreeOfHearts from "../assets/images/card_images/3_of_hearts.png";
-import QueenOfClubs from "../assets/images/card_images/queen_of_clubs.png";
+import CrocCardFreshwater from "../assets/images/card_images/croc-card-freshwater.png";
+import CrocCardCrocodamelon from "../assets/images/card_images/croc-card-crocodameleon.png";
+import CrocCardOrinoco from "../assets/images/card_images/croc-card-orinoco.png";
+import CrocCardAlligator from "../assets/images/card_images/croc-card-alligator.png";
+import CrocCardPhillipine from "../assets/images/card_images/croc-card-phillipine.png";
+import CrocCardSaltwater from "../assets/images/card_images/croc-card-saltwater.png";
+// import CrocCardNile from "../assets/images/card_images/croc-card-nile.png";
 
 const CardValues = () => {
 	const navigate = useNavigate();
@@ -15,27 +16,28 @@ const CardValues = () => {
 			<div className="playing-cards">
 				<div className="playing-card">
 					<img
-						src={KingOfHearts}
-						alt="King of hearts playing card."
+						src={CrocCardFreshwater}
+						alt="Saltwater Crocodile Playing Card - -1"
 					/>
 					<div className="playing-card-info">
-						<h4>Red King</h4>
+						<h4>The Freshwater Crocodile</h4>
 						<p><span className="playing-card-value">Value: -1</span>
 							The most valuable card on the table. 
-							Keep this in your hand and try to not let
-							any crocs catch scent of it.
+							Keep this salty in your hand and try 
+							to not let any others catch scent of it.
 						</p>
 					</div>
 				</div>
 				<div className="playing-card">
 					<img
-						src={QueenOfClubs}
-						alt="Queen of clubs playing card."
+						src={CrocCardSaltwater}
+						alt="The Saltwater Crocodile Playing Card - 10"
 					/>
 					<div className="playing-card-info">
-						<h4>Any other face card</h4>
+						<h4>The Big Boys</h4>
 						<p><span className ="playing-card-value">Value: 10</span>
-							The highest scoring card and 
+							You will find 10 of these heavy hitters
+							throughout the pack. The highest scoring card and 
 							arguably the worst on the table. 
 							What good are they for? 
 							<span>Smackdowns, actually.</span>
@@ -44,55 +46,53 @@ const CardValues = () => {
 				</div>
 				<div className="playing-card">
 					<img
-						src={Joker}
-						alt="Joker playing card."
+						src={CrocCardCrocodamelon}
+						alt="Crocodamelon Playing Card - 0"
 					/>
 					<div className="playing-card-info">
-						<h4>Joker</h4>
+						<h4>The Crocodamelon</h4>
 						<p><span className ="playing-card-value">Value: 0</span>
-							The second most valuable card. 
-							Hang on to this one.
+							The second most valuable card. Hang on this cheeky
+							croc, wait a second that's not a crocodile?
 						</p>
 					</div>
 				</div>
 				<div className="playing-card">
 					<img
-						src={AceOfSpades}
-						alt="Ace of spades playing card."
+						src={CrocCardOrinoco}
+						alt="The Orinoco Crocodile Playing Card - 1"
 					/>
 					<div className="playing-card-info">
-						<h4>Ace</h4>
+						<h4>The Orinoco Crocodile</h4>
 						<p><span className ="playing-card-value">Value: 1</span>
-							Aces are a nice card to keep in your hand.
+							A nice croc to keep hidden in your hand.
 						</p>
 					</div>
 				</div>
 				<div className="playing-card">
 					<img
-						src={TwoOfDiamonds}
-						alt="2 of diamonds playing card."
+						src={CrocCardAlligator}
+						alt="The American Alligator Playing Card- 2"
 					/>
 					<div className="playing-card-info">
-						<h4>2</h4>
+						<h4>2 - The American Alligator</h4>
 						<p><span className ="playing-card-value">Value: 2</span>
 							Not bad. But as the old sayin goes: 
-							<span>2's don't win games.</span>
+							<span>2's don't win games.</span> 
 						</p>
 					</div>
 				</div>
 				<div className="playing-card">
 					<img
-						src={ThreeOfHearts}
-						alt="3 of hearts playing card."
+						src={CrocCardPhillipine}
+						alt="The Phillipine Crocodile Playing Card - 3"
 					/>
 					<div className="playing-card-info">
-						<h4>3</h4>
+						<h4>3 - The Phillipine Crocodile</h4>
 						<p><span className ="playing-card-value">Value: 3</span>
-							I wouldn't bank on this. 
-							Card values reflect the 
-							value seen on the face of the 
-							card from here on out. 
-							<span>4 = 4, 5 = 5 and so on.</span>
+							I wouldn't bank on this croc. 
+							Cards are worth the value as pictured on the card,
+							you've got the hang of it by now.
 						</p>
 					</div>
 				</div>

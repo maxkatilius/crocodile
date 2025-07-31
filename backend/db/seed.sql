@@ -1,11 +1,11 @@
-INSERT INTO products (title, price, description, display_image) VALUES ('Crocodile Cards', 24.95, 'A complete set of Crocodile playing cards', 'https://res.cloudinary.com/dm8swax4s/image/upload/v1753338055/croc-deck-back_g9yr3t.png');
-INSERT INTO product_images (product_id, image_url, is_display_image) VALUES (1, 'https://res.cloudinary.com/dm8swax4s/image/upload/v1753338055/croc-deck-back_g9yr3t.png', TRUE);
-INSERT INTO product_images (product_id, image_url, is_display_image) VALUES (1, 'https://res.cloudinary.com/dm8swax4s/image/upload/v1753338056/croc-deck-front_gwaawo.png', FALSE);
-INSERT INTO product_images (product_id, image_url, is_display_image) VALUES (1, 'https://res.cloudinary.com/dm8swax4s/image/upload/v1753338049/croc-deck-action_v77zbe.png', FALSE);
+INSERT INTO products (title, price, description, display_image) VALUES ('Crocodile Cards', 24.95, 'A complete set of Crocodile playing cards', 'https://res.cloudinary.com/dm8swax4s/image/upload/v1753942355/croc-deck-front_swbkbc.png');
+INSERT INTO product_images (product_id, image_url, is_display_image) VALUES (1, 'https://res.cloudinary.com/dm8swax4s/image/upload/v1753942355/croc-deck-front_swbkbc.png', TRUE);
+INSERT INTO product_images (product_id, image_url, is_display_image) VALUES (1, 'https://res.cloudinary.com/dm8swax4s/image/upload/v1753942351/croc-deck-back_peoc6y.png', FALSE);
+INSERT INTO product_images (product_id, image_url, is_display_image) VALUES (1, 'https://res.cloudinary.com/dm8swax4s/image/upload/v1753942361/croc-deck-action_wtwxlk.png', FALSE);
 INSERT INTO products (title, price, description, display_image) VALUES ('Crocodile Dealer Token', 9.95, 'A Crocodile Dealer chip so you can always keep track of whose turn it is to deal', './images/products/croc-dealer-token-front.png');
 INSERT INTO product_images (product_id, image_url, is_display_image) VALUES (2, 'https://res.cloudinary.com/dm8swax4s/image/upload/v1753338054/croc-dealer-token-front_srzesg.png', TRUE);
 INSERT INTO product_images (product_id, image_url, is_display_image) VALUES (2, 'https://res.cloudinary.com/dm8swax4s/image/upload/v1753338054/croc-dealer-token-back_htbuty.png', FALSE);
-INSERT INTO product_images (product_id, image_url, is_display_image) VALUES (2, 'https://res.cloudinary.com/dm8swax4s/image/upload/v1753338067/croc-dealer-token-action_dlk3hf.png', FALSE);
+INSERT INTO product_images (product_id, image_url, is_display_image) VALUES (2, 'https://res.cloudinary.com/dm8swax4s/image/upload/v1753942353/croc-dealer-token-action_uzs91o.png', FALSE);
 INSERT INTO products (title, price, description, display_image) VALUES ('Crocodile Hoodie', 49.95, 'A stylish Crocodile Hoodie, a signal to potential rivals of the billabong', 'https://res.cloudinary.com/dm8swax4s/image/upload/v1753338058/croc-hoodie-green-front_oqqs5l.png');
 INSERT INTO product_variants (product_id, color, size) VALUES (3, 'Green', 'Small');
 INSERT INTO product_variants (product_id, color, size) VALUES (3, 'Green', 'Medium');
@@ -25,7 +25,7 @@ INSERT INTO product_variants (product_id, color, size) VALUES (3, 'Black', 'Larg
 INSERT INTO product_variants (product_id, color, size) VALUES (3, 'Black', 'XL');
 INSERT INTO product_images (product_id, image_url, color, is_display_image) VALUES (3, 'https://res.cloudinary.com/dm8swax4s/image/upload/v1753338056/croc-hoodie-black-front_egoo8d.png', 'Black', TRUE);
 INSERT INTO product_images (product_id, image_url, color, is_display_image) VALUES (3, 'https://res.cloudinary.com/dm8swax4s/image/upload/v1753338056/croc-hoodie-black-back_f1ryst.png', 'Black', FALSE);
-INSERT INTO products (title, price, description, display_image) VALUES ('Crocodile T-Shirt', 29.95, 'A A stylish Crocodile T-shirt, a signal to potential rivals of the billabong', 'https://res.cloudinary.com/dm8swax4s/image/upload/v1753338049/croc-t-shirt-green-front_t6pd6c.png');
+INSERT INTO products (title, price, description, display_image) VALUES ('Crocodile T-Shirt', 29.95, 'A stylish Crocodile T-shirt, a signal to potential rivals of the billabong', 'https://res.cloudinary.com/dm8swax4s/image/upload/v1753338049/croc-t-shirt-green-front_t6pd6c.png');
 INSERT INTO product_variants (product_id, color, size) VALUES (4, 'Green', 'Small');
 INSERT INTO product_variants (product_id, color, size) VALUES (4, 'Green', 'Medium');
 INSERT INTO product_variants (product_id, color, size) VALUES (4, 'Green', 'Large');
@@ -54,7 +54,7 @@ INSERT INTO product_images (product_id, image_url, color, is_display_image) VALU
 INSERT INTO product_variants (product_id, color) VALUES (5, 'Black');
 INSERT INTO product_images (product_id, image_url, color, is_display_image) VALUES (5, 'https://res.cloudinary.com/dm8swax4s/image/upload/v1753338050/croc-cap-black-front_a5c6pv.png', 'Black', TRUE);
 INSERT INTO product_images (product_id, image_url, color, is_display_image) VALUES (5, 'https://res.cloudinary.com/dm8swax4s/image/upload/v1753338045/croc-cap-black-back_qwjh5j.png', 'Black', FALSE);
-INSERT INTO products (title, price, description, display_image) VALUES ('Crocodile Beanie', 24.95, 'A A stylish Crocodile beanie, to keep you warm during hibernation', 'https://res.cloudinary.com/dm8swax4s/image/upload/v1753338055/croc-beanie-green-front_iypuet.png');
+INSERT INTO products (title, price, description, display_image) VALUES ('Crocodile Beanie', 24.95, 'A stylish Crocodile beanie, to keep you warm during hibernation', 'https://res.cloudinary.com/dm8swax4s/image/upload/v1753338055/croc-beanie-green-front_iypuet.png');
 INSERT INTO product_variants (product_id, color) VALUES (6, 'Green');
 INSERT INTO product_images (product_id, image_url, color, is_display_image) VALUES (6, 'https://res.cloudinary.com/dm8swax4s/image/upload/v1753338055/croc-beanie-green-front_iypuet.png', 'Green', TRUE);
 INSERT INTO product_images (product_id, image_url, color, is_display_image) VALUES (6, 'https://res.cloudinary.com/dm8swax4s/image/upload/v1753338048/croc-beanie-green-back_shoeci.png', 'Green', FALSE);
@@ -64,3 +64,7 @@ INSERT INTO product_images (product_id, image_url, color, is_display_image) VALU
 INSERT INTO product_variants (product_id, color) VALUES (6, 'Black');
 INSERT INTO product_images (product_id, image_url, color, is_display_image) VALUES (6, 'https://res.cloudinary.com/dm8swax4s/image/upload/v1753338047/croc-beanie-black-front_j7nj9k.png', 'Black', TRUE);
 INSERT INTO product_images (product_id, image_url, color, is_display_image) VALUES (6, 'https://res.cloudinary.com/dm8swax4s/image/upload/v1753338047/croc-beanie-black-back_d44rtk.png', 'Black', FALSE);
+INSERT INTO products (title, price, description, display_image) VALUES ('Crocodile Play Mat', 14.95, 'A felt playing mat so that you can smackdown with ease!', 'https://res.cloudinary.com/dm8swax4s/image/upload/v1753942368/croc-mat-front_scksgj.png');
+INSERT INTO product_images (product_id, image_url, is_display_image) VALUES (7, 'https://res.cloudinary.com/dm8swax4s/image/upload/v1753942368/croc-mat-front_scksgj.png', TRUE);
+INSERT INTO product_images (product_id, image_url, is_display_image) VALUES (7, 'https://res.cloudinary.com/dm8swax4s/image/upload/v1753942371/croc-mat-top_ta42bf.png', FALSE);
+INSERT INTO product_images (product_id, image_url, is_display_image) VALUES (7, 'https://res.cloudinary.com/dm8swax4s/image/upload/v1753942367/croc-mat-action_je8n4e.png', FALSE);

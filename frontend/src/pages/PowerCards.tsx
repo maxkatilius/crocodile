@@ -1,8 +1,8 @@
 import { Link, useNavigate, useLocation } from "react-router-dom"
-import CrocCard10 from "../assets/images/card_images/croc-card-10.png"
-import CrocCard9 from "../assets/images/card_images/croc-card-9.png"
-import CrocCard8 from "../assets/images/card_images/croc-card-8.png"
-import CrocCard7 from "../assets/images/card_images/croc-card-7.png"
+import CrocCardSpectacledCaiman from "../assets/images/card_images/croc-card-spectacled-caiman.png"
+import CrocCardFalseGharial from "../assets/images/card_images/croc-card-false-gharial.png"
+import CrocCardGharial from "../assets/images/card_images/croc-card-gharial.png"
+import CrocCardMugger from "../assets/images/card_images/croc-card-mugger.png"
 
 const PowerCards = () => {
 	const navigate = useNavigate()
@@ -31,7 +31,7 @@ const PowerCards = () => {
 			<div className="power-cards">
 				<div className="power-card">
 					<img
-						src={CrocCard7}
+						src={CrocCardSpectacledCaiman}
 						alt="The Spectacled Caiman Playing Card - 7"
 					/>
 					<div className="power-card-info">
@@ -41,7 +41,7 @@ const PowerCards = () => {
 				</div>
 				<div className="power-card">
 					<img
-						src={CrocCard8}
+						src={CrocCardFalseGharial}
 						alt="The False Gharial Playing Card - 8"
 						/>
 					<div className="power-card-info">
@@ -51,11 +51,11 @@ const PowerCards = () => {
 				</div>
 				<div className="power-card">
 					<img
-						src={CrocCard9}
-						alt="The Mugger Crocodile Playing Card - 9"
+						src={CrocCardGharial}
+						alt="The CrocCardMugger Crocodile Playing Card - 9"
 					/>
 					<div className="power-card-info">
-						<h4>9 - The Mugger Crocodile: Blind Swap or 'Switcharoo'</h4>
+						<h4>9 - The Gharial: Blind Swap or 'Switcharoo'</h4>
 						<p>
 						Mix things up! Swap two face-down cards on the table. It
 						can be between your card and another player's, or
@@ -65,11 +65,11 @@ const PowerCards = () => {
 				</div>
 				<div className="power-card">
 					<img
-						src={CrocCard10}
+						src={CrocCardMugger}
 						alt="The Nile Crocodile Playing Card - 10"
 						/>
 					<div className="power-card-info">
-						<h4>10 - The Nile Crocodile: Power Swap or 'The Punisher'</h4>
+						<h4>10 - The Mugger Crocodile: Power Swap or 'The Punisher'</h4>
 						<p>
 							The ultimate power play! View one of your cards and
 							another player's card. Decide to swap them or not. It's
