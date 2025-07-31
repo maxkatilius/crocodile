@@ -36,10 +36,11 @@ const CardValues = () => {
 					<div className="playing-card-info">
 						<h4>The Big Boys</h4>
 						<p><span className ="playing-card-value">Value: 10</span>
+							The Saltware, Nile, and American Crocodiles.
 							You will find 10 of these heavy hitters
 							throughout the pack. The highest scoring card and 
 							arguably the worst on the table. 
-							What good are they for? 
+							What are they good for? 
 							<span>Smackdowns, actually.</span>
 						</p>
 					</div>
@@ -52,8 +53,8 @@ const CardValues = () => {
 					<div className="playing-card-info">
 						<h4>The Crocodamelon</h4>
 						<p><span className ="playing-card-value">Value: 0</span>
-							The second most valuable card. Hang on this cheeky
-							croc, wait a second that's not a crocodile?
+							The second most valuable card. Hang on to this cheeky
+							croc! Wait a second that's not a crocodile?
 						</p>
 					</div>
 				</div>
