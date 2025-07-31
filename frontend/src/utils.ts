@@ -6,7 +6,6 @@ export const fetchProducts = async () => {
 
     } catch (error) {
         console.error('Fetch products error:', error)
-        alert('Error fetching products data')
     }
 }
 
@@ -18,6 +17,5 @@ export const fetchProductData = async (id: string) => {
 
     } catch (error) {
         console.error('Fetch product details error', error)
-        alert('Error fetching product details')
     }
 }

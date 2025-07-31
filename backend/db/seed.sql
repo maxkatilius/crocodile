@@ -18,7 +18,7 @@ INSERT INTO product_variants (product_id, color, size) VALUES (3, 'White', 'Medi
 INSERT INTO product_variants (product_id, color, size) VALUES (3, 'White', 'Large');
 INSERT INTO product_variants (product_id, color, size) VALUES (3, 'White', 'XL');
 INSERT INTO product_images (product_id, image_url, color, is_display_image) VALUES (3, 'https://res.cloudinary.com/dm8swax4s/image/upload/v1753338059/croc-hoodie-white-front_fb5opa.png', 'White', TRUE);
-INSERT INTO product_images (product_id, image_url, color, is_display_image) VALUES (3, 'https://res.cloudinary.com/dm8swax4s/image/upload/v1753338061/croc-t-shirt-white-back_qx5vkd.png', 'White', FALSE);
+INSERT INTO product_images (product_id, image_url, color, is_display_image) VALUES (3, 'https://res.cloudinary.com/dm8swax4s/image/upload/v1753338061/croc-hoodie-white-back_qx5vkd.png', 'White', FALSE);
 INSERT INTO product_variants (product_id, color, size) VALUES (3, 'Black', 'Small');
 INSERT INTO product_variants (product_id, color, size) VALUES (3, 'Black', 'Medium');
 INSERT INTO product_variants (product_id, color, size) VALUES (3, 'Black', 'Large');
