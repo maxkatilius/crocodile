@@ -6,7 +6,6 @@ import crocHeaderImgGreen from "../assets/images/logos/sneaky-croc-2-0B6E4F.jpg"
 import crocHeaderImgWhite from "../assets/images/logos/sneaky-croc-2-white-transparent.png"
 
 const Header = () => {
-
 	const [screenWidth, setScreenWidth] = useState<number>(window.innerWidth)
 	const navigate = useNavigate()
 

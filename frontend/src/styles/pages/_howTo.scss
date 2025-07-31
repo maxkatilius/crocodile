@@ -1,10 +1,6 @@
 @use "../index" as *;
 
 // How To
-.how-to-container {
-	border: 1px solid red;
-}
-
 .aim-setup-container,
 .setup-container,
 .gameplay-container,
@@ -16,7 +12,6 @@
 	flex-grow: 1;
 	@include flex-col;
 	gap: 0.3em;
-
 }
 
 h2 {
@@ -61,8 +56,7 @@ p {
 
 		&:hover {
 			color: $secondary-green;
-			transform: scale(1);
-			font-size: 1.1rem;
+			font-size: larger;
 		}
 	}
 }

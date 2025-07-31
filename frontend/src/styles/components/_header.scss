@@ -9,6 +9,10 @@ header {
     border-bottom: 1px solid $secondary-white;
     background-color: $primary-white;
     box-shadow: $box-shadow-default;
+
+    .darkmode-btn {
+        @include button-style;
+    }
     
     .header-container {
         position: relative;
@@ -28,8 +32,8 @@ header {
                 font-size: 1.1rem;
                 letter-spacing: 0.25rem;
                 line-height: 1.3em;
-                border-top: 2px solid $crocodile-green;
-                border-bottom: 2px solid $crocodile-green;
+                border-top: 2px solid var(--highlight-text-color);
+                border-bottom: 2px solid var(--highlight-text-color);
             }
         }
     }
@@ -66,7 +70,7 @@ header {
                 right: 0.05em;
                 font-size: 0.7rem;
                 font-weight: bold;
-                color: $crocodile-green;
+                color: var(--highlight-text-color);
             }
         }
     }
@@ -84,7 +88,7 @@ header {
         .hamburger::before,
         .hamburger::after {
             height: 0.12em;
-            background-color: $crocodile-green;
+            background-color: var(--highlight-text-color);
             border-radius: 1.5em;
         }
 
@@ -281,7 +285,7 @@ header {
 
 @media only screen and (min-width: 768px) {
     header {
-        background-image: linear-gradient($secondary-green, $crocodile-green);
+        background-image: linear-gradient(var(--secondary-highlight-text-color), var(--highlight-text-color));
         .header-container {
             justify-content: space-between;
             

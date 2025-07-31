@@ -1,8 +1,8 @@
 import { Link, useNavigate, useLocation } from "react-router-dom"
-import SevenOfClubs from "../assets/images/card_images/7_of_clubs.png"
-import EightOfDiamonds from "../assets/images/card_images/8_of_diamonds.png"
-import NineOfSpades from "../assets/images/card_images/9_of_spades.png"
-import TenOfHearts from "../assets/images/card_images/10_of_hearts.png"
+import CrocCard10 from "../assets/images/card_images/croc-card-10.png"
+import CrocCard9 from "../assets/images/card_images/croc-card-9.png"
+import CrocCard8 from "../assets/images/card_images/croc-card-8.png"
+import CrocCard7 from "../assets/images/card_images/croc-card-7.png"
 
 const PowerCards = () => {
 	const navigate = useNavigate()
@@ -31,31 +31,31 @@ const PowerCards = () => {
 			<div className="power-cards">
 				<div className="power-card">
 					<img
-						src={SevenOfClubs}
-						alt="7 of clubs playing card."
+						src={CrocCard7}
+						alt="The Spectacled Caiman Playing Card - 7"
 					/>
 					<div className="power-card-info">
-						<h4>7 - The Self-Peek or 'Selfie'</h4>
+						<h4>7 - The Spectacled Caiman: Self-Peek or 'Selfie'</h4>
 						<p>Have a peek at one of your own face-down cards.</p>
 					</div>
 				</div>
 				<div className="power-card">
 					<img
-						src={EightOfDiamonds}
-						alt="8 of diamonds playing card."
+						src={CrocCard8}
+						alt="The False Gharial Playing Card - 8"
 						/>
 					<div className="power-card-info">
-						<h4>8 - The Sneak-a-Peek or 'Sneaky'</h4>
+						<h4>8 - The False Gharial: Sneak-a-Peek or 'Sneaky'</h4>
 						<p>Sneak a peek at another player's face-down card.</p>
 					</div>
 				</div>
 				<div className="power-card">
 					<img
-						src={NineOfSpades}
-						alt="9 of spades playing card."
+						src={CrocCard9}
+						alt="The Mugger Crocodile Playing Card - 9"
 					/>
 					<div className="power-card-info">
-						<h4>9 - The Blind Swap or 'Switcharoo'</h4>
+						<h4>9 - The Mugger Crocodile: Blind Swap or 'Switcharoo'</h4>
 						<p>
 						Mix things up! Swap two face-down cards on the table. It
 						can be between your card and another player's, or
@@ -65,11 +65,11 @@ const PowerCards = () => {
 				</div>
 				<div className="power-card">
 					<img
-						src={TenOfHearts}
-						alt="10 of hearts playing card."
+						src={CrocCard10}
+						alt="The Nile Crocodile Playing Card - 10"
 						/>
 					<div className="power-card-info">
-						<h4>10 - The Power Swap or 'The Punisher'</h4>
+						<h4>10 - The Nile Crocodile: Power Swap or 'The Punisher'</h4>
 						<p>
 							The ultimate power play! View one of your cards and
 							another player's card. Decide to swap them or not. It's

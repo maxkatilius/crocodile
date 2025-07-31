@@ -1,35 +1,3 @@
-:root {
-  --highlight-text-color: #07543A;
-  --secondary-highlight-text-color: #0B6E4F;
-  --border-color: #428061;
-  --primary-text-color: #161925;
-  --secondary-text-color: #050505;
-  --primary-bg-color: #FEFFFE;
-  --secondary-bg-color: #f7f7f7ee;
-  --third-bg-color: #d3d3d3;
-  --primary-border: #d3d3d3;
-  --green-gradient: linear-gradient(#0B6E4F, #07543A);
-  --box-shadow-default: 2px 2px 8px rgba(0, 0, 0, 0.1), -1px -1px 4px rgba(255, 255, 255, 0.3);
-  --box-shadow-hover: 3px 3px 10px rgba(0, 0, 0, 0.2), -2px -2px 5px rgba(255, 255, 255, 0.3);
-  --transition-fast: all 200ms ease-in-out;
-  --transition-slow: all 500ms ease-in-out;
-}
-
-.dark {
-  --highlight-text-color: #FEFFFE;
-  --secondary-highlight-text-color: #f7f7f7ee;
-  --border-color: #428061;
-  --primary-text-color: #FEFFFE;
-  --secondary-text-color: #f7f7f7ee;
-  --primary-bg-color: #07543A;
-  --secondary-bg-color: #0B6E4F;
-  --third-bg-color: #07543A;
-  --primary-border: #0B6E4F;
-  --green-gradient: linear-gradient(#0B6E4F, #07543A);
-  --box-shadow-default: 2px 2px 8px rgba(255, 255, 255, 0.1), -1px -1px 4px rgba(0, 0, 0, 0.3);
-  --box-shadow-hover: 3px 3px 10px rgba(255, 255, 255, 0.2), -2px -2px 5px rgba(0, 0, 0, 0.3);
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -139,20 +107,6 @@ header {
   background-color: #FEFFFE;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1), -1px -1px 4px rgba(255, 255, 255, 0.3);
 }
-header .darkmode-btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0.8em 1.2em;
-  background-color: #07543A;
-  font-weight: bold;
-  color: #FEFFFE;
-  border: none;
-  border-radius: 0.7em;
-  cursor: pointer;
-  transition: all 200ms ease-in-out;
-  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1), -1px -1px 4px rgba(255, 255, 255, 0.3);
-}
 header .header-container {
   position: relative;
   height: 100%;
@@ -170,8 +124,8 @@ header .header-container .header-logo h2 {
   font-size: 1.1rem;
   letter-spacing: 0.25rem;
   line-height: 1.3em;
-  border-top: 2px solid var(--highlight-text-color);
-  border-bottom: 2px solid var(--highlight-text-color);
+  border-top: 2px solid #07543A;
+  border-bottom: 2px solid #07543A;
 }
 
 .mobile-nav {
@@ -204,7 +158,7 @@ header .header-container .header-logo h2 {
   right: 0.05em;
   font-size: 0.7rem;
   font-weight: bold;
-  color: var(--highlight-text-color);
+  color: #07543A;
 }
 .mobile-nav .hamburger-container {
   z-index: 101;
@@ -221,7 +175,7 @@ header .header-container .header-logo h2 {
 .mobile-nav .hamburger-container .hamburger::before,
 .mobile-nav .hamburger-container .hamburger::after {
   height: 0.12em;
-  background-color: var(--highlight-text-color);
+  background-color: #07543A;
   border-radius: 1.5em;
 }
 .mobile-nav .hamburger-container .hamburger {
@@ -396,7 +350,7 @@ header .header-container .header-logo h2 {
 }
 @media only screen and (min-width: 768px) {
   header {
-    background-image: linear-gradient(var(--secondary-highlight-text-color), var(--highlight-text-color));
+    background-image: linear-gradient(#0B6E4F, #07543A);
   }
   header .header-container {
     justify-content: space-between;
@@ -2079,7 +2033,8 @@ p {
 .gameplay-container .link-card-values:hover,
 .gameplay-container .link-power-cards:hover {
   color: #0B6E4F;
-  font-size: larger;
+  transform: scale(1);
+  font-size: 1.1rem;
 }
 
 .smackdowns-container ul {
