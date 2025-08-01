@@ -1,6 +1,4 @@
 import { Link, useNavigate, useLocation } from "react-router-dom"
-import CrocCardGharial from "../assets/images/card_images/croc-card-gharial-9.png"
-import CrocCardMugger from "../assets/images/card_images/croc-card-mugger-10.png"
 
 const PowerCards = () => {
 	const navigate = useNavigate()
@@ -52,7 +50,7 @@ const PowerCards = () => {
 				<div className="power-card">
 					<img
 						loading="lazy"
-						src={CrocCardGharial}
+						src="https://res.cloudinary.com/dm8swax4s/image/upload/f_auto,q_auto,w_auto,dpr_auto/v1754027711/croc-card-gharial-9_bfnzem.png"
 						alt="The CrocCardMugger Crocodile Playing Card - 9"
 					/>
 					<div className="power-card-info">
@@ -67,7 +65,7 @@ const PowerCards = () => {
 				<div className="power-card">
 					<img
 						loading="lazy"
-						src={CrocCardMugger}
+						src="https://res.cloudinary.com/dm8swax4s/image/upload/f_auto,q_auto,w_auto,dpr_auto/v1754027706/croc-card-mugger-10_dvmxtl.png"
 						alt="The Nile Crocodile Playing Card - 10"
 						/>
 					<div className="power-card-info">
