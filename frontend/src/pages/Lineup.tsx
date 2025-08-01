@@ -162,7 +162,7 @@ const Lineup = () => {
 				<div className="croc-card">
 					<img
 						loading="lazy"
-						src="https://res.cloudinary.com/dm8swax4s/image/upload/v1754027714/f_auto,q_auto,w_auto,dpr_auto/croc-card-spectacled-caiman-7_vlbic1.png"
+						src="https://res.cloudinary.com/dm8swax4s/image/upload/f_auto,q_auto,w_auto,dpr_auto/v1754027714/croc-card-spectacled-caiman-7_vlbic1.png"
 						alt="The Spectacled Caiman Playing Card"
 					/>
 					<div className="croc-card-info">
@@ -176,7 +176,7 @@ const Lineup = () => {
 				<div className="croc-card">
 					<img
 						loading="lazy"
-						src="https://res.cloudinary.com/dm8swax4s/image/upload/v1754027694/f_auto,q_auto,w_auto,dpr_auto/croc-card-false-gharial-8_gytsps.png"
+						src="https://res.cloudinary.com/dm8swax4s/image/upload/f_auto,q_auto,w_auto,dpr_auto/v1754027694/croc-card-false-gharial-8_gytsps.png"
 						alt="The False Gharial Playing Card"
 					/>
 					<div className="croc-card-info">
