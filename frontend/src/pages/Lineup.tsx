@@ -26,10 +26,10 @@ const Lineup = () => {
 					<div className="croc-card-info">
 						<h4>The King Saltwater Crocodile</h4>
 						<p><span className="croc-card-value">Value: -1</span>
-							This highly sought after salty is the most valuable
-							card on the table. Keep this King hidden or expect 
-							relentless snapping from jealous crocs lurking 
-							around you. Heavy is the head that holds the crown. 
+							The King is the most valuable card on the table. 
+							Keep this highly-sought-after salty hidden or face 
+							relentless snapping from the jealous crocs around you. 
+							Heavy is the head that holds the crown. 
 						</p>
 					</div>
 				</div>
@@ -42,8 +42,8 @@ const Lineup = () => {
 					<div className="croc-card-info">
 						<h4>The Thug Saltwater Crocodile</h4>
 						<p><span className ="croc-card-value">Value: 13</span>
-							The Saltwater Crocodile that will crunch you. 
-							The highest scoring card and arguably the 
+							This thug knows how to crunch. This bad boy is 
+							the highest scoring card and arguably the 
 							worst on the table.	What is he good for? 
 							<span>Taking down the King!</span>
 						</p>
@@ -72,8 +72,9 @@ const Lineup = () => {
 					<div className="croc-card-info">
 						<h4>The Orinoco Crocodile</h4>
 						<p><span className ="croc-card-value">Value: 1</span>
-							Hailing all the way from Colombia and Venezuela, this is 
-							a nice croc to keep hidden in your hand.
+							Hailing all the way from Colombia and Venezuela, give
+							it up for the Orinoco Crocodile! This colourful 
+							croc is a handy one to keep stashed away.
 						</p>
 					</div>
 				</div>
@@ -100,7 +101,9 @@ const Lineup = () => {
 					<div className="croc-card-info">
 						<h4>The Phillipine Crocodile</h4>
 						<p><span className ="croc-card-value">Value: 3</span>
-							He may have style but I wouldn't bank on this croc. 
+							He may have style, incredible hospitality and 
+							cooks a mean rice, but I wouldn't bank on this croc
+							being in your winning hand. 
 						</p>
 					</div>
 				</div>
@@ -127,8 +130,9 @@ const Lineup = () => {
 					<div className="croc-card-info">
 						<h4>The Morelet's Crocodile</h4>
 						<p><span className ="croc-card-value">Value: 5</span>
-							This Mexican Croc might just spice the 
+							This Mexican Croc may just spice the 
 							game up when you're least expecting it. 
+							Or not. 
 						</p>
 					</div>
 				</div>
@@ -142,7 +146,7 @@ const Lineup = () => {
 						<h4>The Osborn's Dwarf Crocodile</h4>
 						<p><span className ="croc-card-value">Value: 6</span>
 							The smallest species of crocodile, isn't he cute?
-							Well that's what he wants you to think... 
+							Or is that what he wants us to think... 
 						</p>
 					</div>
 				</div>
@@ -155,8 +159,8 @@ const Lineup = () => {
 					<div className="croc-card-info">
 						<h4>The Spectacled Caiman</h4>
 						<p><span className ="croc-card-value">Value: 7</span>
-							This sophisticated croc will help you see clearer
-							than any other. 
+							This sophisticated croc can help you see through 
+							the murky waters to what's lurking beneath. 
 						</p>
 					</div>
 				</div>
@@ -197,8 +201,8 @@ const Lineup = () => {
 					<div className="croc-card-info">
 						<h4>The Mugger Crocodile</h4>
 						<p><span className ="croc-card-value">Value: 10</span>
-							Nuiasnce, sabatouer, saviour? Power is 
-							in the hand of the holder.
+							Nuisance, sabatouer, saviour, dream crusher? 
+							Power is in the hand of the beholder.
 						</p>
 					</div>
 				</div>
@@ -225,8 +229,8 @@ const Lineup = () => {
 					<div className="croc-card-info">
 						<h4>The Nile Crocodile</h4>
 						<p><span className ="croc-card-value">Value: 12</span>
-							This crocodile is responsible for the most human deaths,
-							and the most losses. Beware! 
+							This crocodile is responsible for the most human deaths
+							on earth, and the most losses in crocland. Avoid at all costs! 
 						</p>
 					</div>
 				</div>
