@@ -46,7 +46,7 @@ const Smackdowns = () => {
 				the deed', ending the round with an instant win!
 			</p>
 			<p>
-				The only time a deed done can be beat by the 
+				The only time a deed can be undone is if someone is holding a  
 				<span className="royal-croc"> Royal Croc</span>: 
 				A perfect full hand worth -2 in total. 
 				Complete with the two King Saltwater Crocodiles, and the two Crocodameleons.
