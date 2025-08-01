@@ -1,6 +1,4 @@
 import { Link, useNavigate, useLocation } from "react-router-dom"
-import CrocCardSpectacledCaiman from "https://res.cloudinary.com/dm8swax4s/image/upload/v1754027714/croc-card-spectacled-caiman-7_vlbic1.png"
-import CrocCardFalseGharial from "https://res.cloudinary.com/dm8swax4s/image/upload/v1754027694/croc-card-false-gharial-8_gytsps.png"
 import CrocCardGharial from "../assets/images/card_images/croc-card-gharial-9.png"
 import CrocCardMugger from "../assets/images/card_images/croc-card-mugger-10.png"
 
@@ -31,7 +29,8 @@ const PowerCards = () => {
 			<div className="power-cards">
 				<div className="power-card">
 					<img
-						src={CrocCardSpectacledCaiman}
+						loading="lazy"
+						src="https://res.cloudinary.com/dm8swax4s/image/upload/v1754027714/f_auto,q_auto,w_auto,dpr_auto/croc-card-spectacled-caiman-7_vlbic1.png"
 						alt="The Spectacled Caiman Playing Card - 7"
 					/>
 					<div className="power-card-info">
@@ -41,7 +40,8 @@ const PowerCards = () => {
 				</div>
 				<div className="power-card">
 					<img
-						src={CrocCardFalseGharial}
+						loading="lazy"
+						src="https://res.cloudinary.com/dm8swax4s/image/upload/v1754027694/f_auto,q_auto,w_auto,dpr_auto/croc-card-false-gharial-8_gytsps.png"
 						alt="The False Gharial Playing Card - 8"
 						/>
 					<div className="power-card-info">
@@ -51,6 +51,7 @@ const PowerCards = () => {
 				</div>
 				<div className="power-card">
 					<img
+						loading="lazy"
 						src={CrocCardGharial}
 						alt="The CrocCardMugger Crocodile Playing Card - 9"
 					/>
@@ -65,6 +66,7 @@ const PowerCards = () => {
 				</div>
 				<div className="power-card">
 					<img
+						loading="lazy"
 						src={CrocCardMugger}
 						alt="The Nile Crocodile Playing Card - 10"
 						/>

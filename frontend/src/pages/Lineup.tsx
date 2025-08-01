@@ -1,15 +1,13 @@
 import { Link, useNavigate, useLocation } from "react-router-dom"
-import CrocCardSaltwaterKing from "https://res.cloudinary.com/dm8swax4s/image/upload/v1754027705/croc-card-saltwater-king--1_lfp7qm.png"
+import CrocCardSaltwaterKing from "../assets/images/card_images/croc-card-saltwater-king--1.png"
 import CrocCardSaltwaterThug from "../assets/images/card_images/croc-card-saltwater-thug-13.png"
-import CrocCardCrocodamelon from "https://res.cloudinary.com/dm8swax4s/image/upload/v1754027694/croc-card-crocodameleon-0_jge62a.png"
+import CrocCardCrocodamelon from "../assets/images/card_images/croc-card-crocodameleon-0.png"
 import CrocCardOrinoco from "../assets/images/card_images/croc-card-orinoco-1.png"
 import CrocCardAlligator from "../assets/images/card_images/croc-card-alligator-2.png"
 import CrocCardPhillipine from "../assets/images/card_images/croc-card-phillipine-3.png"
 import CrocCardFreshwater from "../assets/images/card_images/croc-card-freshwater-4.png"
 import CrocCardMorelets from "../assets/images/card_images/croc-card-morelets-5.png"
 import CrocCardDwarf from "../assets/images/card_images/croc-card-dwarf-6.png"
-import CrocCardSpectacledCaiman from "https://res.cloudinary.com/dm8swax4s/image/upload/v1754027714/croc-card-spectacled-caiman-7_vlbic1.png"
-import CrocCardFalseGharial from "https://res.cloudinary.com/dm8swax4s/image/upload/v1754027694/croc-card-false-gharial-8_gytsps.png"
 import CrocCardGharial from "../assets/images/card_images/croc-card-gharial-9.png"
 import CrocCardMugger from "../assets/images/card_images/croc-card-mugger-10.png"
 import CrocCardWestAfrican from "../assets/images/card_images/croc-card-west-african-11.png"
@@ -34,6 +32,7 @@ const Lineup = () => {
 			<div className="croc-cards">
 				<div className="croc-card">
 					<img
+						loading="lazy"
 						src={CrocCardSaltwaterKing}
 						alt="The King Saltwater Crocodile Playing Card"
 					/>
@@ -49,6 +48,7 @@ const Lineup = () => {
 				</div>
 				<div className="croc-card">
 					<img
+						loading="lazy"
 						src={CrocCardSaltwaterThug}
 						alt="The Thug Saltwater Crocodile Playing Card"
 					/>
@@ -64,6 +64,7 @@ const Lineup = () => {
 				</div>
 				<div className="croc-card">
 					<img
+						loading="lazy"
 						src={CrocCardCrocodamelon}
 						alt="Crocodamelon Playing Card"
 					/>
@@ -77,6 +78,7 @@ const Lineup = () => {
 				</div>
 				<div className="croc-card">
 					<img
+						loading="lazy"
 						src={CrocCardOrinoco}
 						alt="The Orinoco Crocodile Playing Card"
 					/>
@@ -90,6 +92,7 @@ const Lineup = () => {
 				</div>
 				<div className="croc-card">
 					<img
+						loading="lazy"
 						src={CrocCardAlligator}
 						alt="The American Alligator Playing Card"
 					/>
@@ -103,6 +106,7 @@ const Lineup = () => {
 				</div>
 				<div className="croc-card">
 					<img
+						loading="lazy"
 						src={CrocCardPhillipine}
 						alt="The Phillipine Crocodile Playing Card"
 					/>
@@ -115,6 +119,7 @@ const Lineup = () => {
 				</div>
 				<div className="croc-card">
 					<img
+						loading="lazy"
 						src={CrocCardFreshwater}
 						alt="The Freshwater Crocodile Playing Card"
 					/>
@@ -128,6 +133,7 @@ const Lineup = () => {
 				</div>
 				<div className="croc-card">
 					<img
+						loading="lazy"
 						src={CrocCardMorelets}
 						alt="The Morelet's Crocodile Playing Card"
 					/>
@@ -141,6 +147,7 @@ const Lineup = () => {
 				</div>
 				<div className="croc-card">
 					<img
+						loading="lazy"
 						src={CrocCardDwarf}
 						alt="The Osborn's Dwarf Playing Card"
 					/>
@@ -154,7 +161,8 @@ const Lineup = () => {
 				</div>
 				<div className="croc-card">
 					<img
-						src={CrocCardSpectacledCaiman}
+						loading="lazy"
+						src="https://res.cloudinary.com/dm8swax4s/image/upload/v1754027714/f_auto,q_auto,w_auto,dpr_auto/croc-card-spectacled-caiman-7_vlbic1.png"
 						alt="The Spectacled Caiman Playing Card"
 					/>
 					<div className="croc-card-info">
@@ -167,7 +175,8 @@ const Lineup = () => {
 				</div>
 				<div className="croc-card">
 					<img
-						src={CrocCardFalseGharial}
+						loading="lazy"
+						src="https://res.cloudinary.com/dm8swax4s/image/upload/v1754027694/f_auto,q_auto,w_auto,dpr_auto/croc-card-false-gharial-8_gytsps.png"
 						alt="The False Gharial Playing Card"
 					/>
 					<div className="croc-card-info">
@@ -180,6 +189,7 @@ const Lineup = () => {
 				</div>
 				<div className="croc-card">
 					<img
+						loading="lazy"
 						src={CrocCardGharial}
 						alt="The Gharial Playing Card"
 					/>
@@ -193,6 +203,7 @@ const Lineup = () => {
 				</div>
 				<div className="croc-card">
 					<img
+						loading="lazy"
 						src={CrocCardMugger}
 						alt="The Mugger Crocodile Playing Card"
 					/>
@@ -206,6 +217,7 @@ const Lineup = () => {
 				</div>
 				<div className="croc-card">
 					<img
+						loading="lazy"
 						src={CrocCardWestAfrican}
 						alt="The West African Crocodile Playing Card"
 					/>
@@ -219,6 +231,7 @@ const Lineup = () => {
 				</div>
 				<div className="croc-card">
 					<img
+						loading="lazy"
 						src={CrocCardNile}
 						alt="The West African Crocodile Playing Card"
 					/>
