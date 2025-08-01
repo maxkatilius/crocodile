@@ -49,7 +49,7 @@ const Smackdowns = () => {
 				The only time a deed done can be beat by the 
 				<span className="royal-croc"> Royal Croc</span>: 
 				A perfect full hand worth -2 in total. 
-				Complete with the two Red Kings, and two Jokers.
+				Complete with the two King Saltwater Crocodiles, and the two Crocodameleons.
 			</p>
 			<h4>Chaining Smackdowns</h4>
 			<p>
