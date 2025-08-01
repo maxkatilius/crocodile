@@ -1,6 +1,6 @@
 import { Link, useNavigate, useLocation } from "react-router-dom"
-import CrocCardSpectacledCaiman from "../assets/images/card_images/croc-card-spectacled-caiman-7.png"
-import CrocCardFalseGharial from "../assets/images/card_images/croc-card-false-gharial-8.png"
+import CrocCardSpectacledCaiman from "https://res.cloudinary.com/dm8swax4s/image/upload/v1754027714/croc-card-spectacled-caiman-7_vlbic1.png"
+import CrocCardFalseGharial from "https://res.cloudinary.com/dm8swax4s/image/upload/v1754027694/croc-card-false-gharial-8_gytsps.png"
 import CrocCardGharial from "../assets/images/card_images/croc-card-gharial-9.png"
 import CrocCardMugger from "../assets/images/card_images/croc-card-mugger-10.png"
 
