@@ -19,16 +19,16 @@ const Gameplay = () => {
 			<p>
 				Players, in turn, aim to collect the lowest scoring cards (see{" "}
 				<span
-					className="link-card-values"
+					className="link-lineup"
 					onClick={() => {
-						navigate("../card-values", {
+						navigate("/lineup", {
 							state: { from: "/how-to/gameplay" },
 						})
 					}}
 				>
-					card values
+					the line-up
 				</span>
-				) for their face-down hand by either drawing or swapping.
+				{" "}for card values) for their face-down hand by either drawing or swapping.
 			</p>
 			<p>When drawing a fresh card from the deck a player can:</p>
 			<ul>

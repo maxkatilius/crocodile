@@ -7,6 +7,7 @@ import Shop from "./pages/Shop"
 import Cart from "./pages/Cart"
 import Checkout from "./pages/Checkout"
 import Contact from "./pages/Contact"
+import Lineup from "./pages/Lineup"
 import HowTo from "./pages/HowTo"
 import AimSetup from "./pages/AimSetup"
 import Gameplay from "./pages/Gameplay"
@@ -28,6 +29,7 @@ const App = () => {
 							<Route path="shop" element={<Shop />} />
 							<Route path="cart" element={<Cart />} />
 							<Route path ="checkout" element={<Checkout />} />
+							<Route path ="lineup" element={<Lineup />} />
 							<Route path="contact" element={<Contact />} />
 							<Route path="how-to" element={<HowTo />}>
 								<Route index element={<AimSetup />} />

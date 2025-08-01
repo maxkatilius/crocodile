@@ -73,12 +73,12 @@ const MobileNav = () => {
 							</NavLink>
 						</li>
 						<li>
-							<NavLink to="/how-to/card-values" onClick={() => {
+							<NavLink to="/lineup" onClick={() => {
 								toggleNav()
 								toggleHowTo()
 							}}>
-								Card
-								Values</NavLink>
+								The Line-Up
+							</NavLink>
 						</li>
 						<li>
 							<NavLink to="/how-to/calling-croc" onClick={() => {

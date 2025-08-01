@@ -1,35 +1,3 @@
-:root {
-  --highlight-text-color: #07543A;
-  --secondary-highlight-text-color: #0B6E4F;
-  --border-color: #428061;
-  --primary-text-color: #161925;
-  --secondary-text-color: #050505;
-  --primary-bg-color: #FEFFFE;
-  --secondary-bg-color: #f7f7f7ee;
-  --third-bg-color: #d3d3d3;
-  --primary-border: #d3d3d3;
-  --green-gradient: linear-gradient(#0B6E4F, #07543A);
-  --box-shadow-default: 2px 2px 8px rgba(0, 0, 0, 0.1), -1px -1px 4px rgba(255, 255, 255, 0.3);
-  --box-shadow-hover: 3px 3px 10px rgba(0, 0, 0, 0.2), -2px -2px 5px rgba(255, 255, 255, 0.3);
-  --transition-fast: all 200ms ease-in-out;
-  --transition-slow: all 500ms ease-in-out;
-}
-
-.dark {
-  --highlight-text-color: #FEFFFE;
-  --secondary-highlight-text-color: #f7f7f7ee;
-  --border-color: #428061;
-  --primary-text-color: #FEFFFE;
-  --secondary-text-color: #f7f7f7ee;
-  --primary-bg-color: #07543A;
-  --secondary-bg-color: #0B6E4F;
-  --third-bg-color: #07543A;
-  --primary-border: #0B6E4F;
-  --green-gradient: linear-gradient(#0B6E4F, #07543A);
-  --box-shadow-default: 2px 2px 8px rgba(255, 255, 255, 0.1), -1px -1px 4px rgba(0, 0, 0, 0.3);
-  --box-shadow-hover: 3px 3px 10px rgba(255, 255, 255, 0.2), -2px -2px 5px rgba(0, 0, 0, 0.3);
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -170,8 +138,8 @@ header .header-container .header-logo h2 {
   font-size: 1.1rem;
   letter-spacing: 0.25rem;
   line-height: 1.3em;
-  border-top: 2px solid var(--highlight-text-color);
-  border-bottom: 2px solid var(--highlight-text-color);
+  border-top: 2px solid #07543A;
+  border-bottom: 2px solid #07543A;
 }
 
 .mobile-nav {
@@ -204,7 +172,7 @@ header .header-container .header-logo h2 {
   right: 0.05em;
   font-size: 0.7rem;
   font-weight: bold;
-  color: var(--highlight-text-color);
+  color: #07543A;
 }
 .mobile-nav .hamburger-container {
   z-index: 101;
@@ -221,7 +189,7 @@ header .header-container .header-logo h2 {
 .mobile-nav .hamburger-container .hamburger::before,
 .mobile-nav .hamburger-container .hamburger::after {
   height: 0.12em;
-  background-color: var(--highlight-text-color);
+  background-color: #07543A;
   border-radius: 1.5em;
 }
 .mobile-nav .hamburger-container .hamburger {
@@ -396,7 +364,7 @@ header .header-container .header-logo h2 {
 }
 @media only screen and (min-width: 768px) {
   header {
-    background-image: linear-gradient(var(--secondary-highlight-text-color), var(--highlight-text-color));
+    background-image: linear-gradient(#0B6E4F, #07543A);
   }
   header .header-container {
     justify-content: space-between;
@@ -1948,36 +1916,51 @@ main.checkout-container form .thanks-ctrls a {
   }
 }
 
-.aim-setup-container,
-.setup-container,
-.gameplay-container,
-.smackdowns-container,
-.power-cards-container,
-.card-values-container,
-.calling-croc-container,
-.prohibited-container {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 0.3em;
-}
-
-h2 {
+.lineup-container h1 {
   margin-bottom: 0.2em;
 }
-
-p {
-  line-height: 1.6;
+.lineup-container .croc-cards .croc-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 3em;
+  padding: 1em;
 }
-
-.links-container {
+.lineup-container .croc-cards .croc-card img {
+  width: 5em;
+  height: auto;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1), -1px -1px 4px rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease-in-out;
+}
+.lineup-container .croc-cards .croc-card img:hover {
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2), -2px -2px 5px rgba(255, 255, 255, 0.3);
+}
+.lineup-container .croc-cards .croc-card img {
+  width: 7em;
+}
+.lineup-container .croc-cards .croc-card .croc-card-info h4 {
+  margin: 0;
+  padding: 0;
+  color: #161925;
+}
+.lineup-container .croc-cards .croc-card .croc-card-info p {
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+.lineup-container .croc-cards .croc-card .croc-card-info p span {
+  display: block;
+  font-weight: bold;
+}
+.lineup-container .croc-cards .croc-card .croc-card-info p .croc-card-value {
+  color: #07543A;
+}
+.lineup-container .links-container {
   display: flex;
   justify-content: space-around;
   margin: auto 0 0.8em 0;
   padding-top: 1em;
 }
-.links-container a,
-.links-container .back-btn {
+.lineup-container .links-container a,
+.lineup-container .links-container .back-btn {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1992,25 +1975,25 @@ p {
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1), -1px -1px 4px rgba(255, 255, 255, 0.3);
   gap: 0.5em;
 }
-.links-container a .arrow,
-.links-container .back-btn .arrow {
+.lineup-container .links-container a .arrow,
+.lineup-container .links-container .back-btn .arrow {
   width: 0;
   height: 0;
   display: inline-block;
 }
-.links-container a .arrow.right,
-.links-container .back-btn .arrow.right {
+.lineup-container .links-container a .arrow.right,
+.lineup-container .links-container .back-btn .arrow.right {
   border-top: 0.4em solid transparent;
   border-bottom: 0.4em solid transparent;
   border-left: 0.6em solid #FEFFFE;
 }
-.links-container a .arrow.left,
-.links-container .back-btn .arrow.left {
+.lineup-container .links-container a .arrow.left,
+.lineup-container .links-container .back-btn .arrow.left {
   border-top: 0.4em solid transparent;
   border-bottom: 0.4em solid transparent;
   border-right: 0.6em solid #FEFFFE;
 }
-.links-container .back-btn {
+.lineup-container .links-container .back-btn {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -2027,33 +2010,155 @@ p {
   font-family: inherit;
 }
 @media only screen and (min-width: 840px) {
-  .links-container {
+  .lineup-container .links-container {
     justify-content: space-between;
   }
-  .links-container a,
-  .links-container .back-btn {
+  .lineup-container .links-container a,
+  .lineup-container .links-container .back-btn {
     font-size: 1.1rem;
     width: 10em;
   }
 }
+@media only screen and (min-width: 840px) {
+  .lineup-container .croc-cards .croc-card img {
+    width: 9em;
+  }
+  .lineup-container .croc-cards .croc-card .croc-card-info h4 {
+    font-size: 1.5rem;
+  }
+  .lineup-container .croc-cards .croc-card .croc-card-info p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+  .lineup-container .croc-cards .croc-card .croc-card-info p .croc-card-value {
+    font-size: 1.2rem;
+  }
+}
+@media only screen and (min-width: 1048px) {
+  .lineup-container .croc-cards {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .lineup-container .croc-card {
+    width: 50%;
+  }
+}
+@media only screen and (min-width: 1536px) {
+  .lineup-container .croc-cards .croc-card img {
+    width: 10em;
+  }
+  .lineup-container .croc-cards .croc-card .croc-card-info h4 {
+    font-size: 1.9rem;
+  }
+  .lineup-container .croc-cards .croc-card .croc-card-info p {
+    font-size: 1.3rem;
+    line-height: 1.7;
+  }
+  .lineup-container .croc-cards .croc-card .croc-card-info p .croc-card-value {
+    font-size: 1.4rem;
+  }
+}
 
-.aim-setup-container .aim-setup-text {
+.how-to-container .aim-setup-container,
+.how-to-container .setup-container,
+.how-to-container .gameplay-container,
+.how-to-container .smackdowns-container,
+.how-to-container .powcontainer,
+.how-to-container .calling-croc-container,
+.how-to-container .prohibited-container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3em;
+}
+.how-to-container h2 {
+  margin-bottom: 0.2em;
+}
+.how-to-container p {
+  line-height: 1.6;
+}
+.how-to-container .links-container {
+  display: flex;
+  justify-content: space-around;
+  margin: auto 0 0.8em 0;
+  padding-top: 1em;
+}
+.how-to-container .links-container a,
+.how-to-container .links-container .back-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.8em 1.2em;
+  background-color: #07543A;
+  font-weight: bold;
+  color: #FEFFFE;
+  border: none;
+  border-radius: 0.7em;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1), -1px -1px 4px rgba(255, 255, 255, 0.3);
+  gap: 0.5em;
+}
+.how-to-container .links-container a .arrow,
+.how-to-container .links-container .back-btn .arrow {
+  width: 0;
+  height: 0;
+  display: inline-block;
+}
+.how-to-container .links-container a .arrow.right,
+.how-to-container .links-container .back-btn .arrow.right {
+  border-top: 0.4em solid transparent;
+  border-bottom: 0.4em solid transparent;
+  border-left: 0.6em solid #FEFFFE;
+}
+.how-to-container .links-container a .arrow.left,
+.how-to-container .links-container .back-btn .arrow.left {
+  border-top: 0.4em solid transparent;
+  border-bottom: 0.4em solid transparent;
+  border-right: 0.6em solid #FEFFFE;
+}
+.how-to-container .links-container .back-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.8em 1.2em;
+  background-color: #07543A;
+  font-weight: bold;
+  color: #FEFFFE;
+  border: none;
+  border-radius: 0.7em;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1), -1px -1px 4px rgba(255, 255, 255, 0.3);
+  font-size: inherit;
+  font-family: inherit;
+}
+@media only screen and (min-width: 840px) {
+  .how-to-container .links-container {
+    justify-content: space-between;
+  }
+  .how-to-container .links-container a,
+  .how-to-container .links-container .back-btn {
+    font-size: 1.1rem;
+    width: 10em;
+  }
+}
+.how-to-container .aim-setup-container .aim-setup-text {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
   gap: 1em;
   justify-content: space-evenly;
 }
-
-.gameplay-container ul {
+.how-to-container .gameplay-container ul {
   margin-bottom: 1em;
   list-style-type: none;
 }
-.gameplay-container ul li {
+.how-to-container .gameplay-container ul li {
   position: relative;
   padding: 0.8em 0 0 4em;
 }
-.gameplay-container ul li::before {
+.how-to-container .gameplay-container ul li::before {
   content: "";
   position: absolute;
   left: 0;
@@ -2065,32 +2170,31 @@ p {
   background-size: cover;
   background-repeat: no-repeat;
 }
-.gameplay-container ul:nth-of-type(1) li:nth-child(1),
-.gameplay-container ul:nth-of-type(2) li:nth-child(3) {
+.how-to-container .gameplay-container ul:nth-of-type(1) li:nth-child(1),
+.how-to-container .gameplay-container ul:nth-of-type(2) li:nth-child(3) {
   padding-bottom: 0.5em;
 }
-.gameplay-container .link-card-values,
-.gameplay-container .link-power-cards {
+.how-to-container .gameplay-container .link-lineup,
+.how-to-container .gameplay-container .link-power-cards {
   color: #07543A;
   font-weight: bold;
   cursor: pointer;
   transition: all 200ms ease-in-out;
 }
-.gameplay-container .link-card-values:hover,
-.gameplay-container .link-power-cards:hover {
+.how-to-container .gameplay-container .link-lineup:hover,
+.how-to-container .gameplay-container .link-power-cards:hover {
   color: #0B6E4F;
   font-size: larger;
 }
-
-.smackdowns-container ul {
+.how-to-container .smackdowns-container ul {
   margin-bottom: 1em;
   list-style-type: none;
 }
-.smackdowns-container ul li {
+.how-to-container .smackdowns-container ul li {
   position: relative;
   padding: 0.8em 0 0 4em;
 }
-.smackdowns-container ul li::before {
+.how-to-container .smackdowns-container ul li::before {
   content: "";
   position: absolute;
   left: 0;
@@ -2102,140 +2206,76 @@ p {
   background-size: cover;
   background-repeat: no-repeat;
 }
-.smackdowns-container .royal-croc {
+.how-to-container .smackdowns-container .royal-croc {
   font-weight: bold;
   color: #07543A;
 }
-
-.card-values-container h4,
-.power-cards-container h4 {
+.how-to-container .power-cards-container h4 {
   font-size: 1.05rem;
 }
-.card-values-container .links-container a,
-.power-cards-container .links-container a {
+.how-to-container .power-cards-container .links-container a {
   width: auto;
 }
-
-.playing-cards,
-.power-cards {
+.how-to-container .power-cards {
   display: flex;
   flex-direction: column;
 }
-
-.playing-card,
-.power-card {
-  display: flex;
-  align-items: flex-start;
-  gap: 3em;
-  padding: 1em;
+.how-to-container .power-card {
   display: flex;
   align-items: flex-start;
   gap: 3em;
   padding: 1em;
 }
-.playing-card img,
-.power-card img {
+.how-to-container .power-card img {
   width: 5em;
   height: auto;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1), -1px -1px 4px rgba(255, 255, 255, 0.3);
   transition: all 0.3s ease-in-out;
 }
-.playing-card img:hover,
-.power-card img:hover {
+.how-to-container .power-card img:hover {
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2), -2px -2px 5px rgba(255, 255, 255, 0.3);
 }
-.playing-card img,
-.power-card img {
-  width: 5em;
-  height: auto;
-  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1), -1px -1px 4px rgba(255, 255, 255, 0.3);
-  transition: all 0.3s ease-in-out;
-}
-.playing-card img:hover,
-.power-card img:hover {
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2), -2px -2px 5px rgba(255, 255, 255, 0.3);
-}
-.playing-card h4,
-.power-card h4 {
+.how-to-container .power-card h4 {
   padding: 0;
   margin: 0;
 }
-.playing-card .playing-card-info h4,
-.playing-card .power-card-info h4,
-.power-card .playing-card-info h4,
-.power-card .power-card-info h4 {
+.how-to-container .power-card .power-card-info h4 {
   color: #161925;
 }
-.playing-card .playing-card-info p,
-.playing-card .power-card-info p,
-.power-card .playing-card-info p,
-.power-card .power-card-info p {
+.how-to-container .power-card .power-card-info p {
   font-size: 0.8rem;
 }
-.playing-card .playing-card-info p span,
-.playing-card .power-card-info p span,
-.power-card .playing-card-info p span,
-.power-card .power-card-info p span {
-  display: block;
-}
-.playing-card .playing-card-info p .playing-card-value,
-.playing-card .power-card-info p .playing-card-value,
-.power-card .playing-card-info p .playing-card-value,
-.power-card .power-card-info p .playing-card-value {
-  font-weight: bold;
-}
-
-.calling-croc-container h2 {
+.how-to-container .calling-croc-container h2 {
   padding-bottom: 0.6em;
 }
-
 @media only screen and (min-width: 648px) {
-  h2 {
+  .how-to-container h2 {
     font-size: 1.9rem;
   }
-  h4 {
+  .how-to-container h4 {
     font-size: 1.4rem;
     margin: 1em 0 0.3em 0;
   }
-  p,
-  ul li {
+  .how-to-container p,
+  .how-to-container ul li {
     font-size: 1.2rem;
   }
-  .links-container a,
-  .links-container .back-btn {
+  .how-to-container .links-container a,
+  .how-to-container .links-container .back-btn {
     font-size: 1.2rem;
   }
-  .playing-cards,
-  .power-cards {
+  .how-to-container .power-cards {
     justify-content: flex-start;
   }
-  .playing-cards .playing-card-info h4,
-  .playing-cards .power-card-info h4,
-  .power-cards .playing-card-info h4,
-  .power-cards .power-card-info h4 {
+  .how-to-container .power-cards .power-card-info h4 {
     font-size: 1.3rem;
   }
-  .playing-cards .playing-card-info p,
-  .playing-cards .power-card-info p,
-  .power-cards .playing-card-info p,
-  .power-cards .power-card-info p {
+  .how-to-container .power-cards .power-card-info p {
     font-size: 1rem;
-  }
-  .playing-cards .playing-card-info p span,
-  .playing-cards .power-card-info p span,
-  .power-cards .playing-card-info p span,
-  .power-cards .power-card-info p span {
-    display: block;
-  }
-  .playing-cards .playing-card-info p .playing-card-value,
-  .playing-cards .power-card-info p .playing-card-value,
-  .power-cards .playing-card-info p .playing-card-value,
-  .power-cards .power-card-info p .playing-card-value {
-    font-weight: bold;
   }
 }
 @media only screen and (min-width: 840px) {
-  p {
+  .how-to-container p {
     line-height: 1.8;
   }
 }
@@ -2245,7 +2285,6 @@ p {
   .how-to-container .calling-croc-container h2,
   .how-to-container .smackdowns-container h2,
   .how-to-container .power-cards-container h2,
-  .how-to-container .card-values-container h2,
   .how-to-container .prohibited-container h2 {
     font-size: 2.2rem;
   }
@@ -2259,8 +2298,6 @@ p {
   .how-to-container .smackdowns-container ul li,
   .how-to-container .power-cards-container p,
   .how-to-container .power-cards-container ul li,
-  .how-to-container .card-values-container p,
-  .how-to-container .card-values-container ul li,
   .how-to-container .prohibited-container p,
   .how-to-container .prohibited-container ul li {
     font-size: 1.3rem;
@@ -2270,54 +2307,32 @@ p {
   .how-to-container .calling-croc-container h4,
   .how-to-container .smackdowns-container h4,
   .how-to-container .power-cards-container h4,
-  .how-to-container .card-values-container h4,
   .how-to-container .prohibited-container h4 {
     font-size: 1.5rem;
   }
   .how-to-container .links-container a,
   .how-to-container .links-container .back-btn {
-    font-size: 1.3rem;
+    font-size: 1.3r;
   }
-  .how-to-container .card-values-container .playing-cards,
-  .how-to-container .card-values-container .power-cards,
-  .how-to-container .power-cards-container .playing-cards,
   .how-to-container .power-cards-container .power-cards {
     flex-direction: row;
     flex-wrap: wrap;
     gap: 2em;
   }
-  .how-to-container .card-values-container .playing-cards .playing-card,
-  .how-to-container .card-values-container .playing-cards .power-card,
-  .how-to-container .card-values-container .power-cards .playing-card,
-  .how-to-container .card-values-container .power-cards .power-card,
-  .how-to-container .power-cards-container .playing-cards .playing-card,
-  .how-to-container .power-cards-container .playing-cards .power-card,
-  .how-to-container .power-cards-container .power-cards .playing-card,
   .how-to-container .power-cards-container .power-cards .power-card {
     width: 45%;
     margin-right: auto;
   }
-  .how-to-container .card-values-container .playing-cards .playing-card img,
-  .how-to-container .card-values-container .playing-cards .power-card img,
-  .how-to-container .card-values-container .power-cards .playing-card img,
-  .how-to-container .card-values-container .power-cards .power-card img,
-  .how-to-container .power-cards-container .playing-cards .playing-card img,
-  .how-to-container .power-cards-container .playing-cards .power-card img,
-  .how-to-container .power-cards-container .power-cards .playing-card img,
   .how-to-container .power-cards-container .power-cards .power-card img {
     width: 7em;
   }
-  .how-to-container .card-values-container .playing-card-info h4 {
-    font-size: 1.3rem;
-  }
 }
-@media only screen and (min-width: 1536px) {
+@media only screen and (min-width: 1024px) and (min-width: 1536px) {
   .how-to-container .aim-setup-container h2,
   .how-to-container .gameplay-container h2,
   .how-to-container .calling-croc-container h2,
   .how-to-container .smackdowns-container h2,
   .how-to-container .power-cards-container h2,
-  .how-to-container .card-values-container h2,
   .how-to-container .prohibited-container h2 {
     font-size: 2.8rem;
   }
@@ -2331,8 +2346,6 @@ p {
   .how-to-container .smackdowns-container ul li,
   .how-to-container .power-cards-container p,
   .how-to-container .power-cards-container ul li,
-  .how-to-container .card-values-container p,
-  .how-to-container .card-values-container ul li,
   .how-to-container .prohibited-container p,
   .how-to-container .prohibited-container ul li {
     font-size: 1.7rem;
@@ -2347,8 +2360,6 @@ p {
   .how-to-container .smackdowns-container .links-container .back-btn,
   .how-to-container .power-cards-container .links-container a,
   .how-to-container .power-cards-container .links-container .back-btn,
-  .how-to-container .card-values-container .links-container a,
-  .how-to-container .card-values-container .links-container .back-btn,
   .how-to-container .prohibited-container .links-container a,
   .how-to-container .prohibited-container .links-container .back-btn {
     font-size: 1.6rem;
@@ -2364,6 +2375,7 @@ p {
     font-size: 1.7rem;
   }
 }
+
 main.contact-us-container {
   gap: 1em;
   max-width: 30em;

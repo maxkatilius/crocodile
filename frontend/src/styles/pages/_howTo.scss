@@ -1,193 +1,171 @@
 @use "../index" as *;
 
 // How To
-.aim-setup-container,
-.setup-container,
-.gameplay-container,
-.smackdowns-container,
-.power-cards-container,
-.card-values-container,
-.calling-croc-container,
-.prohibited-container {
-	flex-grow: 1;
-	@include flex-col;
-	gap: 0.3em;
-}
+.how-to-container {
 
-h2 {
-	margin-bottom: 0.2em;
-}
-
-p {
-	line-height: 1.6;
-}
-
-.links-container {
-	@include links-container-style;
-}
-
-// AimSetup
-.aim-setup-container {
-	.aim-setup-text {
+	.aim-setup-container,
+	.setup-container,
+	.gameplay-container,
+	.smackdowns-container,
+	.powcontainer,
+	.calling-croc-container,
+	.prohibited-container {
 		flex-grow: 1;
 		@include flex-col;
-		gap: 1em;
-		justify-content: space-evenly;
-	}
-}
-
-// Gameplay
-.gameplay-container {
-	ul {
-		@include croc-ul(green);
+		gap: 0.3em;
 	}
 
-	ul:nth-of-type(1) li:nth-child(1),
-	ul:nth-of-type(2) li:nth-child(3) {
-		padding-bottom: 0.5em;
+	h2 {
+		margin-bottom: 0.2em;
 	}
-
-	.link-card-values,
-	.link-power-cards {
-		color: $crocodile-green;
-		font-weight: bold;
-		cursor: pointer;
-		transition: $transition-fast;
-
-		&:hover {
-			color: $secondary-green;
-			font-size: larger;
-		}
+	
+	p {
+		line-height: 1.6;
 	}
-}
-
-// Smackdowns
-.smackdowns-container {
-	ul {
-		@include croc-ul(green);
-	}
-
-	.royal-croc {
-		font-weight: bold;
-		color: $crocodile-green;
-	}
-}
-
-//  Card values / Power cards
-.card-values-container,
-.power-cards-container {
-	h4 {
-		font-size: 1.05rem;
-	}
-
+	
 	.links-container {
-		a {
-			width: auto;
+		@include links-container-style;
+	}
+	
+	// AimSetup
+	.aim-setup-container {
+		.aim-setup-text {
+			flex-grow: 1;
+			@include flex-col;
+			gap: 1em;
+			justify-content: space-evenly;
 		}
 	}
-}
-
-.playing-cards,
-.power-cards {
-	@include flex-col;
-}
-
-.playing-card,
-.power-card {
-	@include playing-card-style;
-	@include playing-card-style;
-
-	h4 {
-		padding: 0;
-		margin: 0;
+	
+	// Gameplay
+	.gameplay-container {
+		ul {
+			@include croc-ul(green);
+		}
+		
+		ul:nth-of-type(1) li:nth-child(1),
+		ul:nth-of-type(2) li:nth-child(3) {
+			padding-bottom: 0.5em;
+		}
+		
+		.link-lineup,
+		.link-power-cards {
+			color: $crocodile-green;
+			font-weight: bold;
+			cursor: pointer;
+			transition: $transition-fast;
+			
+			&:hover {
+				color: $secondary-green;
+				font-size: larger;
+			}
+		}
 	}
-
-	.playing-card-info,
-	.power-card-info {
+	
+	// Smackdowns
+	.smackdowns-container {
+		ul {
+			@include croc-ul(green);
+		}
+		
+		.royal-croc {
+			font-weight: bold;
+			color: $crocodile-green;
+		}
+	}
+	
+	// Power cards
+	.power-cards-container {
 		h4 {
-			color: $primary-black;
+			font-size: 1.05rem;
 		}
-
-		p {
-			font-size: 0.8rem;
-
-			span {
-				display: block;
-			}
-
-			.playing-card-value {
-				font-weight: bold;
+		
+		.links-container {
+			a {
+				width: auto;
 			}
 		}
 	}
-}
-
-// Calling Croc
-.calling-croc-container {
-	h2 {
-		padding-bottom: 0.6em;
-	}
-}
-
-@media only screen and (min-width: 648px) {
-	h2 {
-		font-size: 1.9rem;
-	}
-
-	h4 {
-		font-size: 1.4rem;
-		margin: 1em 0 0.3em 0;
-	}
-
-	p,
-	ul li {
-		font-size: 1.2rem;
-	}
-
-	.links-container {
-		a,
-		.back-btn {
-			font-size: 1.2rem;
-		}
-	}
-
-	.playing-cards,
+	
 	.power-cards {
-		justify-content: flex-start;
-		.playing-card-info,
+		@include flex-col;
+	}
+	
+
+	.power-card {
+		@include playing-card-style;
+		
+		h4 {
+			padding: 0;
+			margin: 0;
+		}
+		
 		.power-card-info {
 			h4 {
-				font-size: 1.3rem;
+				color: $primary-black;
 			}
-
+			
 			p {
-			font-size: 1rem;
-				span {
-					display: block;
+				font-size: 0.8rem;
+			}
+		}
+	}
+	
+	// Calling Croc
+	.calling-croc-container {
+		h2 {
+			padding-bottom: 0.6em;
+		}
+	}
+	
+	@media only screen and (min-width: 648px) {
+		h2 {
+			font-size: 1.9rem;
+		}
+		
+		h4 {
+			font-size: 1.4rem;
+			margin: 1em 0 0.3em 0;
+		}
+			
+		p,
+		ul li {
+			font-size: 1.2rem;
+		}
+		
+		.links-container {
+			a,
+			.back-btn {
+				font-size: 1.2rem;
+			}
+		}
+		
+		.power-cards {
+			justify-content: flex-start;
+			.power-card-info {
+				h4 {
+					font-size: 1.3rem;
 				}
 				
-				.playing-card-value {
-					font-weight: bold;
+				p {
+					font-size: 1rem;
 				}
 			}
 		}
 	}
-}
 
-@media only screen and (min-width: 840px) {
-	p { 
-		line-height: 1.8;
+	@media only screen and (min-width: 840px) {
+		p { 
+			line-height: 1.8;
+		}
 	}
-}
 
- @media only screen and (min-width: 1024px) {
-	.how-to-container {
+	@media only screen and (min-width: 1024px) {
 		.aim-setup-container,
 		.gameplay-container,
 		.calling-croc-container,
 		.smackdowns-container,
 		.power-cards-container,
-		.card-values-container,
 		.prohibited-container {
 			
 			h2 {
@@ -198,28 +176,25 @@ p {
 			ul li {
 				font-size: 1.3rem;
 			}
-
+			
 			h4 {
 				font-size: 1.5rem;
 			}
 		}
 		
-		.links-container {
-			a,
-			.back-btn {
-				font-size: 1.3rem;
+			.links-container {
+				a,
+				.back-btn {
+					font-size: 1.3r
 			}
+
 		}
-		.card-values-container,
 		.power-cards-container {
-	
-			.playing-cards,
 			.power-cards {
 				flex-direction: row;
 				flex-wrap: wrap;
 				gap: 2em;
-	
-				.playing-card,
+
 				.power-card {
 					width: 45%;
 					margin-right: auto;
@@ -231,56 +206,45 @@ p {
 			}
 		}
 
-		.card-values-container {
-			.playing-card-info {
+		@media only screen and (min-width: 1536px) {
+			.aim-setup-container,
+			.gameplay-container,
+			.calling-croc-container,
+			.smackdowns-container,
+			.power-cards-container,
+			.prohibited-container {
+				
+				h2 {
+					font-size: 2.8rem;
+				}
+				
+				p,
+				ul li {
+					font-size: 1.7rem;
+				}
+				
+				.links-container a,
+				.links-container .back-btn {
+					font-size: 1.6rem;
+				}
+				
+			}
+		
+			.aim-setup-container {
+				h2 {
+					margin-bottom: 0.4em;
+				}
+				.aim-setup-text {
+					gap: 1.6em;
+				}
+			}
+		
+			.smackdowns-container {
 				h4 {
-					font-size: 1.3rem;
+					margin-top: 0.6em;
+					font-size: 1.7rem;
 				}
 			}
 		}
 	}
 }
-
- @media only screen and (min-width: 1536px) {
-	.how-to-container {
-		.aim-setup-container,
-		.gameplay-container,
-		.calling-croc-container,
-		.smackdowns-container,
-		.power-cards-container,
-		.card-values-container,
-		.prohibited-container {
-			
-			h2 {
-				font-size: 2.8rem;
-			}
-			
-			p,
-			ul li {
-				font-size: 1.7rem;
-			}
-			
-			.links-container a,
-			.links-container .back-btn {
-				font-size: 1.6rem;
-			}
-			
-		}
-
-		.aim-setup-container {
-			h2 {
-				margin-bottom: 0.4em;
-			}
-			.aim-setup-text {
-				gap: 1.6em;
-			}
-		}
-		
-		.smackdowns-container {
-			h4 {
-				margin-top: 0.6em;
-				font-size: 1.7rem;
-			}
-		}
-	}
- }

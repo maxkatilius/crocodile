@@ -1,0 +1,95 @@
+@use "../index" as *;
+
+.lineup-container {
+    h1 {
+        margin-bottom: 0.2em;
+    }
+    .croc-cards {
+        .croc-card {
+            @include playing-card-style;
+            
+            img {
+                width: 7em;
+            }
+
+            .croc-card-info {
+                h4 {
+                    margin: 0;
+                    padding: 0;
+                    color: $primary-black;
+                }
+                
+                p {
+                    font-size: 0.8rem;
+                    line-height: 1.5;
+                    
+                    span {
+                        display: block;
+                        font-weight: bold;
+                    }
+                    .croc-card-value {
+                        color: $crocodile-green;
+                    }
+                }
+            }
+        }
+    }
+    .links-container {
+        @include links-container-style;
+    }
+
+    @media only screen and (min-width: 840px) {
+        .croc-cards {
+            .croc-card {
+                img {
+                    width: 9em;
+                }
+                .croc-card-info {
+                    h4 {
+                        font-size: 1.5rem;
+                    } 
+                    p {
+                        font-size: 1.1rem;
+                        line-height: 1.6;
+
+                        .croc-card-value {
+                            font-size: 1.2rem;
+                        }
+                    }
+                }
+            }
+        }    
+    }
+    @media only screen and (min-width: 1048px) {
+        .croc-cards {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .croc-card {
+            width: 50%;
+        }
+    }
+
+    @media only screen and (min-width: 1536px) {
+        .croc-cards {
+            .croc-card {
+                img {
+                    width: 10em;
+                }
+                .croc-card-info {
+                    h4 {
+                        font-size: 1.9rem;
+                    }
+                    p {
+                        .croc-card-value {
+                            font-size: 1.4rem;
+                        }
+
+                        font-size: 1.3rem;
+                        line-height: 1.7;
+                    }
+                }
+            }    
+        }
+    }
+}

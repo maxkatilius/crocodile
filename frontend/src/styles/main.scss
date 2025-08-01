@@ -1,4 +1,3 @@
-@use "theme";
 @use "components/layout";
 @use "components/header";
 @use "components/footer";
@@ -8,5 +7,6 @@
 @use "pages/shop";
 @use "pages/cart";
 @use "pages/checkout";
+@use "pages/lineup";
 @use "pages/howTo";
 @use "pages/contact";

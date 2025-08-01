@@ -1,8 +1,8 @@
 import { Link, useNavigate, useLocation } from "react-router-dom"
-import CrocCardSpectacledCaiman from "../assets/images/card_images/croc-card-spectacled-caiman.png"
-import CrocCardFalseGharial from "../assets/images/card_images/croc-card-false-gharial.png"
-import CrocCardGharial from "../assets/images/card_images/croc-card-gharial.png"
-import CrocCardMugger from "../assets/images/card_images/croc-card-mugger.png"
+import CrocCardSpectacledCaiman from "../assets/images/card_images/croc-card-spectacled-caiman-7.png"
+import CrocCardFalseGharial from "../assets/images/card_images/croc-card-false-gharial-8.png"
+import CrocCardGharial from "../assets/images/card_images/croc-card-gharial-9.png"
+import CrocCardMugger from "../assets/images/card_images/croc-card-mugger-10.png"
 
 const PowerCards = () => {
 	const navigate = useNavigate()
