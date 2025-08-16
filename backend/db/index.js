@@ -4,13 +4,13 @@ dotenv.config()
 const { Pool } = require('pg')
 
 const pool = new Pool({
-  host: process.env.SUPABASE_HOST,
-  port: process.env.SUPABASE_PORT,
-  database: process.env.SUPABASE_DATABASE,
-  user: process.env.SUPABASE_USER,
-  password: process.env.SUPABASE_PASSWORD,
+  host: process.env.PGHOST,
+  port: process.env.PGPORT,
+  database: process.env.PGDATABASE,
+  user: process.env.PGUSER,
+  password: process.env.PGPASSWORD,
   ssl: {
-    rejectUnauthorized: false, // Required by Supabase in some hosts
+    rejectUnauthorized: false, 
   },
 })
 
