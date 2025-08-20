@@ -17,8 +17,8 @@ router.get('/', async (req, res) => {
     )
     res.status(201).json({ message: 'All products', data: result.rows })
   } catch (err) {
-    console.error('Error retrieving products:', err)
-    res.status(500).json({ error: 'Fetching products data failed' })
+    console.error('Error retrieving products:', err);
+    res.status(500).json({ error: 'Fetching products data failed', code: err.code, detail: err.message });
   }
 })
 
@@ -94,8 +94,8 @@ router.get('/:id', async (req, res) => {
     res.status(200).json({ message: `Product details for product_id: ${id}`, data: productData })
 
   } catch (err) {
-    console.error('Error fetching product details:', err)
-    res.status(500).json({ error: 'Failed to fetch product data' })
+    console.error('Error retrieving product:', err);
+    res.status(500).json({ error: 'Fetching product data failed', code: err.code, detail: err.message });
   }
 })
 
