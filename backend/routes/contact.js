@@ -19,7 +19,7 @@ router.post('/', async (req, res) => {
       RETURNING *;
       `, [name, email, message]
     )
-    res.status(201).json({ message: 'Message received', data: result.rows[0] })
+    res.status(200).json({ message: 'Message received', data: result.rows[0] })
   } catch (err) {
     console.error('Error inserting message:', err)
     res.status(500).json({ error: 'Database insert failed' })

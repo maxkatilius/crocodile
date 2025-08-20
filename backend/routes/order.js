@@ -76,7 +76,7 @@ router.post('/', async (req, res) => {
     
     await client.query('COMMIT')
 
-    res.status(201).json({ message: 'Order successfully placed', orderId })
+    res.status(200).json({ message: 'Order successfully placed', orderId })
 
   } catch (err) {
     await client.query('ROLLBACK')

@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
         display_image AS "displayImage"
       FROM products;`,
     )
-    res.status(201).json({ message: 'All products', data: result.rows })
+    res.status(200).json({ message: 'All products', data: result.rows })
   } catch (err) {
     console.error('Error retrieving products:', err);
     res.status(500).json({ error: 'Fetching products data failed', code: err.code, detail: err.message });
