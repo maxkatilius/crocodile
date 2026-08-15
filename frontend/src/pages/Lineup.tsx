@@ -1,17 +1,13 @@
-import { Link, useNavigate, useLocation } from "react-router-dom"
+import { Link, useNavigate, useLocation } from "react-router-dom";
 
 const Lineup = () => {
-	const navigate = useNavigate()
-	const location = useLocation()
-		const prevLocation = location.state?.from || "/"
-		const path =
-			prevLocation === "/how-to/gameplay"
-				? "/how-to/calling-croc"
-				: "/"
-		const nextLocation =
-			prevLocation === "/how-to/gameplay"
-				? "Calling 'Croc'"
-				: "Home"
+	const navigate = useNavigate();
+	const location = useLocation();
+	const prevLocation = location.state?.from || "/";
+	const path =
+		prevLocation === "/how-to/gameplay" ? "/how-to/calling-croc" : "/";
+	const nextLocation =
+		prevLocation === "/how-to/gameplay" ? "Calling 'Croc'" : "Home";
 
 	return (
 		<main className="lineup-container">
@@ -25,11 +21,12 @@ const Lineup = () => {
 					/>
 					<div className="croc-card-info">
 						<h4>The King Saltwater Crocodile</h4>
-						<p><span className="croc-card-value">Value: -1</span>
-							The King is the most valuable card on the table. 
-							Keep this highly-sought-after salty hidden or face 
-							relentless snapping from the jealous crocs around you. 
-							Heavy is the head that holds the crown. 
+						<p>
+							<span className="croc-card-value">Value: -1</span>
+							The King is the most valuable card on the table.
+							Keep this highly-sought-after salty hidden or face
+							relentless snapping from the jealous crocs around
+							you. Heavy is the head that holds the crown.
 						</p>
 					</div>
 				</div>
@@ -41,10 +38,11 @@ const Lineup = () => {
 					/>
 					<div className="croc-card-info">
 						<h4>The Thug Saltwater Crocodile</h4>
-						<p><span className ="croc-card-value">Value: 13</span>
-							This thug knows how to crunch. This bad boy is 
-							the highest scoring card and arguably the 
-							worst on the table.	What is he good for? 
+						<p>
+							<span className="croc-card-value">Value: 13</span>
+							This thug knows how to crunch. This bad boy is the
+							highest scoring card and arguably the worst on the
+							table. What is he good for?
 							<span>Taking down the King!</span>
 						</p>
 					</div>
@@ -57,9 +55,10 @@ const Lineup = () => {
 					/>
 					<div className="croc-card-info">
 						<h4>The Crocodamelon</h4>
-						<p><span className ="croc-card-value">Value: 0</span>
-							The second most valuable card. Hang on to this cheeky
-							croc! Wait a second that's not a crocodile!
+						<p>
+							<span className="croc-card-value">Value: 0</span>
+							The second most valuable card. Hang on to this
+							cheeky croc! Wait a second that's not a crocodile!
 						</p>
 					</div>
 				</div>
@@ -71,9 +70,10 @@ const Lineup = () => {
 					/>
 					<div className="croc-card-info">
 						<h4>The Orinoco Crocodile</h4>
-						<p><span className ="croc-card-value">Value: 1</span>
-							Hailing all the way from Colombia and Venezuela, give
-							it up for the Orinoco Crocodile! This colourful 
+						<p>
+							<span className="croc-card-value">Value: 1</span>
+							Hailing all the way from Colombia and Venezuela,
+							give it up for the Orinoco Crocodile! This colourful
 							croc is a handy one to keep stashed away.
 						</p>
 					</div>
@@ -85,10 +85,11 @@ const Lineup = () => {
 						alt="The American Alligator Playing Card"
 					/>
 					<div className="croc-card-info">
-						<h4>2 - The American Alligator</h4>
-						<p><span className ="croc-card-value">Value: 2</span>
-							Not bad. But as the old sayin goes: 
-							<span>2's don't win games.</span> 
+						<h4>The American Alligator</h4>
+						<p>
+							<span className="croc-card-value">Value: 2</span>
+							Not bad. But as the old sayin goes:
+							<span>2's don't win games.</span>
 						</p>
 					</div>
 				</div>
@@ -100,10 +101,11 @@ const Lineup = () => {
 					/>
 					<div className="croc-card-info">
 						<h4>The Phillipine Crocodile</h4>
-						<p><span className ="croc-card-value">Value: 3</span>
-							He may have style, incredible hospitality and 
-							cooks a mean rice, but I wouldn't bank on this croc
-							being in your winning hand. 
+						<p>
+							<span className="croc-card-value">Value: 3</span>
+							He may have style, incredible hospitality and cooks
+							a mean rice, but I wouldn't bank on this croc being
+							in your winning hand.
 						</p>
 					</div>
 				</div>
@@ -115,9 +117,10 @@ const Lineup = () => {
 					/>
 					<div className="croc-card-info">
 						<h4>The Freshwater Crocodile</h4>
-						<p><span className ="croc-card-value">Value: 4</span>
-							Take it or leave it. Frankly, this 
-							laidback croc couldn't care less. 
+						<p>
+							<span className="croc-card-value">Value: 4</span>
+							Take it or leave it. Frankly, this laidback croc
+							couldn't care less.
 						</p>
 					</div>
 				</div>
@@ -129,10 +132,10 @@ const Lineup = () => {
 					/>
 					<div className="croc-card-info">
 						<h4>The Morelet's Crocodile</h4>
-						<p><span className ="croc-card-value">Value: 5</span>
-							This Mexican Croc may just spice the 
-							game up when you're least expecting it. 
-							Or not. 
+						<p>
+							<span className="croc-card-value">Value: 5</span>
+							This Mexican Croc may just spice the game up when
+							you're least expecting it. Or not.
 						</p>
 					</div>
 				</div>
@@ -144,9 +147,10 @@ const Lineup = () => {
 					/>
 					<div className="croc-card-info">
 						<h4>The Osborn's Dwarf Crocodile</h4>
-						<p><span className ="croc-card-value">Value: 6</span>
-							The smallest species of crocodile, isn't he cute?
-							Or is that what he wants us to think... 
+						<p>
+							<span className="croc-card-value">Value: 6</span>
+							The smallest species of crocodile, isn't he cute? Or
+							is that what he wants us to think...
 						</p>
 					</div>
 				</div>
@@ -158,9 +162,10 @@ const Lineup = () => {
 					/>
 					<div className="croc-card-info">
 						<h4>The Spectacled Caiman</h4>
-						<p><span className ="croc-card-value">Value: 7</span>
-							This sophisticated croc can help you see through 
-							the murky waters to what's lurking beneath. 
+						<p>
+							<span className="croc-card-value">Value: 7</span>
+							This sophisticated croc can help you see through the
+							murky waters to what's lurking beneath.
 						</p>
 					</div>
 				</div>
@@ -172,9 +177,10 @@ const Lineup = () => {
 					/>
 					<div className="croc-card-info">
 						<h4>The False Gharial</h4>
-						<p><span className ="croc-card-value">Value: 8</span>
+						<p>
+							<span className="croc-card-value">Value: 8</span>
 							The slim snouted false gharial loves to stay hidden,
-							but he always keeps an eye on others. 
+							but he always keeps an eye on others.
 						</p>
 					</div>
 				</div>
@@ -186,9 +192,10 @@ const Lineup = () => {
 					/>
 					<div className="croc-card-info">
 						<h4>The Gharial</h4>
-						<p><span className ="croc-card-value">Value: 9</span>
+						<p>
+							<span className="croc-card-value">Value: 9</span>
 							The most thoroughly aquatic crocodile, this croc
-							loves to shake things up underneath the surface. 
+							loves to shake things up underneath the surface.
 						</p>
 					</div>
 				</div>
@@ -200,9 +207,10 @@ const Lineup = () => {
 					/>
 					<div className="croc-card-info">
 						<h4>The Mugger Crocodile</h4>
-						<p><span className ="croc-card-value">Value: 10</span>
-							Nuisance, sabatouer, saviour, dream crusher? 
-							Power is in the hand of the beholder.
+						<p>
+							<span className="croc-card-value">Value: 10</span>
+							Nuisance, sabatouer, saviour, dream crusher? Power
+							is in the hand of the beholder.
 						</p>
 					</div>
 				</div>
@@ -214,9 +222,10 @@ const Lineup = () => {
 					/>
 					<div className="croc-card-info">
 						<h4>The West African Crocodile</h4>
-						<p><span className ="croc-card-value">Value: 11</span>
-							What a funky crocodile. It's a shame to
-							have to get rid of him so quickly. 
+						<p>
+							<span className="croc-card-value">Value: 11</span>
+							What a funky crocodile. It's a shame to have to get
+							rid of him so quickly.
 						</p>
 					</div>
 				</div>
@@ -228,9 +237,11 @@ const Lineup = () => {
 					/>
 					<div className="croc-card-info">
 						<h4>The Nile Crocodile</h4>
-						<p><span className ="croc-card-value">Value: 12</span>
-							This crocodile is responsible for the most human deaths
-							on earth, and the most losses in crocland. Avoid at all costs! 
+						<p>
+							<span className="croc-card-value">Value: 12</span>
+							This crocodile is responsible for the most human
+							deaths on earth, and the most losses in crocland.
+							Avoid at all costs!
 						</p>
 					</div>
 				</div>
@@ -246,7 +257,7 @@ const Lineup = () => {
 				</Link>
 			</div>
 		</main>
-	)
-}
+	);
+};
 
-export default Lineup
+export default Lineup;
