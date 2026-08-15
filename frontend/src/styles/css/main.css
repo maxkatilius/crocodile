@@ -237,7 +237,6 @@ header .header-container .header-logo h2 {
 .mobile-nav-how-to-links {
   margin-bottom: 1em;
   list-style-type: none;
-  margin-top: 1em;
 }
 .mobile-nav-how-to-links li {
   position: relative;
@@ -254,6 +253,9 @@ header .header-container .header-logo h2 {
   background-image: url("https://cdn.jsdelivr.net/gh/maxkatilius/crocodile/frontend/src/assets/images/logos/croc-head-white.png");
   background-size: cover;
   background-repeat: no-repeat;
+}
+.mobile-nav-how-to-links {
+  margin-top: 1em;
 }
 .mobile-nav-how-to-links a {
   font-size: 1rem;
@@ -647,9 +649,6 @@ main.about-container .about-links {
   justify-content: space-around;
   margin: auto 0 0.8em 0;
   padding-top: 1em;
-  display: flex;
-  flex-direction: column;
-  gap: 1.1em;
 }
 main.about-container .about-links a,
 main.about-container .about-links .back-btn {
@@ -711,6 +710,11 @@ main.about-container .about-links .back-btn {
     width: 10em;
   }
 }
+main.about-container .about-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1em;
+}
 main.about-container .about-links a {
   display: flex;
   justify-content: center;
@@ -737,7 +741,6 @@ main.about-container .about-links a {
   transition: all 200ms ease-in-out;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1), -1px -1px 4px rgba(255, 255, 255, 0.3);
   gap: 0.5em;
-  font-size: 1.1rem;
 }
 main.about-container .about-links a .arrow {
   width: 0;
@@ -753,6 +756,9 @@ main.about-container .about-links a .arrow.left {
   border-top: 0.4em solid transparent;
   border-bottom: 0.4em solid transparent;
   border-right: 0.6em solid #FEFFFE;
+}
+main.about-container .about-links a {
+  font-size: 1.1rem;
 }
 main.about-container .about-links a:hover {
   transform: scale(1.1);
@@ -974,10 +980,6 @@ main.shop-container .go-to-cart-btn {
   transition: all 200ms ease-in-out;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1), -1px -1px 4px rgba(255, 255, 255, 0.3);
   gap: 0.5em;
-  margin: 1em auto;
-  width: 100%;
-  max-width: 20em;
-  min-width: 12em;
 }
 main.shop-container .go-to-cart-btn .arrow {
   width: 0;
@@ -993,6 +995,12 @@ main.shop-container .go-to-cart-btn .arrow.left {
   border-top: 0.4em solid transparent;
   border-bottom: 0.4em solid transparent;
   border-right: 0.6em solid #FEFFFE;
+}
+main.shop-container .go-to-cart-btn {
+  margin: 1em auto;
+  width: 100%;
+  max-width: 20em;
+  min-width: 12em;
 }
 main.shop-container .go-to-cart-btn:hover {
   transform: scale(1.1);
@@ -1220,8 +1228,6 @@ main.cart-container .links-container {
   justify-content: space-around;
   margin: auto 0 0.8em 0;
   padding-top: 1em;
-  margin-top: auto;
-  width: 90%;
 }
 main.cart-container .links-container a,
 main.cart-container .links-container .back-btn {
@@ -1283,6 +1289,10 @@ main.cart-container .links-container .back-btn {
     width: 10em;
   }
 }
+main.cart-container .links-container {
+  margin-top: auto;
+  width: 90%;
+}
 main.cart-container .links-container a {
   display: flex;
   justify-content: center;
@@ -1297,7 +1307,6 @@ main.cart-container .links-container a {
   transition: all 200ms ease-in-out;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1), -1px -1px 4px rgba(255, 255, 255, 0.3);
   gap: 0.5em;
-  width: 45%;
 }
 main.cart-container .links-container a .arrow {
   width: 0;
@@ -1313,6 +1322,9 @@ main.cart-container .links-container a .arrow.left {
   border-top: 0.4em solid transparent;
   border-bottom: 0.4em solid transparent;
   border-right: 0.6em solid #FEFFFE;
+}
+main.cart-container .links-container a {
+  width: 45%;
 }
 main.cart-container .empty-cart {
   margin: auto 0;
@@ -1948,7 +1960,7 @@ main.checkout-container form .thanks-ctrls a {
 }
 .lineup-container .croc-cards .croc-card .croc-card-info p span {
   display: block;
-  font-weight: bold;
+  font-style: italic;
 }
 .lineup-container .croc-cards .croc-card .croc-card-info p .croc-card-value {
   color: #07543A;
@@ -2050,12 +2062,12 @@ main.checkout-container form .thanks-ctrls a {
   .lineup-container .croc-cards .croc-card .croc-card-info h4 {
     font-size: 1.9rem;
   }
+  .lineup-container .croc-cards .croc-card .croc-card-info p .croc-card-value {
+    font-size: 1.4rem;
+  }
   .lineup-container .croc-cards .croc-card .croc-card-info p {
     font-size: 1.3rem;
     line-height: 1.7;
-  }
-  .lineup-container .croc-cards .croc-card .croc-card-info p .croc-card-value {
-    font-size: 1.4rem;
   }
 }
 
